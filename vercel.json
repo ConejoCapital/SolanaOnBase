@@ -1,6 +1,9 @@
 {
   "rewrites": [
-    { "source": "/dashboard", "destination": "/index.html" }
+    { "source": "/dashboard", "destination": "/index.html" },
+    { "source": "/methodology", "destination": "/index.html" },
+    { "source": "/wash-addresses", "destination": "/index.html" },
+    { "source": "/organic-addresses", "destination": "/index.html" }
   ],
   "headers": [
     {

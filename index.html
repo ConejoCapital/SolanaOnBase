@@ -684,10 +684,10 @@
                 SOL Wash Trading Analysis
             </a>
             <div class="nav-links">
-                <a class="nav-link active" data-page="dashboard">Dashboard</a>
-                <a class="nav-link" data-page="methodology">Methodology</a>
-                <a class="nav-link" data-page="wash-addresses">Wash Traders</a>
-                <a class="nav-link" data-page="organic-addresses">Organic</a>
+                <a href="#dashboard" class="nav-link active" data-page="dashboard">Dashboard</a>
+                <a href="#methodology" class="nav-link" data-page="methodology">Methodology</a>
+                <a href="#wash-addresses" class="nav-link" data-page="wash-addresses">Wash Traders</a>
+                <a href="#organic-addresses" class="nav-link" data-page="organic-addresses">Organic</a>
             </div>
         </div>
     </nav>
@@ -1172,21 +1172,64 @@
         let washPage = 1;
         let organicPage = 1;
         
-        // Navigation
+        // Navigation with URL hash routing
+        function navigateToPage(pageId) {
+            // Update URL hash
+            window.location.hash = pageId;
+            
+            // Update nav
+            document.querySelectorAll('.nav-link').forEach(l => {
+                if (l.dataset.page === pageId) {
+                    l.classList.add('active');
+                } else {
+                    l.classList.remove('active');
+                }
+            });
+            
+            // Update pages
+            document.querySelectorAll('.page').forEach(p => {
+                if (p.id === pageId) {
+                    p.classList.add('active');
+                } else {
+                    p.classList.remove('active');
+                }
+            });
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Handle nav link clicks
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const pageId = link.dataset.page;
-                
-                // Update nav
-                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
-                
-                // Update pages
-                document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-                document.getElementById(pageId).classList.add('active');
+                navigateToPage(pageId);
             });
         });
+        
+        // Handle hash changes (direct URL navigation, browser back/forward)
+        function handleHashChange() {
+            const hash = window.location.hash.slice(1) || 'dashboard';
+            const validPages = ['dashboard', 'methodology', 'wash-addresses', 'organic-addresses'];
+            
+            if (validPages.includes(hash)) {
+                navigateToPage(hash);
+            } else {
+                navigateToPage('dashboard');
+            }
+        }
+        
+        // Listen for hash changes
+        window.addEventListener('hashchange', handleHashChange);
+        
+        // Handle initial load
+        window.addEventListener('load', () => {
+            handleHashChange();
+        });
+        
+        // Also handle on initial script execution
+        handleHashChange();
         
         // Load data
         async function loadData() {

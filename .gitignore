@@ -87,3 +87,5 @@ Desktop.ini
 # ----------------
 *.tmp
 tmp*.json
+chart_data.json
+dashboard_data.json

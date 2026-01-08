@@ -774,6 +774,20 @@ margin: 0 12px;
 overflow: hidden;
 text-overflow: ellipsis;
 white-space: nowrap;
+text-decoration: none;
+transition: opacity 0.2s;
+}
+
+.address-card-address.wash {
+color: var(--accent-wash);
+}
+
+.address-card-address.organic {
+color: var(--accent-organic);
+}
+
+.address-card-address:hover {
+opacity: 0.8;
 }
 
 .address-card-address a {
@@ -1161,16 +1175,7 @@ text-decoration: underline;
             }
             
             .table-wrapper {
-                display: none;
-            }
-            
-            /* Tables - Horizontal Scroll Wrapper (for larger screens) */
-            .table-wrapper {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                margin: 0 -16px;
-                padding: 0 16px;
-                scrollbar-width: thin;
+                display: none !important;
             }
             
             .table-wrapper::-webkit-scrollbar {

@@ -729,10 +729,131 @@ text-decoration: underline;
  color: #9a5aff;
  }
  
- .address-label.user {
- background: rgba(128, 128, 128, 0.2);
- color: #888;
- }
+.address-label.user {
+background: rgba(128, 128, 128, 0.2);
+color: #888;
+}
+
+/* Mobile Card Layout */
+.address-card-list {
+display: none;
+list-style: none;
+padding: 0;
+margin: 0;
+gap: 12px;
+}
+
+.address-card {
+background: var(--bg-card);
+border: 1px solid var(--border);
+border-radius: 16px;
+padding: 16px;
+margin-bottom: 12px;
+}
+
+.address-card-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom: 12px;
+}
+
+.address-card-rank {
+font-family: 'JetBrains Mono', monospace;
+font-size: 0.9em;
+color: var(--text-muted);
+width: 30px;
+flex-shrink: 0;
+}
+
+.address-card-address {
+font-family: 'JetBrains Mono', monospace;
+font-size: 0.85em;
+flex: 1;
+margin: 0 12px;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+text-decoration: none;
+transition: opacity 0.2s;
+}
+
+.address-card-address.wash {
+color: var(--accent-wash);
+}
+
+.address-card-address.organic {
+color: var(--accent-organic);
+}
+
+.address-card-address:hover {
+opacity: 0.8;
+}
+
+.address-card-address a {
+text-decoration: none;
+transition: opacity 0.2s;
+}
+
+.address-card-address a:hover {
+opacity: 0.8;
+}
+
+.address-card-badge {
+font-size: 0.75em;
+padding: 4px 10px;
+border-radius: 12px;
+font-weight: 600;
+font-family: 'JetBrains Mono', monospace;
+}
+
+.address-card-badge.wash {
+background: rgba(255, 107, 107, 0.15);
+color: var(--accent-wash);
+}
+
+.address-card-badge.organic {
+background: rgba(0, 255, 170, 0.15);
+color: var(--accent-organic);
+}
+
+.address-card-stats {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 8px;
+margin-top: 12px;
+}
+
+.address-card-stat {
+background: var(--bg-secondary);
+border-radius: 12px;
+padding: 12px;
+}
+
+.address-card-stat-label {
+font-size: 0.7em;
+color: var(--text-muted);
+text-transform: uppercase;
+letter-spacing: 0.5px;
+margin-bottom: 4px;
+}
+
+.address-card-stat-value {
+font-family: 'JetBrains Mono', monospace;
+font-size: 0.9em;
+font-weight: 600;
+color: var(--text-primary);
+}
+
+/* Desktop: Show tables, hide cards */
+@media (min-width: 640px) {
+.address-card-list {
+display: none !important;
+}
+.table-wrapper {
+display: block !important;
+}
+}
  
 /* Collapsible Sections */
 .collapsible-section {
@@ -1048,13 +1169,13 @@ text-decoration: underline;
                 grid-template-columns: 1fr !important;
             }
             
-            /* Tables - Horizontal Scroll Wrapper */
+            /* Mobile: Show cards, hide tables */
+            .address-card-list {
+                display: block;
+            }
+            
             .table-wrapper {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                margin: 0 -16px;
-                padding: 0 16px;
-                scrollbar-width: thin;
+                display: none !important;
             }
             
             .table-wrapper::-webkit-scrollbar {
@@ -1608,6 +1729,9 @@ text-decoration: underline;
                     <div class="card-header">
                         <h2 class="card-title"><i class="fas fa-tractor"></i> Top Wash Traders</h2>
                     </div>
+                    <!-- Mobile Card List -->
+                    <ul class="address-card-list" id="topWashCards"></ul>
+                    <!-- Desktop Table -->
                     <div class="table-wrapper">
                         <table class="address-table">
                             <thead>
@@ -1629,6 +1753,9 @@ text-decoration: underline;
                     <div class="card-header">
                         <h2 class="card-title"><i class="fas fa-leaf"></i> Top Organic Traders</h2>
                     </div>
+                    <!-- Mobile Card List -->
+                    <ul class="address-card-list" id="topOrganicCards"></ul>
+                    <!-- Desktop Table -->
                     <div class="table-wrapper">
                         <table class="address-table">
                             <thead>
@@ -2341,6 +2468,9 @@ text-decoration: underline;
             <div class="card-header">
                 <h2 class="card-title"><i class="fas fa-list"></i> Complete List (<span id="washCount">0</span> addresses)</h2>
             </div>
+            <!-- Mobile Card List -->
+            <ul class="address-card-list" id="washAddressesCards"></ul>
+            <!-- Desktop Table -->
             <div class="table-wrapper">
                 <table class="address-table">
                     <thead>
@@ -2374,6 +2504,9 @@ text-decoration: underline;
             <div class="card-header">
                 <h2 class="card-title"><i class="fas fa-list"></i> Complete List (<span id="organicCount">0</span> addresses)</h2>
             </div>
+            <!-- Mobile Card List -->
+            <ul class="address-card-list" id="organicAddressesCards"></ul>
+            <!-- Desktop Table -->
             <div class="table-wrapper">
                 <table class="address-table">
                     <thead>
@@ -2392,8 +2525,8 @@ text-decoration: underline;
                 </table>
             </div>
             <div class="pagination" id="organicPagination"></div>
- <div class="page-info" id="organicPageInfo"></div>
- </div>
+            <div class="page-info" id="organicPageInfo"></div>
+        </div>
  </section>
  </main>
  
@@ -2857,13 +2990,16 @@ return `${addr.slice(0, start)}...${addr.slice(-end)}`;
  document.getElementById('lastUpdated').textContent = new Date().toLocaleString();
  }
  
- function updateTopTables() {
- if (!dashboardData) return;
- 
- // Top wash traders
-const washBody = document.getElementById('topWashTable');
+function updateTopTables() {
+if (!dashboardData) return;
+
+// Top wash traders
 const topWash = (dashboardData.wash_trading_addresses || []).slice(0, 5);
+const washBody = document.getElementById('topWashTable');
+const washCards = document.getElementById('topWashCards');
+
 if (topWash.length > 0) {
+// Desktop table
 washBody.innerHTML = topWash.map((a, i) => `
 <tr>
 <td class="mono">${i + 1}</td>
@@ -2872,14 +3008,39 @@ washBody.innerHTML = topWash.map((a, i) => `
 <td class="mono" style="color: var(--accent-wash)">${(a.balance_ratio || 0).toFixed(1)}%</td>
 </tr>
 `).join('');
+
+// Mobile cards
+washCards.innerHTML = topWash.map((a, i) => `
+<li class="address-card">
+<div class="address-card-header">
+<span class="address-card-rank">${i + 1}</span>
+<a href="https://basescan.org/address/${a.address}" target="_blank" class="address-card-address wash" title="${a.address}">${formatAddress(a.address, 8, 6)}</a>
+<span class="address-card-badge wash">${(a.balance_ratio || 0).toFixed(1)}%</span>
+</div>
+<div class="address-card-stats">
+<div class="address-card-stat">
+<div class="address-card-stat-label">Volume</div>
+<div class="address-card-stat-value">${formatCompactNumber(a.total_volume_sol || 0)} SOL</div>
+</div>
+<div class="address-card-stat">
+<div class="address-card-stat-label">Balance</div>
+<div class="address-card-stat-value" style="color: var(--accent-wash)">${(a.balance_ratio || 0).toFixed(1)}%</div>
+</div>
+</div>
+</li>
+`).join('');
 } else {
 washBody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--text-muted)">No wash traders detected</td></tr>';
+washCards.innerHTML = '<li style="text-align:center;color:var(--text-muted);padding:20px;">No wash traders detected</li>';
 }
 
 // Top organic traders
-const organicBody = document.getElementById('topOrganicTable');
 const topOrganic = (dashboardData.organic_addresses || []).slice(0, 5);
+const organicBody = document.getElementById('topOrganicTable');
+const organicCards = document.getElementById('topOrganicCards');
+
 if (topOrganic.length > 0) {
+// Desktop table
 organicBody.innerHTML = topOrganic.map((a, i) => `
 <tr>
 <td class="mono">${i + 1}</td>
@@ -2888,10 +3049,32 @@ organicBody.innerHTML = topOrganic.map((a, i) => `
 <td class="mono">${a.counterparties || 0}</td>
 </tr>
 `).join('');
+
+// Mobile cards
+organicCards.innerHTML = topOrganic.map((a, i) => `
+<li class="address-card">
+<div class="address-card-header">
+<span class="address-card-rank">${i + 1}</span>
+<a href="https://basescan.org/address/${a.address}" target="_blank" class="address-card-address organic" title="${a.address}">${formatAddress(a.address, 8, 6)}</a>
+<span class="address-card-badge organic">${a.counterparties || 0} CP</span>
+</div>
+<div class="address-card-stats">
+<div class="address-card-stat">
+<div class="address-card-stat-label">Volume</div>
+<div class="address-card-stat-value">${formatCompactNumber(a.total_volume_sol || 0)} SOL</div>
+</div>
+<div class="address-card-stat">
+<div class="address-card-stat-label">Counterparties</div>
+<div class="address-card-stat-value" style="color: var(--accent-organic)">${a.counterparties || 0}</div>
+</div>
+</div>
+</li>
+`).join('');
 } else {
 organicBody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--text-muted)">Loading...</td></tr>';
+organicCards.innerHTML = '<li style="text-align:center;color:var(--text-muted);padding:20px;">Loading...</li>';
 }
- }
+}
  
         function renderAddressTable(addresses, tableId, paginationId, pageInfoId, currentPage, addressClass) {
             const totalPages = Math.ceil(addresses.length / ITEMS_PER_PAGE);
@@ -2902,9 +3085,15 @@ organicBody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(
             // Calculate total volume for percentage calculation
             const totalVolume = dashboardData && dashboardData.summary ? dashboardData.summary.total_volume_sol : 0;
             
+            // Get card list ID (if exists)
+            const cardListId = tableId === 'washAddressesTable' ? 'washAddressesCards' : 
+                              tableId === 'organicAddressesTable' ? 'organicAddressesCards' : null;
+            const cardList = cardListId ? document.getElementById(cardListId) : null;
+            
             // Table body
             const tbody = document.getElementById(tableId);
             if (pageAddresses.length > 0) {
+                // Desktop table
                 tbody.innerHTML = pageAddresses.map((a, i) => {
                     const volume = a.total_volume_sol || 0;
                     const pctOfTotal = totalVolume > 0 ? ((volume / totalVolume) * 100) : 0;
@@ -2923,8 +3112,51 @@ organicBody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(
                         <td class="mono">${a.counterparties || 0}</td>
                     </tr>
                 `}).join('');
+                
+                // Mobile cards
+                if (cardList) {
+                    cardList.innerHTML = pageAddresses.map((a, i) => {
+                        const volume = a.total_volume_sol || 0;
+                        const pctOfTotal = totalVolume > 0 ? ((volume / totalVolume) * 100) : 0;
+                        const pctColor = pctOfTotal > 10 ? 'var(--accent-wash)' : pctOfTotal > 1 ? 'var(--accent-warning)' : 'var(--text-secondary)';
+                        return `
+                        <li class="address-card">
+                            <div class="address-card-header">
+                                <span class="address-card-rank">${start + i + 1}</span>
+                                <a href="https://basescan.org/address/${a.address}" target="_blank" class="address-card-address ${addressClass}" title="${a.address}">${formatAddress(a.address, 8, 6)}</a>
+                                <span class="address-card-badge ${addressClass}" style="background: ${addressClass === 'wash' ? 'rgba(255, 107, 107, 0.15)' : 'rgba(0, 255, 170, 0.15)'}; color: ${addressClass === 'wash' ? 'var(--accent-wash)' : 'var(--accent-organic)'};">${(a.balance_ratio || 0).toFixed(1)}%</span>
+                            </div>
+                            ${a.label ? `<div style="font-size:0.7em;color:var(--text-muted);margin-bottom:8px;">${a.label}</div>` : ''}
+                            <div class="address-card-stats">
+                                <div class="address-card-stat">
+                                    <div class="address-card-stat-label">Volume</div>
+                                    <div class="address-card-stat-value">${formatCompactNumber(volume)} SOL</div>
+                                </div>
+                                <div class="address-card-stat">
+                                    <div class="address-card-stat-label">% of Total</div>
+                                    <div class="address-card-stat-value" style="color: ${pctColor}">${pctOfTotal.toFixed(1)}%</div>
+                                </div>
+                            </div>
+                            ${addressClass === 'organic' ? `
+                            <div class="address-card-stats" style="margin-top:8px;">
+                                <div class="address-card-stat">
+                                    <div class="address-card-stat-label">Counterparties</div>
+                                    <div class="address-card-stat-value" style="color: var(--accent-organic)">${a.counterparties || 0}</div>
+                                </div>
+                                <div class="address-card-stat">
+                                    <div class="address-card-stat-label">Balance</div>
+                                    <div class="address-card-stat-value">${(a.balance_ratio || 0).toFixed(1)}%</div>
+                                </div>
+                            </div>
+                            ` : ''}
+                        </li>
+                    `}).join('');
+                }
             } else {
                 tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--text-muted)">No addresses found</td></tr>';
+                if (cardList) {
+                    cardList.innerHTML = '<li style="text-align:center;color:var(--text-muted);padding:20px;">No addresses found</li>';
+                }
             }
  
  // Pagination

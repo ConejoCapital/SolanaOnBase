@@ -109,12 +109,18 @@
  color: var(--accent-organic);
  }
  
- /* Main Container */
- .main {
- padding: 100px 20px 40px;
- max-width: 1600px;
- margin: 0 auto;
- }
+/* Main Container */
+.main {
+padding: 100px 24px 50px;
+max-width: 1600px;
+margin: 0 auto;
+}
+
+@media (min-width: 1200px) {
+.main {
+padding: 100px 40px 60px;
+}
+}
  
  /* Page Sections */
  .page {
@@ -131,10 +137,16 @@
  to { opacity: 1; transform: translateY(0); }
  }
  
- /* Header */
- .header {
- margin-bottom: 40px;
- }
+/* Header */
+.header {
+margin-bottom: 48px;
+}
+
+@media (min-width: 1200px) {
+.header {
+margin-bottom: 56px;
+}
+}
  
  .header h1 {
  font-size: 3em;
@@ -179,12 +191,19 @@
  }
  
  /* Stats Grid */
- .stats-row {
- display: grid;
- grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
- gap: 20px;
- margin-bottom: 30px;
- }
+.stats-row {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 24px;
+margin-bottom: 30px;
+}
+
+@media (min-width: 1200px) {
+.stats-row {
+gap: 28px;
+margin-bottom: 36px;
+}
+}
  
  .stat-card {
  background: var(--bg-card);
@@ -222,14 +241,21 @@
  margin-top: 6px;
  }
  
- /* Cards */
- .card {
- background: var(--bg-card);
- border: 1px solid var(--border);
- border-radius: 20px;
- padding: 28px;
- margin-bottom: 24px;
- }
+/* Cards */
+.card {
+background: var(--bg-card);
+border: 1px solid var(--border);
+border-radius: 20px;
+padding: 32px;
+margin-bottom: 28px;
+}
+
+@media (min-width: 1200px) {
+.card {
+padding: 40px;
+margin-bottom: 32px;
+}
+}
  
  .card-header {
  display: flex;
@@ -686,12 +712,13 @@ background: var(--bg-card);
 border: 1px solid var(--border);
 border-radius: 16px;
 overflow: hidden;
+margin-bottom: 20px;
 }
 
 .collapsible-header {
 display: flex;
 align-items: center;
-padding: 20px 24px;
+padding: 20px 28px;
 font-size: 1.1em;
 font-weight: 600;
 color: var(--text-primary);
@@ -714,17 +741,33 @@ transform: rotate(180deg);
 }
 
 .collapsible-content {
-padding: 0 24px 24px 24px;
+padding: 0 28px 28px 28px;
+}
+
+@media (min-width: 1200px) {
+.collapsible-header {
+padding: 24px 32px;
+}
+.collapsible-content {
+padding: 0 32px 32px 32px;
+}
 }
 
 /* Footer */
 .footer {
 text-align: center;
-padding: 40px 20px;
+padding: 48px 24px;
 color: var(--text-muted);
 font-size: 0.9em;
 border-top: 1px solid var(--border);
-margin-top: 40px;
+margin-top: 60px;
+}
+
+@media (min-width: 1200px) {
+.footer {
+padding: 56px 40px;
+margin-top: 80px;
+}
 }
 
 .footer-brand {
@@ -1417,7 +1460,7 @@ text-decoration: underline;
  </div>
  
              <!-- Collapsible Technical Details -->
-            <details class="collapsible-section" style="margin-top: 20px;">
+            <details class="collapsible-section" style="margin-top: 24px;">
                 <summary class="collapsible-header">
                     <i class="fas fa-sync-alt"></i> Block Sync Status
                     <i class="fas fa-chevron-down" style="margin-left: auto; transition: transform 0.3s;"></i>
@@ -1448,7 +1491,7 @@ text-decoration: underline;
                 </div>
             </details>
 
-            <details class="collapsible-section" style="margin-top: 15px;">
+            <details class="collapsible-section" style="margin-top: 20px;">
                 <summary class="collapsible-header">
                     <i class="fas fa-download"></i> Live Backfill Status
                     <span id="backfillIndicator" class="status-badge" style="font-size: 0.8em; margin-left: 10px;">

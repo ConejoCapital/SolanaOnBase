@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOL Token Wash Trading Analysis - Base Network</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg-primary: #050508;
+            --bg-secondary: #0d0d12;
+            --bg-card: #111116;
+            --bg-card-hover: #16161d;
+            --text-primary: #f0f0f5;
+            --text-secondary: #8a8a9a;
+            --text-muted: #5a5a6a;
+            --border: #1e1e28;
+            --accent-wash: #ff3366;
+            --accent-organic: #00ffaa;
+            --accent-warning: #ffaa00;
+            --accent-info: #3366ff;
+            --gradient-wash: linear-gradient(135deg, #ff3366 0%, #ff6699 100%);
+            --gradient-organic: linear-gradient(135deg, #00ffaa 0%, #00cc88 100%);
+        }
+        
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(5, 5, 8, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 0 20px;
+        }
+        
+        .nav-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+        
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.3em;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        
+        .nav-brand i {
+            color: var(--accent-organic);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .nav-link {
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            background: var(--bg-card);
+            color: var(--text-primary);
+        }
+        
+        .nav-link.active {
+            color: var(--accent-organic);
+        }
+        
+        /* Main Container */
+        .main {
+            padding: 100px 20px 40px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        /* Page Sections */
+        .page {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Header */
+        .header {
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+        
+        .header h1 span {
+            background: var(--gradient-organic);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .header .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        .token-badges {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .token-badge {
+            background: var(--bg-card);
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .token-badge i {
+            color: var(--accent-organic);
+        }
+        
+        /* Stats Grid */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+        
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        
+        .stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+        
+        .stat-value.wash { color: var(--accent-wash); }
+        .stat-value.organic { color: var(--accent-organic); }
+        
+        .stat-sub {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            margin-top: 6px;
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .card-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card-title i {
+            color: var(--accent-organic);
+        }
+        
+        /* Volume Breakdown Visual */
+        .volume-breakdown {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .volume-breakdown { grid-template-columns: 1fr; }
+        }
+        
+        .volume-section {
+            text-align: center;
+            padding: 30px;
+            border-radius: 16px;
+        }
+        
+        .volume-section.wash {
+            background: rgba(255, 51, 102, 0.1);
+            border: 2px solid rgba(255, 51, 102, 0.3);
+        }
+        
+        .volume-section.organic {
+            background: rgba(0, 255, 170, 0.1);
+            border: 2px solid rgba(0, 255, 170, 0.3);
+        }
+        
+        .volume-section h3 {
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+        
+        .volume-pct {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 4em;
+            font-weight: 800;
+        }
+        
+        .volume-section.wash .volume-pct { color: var(--accent-wash); }
+        .volume-section.organic .volume-pct { color: var(--accent-organic); }
+        
+        .volume-amount {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.2em;
+            color: var(--text-secondary);
+            margin-top: 10px;
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            height: 50px;
+            overflow: hidden;
+            display: flex;
+            margin: 20px 0;
+        }
+        
+        .progress-wash {
+            background: var(--gradient-wash);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9em;
+            color: white;
+            transition: width 0.8s ease;
+        }
+        
+        .progress-organic {
+            background: var(--gradient-organic);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9em;
+            color: #050508;
+            transition: width 0.8s ease;
+        }
+        
+        /* Chart Container */
+        .chart-container {
+            height: 300px;
+            margin: 20px 0;
+        }
+        
+        /* Address Tables */
+        .address-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .address-table th {
+            text-align: left;
+            padding: 14px 16px;
+            color: var(--text-muted);
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+            font-weight: 600;
+        }
+        
+        .address-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9em;
+        }
+        
+        .address-table tbody tr {
+            transition: background 0.2s;
+        }
+        
+        .address-table tbody tr:hover {
+            background: var(--bg-secondary);
+        }
+        
+        .address {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
+        }
+        
+        .address.wash { color: var(--accent-wash); }
+        .address.organic { color: var(--accent-organic); }
+        
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        
+        .pagination button {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .pagination button:hover:not(:disabled) {
+            background: var(--bg-card);
+            color: var(--text-primary);
+        }
+        
+        .pagination button.active {
+            background: var(--accent-organic);
+            color: var(--bg-primary);
+            border-color: var(--accent-organic);
+        }
+        
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .page-info {
+            color: var(--text-muted);
+            font-size: 0.9em;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        /* Methodology Page */
+        .methodology-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 24px;
+        }
+        
+        .methodology-section h2 {
+            color: var(--accent-organic);
+            font-size: 1.5em;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .methodology-section p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+        
+        .criteria-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .criteria-list li {
+            padding: 16px 20px;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        
+        .criteria-list li i {
+            color: var(--accent-wash);
+            margin-top: 3px;
+        }
+        
+        .criteria-list li strong {
+            color: var(--text-primary);
+        }
+        
+        .criteria-list li span {
+            color: var(--text-secondary);
+        }
+        
+        /* Status Badge */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        
+        .status-badge.running {
+            background: rgba(0, 255, 170, 0.2);
+            color: var(--accent-organic);
+        }
+        
+        .status-badge.preliminary {
+            background: rgba(255, 170, 0, 0.2);
+            color: var(--accent-warning);
+        }
+        
+        /* Grid Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        
+        @media (max-width: 1024px) {
+            .two-col { grid-template-columns: 1fr; }
+        }
+        
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+        }
+        
+        .spinner {
+            border: 3px solid var(--border);
+            border-top: 3px solid var(--accent-organic);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Backfill Status */
+        .backfill-status {
+            padding: 20px;
+        }
+        
+        .backfill-main {
+            margin-bottom: 20px;
+        }
+        
+        .backfill-state {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .backfill-state.running {
+            color: var(--accent-organic);
+        }
+        
+        .backfill-state.stopped {
+            color: var(--accent-wash);
+        }
+        
+        .backfill-state.error {
+            color: var(--accent-warning);
+        }
+        
+        .backfill-activity {
+            color: var(--text-muted);
+            font-size: 0.9em;
+            font-family: monospace;
+            background: var(--bg-secondary);
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        
+        .backfill-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .backfill-stats { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        .backfill-stat {
+            background: var(--bg-secondary);
+            padding: 12px 16px;
+            border-radius: 10px;
+        }
+        
+        .backfill-stat .label {
+            display: block;
+            font-size: 0.8em;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+        
+        .backfill-stat .value {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        
+        .backfill-errors {
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .backfill-errors ul {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+            color: var(--accent-wash);
+            font-size: 0.85em;
+        }
+        
+        .status-badge.backfill-running {
+            background: rgba(0, 255, 170, 0.2);
+            color: var(--accent-organic);
+        }
+        
+        .status-badge.backfill-stopped {
+            background: rgba(255, 107, 107, 0.2);
+            color: var(--accent-wash);
+        }
+        
+        /* Address Labels */
+        .address-cell {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .address-label {
+            font-size: 0.75em;
+            padding: 3px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            max-width: fit-content;
+            cursor: help;
+        }
+        
+        .address-label.wash_trader {
+            background: rgba(255, 107, 107, 0.2);
+            color: #ff6b6b;
+        }
+        
+        .address-label.dex_pool {
+            background: rgba(102, 178, 255, 0.2);
+            color: #66b2ff;
+        }
+        
+        .address-label.bot {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+        }
+        
+        .address-label.organic {
+            background: rgba(0, 255, 170, 0.2);
+            color: var(--accent-organic);
+        }
+        
+        .address-label.lp {
+            background: rgba(138, 43, 226, 0.2);
+            color: #9a5aff;
+        }
+        
+        .address-label.user {
+            background: rgba(128, 128, 128, 0.2);
+            color: #888;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.9em;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="#" class="nav-brand">
+                <i class="fas fa-chart-pie"></i>
+                SOL Wash Trading Analysis
+            </a>
+            <div class="nav-links">
+                <a class="nav-link active" data-page="dashboard">Dashboard</a>
+                <a class="nav-link" data-page="methodology">Methodology</a>
+                <a class="nav-link" data-page="wash-addresses">Wash Traders</a>
+                <a class="nav-link" data-page="organic-addresses">Organic</a>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="main">
+        <!-- Dashboard Page -->
+        <section id="dashboard" class="page active">
+            <div class="header">
+                <h1>SOL Token <span>Wash Trading</span> Analysis</h1>
+                <p class="subtitle">Comprehensive analysis of trading patterns on the SOL token (Base Network) to identify wash trading vs organic volume</p>
+                <div class="token-badges">
+                    <div class="token-badge">
+                        <i class="fas fa-coins"></i>
+                        <strong>Token:</strong> 0x311935cd80b76769bf2ecc9d8ab7635b2139cf82
+                    </div>
+                    <div class="token-badge">
+                        <i class="fas fa-network-wired"></i>
+                        <strong>Network:</strong> Base (L2)
+                    </div>
+                    <div class="token-badge" id="statusBadge">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        Loading...
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Key Stats -->
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-label">Transactions Analyzed</div>
+                    <div class="stat-value" id="totalTxs">-</div>
+                    <div class="stat-sub" id="progressPct">Loading...</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Wash Trading Volume</div>
+                    <div class="stat-value wash" id="washPct">-</div>
+                    <div class="stat-sub" id="washVol">-</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Organic Volume</div>
+                    <div class="stat-value organic" id="organicPct">-</div>
+                    <div class="stat-sub" id="organicVol">-</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Total Volume (USD)</div>
+                    <div class="stat-value" id="totalVol">-</div>
+                    <div class="stat-sub" id="totalVolSol">-</div>
+                </div>
+            </div>
+            
+            <!-- Block Sync Status -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title"><i class="fas fa-sync-alt"></i> Block Sync Status</h2>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="stat-label">Synced Block</div>
+                        <div class="stat-value" id="syncedBlock" style="color: var(--accent-organic)">-</div>
+                        <div class="stat-sub">Latest block with transactions</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Latest Base Block</div>
+                        <div class="stat-value" id="latestBlock">-</div>
+                        <div class="stat-sub">Current network block</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Blocks Behind</div>
+                        <div class="stat-value" id="blocksBehind" style="color: var(--accent-warning)">-</div>
+                        <div class="stat-sub" id="blockSyncPct">-</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Block Sync Progress</div>
+                        <div class="stat-value" id="blockSyncProgress" style="color: var(--accent-info)">-</div>
+                        <div class="stat-sub">From token start (38,699,339)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Live Backfill Status -->
+            <div class="card" id="backfillStatusCard">
+                <div class="card-header">
+                    <h2 class="card-title"><i class="fas fa-download"></i> Live Backfill Status</h2>
+                    <span id="backfillIndicator" class="status-badge" style="font-size: 0.8em;">
+                        <i class="fas fa-circle-notch fa-spin"></i> Checking...
+                    </span>
+                </div>
+                <div class="backfill-status">
+                    <div class="backfill-main">
+                        <div class="backfill-state" id="backfillState">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <span>Loading status...</span>
+                        </div>
+                        <div class="backfill-activity" id="backfillActivity">-</div>
+                    </div>
+                    <div class="backfill-stats">
+                        <div class="backfill-stat">
+                            <span class="label">Transactions Fetched:</span>
+                            <span class="value" id="backfillTxCount">-</span>
+                        </div>
+                        <div class="backfill-stat">
+                            <span class="label">API Requests:</span>
+                            <span class="value" id="backfillRequests">-</span>
+                        </div>
+                        <div class="backfill-stat">
+                            <span class="label">Gaps Remaining:</span>
+                            <span class="value" id="backfillGaps">-</span>
+                        </div>
+                        <div class="backfill-stat">
+                            <span class="label">Req/min:</span>
+                            <span class="value" id="backfillRate">-</span>
+                        </div>
+                    </div>
+                    <div class="backfill-errors" id="backfillErrors" style="display: none;">
+                        <strong>Recent Errors:</strong>
+                        <ul id="backfillErrorList"></ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Volume Breakdown -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title"><i class="fas fa-chart-pie"></i> Volume Classification</h2>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-wash" id="progressWash" style="width: 0%">0%</div>
+                    <div class="progress-organic" id="progressOrganic" style="width: 0%">0%</div>
+                </div>
+                
+                <div id="poolVolumeInfo" style="text-align: center; color: var(--text-muted); font-size: 0.9em; margin: 10px 0; padding: 8px; background: rgba(255,170,0,0.1); border-radius: 8px;">
+                    🏊 Pool volume excluded from wash/organic split (infrastructure)
+                </div>
+                
+                <!-- Toggle for Top Trader -->
+                <div style="display: flex; justify-content: center; align-items: center; gap: 12px; margin: 15px 0; padding: 12px; background: var(--bg-secondary); border-radius: 10px; border: 1px solid var(--border);">
+                    <span style="color: var(--text-secondary); font-size: 0.9em;">🔬 Research Mode:</span>
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" id="excludeTopTrader" onchange="toggleTopTrader()" style="width: 18px; height: 18px; cursor: pointer;">
+                        <span style="color: var(--text-primary); font-size: 0.9em;">Exclude top trader for analysis</span>
+                    </label>
+                    <a href="https://basescan.org/address/0x7c460d504c1600fb8c030ff0d3b7e02bab268309" target="_blank" 
+                       style="color: var(--accent-wash); font-size: 0.85em; text-decoration: none; font-family: 'JetBrains Mono', monospace;">
+                       (0x7c460d...)</a>
+                </div>
+                <div id="topTraderNote" style="display: none; text-align: center; color: var(--accent-warning); font-size: 0.85em; margin-bottom: 10px; padding: 8px; background: rgba(255,170,0,0.15); border-radius: 8px;">
+                    ⚠️ Top trader excluded - volume accounts for <span id="topTraderPct">68%</span> of wash trading
+                </div>
+                
+                <div class="volume-breakdown">
+                    <div class="volume-section wash">
+                        <h3>🚜 Wash Trading</h3>
+                        <div class="volume-pct" id="washPctLarge">-</div>
+                        <div class="volume-amount" id="washAmount">-</div>
+                    </div>
+                    <div class="volume-section organic">
+                        <h3>🌱 Organic Trading</h3>
+                        <div class="volume-pct" id="organicPctLarge">-</div>
+                        <div class="volume-amount" id="organicAmount">-</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Top Addresses -->
+            <div class="two-col">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-tractor"></i> Top Wash Traders</h2>
+                    </div>
+                    <table class="address-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Address</th>
+                                <th>Volume</th>
+                                <th>Balance %</th>
+                            </tr>
+                        </thead>
+                        <tbody id="topWashTable">
+                            <tr><td colspan="4" class="loading"><div class="spinner"></div>Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-leaf"></i> Top Organic Traders</h2>
+                    </div>
+                    <table class="address-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Address</th>
+                                <th>Volume</th>
+                                <th>Counterparties</th>
+                            </tr>
+                        </thead>
+                        <tbody id="topOrganicTable">
+                            <tr><td colspan="4" class="loading"><div class="spinner"></div>Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Methodology Page -->
+        <section id="methodology" class="page">
+            <div class="header">
+                <h1>Classification <span>Methodology</span></h1>
+                <p class="subtitle">How we distinguish wash trading from organic volume</p>
+            </div>
+            
+            <div class="methodology-section">
+                <h2><i class="fas fa-flask"></i> Overview</h2>
+                <p>
+                    This analysis examines all ERC-20 transfer transactions for the SOL token on Base network 
+                    starting from block 38,699,339 (token inception). Each address is classified as either 
+                    "wash trading" or "organic" based on their trading patterns.
+                </p>
+                <p>
+                    Wash trading is identified by addresses that repeatedly buy and sell nearly equal amounts, 
+                    resulting in minimal net position changes while generating significant volume. These addresses
+                    typically interact with very few counterparties (often just 1-3 DEX pools).
+                </p>
+            </div>
+            
+            <div class="methodology-section">
+                <h2><i class="fas fa-check-double"></i> Classification Criteria</h2>
+                <p>An address is classified as <strong style="color: var(--accent-wash)">WASH TRADING</strong> if it meets ALL of the following:</p>
+                <ul class="criteria-list">
+                    <li>
+                        <i class="fas fa-balance-scale"></i>
+                        <div>
+                            <strong>Balance Ratio &gt; 85%</strong><br>
+                            <span>The ratio of sent to received volume must be greater than 85%. This indicates the address is buying and selling nearly equal amounts (e.g., sent 1000 SOL and received 950 SOL = 95% balance ratio).</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-percentage"></i>
+                        <div>
+                            <strong>Net Position &lt; 15% of Average Volume</strong><br>
+                            <span>The absolute difference between received and sent volume must be less than 15% of the average volume. This confirms minimal accumulation or distribution.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <strong>Fewer Than 10 Counterparties</strong><br>
+                            <span>The address must interact with fewer than 10 unique counterparties. Legitimate routers and aggregators interact with hundreds of addresses, while wash traders typically use 1-3 DEX pools.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-coins"></i>
+                        <div>
+                            <strong>Total Volume &gt; 100 SOL</strong><br>
+                            <span>Minimum volume threshold to filter out dust and noise.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="methodology-section">
+                <h2><i class="fas fa-shield-alt"></i> Exclusions</h2>
+                <p>Addresses are classified as <strong style="color: var(--accent-organic)">ORGANIC</strong> if they:</p>
+                <ul class="criteria-list">
+                    <li>
+                        <i class="fas fa-exchange-alt" style="color: var(--accent-organic)"></i>
+                        <div>
+                            <strong>Have Many Counterparties (&gt;50)</strong><br>
+                            <span>Addresses interacting with 50+ counterparties are likely DEX routers, aggregators, or other infrastructure - not wash traders.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-chart-line" style="color: var(--accent-organic)"></i>
+                        <div>
+                            <strong>Have Significant Net Position</strong><br>
+                            <span>Addresses that accumulate or distribute significant amounts (net position &gt;15% of volume) are engaging in real buying/selling.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-random" style="color: var(--accent-organic)"></i>
+                        <div>
+                            <strong>Have Imbalanced Buy/Sell Ratio</strong><br>
+                            <span>Addresses where buy and sell volumes differ significantly (balance ratio &lt;85%) are not round-tripping.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="methodology-section">
+                <h2><i class="fas fa-swimming-pool"></i> Pool Volume Exclusion</h2>
+                <p>
+                    <strong style="color: var(--accent-warning)">Important:</strong> The Aerodrome SOL/WETH pool 
+                    (<code style="font-family: 'JetBrains Mono', monospace; font-size: 0.9em; color: var(--text-secondary);">0xb30540172f1b37d1ee1d109e49f883e935e69219</code>) 
+                    is <strong>excluded</strong> from the wash/organic percentage calculation because:
+                </p>
+                <ul class="criteria-list">
+                    <li>
+                        <i class="fas fa-cog" style="color: var(--accent-warning)"></i>
+                        <div>
+                            <strong>It's Infrastructure, Not a Trader</strong><br>
+                            <span>The pool is the counterparty for all swaps. When a wash trader sells, the pool "receives" that volume. Including pool volume would double-count and misrepresent the data.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="methodology-section" style="border: 2px solid var(--accent-wash);">
+                <h2><i class="fas fa-search" style="color: var(--accent-wash)"></i> Proof: Wash Trading Mechanism</h2>
+                <p>
+                    <strong>We have identified conclusive evidence of wash trading.</strong> The top wash trader 
+                    executes buy and sell transactions for the <strong>exact same amount</strong> within seconds of each other.
+                </p>
+                
+                <div style="background: var(--bg-secondary); border-radius: 12px; padding: 20px; margin: 20px 0;">
+                    <h3 style="color: var(--text-primary); margin-bottom: 15px;">🔍 The Mechanism</h3>
+                    <ol style="color: var(--text-secondary); line-height: 2; padding-left: 20px;">
+                        <li><strong>SELL:</strong> Trader sends 84.7211 SOL to the Aerodrome pool</li>
+                        <li><strong>BUY:</strong> 2 seconds later, trader receives 84.7211 SOL back from the pool</li>
+                        <li><strong>REPEAT:</strong> This process repeats thousands of times</li>
+                        <li><strong>RESULT:</strong> No net position change, but volume generated for AERO incentives</li>
+                    </ol>
+                </div>
+                
+                <h3 style="color: var(--text-primary); margin: 25px 0 15px;">📊 Real Transaction Examples</h3>
+                <p style="color: var(--text-muted); font-size: 0.9em;">From top wash trader: <code id="topWashTrader" style="font-family: 'JetBrains Mono'; font-size: 0.85em;">Loading...</code></p>
+                
+                <div id="evidenceExamples" style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+                    <div style="background: linear-gradient(135deg, rgba(255,99,99,0.1), rgba(255,99,99,0.05)); border: 1px solid rgba(255,99,99,0.3); border-radius: 10px; padding: 20px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                            <span style="color: var(--accent-wash); font-weight: 600;">Example 1</span>
+                            <span class="status-badge running" style="font-size: 0.8em;">Verified</span>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <div>
+                                <span style="color: var(--text-muted); font-size: 0.85em;">🔻 SELL</span>
+                                <div style="font-family: 'JetBrains Mono'; font-size: 1.1em; color: var(--accent-wash);" id="ex1-sell">84.7211 SOL</div>
+                                <div style="color: var(--text-muted); font-size: 0.8em;" id="ex1-sell-block">Block 39,109,843</div>
+                            </div>
+                            <div>
+                                <span style="color: var(--text-muted); font-size: 0.85em;">🔺 BUY</span>
+                                <div style="font-family: 'JetBrains Mono'; font-size: 1.1em; color: var(--accent-organic);" id="ex1-buy">84.7211 SOL</div>
+                                <div style="color: var(--text-muted); font-size: 0.8em;" id="ex1-buy-block">Block 39,109,844</div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1);">
+                            <span style="color: var(--accent-warning); font-size: 0.85em;">⏱️ Time difference: <span id="ex1-time">~2 seconds</span></span>
+                            <span style="color: var(--text-muted); font-size: 0.85em; margin-left: 20px;">Δ Amount: <span style="color: var(--accent-organic);">0.0000 SOL (0.00%)</span></span>
+                        </div>
+                    </div>
+                    
+                    <div style="background: linear-gradient(135deg, rgba(255,99,99,0.1), rgba(255,99,99,0.05)); border: 1px solid rgba(255,99,99,0.3); border-radius: 10px; padding: 20px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                            <span style="color: var(--accent-wash); font-weight: 600;">Example 2</span>
+                            <span class="status-badge running" style="font-size: 0.8em;">Verified</span>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <div>
+                                <span style="color: var(--text-muted); font-size: 0.85em;">🔻 SELL</span>
+                                <div style="font-family: 'JetBrains Mono'; font-size: 1.1em; color: var(--accent-wash);" id="ex2-sell">86.3533 SOL</div>
+                                <div style="color: var(--text-muted); font-size: 0.8em;" id="ex2-sell-block">Block 39,110,148</div>
+                            </div>
+                            <div>
+                                <span style="color: var(--text-muted); font-size: 0.85em;">🔺 BUY</span>
+                                <div style="font-family: 'JetBrains Mono'; font-size: 1.1em; color: var(--accent-organic);" id="ex2-buy">86.3533 SOL</div>
+                                <div style="color: var(--text-muted); font-size: 0.8em;" id="ex2-buy-block">Block 39,110,147</div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1);">
+                            <span style="color: var(--accent-warning); font-size: 0.85em;">⏱️ Time difference: <span id="ex2-time">~2 seconds</span></span>
+                            <span style="color: var(--text-muted); font-size: 0.85em; margin-left: 20px;">Δ Amount: <span style="color: var(--accent-organic);">0.0000 SOL (0.00%)</span></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: rgba(255,170,0,0.1); border: 1px solid rgba(255,170,0,0.3); border-radius: 10px; padding: 20px; margin-top: 20px;">
+                    <h4 style="color: var(--accent-warning); margin-bottom: 10px;">🎯 Why This is Conclusive Proof</h4>
+                    <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px;">
+                        <li>The amounts are <strong>exactly identical</strong> - no price slippage, no partial fills</li>
+                        <li>Transactions occur within <strong>2-4 seconds</strong> of each other (1-2 blocks on Base)</li>
+                        <li>This pattern repeats <strong>thousands of times</strong> from the same addresses</li>
+                        <li>Net position change is <strong>~0</strong> despite millions in volume</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="methodology-section">
+                <h2><i class="fas fa-database"></i> Data Source</h2>
+                <p>
+                    Transaction data is fetched from the Routescan API (Etherscan-compatible endpoint for Base network).
+                    Analysis starts from block <strong>38,699,339</strong> (first SOL token transaction) and continues
+                    to the current block.
+                </p>
+                <p>
+                    The target is approximately <strong>2,352,771 transactions</strong> as shown on Basescan.
+                    This analysis is updated in real-time as more transactions are fetched.
+                </p>
+                <p style="margin-top: 20px;">
+                    <strong>Token Contract:</strong> 
+                    <a href="https://basescan.org/token/0x311935cd80b76769bf2ecc9d8ab7635b2139cf82#code" 
+                       target="_blank" style="color: var(--accent-organic);">
+                        CrossChainERC20 (Minimal Proxy) - 9 decimals
+                    </a>
+                </p>
+            </div>
+        </section>
+        
+        <!-- Wash Trading Addresses Page -->
+        <section id="wash-addresses" class="page">
+            <div class="header">
+                <h1><span style="color: var(--accent-wash)">🚜 Wash Trading</span> Addresses</h1>
+                <p class="subtitle">All addresses classified as wash trading based on their trading patterns</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title"><i class="fas fa-list"></i> Complete List (<span id="washCount">0</span> addresses)</h2>
+                </div>
+                <table class="address-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Address & Label</th>
+                            <th>Volume (SOL)</th>
+                            <th>Volume (USD)</th>
+                            <th>Balance %</th>
+                            <th>Counterparties</th>
+                            <th>Confidence</th>
+                        </tr>
+                    </thead>
+                    <tbody id="washAddressesTable">
+                        <tr><td colspan="7" class="loading"><div class="spinner"></div>Loading...</td></tr>
+                    </tbody>
+                </table>
+                <div class="pagination" id="washPagination"></div>
+                <div class="page-info" id="washPageInfo"></div>
+            </div>
+        </section>
+        
+        <!-- Organic Addresses Page -->
+        <section id="organic-addresses" class="page">
+            <div class="header">
+                <h1><span style="color: var(--accent-organic)">🌱 Organic</span> Addresses</h1>
+                <p class="subtitle">All addresses classified as organic traders</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title"><i class="fas fa-list"></i> Complete List (<span id="organicCount">0</span> addresses)</h2>
+                </div>
+                <table class="address-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Address & Label</th>
+                            <th>Volume (SOL)</th>
+                            <th>Volume (USD)</th>
+                            <th>Balance %</th>
+                            <th>Counterparties</th>
+                            <th>Confidence</th>
+                        </tr>
+                    </thead>
+                    <tbody id="organicAddressesTable">
+                        <tr><td colspan="7" class="loading"><div class="spinner"></div>Loading...</td></tr>
+                    </tbody>
+                </table>
+                <div class="pagination" id="organicPagination"></div>
+                <div class="page-info" id="organicPageInfo"></div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <p>SOL Token Wash Trading Analysis &bull; Base Network &bull; Data from Routescan API</p>
+        <p style="margin-top: 8px;">Last updated: <span id="lastUpdated">-</span></p>
+    </footer>
+    
+    <script>
+        let dashboardData = null;
+        const ITEMS_PER_PAGE = 10;
+        let washPage = 1;
+        let organicPage = 1;
+        
+        // Navigation
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageId = link.dataset.page;
+                
+                // Update nav
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                
+                // Update pages
+                document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+                document.getElementById(pageId).classList.add('active');
+            });
+        });
+        
+        // Load data
+        async function loadData() {
+            try {
+                const response = await fetch('dashboard_export.json?t=' + Date.now());
+                dashboardData = await response.json();
+                updateDashboard();
+                updateWashTable();
+                updateOrganicTable();
+            } catch (e) {
+                console.error('Error loading data:', e);
+            }
+        }
+        
+        function formatNumber(n, decimals = 0) {
+            return n.toLocaleString(undefined, { maximumFractionDigits: decimals });
+        }
+        
+        function formatUSD(n) {
+            if (n >= 1e9) return '$' + (n / 1e9).toFixed(2) + 'B';
+            if (n >= 1e6) return '$' + (n / 1e6).toFixed(2) + 'M';
+            if (n >= 1e3) return '$' + (n / 1e3).toFixed(1) + 'K';
+            return '$' + n.toFixed(2);
+        }
+        
+        // Top trader exclusion toggle
+        const TOP_TRADER = '0x7c460d504c1600fb8c030ff0d3b7e02bab268309';
+        let excludeTopTrader = false;
+        
+        function toggleTopTrader() {
+            excludeTopTrader = document.getElementById('excludeTopTrader').checked;
+            document.getElementById('topTraderNote').style.display = excludeTopTrader ? 'block' : 'none';
+            updateDashboard();
+        }
+        
+        function updateDashboard() {
+            if (!dashboardData) return;
+            const s = dashboardData.summary;
+            
+            // Status
+            const statusBadge = document.getElementById('statusBadge');
+            const progress = s.progress_percentage;
+            if (progress < 100) {
+                statusBadge.innerHTML = `<span class="status-badge preliminary"><i class="fas fa-clock"></i> ${progress.toFixed(1)}% Complete</span>`;
+            } else {
+                statusBadge.innerHTML = `<span class="status-badge running"><i class="fas fa-check"></i> Analysis Complete</span>`;
+            }
+            
+            // Stats
+            document.getElementById('totalTxs').textContent = formatNumber(s.transactions_analyzed);
+            document.getElementById('progressPct').textContent = `${s.progress_percentage.toFixed(1)}% of target (${formatNumber(s.target_transactions)})`;
+            
+            // Calculate volumes (with or without top trader)
+            let washVol = s.wash_volume_sol;
+            let washPct = s.wash_percentage;
+            let organicVol = s.organic_volume_sol;
+            let organicPct = s.organic_percentage;
+            let washCount = s.wash_address_count;
+            let topTraderVol = 0;
+            
+            // Find top trader volume if we need to exclude
+            if (excludeTopTrader && dashboardData.wash_trading_addresses) {
+                const topTrader = dashboardData.wash_trading_addresses.find(a => a.address.toLowerCase() === TOP_TRADER);
+                if (topTrader) {
+                    topTraderVol = topTrader.total_volume_sol;
+                    washVol = washVol - topTraderVol;
+                    const newTotal = washVol + organicVol;
+                    washPct = (washVol / newTotal * 100);
+                    organicPct = (organicVol / newTotal * 100);
+                    washCount = washCount - 1;
+                    
+                    // Update top trader note
+                    const topTraderPctEl = document.getElementById('topTraderPct');
+                    if (topTraderPctEl) {
+                        topTraderPctEl.textContent = ((topTraderVol / s.wash_volume_sol) * 100).toFixed(0) + '%';
+                    }
+                }
+            }
+            
+            document.getElementById('washPct').textContent = washPct.toFixed(1) + '%';
+            document.getElementById('washVol').textContent = formatNumber(washVol, 0) + ' SOL';
+            
+            document.getElementById('organicPct').textContent = organicPct.toFixed(1) + '%';
+            document.getElementById('organicVol').textContent = formatNumber(organicVol, 0) + ' SOL';
+            
+            document.getElementById('totalVol').textContent = formatUSD(s.total_volume_usd);
+            document.getElementById('totalVolSol').textContent = formatNumber(s.total_volume_sol, 0) + ' SOL';
+            
+            // Progress bar
+            document.getElementById('progressWash').style.width = washPct + '%';
+            document.getElementById('progressWash').textContent = washPct.toFixed(1) + '% Wash';
+            document.getElementById('progressOrganic').style.width = organicPct + '%';
+            document.getElementById('progressOrganic').textContent = organicPct.toFixed(1) + '% Organic';
+            
+            // Large percentages
+            document.getElementById('washPctLarge').textContent = washPct.toFixed(1) + '%';
+            document.getElementById('washAmount').textContent = formatNumber(washVol, 0) + ' SOL (' + formatUSD(washVol * s.sol_price_usd) + ')';
+            document.getElementById('organicPctLarge').textContent = organicPct.toFixed(1) + '%';
+            document.getElementById('organicAmount').textContent = formatNumber(organicVol, 0) + ' SOL (' + formatUSD(organicVol * s.sol_price_usd) + ')';
+            
+            // Counts
+            document.getElementById('washCount').textContent = washCount;
+            document.getElementById('organicCount').textContent = s.organic_address_count;
+            
+            // Pool volume info (if available)
+            if (s.pool_volume_sol) {
+                const poolInfoEl = document.getElementById('poolVolumeInfo');
+                if (poolInfoEl) {
+                    poolInfoEl.innerHTML = `🏊 Pool volume excluded: ${formatNumber(s.pool_volume_sol, 0)} SOL (${s.pool_volume_pct}% of total)`;
+                }
+            }
+            
+            // Wash trading evidence (for methodology page)
+            if (dashboardData.wash_trading_evidence) {
+                const evidence = dashboardData.wash_trading_evidence;
+                const topTraderEl = document.getElementById('topWashTrader');
+                if (topTraderEl && evidence.top_wash_trader) {
+                    topTraderEl.textContent = evidence.top_wash_trader.slice(0, 20) + '...';
+                }
+                
+                // Update examples if available
+                if (evidence.examples && evidence.examples.length > 0) {
+                    const ex1 = evidence.examples[0];
+                    if (ex1) {
+                        const el1Sell = document.getElementById('ex1-sell');
+                        const el1Buy = document.getElementById('ex1-buy');
+                        const el1SellBlock = document.getElementById('ex1-sell-block');
+                        const el1BuyBlock = document.getElementById('ex1-buy-block');
+                        const el1Time = document.getElementById('ex1-time');
+                        if (el1Sell) el1Sell.textContent = ex1.sell_amount_sol + ' SOL';
+                        if (el1Buy) el1Buy.textContent = ex1.buy_amount_sol + ' SOL';
+                        if (el1SellBlock) el1SellBlock.textContent = 'Block ' + formatNumber(parseInt(ex1.sell_block));
+                        if (el1BuyBlock) el1BuyBlock.textContent = 'Block ' + formatNumber(parseInt(ex1.buy_block));
+                        if (el1Time) el1Time.textContent = ex1.time_difference;
+                    }
+                    
+                    const ex2 = evidence.examples[1];
+                    if (ex2) {
+                        const el2Sell = document.getElementById('ex2-sell');
+                        const el2Buy = document.getElementById('ex2-buy');
+                        const el2SellBlock = document.getElementById('ex2-sell-block');
+                        const el2BuyBlock = document.getElementById('ex2-buy-block');
+                        const el2Time = document.getElementById('ex2-time');
+                        if (el2Sell) el2Sell.textContent = ex2.sell_amount_sol + ' SOL';
+                        if (el2Buy) el2Buy.textContent = ex2.buy_amount_sol + ' SOL';
+                        if (el2SellBlock) el2SellBlock.textContent = 'Block ' + formatNumber(parseInt(ex2.sell_block));
+                        if (el2BuyBlock) el2BuyBlock.textContent = 'Block ' + formatNumber(parseInt(ex2.buy_block));
+                        if (el2Time) el2Time.textContent = ex2.time_difference;
+                    }
+                }
+            }
+            
+            // Block sync info
+            if (s.block_sync) {
+                const bs = s.block_sync;
+                document.getElementById('syncedBlock').textContent = formatNumber(bs.synced_block);
+                document.getElementById('latestBlock').textContent = formatNumber(bs.latest_base_block);
+                document.getElementById('blocksBehind').textContent = formatNumber(bs.blocks_behind);
+                document.getElementById('blockSyncPct').textContent = bs.blocks_behind <= 100 ? '✅ Caught up!' : `${bs.blocks_behind} blocks behind`;
+                document.getElementById('blockSyncProgress').textContent = bs.block_sync_percentage.toFixed(1) + '%';
+            }
+            
+            // Top tables
+            updateTopTables();
+            
+            // Last updated
+            document.getElementById('lastUpdated').textContent = new Date().toLocaleString();
+        }
+        
+        function updateTopTables() {
+            if (!dashboardData) return;
+            
+            // Top wash traders
+            const washBody = document.getElementById('topWashTable');
+            const topWash = dashboardData.wash_trading_addresses.slice(0, 5);
+            if (topWash.length > 0) {
+                washBody.innerHTML = topWash.map((a, i) => `
+                    <tr>
+                        <td class="mono">${i + 1}</td>
+                        <td><span class="address wash">${a.address.slice(0, 10)}...${a.address.slice(-8)}</span></td>
+                        <td class="mono">${formatNumber(a.total_volume_sol, 0)}</td>
+                        <td class="mono" style="color: var(--accent-wash)">${a.balance_ratio}%</td>
+                    </tr>
+                `).join('');
+            } else {
+                washBody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--text-muted)">No wash traders detected</td></tr>';
+            }
+            
+            // Top organic traders
+            const organicBody = document.getElementById('topOrganicTable');
+            const topOrganic = dashboardData.organic_addresses.slice(0, 5);
+            if (topOrganic.length > 0) {
+                organicBody.innerHTML = topOrganic.map((a, i) => `
+                    <tr>
+                        <td class="mono">${i + 1}</td>
+                        <td><span class="address organic">${a.address.slice(0, 10)}...${a.address.slice(-8)}</span></td>
+                        <td class="mono">${formatNumber(a.total_volume_sol, 0)}</td>
+                        <td class="mono">${a.counterparties}</td>
+                    </tr>
+                `).join('');
+            } else {
+                organicBody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--text-muted)">Loading...</td></tr>';
+            }
+        }
+        
+        function renderAddressTable(addresses, tableId, paginationId, pageInfoId, currentPage, addressClass) {
+            const totalPages = Math.ceil(addresses.length / ITEMS_PER_PAGE);
+            const start = (currentPage - 1) * ITEMS_PER_PAGE;
+            const end = start + ITEMS_PER_PAGE;
+            const pageAddresses = addresses.slice(start, end);
+            
+            // Table body
+            const tbody = document.getElementById(tableId);
+            if (pageAddresses.length > 0) {
+                tbody.innerHTML = pageAddresses.map((a, i) => `
+                    <tr>
+                        <td class="mono">${start + i + 1}</td>
+                        <td>
+                            <div class="address-cell">
+                                <a href="https://basescan.org/address/${a.address}" target="_blank" class="address ${addressClass}">${a.address.slice(0,10)}...${a.address.slice(-8)}</a>
+                                <div class="address-label ${a.label_type || ''}" title="${a.label_source || 'Unknown source'}">${a.label || '👤 Unknown'}</div>
+                            </div>
+                        </td>
+                        <td class="mono">${formatNumber(a.total_volume_sol, 2)}</td>
+                        <td class="mono">${formatUSD(a.total_volume_usd)}</td>
+                        <td class="mono">${a.balance_ratio}%</td>
+                        <td class="mono">${a.counterparties}</td>
+                        <td class="mono">${a.label_confidence || 0}%</td>
+                    </tr>
+                `).join('');
+            } else {
+                tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:var(--text-muted)">No addresses found</td></tr>';
+            }
+            
+            // Pagination
+            const pag = document.getElementById(paginationId);
+            let pagHtml = '';
+            
+            // Prev button
+            pagHtml += `<button ${currentPage === 1 ? 'disabled' : ''} onclick="${addressClass === 'wash' ? 'washPage--' : 'organicPage--'}; update${addressClass === 'wash' ? 'Wash' : 'Organic'}Table();">← Prev</button>`;
+            
+            // Page numbers
+            const maxPages = 5;
+            let startPage = Math.max(1, currentPage - 2);
+            let endPage = Math.min(totalPages, startPage + maxPages - 1);
+            if (endPage - startPage < maxPages - 1) {
+                startPage = Math.max(1, endPage - maxPages + 1);
+            }
+            
+            if (startPage > 1) {
+                pagHtml += `<button onclick="${addressClass === 'wash' ? 'washPage=1' : 'organicPage=1'}; update${addressClass === 'wash' ? 'Wash' : 'Organic'}Table();">1</button>`;
+                if (startPage > 2) pagHtml += '<button disabled>...</button>';
+            }
+            
+            for (let i = startPage; i <= endPage; i++) {
+                pagHtml += `<button class="${i === currentPage ? 'active' : ''}" onclick="${addressClass === 'wash' ? 'washPage=' : 'organicPage='}${i}; update${addressClass === 'wash' ? 'Wash' : 'Organic'}Table();">${i}</button>`;
+            }
+            
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) pagHtml += '<button disabled>...</button>';
+                pagHtml += `<button onclick="${addressClass === 'wash' ? 'washPage=' : 'organicPage='}${totalPages}; update${addressClass === 'wash' ? 'Wash' : 'Organic'}Table();">${totalPages}</button>`;
+            }
+            
+            // Next button
+            pagHtml += `<button ${currentPage === totalPages ? 'disabled' : ''} onclick="${addressClass === 'wash' ? 'washPage++' : 'organicPage++'}; update${addressClass === 'wash' ? 'Wash' : 'Organic'}Table();">Next →</button>`;
+            
+            pag.innerHTML = pagHtml;
+            
+            // Page info
+            document.getElementById(pageInfoId).textContent = `Showing ${start + 1}-${Math.min(end, addresses.length)} of ${addresses.length} addresses`;
+        }
+        
+        function updateWashTable() {
+            if (!dashboardData) return;
+            renderAddressTable(dashboardData.wash_trading_addresses, 'washAddressesTable', 'washPagination', 'washPageInfo', washPage, 'wash');
+        }
+        
+        function updateOrganicTable() {
+            if (!dashboardData) return;
+            renderAddressTable(dashboardData.organic_addresses, 'organicAddressesTable', 'organicPagination', 'organicPageInfo', organicPage, 'organic');
+        }
+        
+        // Backfill status
+        async function loadBackfillStatus() {
+            try {
+                const response = await fetch('backfill_status.json?t=' + Date.now());
+                const status = await response.json();
+                updateBackfillStatus(status);
+            } catch (e) {
+                // File might not exist yet
+                updateBackfillStatus({ is_running: false, status: 'unknown', last_update: '-' });
+            }
+        }
+        
+        function updateBackfillStatus(status) {
+            const indicator = document.getElementById('backfillIndicator');
+            const stateEl = document.getElementById('backfillState');
+            const activityEl = document.getElementById('backfillActivity');
+            const txCountEl = document.getElementById('backfillTxCount');
+            const requestsEl = document.getElementById('backfillRequests');
+            const gapsEl = document.getElementById('backfillGaps');
+            const rateEl = document.getElementById('backfillRate');
+            const errorsDiv = document.getElementById('backfillErrors');
+            const errorList = document.getElementById('backfillErrorList');
+            
+            if (status.is_running) {
+                indicator.className = 'status-badge backfill-running';
+                indicator.innerHTML = '<i class="fas fa-circle" style="color: #00ffaa; animation: pulse 1s infinite;"></i> RUNNING';
+                
+                stateEl.className = 'backfill-state running';
+                let stateIcon = 'fa-sync fa-spin';
+                let stateText = 'Fetching...';
+                
+                if (status.status === 'filling_gap') {
+                    stateText = 'Filling gaps in historical data';
+                } else if (status.status === 'fetching_new') {
+                    stateText = 'Fetching new blocks';
+                } else if (status.status === 'caught_up') {
+                    stateText = 'Caught up! Waiting for new blocks';
+                    stateIcon = 'fa-check';
+                } else if (status.status === 'fetching') {
+                    stateText = 'Actively fetching transactions';
+                }
+                
+                stateEl.innerHTML = `<i class="fas ${stateIcon}"></i><span>${stateText}</span>`;
+            } else {
+                indicator.className = 'status-badge backfill-stopped';
+                indicator.innerHTML = '<i class="fas fa-circle"></i> STOPPED';
+                
+                stateEl.className = 'backfill-state stopped';
+                stateEl.innerHTML = `<i class="fas fa-stop"></i><span>Backfill stopped: ${status.status || 'unknown'}</span>`;
+            }
+            
+            activityEl.textContent = status.last_activity || status.current_gap || 'No recent activity';
+            txCountEl.textContent = formatNumber(status.transactions_fetched || 0);
+            requestsEl.textContent = formatNumber(status.api_requests || 0);
+            gapsEl.textContent = status.gaps_remaining || '0';
+            rateEl.textContent = (status.requests_per_minute || 0).toFixed(1);
+            
+            // Errors
+            if (status.errors && status.errors.length > 0) {
+                errorsDiv.style.display = 'block';
+                errorList.innerHTML = status.errors.map(e => `<li>${e}</li>`).join('');
+            } else {
+                errorsDiv.style.display = 'none';
+            }
+        }
+        
+        // Add pulse animation
+        const style = document.createElement('style');
+        style.textContent = '@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }';
+        document.head.appendChild(style);
+        
+        // Initial load
+        loadData();
+        loadBackfillStatus();
+        
+        // Auto-refresh every 60 seconds for main data
+        setInterval(loadData, 60000);
+        
+        // Auto-refresh backfill status every 5 seconds
+        setInterval(loadBackfillStatus, 5000);
+    </script>
+</body>
+</html>

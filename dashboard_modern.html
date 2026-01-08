@@ -680,15 +680,128 @@
  color: #888;
  }
  
- /* Footer */
- .footer {
- text-align: center;
- padding: 40px 20px;
- color: var(--text-muted);
- font-size: 0.9em;
- border-top: 1px solid var(--border);
- margin-top: 40px;
- }
+/* Footer */
+.footer {
+text-align: center;
+padding: 40px 20px;
+color: var(--text-muted);
+font-size: 0.9em;
+border-top: 1px solid var(--border);
+margin-top: 40px;
+}
+
+.footer-brand {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
+margin-bottom: 20px;
+}
+
+.footer-brand span {
+font-weight: 600;
+font-size: 1.1em;
+color: var(--text-primary);
+}
+
+.footer-buttons {
+display: flex;
+justify-content: center;
+gap: 15px;
+flex-wrap: wrap;
+margin-bottom: 25px;
+}
+
+.footer-btn {
+display: flex;
+align-items: center;
+gap: 8px;
+color: var(--text-primary);
+text-decoration: none;
+padding: 12px 20px;
+background: var(--bg-secondary);
+border-radius: 8px;
+border: 1px solid var(--border);
+transition: all 0.2s;
+font-size: 0.9em;
+}
+
+.footer-btn:hover {
+background: var(--bg-card);
+border-color: var(--solana-purple);
+}
+
+.footer-resources {
+max-width: 1000px;
+margin: 0 auto 25px;
+text-align: left;
+}
+
+.footer-resources h4 {
+color: var(--text-primary);
+margin-bottom: 15px;
+text-align: center;
+font-size: 1em;
+}
+
+.footer-resources-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+gap: 12px;
+}
+
+.footer-resource-card {
+background: var(--bg-secondary);
+padding: 15px;
+border-radius: 8px;
+border: 1px solid var(--border);
+}
+
+.footer-resource-title {
+color: var(--solana-purple);
+font-weight: 600;
+margin-bottom: 10px;
+font-size: 0.85em;
+}
+
+.footer-resource-card ul {
+color: var(--text-secondary);
+font-size: 0.8em;
+padding-left: 16px;
+margin: 0;
+line-height: 1.8;
+}
+
+.footer-resource-card ul a {
+color: var(--accent-organic);
+text-decoration: none;
+}
+
+.footer-resource-card ul a:hover {
+text-decoration: underline;
+}
+
+.footer-info {
+color: var(--text-muted);
+font-size: 0.85em;
+margin-bottom: 8px;
+}
+
+.footer-updated {
+font-size: 0.8em;
+color: var(--text-muted);
+margin-bottom: 15px;
+}
+
+.footer-github a {
+color: var(--solana-purple);
+text-decoration: none;
+font-size: 0.85em;
+}
+
+.footer-github a:hover {
+text-decoration: underline;
+}
  
  /* Solana Branding */
  .solana-logo {
@@ -927,8 +1040,56 @@
             }
             
             /* Footer */
-            .footer { padding: 30px 15px; }
+            .footer { padding: 25px 15px; }
             .footer p { font-size: 0.85em; }
+            
+            .footer-brand {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .footer-brand span {
+                font-size: 1em;
+            }
+            
+            .footer-buttons {
+                flex-direction: column;
+                gap: 10px;
+                align-items: stretch;
+                padding: 0 10px;
+            }
+            
+            .footer-btn {
+                justify-content: center;
+                padding: 12px 16px;
+            }
+            
+            .footer-resources {
+                padding: 0 5px;
+            }
+            
+            .footer-resources h4 {
+                font-size: 0.95em;
+            }
+            
+            .footer-resources-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            
+            .footer-resource-card {
+                padding: 12px;
+            }
+            
+            .footer-resource-title {
+                font-size: 0.8em;
+            }
+            
+            .footer-resource-card ul {
+                font-size: 0.75em;
+                padding-left: 14px;
+                line-height: 1.6;
+            }
             
             /* Evidence sections */
             [style*="display: grid"][style*="grid-template-columns: 1fr 1fr"][style*="gap: 20px"] {
@@ -962,14 +1123,73 @@
             .methodology-section { padding: 14px; }
             .methodology-section h2 { font-size: 1em; }
             
-            /* Tables - show fewer columns */
-            .address-table { min-width: 350px; }
+            /* Tables - optimized for small screens */
+            .address-table { min-width: 320px; }
             
-            .address-table th:nth-child(4),
-            .address-table td:nth-child(4),
+            /* Hide Balance % and Counterparties on very small screens */
             .address-table th:nth-child(5),
-            .address-table td:nth-child(5) {
+            .address-table td:nth-child(5),
+            .address-table th:nth-child(6),
+            .address-table td:nth-child(6) {
                 display: none;
+            }
+            
+            /* Compact table cells */
+            .address-table th, .address-table td {
+                padding: 10px 6px;
+                font-size: 0.8em;
+            }
+            
+            /* Address column - more compact */
+            .address-cell {
+                max-width: 100px;
+            }
+            
+            .address-cell a {
+                font-size: 0.75em;
+            }
+            
+            .address-label {
+                font-size: 0.65em;
+                padding: 2px 6px;
+            }
+            
+            /* Pagination on small screens */
+            .pagination {
+                gap: 4px;
+            }
+            
+            .pagination button {
+                padding: 8px 10px;
+                font-size: 0.8em;
+                min-width: 36px;
+            }
+            
+            .page-info {
+                font-size: 0.8em;
+            }
+            
+            /* Footer resources - stack on small screens */
+            .footer-resources-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .footer-resource-card {
+                padding: 12px !important;
+            }
+            
+            .footer-resource-card ul {
+                font-size: 0.8em !important;
+            }
+            
+            .footer-buttons {
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            
+            .footer-buttons a {
+                width: 100% !important;
+                justify-content: center !important;
             }
             
             /* Backfill stats */
@@ -2025,7 +2245,8 @@
  </main>
  
     <footer class="footer">
-        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 15px;">
+        <!-- Logo & Title -->
+        <div class="footer-brand">
             <svg width="24" height="24" viewBox="0 0 397 311" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M64.6 237.9c2.4-2.4 5.7-3.8 9.2-3.8h317.4c5.8 0 8.7 7 4.6 11.1l-62.7 62.7c-2.4 2.4-5.7 3.8-9.2 3.8H6.5c-5.8 0-8.7-7-4.6-11.1l62.7-62.7z" fill="url(#solana-gradient-footer)"/>
                 <path d="M64.6 3.8C67.1 1.4 70.4 0 73.8 0h317.4c5.8 0 8.7 7 4.6 11.1l-62.7 62.7c-2.4 2.4-5.7 3.8-9.2 3.8H6.5c-5.8 0-8.7-7-4.6-11.1L64.6 3.8z" fill="url(#solana-gradient-footer)"/>
@@ -2037,70 +2258,70 @@
                     </linearGradient>
                 </defs>
             </svg>
-            <span style="font-weight: 600; font-size: 1.1em;">Solana on Base Volume Analysis</span>
+            <span>Solana on Base Volume Analysis</span>
         </div>
         
-        <!-- GitHub & Resources -->
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
-            <a href="https://github.com/ConejoCapital/SolanaOnBase" target="_blank" style="display: flex; align-items: center; gap: 8px; color: var(--text-primary); text-decoration: none; padding: 10px 20px; background: var(--bg-secondary); border-radius: 8px; border: 1px solid var(--border);">
+        <!-- GitHub & Resources Buttons -->
+        <div class="footer-buttons">
+            <a href="https://github.com/ConejoCapital/SolanaOnBase" target="_blank" class="footer-btn">
                 <i class="fab fa-github"></i> View Source Code
             </a>
-            <a href="https://basescan.org/token/0x311935cd80b76769bf2ecc9d8ab7635b2139cf82" target="_blank" style="display: flex; align-items: center; gap: 8px; color: var(--text-primary); text-decoration: none; padding: 10px 20px; background: var(--bg-secondary); border-radius: 8px; border: 1px solid var(--border);">
+            <a href="https://basescan.org/token/0x311935cd80b76769bf2ecc9d8ab7635b2139cf82" target="_blank" class="footer-btn">
                 <i class="fas fa-cube"></i> SOL Token on Basescan
             </a>
         </div>
         
         <!-- Resources for Researchers -->
-        <div style="max-width: 1000px; margin: 0 auto 25px; text-align: left;">
-            <h4 style="color: var(--text-primary); margin-bottom: 12px; text-align: center;">Resources for Researchers</h4>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
-                <div style="background: var(--bg-secondary); padding: 15px; border-radius: 8px; border: 1px solid var(--border);">
-                    <div style="color: var(--solana-purple); font-weight: 600; margin-bottom: 8px;"><i class="fas fa-database"></i> Data Sources</div>
-                    <ul style="color: var(--text-secondary); font-size: 0.85em; padding-left: 18px; margin: 0;">
-                        <li><a href="https://routescan.io/documentation/api" target="_blank" style="color: var(--accent-organic);">Routescan API</a></li>
-                        <li><a href="https://basescan.org" target="_blank" style="color: var(--accent-organic);">Basescan Explorer</a></li>
-                        <li><a href="https://docs.base.org" target="_blank" style="color: var(--accent-organic);">Base Documentation</a></li>
+        <div class="footer-resources">
+            <h4>Resources for Researchers</h4>
+            <div class="footer-resources-grid">
+                <div class="footer-resource-card">
+                    <div class="footer-resource-title"><i class="fas fa-database"></i> Data Sources</div>
+                    <ul>
+                        <li><a href="https://routescan.io/documentation/api" target="_blank">Routescan API</a></li>
+                        <li><a href="https://basescan.org" target="_blank">Basescan Explorer</a></li>
+                        <li><a href="https://docs.base.org" target="_blank">Base Documentation</a></li>
                     </ul>
                 </div>
-                <div style="background: var(--bg-secondary); padding: 15px; border-radius: 8px; border: 1px solid var(--border);">
-                    <div style="color: var(--solana-purple); font-weight: 600; margin-bottom: 8px;"><i class="fas fa-water"></i> SOL Liquidity Pools</div>
-                    <ul style="color: var(--text-secondary); font-size: 0.85em; padding-left: 18px; margin: 0;">
-                        <li><a href="https://basescan.org/address/0xb30540172f1b37d1ee1d109e49f883e935e69219" target="_blank" style="color: var(--accent-organic);">Aerodrome SOL/WETH</a></li>
-                        <li><a href="https://basescan.org/address/0x4c598ed2d67d2f189263f70cf4573c5c1e6718b3" target="_blank" style="color: var(--accent-organic);">Uniswap V3 SOL</a></li>
-                        <li><a href="https://basescan.org/address/0xab07de353e15b80fa3b4224d5c8fdf3ac9f50670" target="_blank" style="color: var(--accent-organic);">PancakeSwap V3 SOL</a></li>
+                <div class="footer-resource-card">
+                    <div class="footer-resource-title"><i class="fas fa-water"></i> SOL Liquidity Pools</div>
+                    <ul>
+                        <li><a href="https://basescan.org/address/0xb30540172f1b37d1ee1d109e49f883e935e69219" target="_blank">Aerodrome SOL/WETH</a></li>
+                        <li><a href="https://basescan.org/address/0x4c598ed2d67d2f189263f70cf4573c5c1e6718b3" target="_blank">Uniswap V3 SOL</a></li>
+                        <li><a href="https://basescan.org/address/0xab07de353e15b80fa3b4224d5c8fdf3ac9f50670" target="_blank">PancakeSwap V3 SOL</a></li>
                     </ul>
                 </div>
-                <div style="background: var(--bg-secondary); padding: 15px; border-radius: 8px; border: 1px solid var(--border);">
-                    <div style="color: var(--solana-purple); font-weight: 600; margin-bottom: 8px;"><i class="fas fa-book"></i> DEX Documentation</div>
-                    <ul style="color: var(--text-secondary); font-size: 0.85em; padding-left: 18px; margin: 0;">
-                        <li><a href="https://docs.aerodrome.finance/" target="_blank" style="color: var(--accent-organic);">Aerodrome Docs</a></li>
-                        <li><a href="https://docs.uniswap.org/contracts/v3/reference/deployments/base-deployments" target="_blank" style="color: var(--accent-organic);">Uniswap V3 Base</a></li>
-                        <li><a href="https://docs.pancakeswap.finance/" target="_blank" style="color: var(--accent-organic);">PancakeSwap Docs</a></li>
+                <div class="footer-resource-card">
+                    <div class="footer-resource-title"><i class="fas fa-book"></i> DEX Documentation</div>
+                    <ul>
+                        <li><a href="https://docs.aerodrome.finance/" target="_blank">Aerodrome Docs</a></li>
+                        <li><a href="https://docs.uniswap.org/contracts/v3/reference/deployments/base-deployments" target="_blank">Uniswap V3 Base</a></li>
+                        <li><a href="https://docs.pancakeswap.finance/" target="_blank">PancakeSwap Docs</a></li>
                     </ul>
                 </div>
-                <div style="background: var(--bg-secondary); padding: 15px; border-radius: 8px; border: 1px solid var(--border);">
-                    <div style="color: var(--solana-purple); font-weight: 600; margin-bottom: 8px;"><i class="fas fa-link"></i> Key Contracts</div>
-                    <ul style="color: var(--text-secondary); font-size: 0.85em; padding-left: 18px; margin: 0;">
-                        <li><a href="https://basescan.org/token/0x311935cd80b76769bf2ecc9d8ab7635b2139cf82" target="_blank" style="color: var(--accent-organic);">SOL Token</a></li>
-                        <li><a href="https://basescan.org/token/0x940181a94a35a4569e4529a3cdfb74e38fd98631" target="_blank" style="color: var(--accent-organic);">AERO Token</a></li>
-                        <li><a href="https://basescan.org/address/0xcf77a3ba9a5ca399b7c97c74d54e5b1beb874e43" target="_blank" style="color: var(--accent-organic);">Aerodrome Router</a></li>
+                <div class="footer-resource-card">
+                    <div class="footer-resource-title"><i class="fas fa-link"></i> Key Contracts</div>
+                    <ul>
+                        <li><a href="https://basescan.org/token/0x311935cd80b76769bf2ecc9d8ab7635b2139cf82" target="_blank">SOL Token</a></li>
+                        <li><a href="https://basescan.org/token/0x940181a94a35a4569e4529a3cdfb74e38fd98631" target="_blank">AERO Token</a></li>
+                        <li><a href="https://basescan.org/address/0xcf77a3ba9a5ca399b7c97c74d54e5b1beb874e43" target="_blank">Aerodrome Router</a></li>
                     </ul>
                 </div>
-                <div style="background: var(--bg-secondary); padding: 15px; border-radius: 8px; border: 1px solid var(--border);">
-                    <div style="color: var(--solana-purple); font-weight: 600; margin-bottom: 8px;"><i class="fas fa-chart-line"></i> Analytics</div>
-                    <ul style="color: var(--text-secondary); font-size: 0.85em; padding-left: 18px; margin: 0;">
-                        <li><a href="https://tokenterminal.com/explorer/projects/aerodrome" target="_blank" style="color: var(--accent-organic);">Token Terminal</a></li>
-                        <li><a href="https://defillama.com/chain/Base" target="_blank" style="color: var(--accent-organic);">DefiLlama - Base</a></li>
-                        <li><a href="https://dune.com/browse/dashboards?q=base" target="_blank" style="color: var(--accent-organic);">Dune Analytics</a></li>
+                <div class="footer-resource-card">
+                    <div class="footer-resource-title"><i class="fas fa-chart-line"></i> Analytics</div>
+                    <ul>
+                        <li><a href="https://tokenterminal.com/explorer/projects/aerodrome" target="_blank">Token Terminal</a></li>
+                        <li><a href="https://defillama.com/chain/Base" target="_blank">DefiLlama - Base</a></li>
+                        <li><a href="https://dune.com/browse/dashboards?q=base" target="_blank">Dune Analytics</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         
-        <p style="color: var(--text-muted);">Volume Analysis Report &bull; Base Network (L2) &bull; Data from Routescan API</p>
-        <p style="margin-top: 8px; font-size: 0.85em; color: var(--text-muted);">Last updated: <span id="lastUpdated">-</span></p>
-        <p style="margin-top: 15px; font-size: 0.8em; color: var(--text-muted);">
-            <a href="https://github.com/ConejoCapital/SolanaOnBase" target="_blank" style="color: var(--solana-purple);">
+        <p class="footer-info">Volume Analysis Report &bull; Base Network (L2) &bull; Data from Routescan API</p>
+        <p class="footer-updated">Last updated: <span id="lastUpdated">-</span></p>
+        <p class="footer-github">
+            <a href="https://github.com/ConejoCapital/SolanaOnBase" target="_blank">
                 <i class="fab fa-github"></i> github.com/ConejoCapital/SolanaOnBase
             </a>
         </p>

@@ -1,5 +1,5 @@
 {
-  "total_transactions": 2066041,
+  "total_transactions": 2066245,
   "organic_percentage": 99.09888056055316,
   "farmed_percentage": 0.9011194394468482,
   "organic_volume": 364756380726033.1,
@@ -8,7 +8,7 @@
   "farming_addresses_count": 130,
   "organic_addresses_count": 3052,
   "is_preliminary": false,
-  "last_updated": "2026-01-08T16:26:45.008662",
+  "last_updated": "2026-01-08T16:30:28.639495",
   "progress": {
     "main": {
       "current_block_range": "40553278-40553290",

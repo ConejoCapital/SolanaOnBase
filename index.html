@@ -1974,13 +1974,14 @@
                         <tr>
                             <th>#</th>
                             <th>Address & Label</th>
+                            <th>Volume (SOL)</th>
+                            <th>% of Total</th>
                             <th>Balance %</th>
                             <th>Counterparties</th>
-                            <th>Confidence</th>
                         </tr>
                     </thead>
                     <tbody id="washAddressesTable">
-                        <tr><td colspan="5" class="loading"><div class="spinner"></div>Loading...</td></tr>
+                        <tr><td colspan="6" class="loading"><div class="spinner"></div>Loading...</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -2006,13 +2007,14 @@
                         <tr>
                             <th>#</th>
                             <th>Address & Label</th>
+                            <th>Volume (SOL)</th>
+                            <th>% of Total</th>
                             <th>Balance %</th>
                             <th>Counterparties</th>
-                            <th>Confidence</th>
                         </tr>
                     </thead>
                     <tbody id="organicAddressesTable">
-                        <tr><td colspan="5" class="loading"><div class="spinner"></div>Loading...</td></tr>
+                        <tr><td colspan="6" class="loading"><div class="spinner"></div>Loading...</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -2444,10 +2446,16 @@
             const end = start + ITEMS_PER_PAGE;
             const pageAddresses = addresses.slice(start, end);
             
+            // Calculate total volume for percentage calculation
+            const totalVolume = dashboardData && dashboardData.summary ? dashboardData.summary.total_volume_sol : 0;
+            
             // Table body
             const tbody = document.getElementById(tableId);
             if (pageAddresses.length > 0) {
-                tbody.innerHTML = pageAddresses.map((a, i) => `
+                tbody.innerHTML = pageAddresses.map((a, i) => {
+                    const volume = a.total_volume_sol || 0;
+                    const pctOfTotal = totalVolume > 0 ? ((volume / totalVolume) * 100) : 0;
+                    return `
                     <tr>
                         <td class="mono">${start + i + 1}</td>
                         <td>
@@ -2456,13 +2464,14 @@
                                 <div class="address-label ${a.label_type || ''}" title="${a.label_source || 'Unknown source'}">${a.label || 'Unknown'}</div>
                             </div>
                         </td>
+                        <td class="mono">${formatNumber(volume, 0)}</td>
+                        <td class="mono" style="color: ${pctOfTotal > 10 ? 'var(--accent-wash)' : pctOfTotal > 1 ? 'var(--accent-warning)' : 'var(--text-secondary)'};">${pctOfTotal.toFixed(2)}%</td>
                         <td class="mono">${a.balance_ratio}%</td>
                         <td class="mono">${a.counterparties}</td>
-                        <td class="mono">${a.label_confidence || 0}%</td>
                     </tr>
-                `).join('');
+                `}).join('');
             } else {
-                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-muted)">No addresses found</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--text-muted)">No addresses found</td></tr>';
             }
  
  // Pagination

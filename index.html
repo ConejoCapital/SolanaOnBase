@@ -1038,29 +1038,42 @@
             </div>
             
             <div class="methodology-section" style="border: 2px solid var(--accent-wash);">
-                <h2><i class="fas fa-search" style="color: var(--accent-wash)"></i> Proof: Wash Trading Mechanism</h2>
+                <h2><i class="fas fa-search" style="color: var(--accent-wash)"></i> Proof: Volume Farming via LP Churning</h2>
                 <p>
-                    <strong>We have identified conclusive evidence of wash trading.</strong> The wash traders 
-                    execute buy and sell transactions for the <strong>exact same amount</strong> within seconds of each other.
+                    <strong>We have identified conclusive evidence of volume farming through liquidity manipulation.</strong> 
+                    The top "wash trader" is actually a <strong>smart contract wallet</strong> that repeatedly adds and removes liquidity.
                 </p>
                 
                 <div style="background: var(--bg-secondary); border-radius: 12px; padding: 20px; margin: 20px 0;">
-                    <h3 style="color: var(--text-primary); margin-bottom: 15px;">🔍 The Mechanism</h3>
+                    <h3 style="color: var(--text-primary); margin-bottom: 15px;">🔍 The Mechanism (LP Churning)</h3>
                     <ol style="color: var(--text-secondary); line-height: 2; padding-left: 20px;">
-                        <li><strong>SELL:</strong> Trader sends X SOL to the Aerodrome pool</li>
-                        <li><strong>BUY:</strong> Within seconds, trader receives X SOL back from the pool</li>
-                        <li><strong>REPEAT:</strong> This process repeats hundreds of thousands of times</li>
-                        <li><strong>RESULT:</strong> No net position change, but massive volume generated for AERO incentives</li>
+                        <li><strong>ADD LIQUIDITY:</strong> Contract sends SOL + USDC to the Aerodrome pool</li>
+                        <li><strong>RECEIVE NFT:</strong> Gets Slipstream Position NFT representing LP position</li>
+                        <li><strong>STAKE:</strong> Deposits NFT in gauge for AERO rewards</li>
+                        <li><strong>REMOVE:</strong> Shortly after, removes liquidity (gets SOL + USDC back)</li>
+                        <li><strong>REPEAT:</strong> This process repeats ~50,000 times</li>
+                        <li><strong>RESULT:</strong> Net position ≈ 0, but massive "volume" generated</li>
                     </ol>
+                </div>
+                
+                <div style="background: rgba(255,170,0,0.15); border: 1px solid rgba(255,170,0,0.4); border-radius: 10px; padding: 15px; margin-top: 15px;">
+                    <strong style="color: var(--accent-warning);">⚠️ Important Distinction:</strong>
+                    <p style="color: var(--text-secondary); margin: 10px 0 0 0; font-size: 0.95em;">
+                        This is <strong>NOT traditional wash trading</strong> (fake trades between addresses). 
+                        Instead, it's <strong>LP churning</strong> - repeatedly adding/removing liquidity to artificially inflate 
+                        transfer volume while maintaining near-zero net exposure. The actual transaction initiator is 
+                        <code style="font-family: 'JetBrains Mono'; color: var(--accent-warning);">0xF28C66a9dFA53eeaF4b25d280B294C8835E10EA9</code>,
+                        who controls the smart contract.
+                    </p>
                 </div>
             </div>
             
-            <!-- Wash Trader 1: 0x7c460d... -->
+            <!-- Volume Farmer 1: 0x7c460d... (Smart Contract) -->
             <div class="methodology-section" style="border: 2px solid var(--accent-wash);">
-                <h2><i class="fas fa-tractor" style="color: var(--accent-wash)"></i> Wash Trader #1</h2>
+                <h2><i class="fas fa-robot" style="color: var(--accent-wash)"></i> Volume Farmer #1 (Smart Contract)</h2>
                 
                 <div style="background: var(--bg-secondary); border-radius: 12px; padding: 20px; margin: 15px 0;">
-                    <h4 style="color: var(--text-muted); margin-bottom: 10px;">Address</h4>
+                    <h4 style="color: var(--text-muted); margin-bottom: 10px;">Smart Contract Address</h4>
                     <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
                         <code style="font-family: 'JetBrains Mono'; font-size: 0.9em; color: var(--accent-wash); background: rgba(255,99,99,0.15); padding: 8px 12px; border-radius: 6px; word-break: break-all;">0x7c460d504c1600fb8c030ff0d3b7e02bab268309</code>
                         <a href="https://basescan.org/address/0x7c460d504c1600fb8c030ff0d3b7e02bab268309" target="_blank" style="color: var(--accent-organic); text-decoration: none; font-size: 0.9em;">
@@ -1068,42 +1081,73 @@
                         </a>
                     </div>
                     
+                    <h4 style="color: var(--text-muted); margin: 15px 0 10px 0;">Actual Owner (Transaction Initiator)</h4>
+                    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                        <code style="font-family: 'JetBrains Mono'; font-size: 0.9em; color: var(--accent-warning); background: rgba(255,170,0,0.15); padding: 8px 12px; border-radius: 6px; word-break: break-all;">0xF28C66a9dFA53eeaF4b25d280B294C8835E10EA9</code>
+                        <a href="https://basescan.org/address/0xF28C66a9dFA53eeaF4b25d280B294C8835E10EA9" target="_blank" style="color: var(--accent-organic); text-decoration: none; font-size: 0.9em;">
+                            <i class="fas fa-external-link-alt"></i> View on Basescan
+                        </a>
+                    </div>
+                    
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px;">
                         <div>
-                            <div style="color: var(--text-muted); font-size: 0.8em;">Total Transactions</div>
-                            <div style="color: var(--text-primary); font-size: 1.2em; font-weight: 600;">106,909</div>
+                            <div style="color: var(--text-muted); font-size: 0.8em;">Add Liquidity Events</div>
+                            <div style="color: var(--accent-wash); font-size: 1.2em; font-weight: 600;">48,341</div>
                         </div>
                         <div>
-                            <div style="color: var(--text-muted); font-size: 0.8em;">Total SELL Volume</div>
-                            <div style="color: var(--accent-wash); font-size: 1.2em; font-weight: 600;">18,630,981 SOL</div>
+                            <div style="color: var(--text-muted); font-size: 0.8em;">Remove Liquidity Events</div>
+                            <div style="color: var(--accent-organic); font-size: 1.2em; font-weight: 600;">58,665</div>
                         </div>
                         <div>
-                            <div style="color: var(--text-muted); font-size: 0.8em;">Total BUY Volume</div>
-                            <div style="color: var(--accent-organic); font-size: 1.2em; font-weight: 600;">18,629,870 SOL</div>
+                            <div style="color: var(--text-muted); font-size: 0.8em;">Total SOL to Pool</div>
+                            <div style="color: var(--accent-wash); font-size: 1.2em; font-weight: 600;">18,648,860 SOL</div>
+                        </div>
+                        <div>
+                            <div style="color: var(--text-muted); font-size: 0.8em;">Total SOL from Pool</div>
+                            <div style="color: var(--accent-organic); font-size: 1.2em; font-weight: 600;">18,647,648 SOL</div>
                         </div>
                         <div>
                             <div style="color: var(--text-muted); font-size: 0.8em;">Net Position</div>
-                            <div style="color: var(--text-primary); font-size: 1.2em; font-weight: 600;">-1,111 SOL</div>
+                            <div style="color: var(--text-primary); font-size: 1.2em; font-weight: 600;">-1,212 SOL</div>
                         </div>
                         <div>
                             <div style="color: var(--text-muted); font-size: 0.8em;">Balance Ratio</div>
                             <div style="color: var(--accent-warning); font-size: 1.2em; font-weight: 600;">99.99%</div>
+                        </div>
+                        <div>
+                            <div style="color: var(--text-muted); font-size: 0.8em;">Unique Counterparties</div>
+                            <div style="color: var(--accent-warning); font-size: 1.2em; font-weight: 600;">2 (only pool!)</div>
                         </div>
                     </div>
                 </div>
                 
                 <h4 style="color: var(--text-primary); margin: 20px 0 15px;"><i class="fas fa-receipt"></i> Transaction Evidence (Verified on Basescan)</h4>
                 
-                <!-- Example 1 -->
+                <!-- LP Churning Example -->
                 <div style="background: linear-gradient(135deg, rgba(255,99,99,0.1), rgba(255,99,99,0.05)); border: 1px solid rgba(255,99,99,0.3); border-radius: 10px; padding: 20px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                        <span style="color: var(--accent-wash); font-weight: 600;">Round-Trip Example #1</span>
+                        <span style="color: var(--accent-wash); font-weight: 600;">LP Churning Example</span>
                         <span class="status-badge running" style="font-size: 0.8em;"><i class="fas fa-check"></i> Verified</span>
                     </div>
+                    
+                    <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                        <div style="color: var(--accent-warning); font-weight: 600; margin-bottom: 10px;">📜 Actual Transaction Breakdown</div>
+                        <p style="color: var(--text-secondary); font-size: 0.9em; line-height: 1.6; margin: 0 0 15px 0;">
+                            This transaction (user-provided evidence) shows the full LP churning flow:
+                        </p>
+                        <ol style="color: var(--text-secondary); font-size: 0.9em; line-height: 1.8; padding-left: 20px; margin: 0;">
+                            <li><strong>Initiator:</strong> <code style="font-size: 0.85em; color: var(--accent-warning);">0xF28C66a9dFA53eeaF4b25d280B294C8835E10EA9</code> calls contract</li>
+                            <li><strong>Contract sends:</strong> 84.72 SOL + 15,247 USDC to pool</li>
+                            <li><strong>Mint NFT:</strong> Slipstream Position NFT #95817 minted to contract</li>
+                            <li><strong>Stake:</strong> NFT deposited to gauge for AERO rewards</li>
+                        </ol>
+                    </div>
+                    
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px;">
-                            <div style="color: var(--accent-wash); font-weight: 600; margin-bottom: 10px;">🔻 SELL Transaction</div>
+                            <div style="color: var(--accent-wash); font-weight: 600; margin-bottom: 10px;">📤 ADD LIQUIDITY</div>
                             <div style="color: var(--text-primary); font-size: 1.1em; font-weight: 600;">84.7211 SOL</div>
+                            <div style="color: var(--text-secondary); font-size: 0.9em;">+ 15,247.69 USDC</div>
                             <div style="color: var(--text-muted); font-size: 0.85em; margin-top: 5px;">Block 39,109,843</div>
                             <div style="margin-top: 10px;">
                                 <div style="color: var(--text-muted); font-size: 0.75em;">Transaction Hash:</div>
@@ -1113,20 +1157,21 @@
                             </div>
                         </div>
                         <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px;">
-                            <div style="color: var(--accent-organic); font-weight: 600; margin-bottom: 10px;">🔺 BUY Transaction</div>
-                            <div style="color: var(--text-primary); font-size: 1.1em; font-weight: 600;">84.7211 SOL</div>
-                            <div style="color: var(--text-muted); font-size: 0.85em; margin-top: 5px;">Block 39,109,842</div>
+                            <div style="color: var(--accent-organic); font-weight: 600; margin-bottom: 10px;">📥 REMOVE LIQUIDITY (Later)</div>
+                            <div style="color: var(--text-primary); font-size: 1.1em; font-weight: 600;">~84.72 SOL</div>
+                            <div style="color: var(--text-secondary); font-size: 0.9em;">+ ~15,247 USDC</div>
+                            <div style="color: var(--text-muted); font-size: 0.85em; margin-top: 5px;">Shortly after</div>
                             <div style="margin-top: 10px;">
-                                <div style="color: var(--text-muted); font-size: 0.75em;">Transaction Hash:</div>
-                                <a href="https://basescan.org/tx/0x7ba89c9d5b4b0f83b1ccaa19585fcbe252cbdf22666340a5f7f4ab7053c2653c" target="_blank" style="font-family: 'JetBrains Mono'; font-size: 0.7em; color: var(--accent-organic); word-break: break-all;">
-                                    0x7ba89c9d5b4b0f83b1ccaa19585fcbe252cbdf22666340a5f7f4ab7053c2653c <i class="fas fa-external-link-alt"></i>
-                                </a>
+                                <div style="color: var(--text-muted); font-size: 0.75em;">Result:</div>
+                                <span style="color: var(--accent-warning); font-size: 0.85em;">Net position: ~0 SOL</span>
                             </div>
                         </div>
                     </div>
-                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 30px; flex-wrap: wrap;">
-                        <span style="color: var(--accent-warning); font-size: 0.9em;"><i class="fas fa-clock"></i> Time difference: <strong>~2 seconds</strong> (1 block)</span>
-                        <span style="color: var(--accent-organic); font-size: 0.9em;"><i class="fas fa-equals"></i> Amount difference: <strong>0.0000 SOL</strong></span>
+                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
+                        <span style="color: var(--text-muted); font-size: 0.9em;">
+                            <i class="fas fa-info-circle"></i> This is NOT a trade - it's adding liquidity to earn trading fees and AERO rewards, then removing it. 
+                            The "volume" is generated by the SOL transfer to/from the pool, not actual buying/selling.
+                        </span>
                     </div>
                 </div>
                 

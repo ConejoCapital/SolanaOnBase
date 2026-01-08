@@ -1,50 +1,50 @@
 {
   "summary": {
-    "transactions_analyzed": 2067182,
+    "transactions_analyzed": 2067043,
     "unique_addresses": 8393,
     "holders_on_basescan": 4238,
     "target_transactions": 2352771,
     "progress_percentage": 87.9,
-    "total_volume_sol": 76435583.53,
-    "total_volume_usd": 10537409544.94,
+    "total_volume_sol": 76420620.89,
+    "total_volume_usd": 10535346795.6,
     "sol_price_usd": 137.86,
-    "pool_volume_sol": 37021367.0,
+    "pool_volume_sol": 37013898.23,
     "pool_volume_pct": 48.4,
-    "non_pool_volume_sol": 39414216.53,
-    "wash_volume_sol": 37630300.96,
-    "wash_volume_usd": 5187713290.35,
+    "non_pool_volume_sol": 39406722.65,
+    "wash_volume_sol": 37622807.13,
+    "wash_volume_usd": 5186680190.94,
     "wash_percentage": 95.5,
-    "organic_volume_sol": 1783915.08,
-    "organic_volume_usd": 245930532.93,
+    "organic_volume_sol": 1783915.05,
+    "organic_volume_usd": 245930528.79,
     "organic_percentage": 4.5,
     "wash_address_count": 86,
     "organic_address_count": 6755,
     "block_sync": {
-      "synced_block": 40559575,
+      "synced_block": 40559514,
       "min_block": 38699339,
       "token_start_block": 38699339
     },
-    "last_updated": "2026-01-08 16:43:36"
+    "last_updated": "2026-01-08 16:43:30"
   },
   "wash_trading_addresses": [
     {
       "address": "0x7c460d504c1600fb8c030ff0d3b7e02bab268309",
-      "total_volume_sol": 18688174.56,
-      "total_volume_usd": 2576351745.3,
+      "total_volume_sol": 18687668.79,
+      "total_volume_usd": 2576282019.14,
       "balance_ratio": 100.0,
       "counterparties": 2,
-      "tx_count": 107273,
+      "tx_count": 107271,
       "label": " Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
     },
     {
       "address": "0xecbe25d69f0bc85c8eb42ae9a3b9a212dced96e6",
-      "total_volume_sol": 14875427.23,
-      "total_volume_usd": 2050726398.46,
+      "total_volume_sol": 14868602.02,
+      "total_volume_usd": 2049785474.22,
       "balance_ratio": 99.8,
       "counterparties": 2,
-      "tx_count": 836857,
+      "tx_count": 836746,
       "label": " Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -73,11 +73,11 @@
     },
     {
       "address": "0x88fec94eb9f11376e0dcb31ea7babc278d6035c3",
-      "total_volume_sol": 1177298.58,
-      "total_volume_usd": 162302382.51,
+      "total_volume_sol": 1177162.43,
+      "total_volume_usd": 162283613.11,
       "balance_ratio": 99.9,
       "counterparties": 4,
-      "tx_count": 199311,
+      "tx_count": 199295,
       "label": " Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -95,22 +95,22 @@
     },
     {
       "address": "0x802b65b5d9016621e66003aed0b16615093f328b",
-      "total_volume_sol": 59225.7,
-      "total_volume_usd": 8164854.96,
+      "total_volume_sol": 59222.8,
+      "total_volume_usd": 8164454.64,
       "balance_ratio": 99.8,
       "counterparties": 3,
-      "tx_count": 36826,
+      "tx_count": 36824,
       "label": " Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
     },
     {
       "address": "0x3a32d2987b86a9c5552921289b8d4470075d360f",
-      "total_volume_sol": 42132.36,
-      "total_volume_usd": 5808366.67,
-      "balance_ratio": 99.5,
+      "total_volume_sol": 42113.06,
+      "total_volume_usd": 5805706.0,
+      "balance_ratio": 99.4,
       "counterparties": 3,
-      "tx_count": 22975,
+      "tx_count": 22971,
       "label": " Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -150,11 +150,11 @@
     },
     {
       "address": "0x1113a2bc6c237083183b9db29410d93f0077e501",
-      "total_volume_sol": 10801.64,
-      "total_volume_usd": 1489114.68,
+      "total_volume_sol": 10797.14,
+      "total_volume_usd": 1488494.31,
       "balance_ratio": 93.3,
       "counterparties": 5,
-      "tx_count": 9091,
+      "tx_count": 9089,
       "label": " Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -981,7 +981,7 @@
       "total_volume_usd": 200417375.82,
       "balance_ratio": 98.2,
       "counterparties": 235,
-      "tx_count": 430452,
+      "tx_count": 430450,
       "label": " Organic",
       "label_type": "organic",
       "label_confidence": 70
@@ -1087,11 +1087,11 @@
     },
     {
       "address": "0x4c598ed2d67d2f189263f70cf4573c5c1e6718b3",
-      "total_volume_sol": 5973.57,
-      "total_volume_usd": 823516.6,
+      "total_volume_sol": 5973.54,
+      "total_volume_usd": 823512.63,
       "balance_ratio": 96.0,
       "counterparties": 2249,
-      "tx_count": 35891,
+      "tx_count": 35890,
       "label": " Organic",
       "label_type": "organic",
       "label_confidence": 70
@@ -3268,8 +3268,8 @@
       "total_volume_sol": 12.28,
       "total_volume_usd": 1692.91,
       "balance_ratio": 5.5,
-      "counterparties": 64,
-      "tx_count": 79,
+      "counterparties": 63,
+      "tx_count": 78,
       "label": " Organic",
       "label_type": "organic",
       "label_confidence": 70
@@ -47431,10 +47431,10 @@
     {
       "address": "0xfe91aa87d635e2b13fbf9381563d9c70c22042f4",
       "total_volume_sol": 0.04,
-      "total_volume_usd": 6.19,
-      "balance_ratio": 99.0,
-      "counterparties": 2,
-      "tx_count": 3,
+      "total_volume_usd": 6.13,
+      "balance_ratio": 100.0,
+      "counterparties": 1,
+      "tx_count": 2,
       "label": " User",
       "label_type": "organic",
       "label_confidence": 70
@@ -75280,5 +75280,124 @@
       "label_type": "organic",
       "label_confidence": 70
     }
-  ]
+  ],
+  "wash_trading_evidence": {
+    "description": "Conclusive proof of wash trading - addresses executing buy and sell transactions for identical amounts within seconds",
+    "pool_address": "0xb30540172f1b37d1ee1d109e49f883e935e69219",
+    "pool_basescan_url": "https://basescan.org/address/0xb30540172f1b37d1ee1d109e49f883e935e69219",
+    "traders": {
+      "0x7c460d504c1600fb8c030ff0d3b7e02bab268309": {
+        "address": "0x7c460d504c1600fb8c030ff0d3b7e02bab268309",
+        "basescan_url": "https://basescan.org/address/0x7c460d504c1600fb8c030ff0d3b7e02bab268309",
+        "total_transactions": 106909,
+        "total_sell_sol": 18630981.06,
+        "total_buy_sol": 18629869.9,
+        "net_position_sol": -1111.16,
+        "balance_ratio_pct": 99.99,
+        "round_trip_examples": [
+          {
+            "sell_hash": "0xcd9ce7f02aa53c42f1627053f0e698a1dd1f6dd7480c816780c0b827d0002f4e",
+            "sell_block": 39109843,
+            "sell_amount": 84.72114,
+            "buy_hash": "0x7ba89c9d5b4b0f83b1ccaa19585fcbe252cbdf22666340a5f7f4ab7053c2653c",
+            "buy_block": 39109842,
+            "buy_amount": 84.72114,
+            "time_diff_seconds": 2
+          },
+          {
+            "sell_hash": "0xcd9ce7f02aa53c42f1627053f0e698a1dd1f6dd7480c816780c0b827d0002f4e",
+            "sell_block": 39109843,
+            "sell_amount": 84.72114,
+            "buy_hash": "0x6dbc22f983baa91b5c2751ffd854408a7f665b2dd383096456bc1c5971204d0a",
+            "buy_block": 39109844,
+            "buy_amount": 84.72114,
+            "time_diff_seconds": 2
+          },
+          {
+            "sell_hash": "0xa01d09e4ab634621750a1324634244d94fadb6d434b826265420dc9a6982170f",
+            "sell_block": 39109846,
+            "sell_amount": 84.72114,
+            "buy_hash": "0x6dbc22f983baa91b5c2751ffd854408a7f665b2dd383096456bc1c5971204d0a",
+            "buy_block": 39109844,
+            "buy_amount": 84.72114,
+            "time_diff_seconds": 4
+          },
+          {
+            "sell_hash": "0xef317c75817cd3d01fc480f0f0d48e19c2e9687cb5a58dba81632d57244b88cf",
+            "sell_block": 39110148,
+            "sell_amount": 86.353282,
+            "buy_hash": "0xbe6c8b6386c4c6bfc7143422c6667fd021c45d5218fdc3fab6303a3106af5219",
+            "buy_block": 39110147,
+            "buy_amount": 86.353282,
+            "time_diff_seconds": 2
+          },
+          {
+            "sell_hash": "0x31d1e0e044f3eee38b0123e2c62cd02fb504057e9c93e5348e843ad549be2aea",
+            "sell_block": 39110168,
+            "sell_amount": 115.832053,
+            "buy_hash": "0xc8f122c49b4a2f5b7c335597afafab92ff7e42aec33cf485371c27956418cdda",
+            "buy_block": 39110165,
+            "buy_amount": 115.832053,
+            "time_diff_seconds": 6
+          }
+        ]
+      },
+      "0xecbe25d69f0bc85c8eb42ae9a3b9a212dced96e6": {
+        "address": "0xecbe25d69f0bc85c8eb42ae9a3b9a212dced96e6",
+        "basescan_url": "https://basescan.org/address/0xecbe25d69f0bc85c8eb42ae9a3b9a212dced96e6",
+        "total_transactions": 831122,
+        "total_sell_sol": 14674439.69,
+        "total_buy_sol": 14700973.51,
+        "net_position_sol": 26533.82,
+        "balance_ratio_pct": 99.82,
+        "round_trip_examples": [
+          {
+            "sell_hash": "0x2d86d012e6ba1cf6e6052b55bcd8ce897fe99e71d1df281ce791e106da87689e",
+            "sell_block": 39919926,
+            "sell_amount": 0.008149,
+            "buy_hash": "0x6d335c2db34cceb974c19ddfb6ee30877c379fb2a94612a74ec0b1f9b98cb62a",
+            "buy_block": 39919926,
+            "buy_amount": 0.008149,
+            "time_diff_seconds": 0
+          },
+          {
+            "sell_hash": "0x2d86d012e6ba1cf6e6052b55bcd8ce897fe99e71d1df281ce791e106da87689e",
+            "sell_block": 39919926,
+            "sell_amount": 0.008149,
+            "buy_hash": "0x5d30f1bd9326ef4af741401a4e9235d3323980993ddd88f25c13ec963038cea4",
+            "buy_block": 39919927,
+            "buy_amount": 0.008149,
+            "time_diff_seconds": 2
+          },
+          {
+            "sell_hash": "0xb20d77e4cb2636466f4990aecbb204d2dc883f8b822a2d9372d564e772d9cdc0",
+            "sell_block": 39919927,
+            "sell_amount": 0.008149,
+            "buy_hash": "0x5d30f1bd9326ef4af741401a4e9235d3323980993ddd88f25c13ec963038cea4",
+            "buy_block": 39919927,
+            "buy_amount": 0.008149,
+            "time_diff_seconds": 0
+          },
+          {
+            "sell_hash": "0xb20d77e4cb2636466f4990aecbb204d2dc883f8b822a2d9372d564e772d9cdc0",
+            "sell_block": 39919927,
+            "sell_amount": 0.008149,
+            "buy_hash": "0xc3a6051e354177db005a4ea6fec541637373f15e1284fcf436443b229c98acf6",
+            "buy_block": 39919928,
+            "buy_amount": 0.008149,
+            "time_diff_seconds": 2
+          },
+          {
+            "sell_hash": "0x6b900bc1449d94dfc19987de9c7d7fbbb00466aed6e8e168d1dd068956eb6e28",
+            "sell_block": 39919928,
+            "sell_amount": 0.008149,
+            "buy_hash": "0xc3a6051e354177db005a4ea6fec541637373f15e1284fcf436443b229c98acf6",
+            "buy_block": 39919928,
+            "buy_amount": 0.008149,
+            "time_diff_seconds": 0
+          }
+        ]
+      }
+    }
+  }
 }

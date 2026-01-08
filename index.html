@@ -1294,77 +1294,7 @@ text-decoration: underline;
  </div>
  </div>
  
- <!-- Block Sync Status -->
- <div class="card">
- <div class="card-header">
- <h2 class="card-title"><i class="fas fa-sync-alt"></i> Block Sync Status</h2>
- </div>
- <div class="stats-row">
- <div class="stat-card">
- <div class="stat-label">Synced Block</div>
- <div class="stat-value" id="syncedBlock" style="color: var(--accent-organic)">-</div>
- <div class="stat-sub">Latest block with transactions</div>
- </div>
- <div class="stat-card">
- <div class="stat-label">Latest Base Block</div>
- <div class="stat-value" id="latestBlock">-</div>
- <div class="stat-sub">Current network block</div>
- </div>
- <div class="stat-card">
- <div class="stat-label">Blocks Behind</div>
- <div class="stat-value" id="blocksBehind" style="color: var(--accent-warning)">-</div>
- <div class="stat-sub" id="blockSyncPct">-</div>
- </div>
- <div class="stat-card">
- <div class="stat-label">Block Sync Progress</div>
- <div class="stat-value" id="blockSyncProgress" style="color: var(--accent-info)">-</div>
- <div class="stat-sub">From token start (38,699,339)</div>
- </div>
- </div>
- </div>
- 
- <!-- Live Backfill Status -->
- <div class="card" id="backfillStatusCard">
- <div class="card-header">
- <h2 class="card-title"><i class="fas fa-download"></i> Live Backfill Status</h2>
- <span id="backfillIndicator" class="status-badge" style="font-size: 0.8em;">
- <i class="fas fa-circle-notch fa-spin"></i> Checking...
- </span>
- </div>
- <div class="backfill-status">
- <div class="backfill-main">
- <div class="backfill-state" id="backfillState">
- <i class="fas fa-spinner fa-spin"></i>
- <span>Loading status...</span>
- </div>
- <div class="backfill-activity" id="backfillActivity">-</div>
- </div>
- <div class="backfill-stats">
- <div class="backfill-stat">
- <span class="label">Transactions Fetched:</span>
- <span class="value" id="backfillTxCount">-</span>
- </div>
- <div class="backfill-stat">
- <span class="label">API Requests:</span>
- <span class="value" id="backfillRequests">-</span>
- </div>
- <div class="backfill-stat">
- <span class="label">Gaps Remaining:</span>
- <span class="value" id="backfillGaps">-</span>
- </div>
- <div class="backfill-stat">
- <span class="label">Req/min:</span>
- <span class="value" id="backfillRate">-</span>
- </div>
- </div>
- <div class="backfill-errors" id="backfillErrors" style="display: none;">
- <strong>Recent Errors:</strong>
- <ul id="backfillErrorList"></ul>
- </div>
- </div>
- </div>
- 
- <!-- Volume Breakdown -->
+<!-- Volume Breakdown -->
  <div class="card">
  <div class="card-header">
  <h2 class="card-title"><i class="fas fa-chart-pie"></i> Volume Classification</h2>

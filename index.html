@@ -1234,13 +1234,51 @@
         // Load data
         async function loadData() {
             try {
-                const response = await fetch('dashboard_export.json?t=' + Date.now());
+                // Try multiple paths for Vercel compatibility
+                const paths = [
+                    'dashboard_export.json',
+                    './dashboard_export.json',
+                    '/dashboard_export.json'
+                ];
+                
+                let response = null;
+                let lastError = null;
+                
+                for (const path of paths) {
+                    try {
+                        response = await fetch(path + '?t=' + Date.now());
+                        if (response.ok) {
+                            break;
+                        }
+                    } catch (e) {
+                        lastError = e;
+                        continue;
+                    }
+                }
+                
+                if (!response || !response.ok) {
+                    throw new Error(`Failed to load data: ${response?.status || 'Network error'}`);
+                }
+                
                 dashboardData = await response.json();
+                
+                if (!dashboardData || !dashboardData.summary) {
+                    throw new Error('Invalid data format');
+                }
+                
                 updateDashboard();
                 updateWashTable();
                 updateOrganicTable();
+                
+                console.log('✅ Data loaded successfully:', dashboardData.summary.transactions_analyzed, 'transactions');
             } catch (e) {
-                console.error('Error loading data:', e);
+                console.error('❌ Error loading data:', e);
+                // Show error message on page
+                const errorMsg = document.createElement('div');
+                errorMsg.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #ff4444; color: white; padding: 15px 20px; border-radius: 8px; z-index: 10000; max-width: 400px;';
+                errorMsg.innerHTML = `<strong>⚠️ Data Loading Error</strong><br>${e.message}<br><small>Check console for details</small>`;
+                document.body.appendChild(errorMsg);
+                setTimeout(() => errorMsg.remove(), 10000);
             }
         }
         

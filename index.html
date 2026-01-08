@@ -823,19 +823,60 @@
                     🏊 Pool volume excluded from wash/organic split (infrastructure)
                 </div>
                 
-                <!-- Toggle for Top Trader -->
-                <div style="display: flex; justify-content: center; align-items: center; gap: 12px; margin: 15px 0; padding: 12px; background: var(--bg-secondary); border-radius: 10px; border: 1px solid var(--border);">
-                    <span style="color: var(--text-secondary); font-size: 0.9em;">🔬 Research Mode:</span>
-                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                        <input type="checkbox" id="excludeTopTrader" onchange="toggleTopTrader()" style="width: 18px; height: 18px; cursor: pointer;">
-                        <span style="color: var(--text-primary); font-size: 0.9em;">Exclude top trader for analysis</span>
-                    </label>
-                    <a href="https://basescan.org/address/0x7c460d504c1600fb8c030ff0d3b7e02bab268309" target="_blank" 
-                       style="color: var(--accent-wash); font-size: 0.85em; text-decoration: none; font-family: 'JetBrains Mono', monospace;">
-                       (0x7c460d...)</a>
-                </div>
-                <div id="topTraderNote" style="display: none; text-align: center; color: var(--accent-warning); font-size: 0.85em; margin-bottom: 10px; padding: 8px; background: rgba(255,170,0,0.15); border-radius: 8px;">
-                    ⚠️ Top trader excluded - volume accounts for <span id="topTraderPct">68%</span> of wash trading
+                <!-- Research Mode: Exclude Top Traders -->
+                <div style="background: var(--bg-secondary); border-radius: 12px; padding: 20px; margin: 15px 0; border: 1px solid var(--border);">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                        <i class="fas fa-flask" style="color: var(--accent-warning);"></i>
+                        <span style="color: var(--text-primary); font-weight: 600;">🔬 Research Mode: Exclude Top Traders</span>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <!-- Wash Traders -->
+                        <div style="background: rgba(255,99,99,0.1); border: 1px solid rgba(255,99,99,0.3); border-radius: 10px; padding: 15px;">
+                            <div style="color: var(--accent-wash); font-weight: 600; margin-bottom: 10px;">🚜 Exclude Wash Traders</div>
+                            <div id="washExcludeList" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85em;">
+                                    <input type="checkbox" class="exclude-wash" data-rank="0" onchange="updateExclusions()" style="width: 16px; height: 16px;">
+                                    <span style="color: var(--text-secondary);">#1: <span id="wash-exclude-1" class="mono" style="color: var(--accent-wash);">Loading...</span></span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85em;">
+                                    <input type="checkbox" class="exclude-wash" data-rank="1" onchange="updateExclusions()" style="width: 16px; height: 16px;">
+                                    <span style="color: var(--text-secondary);">#2: <span id="wash-exclude-2" class="mono" style="color: var(--accent-wash);">Loading...</span></span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85em;">
+                                    <input type="checkbox" class="exclude-wash" data-rank="2" onchange="updateExclusions()" style="width: 16px; height: 16px;">
+                                    <span style="color: var(--text-secondary);">#3: <span id="wash-exclude-3" class="mono" style="color: var(--accent-wash);">Loading...</span></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Organic Traders -->
+                        <div style="background: rgba(0,255,170,0.1); border: 1px solid rgba(0,255,170,0.3); border-radius: 10px; padding: 15px;">
+                            <div style="color: var(--accent-organic); font-weight: 600; margin-bottom: 10px;">🌱 Exclude Organic Traders</div>
+                            <div id="organicExcludeList" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85em;">
+                                    <input type="checkbox" class="exclude-organic" data-rank="0" onchange="updateExclusions()" style="width: 16px; height: 16px;">
+                                    <span style="color: var(--text-secondary);">#1: <span id="organic-exclude-1" class="mono" style="color: var(--accent-organic);">Loading...</span></span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85em;">
+                                    <input type="checkbox" class="exclude-organic" data-rank="1" onchange="updateExclusions()" style="width: 16px; height: 16px;">
+                                    <span style="color: var(--text-secondary);">#2: <span id="organic-exclude-2" class="mono" style="color: var(--accent-organic);">Loading...</span></span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85em;">
+                                    <input type="checkbox" class="exclude-organic" data-rank="2" onchange="updateExclusions()" style="width: 16px; height: 16px;">
+                                    <span style="color: var(--text-secondary);">#3: <span id="organic-exclude-3" class="mono" style="color: var(--accent-organic);">Loading...</span></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Exclusion Summary -->
+                    <div id="exclusionSummary" style="display: none; margin-top: 15px; padding: 12px; background: rgba(255,170,0,0.15); border-radius: 8px; text-align: center;">
+                        <span style="color: var(--accent-warning); font-size: 0.9em;">
+                            ⚠️ <span id="exclusionText">0 addresses excluded</span> - 
+                            <span id="excludedVolume">0 SOL</span> removed from analysis
+                        </span>
+                    </div>
                 </div>
                 
                 <div class="volume-breakdown">
@@ -1516,23 +1557,69 @@
             return '$' + n.toFixed(2);
         }
         
-        // Top trader exclusion toggle
-        const TOP_TRADER = '0x7c460d504c1600fb8c030ff0d3b7e02bab268309';
-        let excludeTopTrader = false;
+        // Research mode: exclude top traders
+        let excludedWash = new Set();
+        let excludedOrganic = new Set();
         
-        function toggleTopTrader() {
-            excludeTopTrader = document.getElementById('excludeTopTrader').checked;
-            document.getElementById('topTraderNote').style.display = excludeTopTrader ? 'block' : 'none';
+        function updateExclusions() {
+            // Get checked wash traders
+            excludedWash.clear();
+            document.querySelectorAll('.exclude-wash:checked').forEach(cb => {
+                const rank = parseInt(cb.dataset.rank);
+                if (dashboardData && dashboardData.wash_trading_addresses && dashboardData.wash_trading_addresses[rank]) {
+                    excludedWash.add(dashboardData.wash_trading_addresses[rank].address.toLowerCase());
+                }
+            });
+            
+            // Get checked organic traders
+            excludedOrganic.clear();
+            document.querySelectorAll('.exclude-organic:checked').forEach(cb => {
+                const rank = parseInt(cb.dataset.rank);
+                if (dashboardData && dashboardData.organic_addresses && dashboardData.organic_addresses[rank]) {
+                    excludedOrganic.add(dashboardData.organic_addresses[rank].address.toLowerCase());
+                }
+            });
+            
             updateDashboard();
+        }
+        
+        function populateExclusionPanel() {
+            if (!dashboardData) return;
+            
+            // Populate wash trader labels
+            const washAddrs = dashboardData.wash_trading_addresses || [];
+            for (let i = 0; i < 3; i++) {
+                const el = document.getElementById(`wash-exclude-${i+1}`);
+                if (el && washAddrs[i]) {
+                    const addr = washAddrs[i].address;
+                    const vol = formatNumber(washAddrs[i].total_volume_sol || 0, 0);
+                    el.innerHTML = `<a href="https://basescan.org/address/${addr}" target="_blank" style="color: var(--accent-wash);">${addr.slice(0,8)}...</a> (${vol} SOL)`;
+                }
+            }
+            
+            // Populate organic trader labels
+            const orgAddrs = dashboardData.organic_addresses || [];
+            for (let i = 0; i < 3; i++) {
+                const el = document.getElementById(`organic-exclude-${i+1}`);
+                if (el && orgAddrs[i]) {
+                    const addr = orgAddrs[i].address;
+                    const vol = formatNumber(orgAddrs[i].total_volume_sol || 0, 0);
+                    el.innerHTML = `<a href="https://basescan.org/address/${addr}" target="_blank" style="color: var(--accent-organic);">${addr.slice(0,8)}...</a> (${vol} SOL)`;
+                }
+            }
         }
         
         function updateDashboard() {
             if (!dashboardData) return;
             const s = dashboardData.summary;
+            if (!s) return;
+            
+            // Populate exclusion panel on first load
+            populateExclusionPanel();
             
             // Status
             const statusBadge = document.getElementById('statusBadge');
-            const progress = s.progress_percentage;
+            const progress = s.progress_percentage || 0;
             if (progress < 100) {
                 statusBadge.innerHTML = `<span class="status-badge preliminary"><i class="fas fa-clock"></i> ${progress.toFixed(1)}% Complete</span>`;
             } else {
@@ -1541,33 +1628,52 @@
             
             // Stats
             document.getElementById('totalTxs').textContent = formatNumber(s.transactions_analyzed);
-            document.getElementById('progressPct').textContent = `${s.progress_percentage.toFixed(1)}% of target (${formatNumber(s.target_transactions)})`;
+            document.getElementById('progressPct').textContent = `${(s.progress_percentage || 0).toFixed(1)}% of target (${formatNumber(s.target_transactions)})`;
             
-            // Calculate volumes (with or without top trader)
-            let washVol = s.wash_volume_sol;
-            let washPct = s.wash_percentage;
-            let organicVol = s.organic_volume_sol;
-            let organicPct = s.organic_percentage;
-            let washCount = s.wash_address_count;
-            let topTraderVol = 0;
+            // Calculate volumes with exclusions
+            let washVol = s.wash_volume_sol || 0;
+            let organicVol = s.organic_volume_sol || 0;
+            let washCount = s.wash_address_count || 0;
+            let organicCount = s.organic_address_count || 0;
+            let excludedWashVol = 0;
+            let excludedOrganicVol = 0;
             
-            // Find top trader volume if we need to exclude
-            if (excludeTopTrader && dashboardData.wash_trading_addresses) {
-                const topTrader = dashboardData.wash_trading_addresses.find(a => a.address.toLowerCase() === TOP_TRADER);
-                if (topTrader) {
-                    topTraderVol = topTrader.total_volume_sol;
-                    washVol = washVol - topTraderVol;
-                    const newTotal = washVol + organicVol;
-                    washPct = (washVol / newTotal * 100);
-                    organicPct = (organicVol / newTotal * 100);
-                    washCount = washCount - 1;
-                    
-                    // Update top trader note
-                    const topTraderPctEl = document.getElementById('topTraderPct');
-                    if (topTraderPctEl) {
-                        topTraderPctEl.textContent = ((topTraderVol / s.wash_volume_sol) * 100).toFixed(0) + '%';
+            // Subtract excluded wash traders
+            if (excludedWash.size > 0 && dashboardData.wash_trading_addresses) {
+                dashboardData.wash_trading_addresses.forEach(addr => {
+                    if (excludedWash.has(addr.address.toLowerCase())) {
+                        excludedWashVol += (addr.total_volume_sol || 0);
+                        washCount--;
                     }
-                }
+                });
+                washVol -= excludedWashVol;
+            }
+            
+            // Subtract excluded organic traders
+            if (excludedOrganic.size > 0 && dashboardData.organic_addresses) {
+                dashboardData.organic_addresses.forEach(addr => {
+                    if (excludedOrganic.has(addr.address.toLowerCase())) {
+                        excludedOrganicVol += (addr.total_volume_sol || 0);
+                        organicCount--;
+                    }
+                });
+                organicVol -= excludedOrganicVol;
+            }
+            
+            // Recalculate percentages
+            const totalVol = washVol + organicVol;
+            let washPct = totalVol > 0 ? (washVol / totalVol * 100) : 0;
+            let organicPct = totalVol > 0 ? (organicVol / totalVol * 100) : 0;
+            
+            // Show/hide exclusion summary
+            const summary = document.getElementById('exclusionSummary');
+            const totalExcluded = excludedWash.size + excludedOrganic.size;
+            if (totalExcluded > 0) {
+                summary.style.display = 'block';
+                document.getElementById('exclusionText').textContent = `${totalExcluded} address${totalExcluded > 1 ? 'es' : ''} excluded`;
+                document.getElementById('excludedVolume').textContent = formatNumber(excludedWashVol + excludedOrganicVol, 0) + ' SOL';
+            } else {
+                summary.style.display = 'none';
             }
             
             document.getElementById('washPct').textContent = washPct.toFixed(1) + '%';
@@ -1593,7 +1699,7 @@
             
             // Counts
             document.getElementById('washCount').textContent = washCount;
-            document.getElementById('organicCount').textContent = s.organic_address_count;
+            document.getElementById('organicCount').textContent = organicCount;
             
             // Pool volume info (if available)
             if (s.pool_volume_sol) {

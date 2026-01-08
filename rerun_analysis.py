@@ -27,20 +27,20 @@ def main():
     transactions_file = 'transactions.json'
     
     if not os.path.exists(transactions_file):
-        print(f"❌ {transactions_file} not found!")
+        print(f" {transactions_file} not found!")
         print("   Please run main.py first to fetch transactions.")
         return
     
     print(f"Loading existing transactions from {transactions_file}...")
     try:
         transactions = fetcher.load_transactions(transactions_file)
-        print(f"✅ Loaded {len(transactions):,} transactions")
+        print(f" Loaded {len(transactions):,} transactions")
     except Exception as e:
-        print(f"❌ Error loading transactions: {e}")
+        print(f" Error loading transactions: {e}")
         return
     
     if not transactions:
-        print("❌ No transactions loaded!")
+        print(" No transactions loaded!")
         return
     
     print(f"\nAnalyzing {len(transactions):,} transactions with updated classification logic...")
@@ -106,12 +106,12 @@ def main():
     print("  - analysis_results.json (structured data)")
     print("  - analysis_report.txt (human-readable report)")
     print()
-    print("📊 Key Changes:")
-    print("  ✅ Infrastructure addresses excluded (routers, aggregators)")
-    print("  ✅ Stricter multi-signal classification (2+ signals required)")
-    print("  ✅ Better counterparty diversity weighting")
+    print(" Key Changes:")
+    print("   Infrastructure addresses excluded (routers, aggregators)")
+    print("   Stricter multi-signal classification (2+ signals required)")
+    print("   Better counterparty diversity weighting")
     print()
-    print("🔄 Dashboard will auto-update with new results")
+    print(" Dashboard will auto-update with new results")
     print("=" * 80)
 
 if __name__ == "__main__":

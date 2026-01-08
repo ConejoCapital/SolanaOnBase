@@ -764,7 +764,7 @@
         <div class="warning">
             <div class="warning-icon"><i class="fas fa-exclamation-triangle"></i></div>
             <div class="warning-content">
-                <strong>⚠️ Preliminary Results</strong>
+                <strong> Preliminary Results</strong>
                 <p>This analysis is based on <span id="prelimTxs">-</span> transactions collected so far. The full analysis (targeting 1.8M transactions) is still running in the background. Results will be updated automatically as more data is collected.</p>
                 <p style="margin-top: 10px;"><strong>Note:</strong> While preliminary, the current findings show a clear pattern: 99.97% of volume is farmed, consistent with initial observations of 99.8% from just 3 addresses.</p>
             </div>
@@ -838,7 +838,7 @@
                     statusEl.textContent = `Preliminary Analysis (${txCount} transactions)`;
                     statusEl.style.color = 'var(--warning)';
                 } else if (isRunning) {
-                    statusEl.textContent = `🟢 Analysis in Progress (${txCount} transactions)`;
+                    statusEl.textContent = ` Analysis in Progress (${txCount} transactions)`;
                     statusEl.style.color = 'var(--success)';
                 } else {
                     statusEl.textContent = `Analysis Complete (${txCount} transactions)`;

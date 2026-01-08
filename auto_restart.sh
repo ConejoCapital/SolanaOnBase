@@ -36,16 +36,16 @@ start_aero() {
 echo "$(date): Checking processes..."
 
 if is_running "$MAIN_SCRIPT"; then
-    echo "✅ Main analysis is running"
+    echo " Main analysis is running"
 else
-    echo "⚠️  Main analysis not running, restarting..."
+    echo "  Main analysis not running, restarting..."
     start_main
 fi
 
 if is_running "$AERO_SCRIPT"; then
-    echo "✅ AERO tracking is running"
+    echo " AERO tracking is running"
 else
-    echo "⚠️  AERO tracking not running, restarting..."
+    echo "  AERO tracking not running, restarting..."
     start_aero
 fi
 

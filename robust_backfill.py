@@ -63,7 +63,7 @@ class RobustBackfiller:
                 self.request_count += 1
                 
                 if response.status_code == 429:
-                    print(f"  ⚠️ Rate limited, waiting 60s and rotating key...")
+                    print(f"   Rate limited, waiting 60s and rotating key...")
                     time.sleep(60)
                     self._rotate_key()
                     continue
@@ -75,19 +75,19 @@ class RobustBackfiller:
                     elif 'No transactions found' in str(data.get('message', '')):
                         return []
                     elif 'rate limit' in str(data).lower():
-                        print(f"  ⚠️ Rate limit in response, waiting 60s...")
+                        print(f"   Rate limit in response, waiting 60s...")
                         time.sleep(60)
                         self._rotate_key()
                         continue
                     else:
-                        print(f"  ⚠️ API error: {data.get('message', 'Unknown')}")
+                        print(f"   API error: {data.get('message', 'Unknown')}")
                         return None
                 else:
-                    print(f"  ⚠️ HTTP {response.status_code}")
+                    print(f"   HTTP {response.status_code}")
                     if attempt < max_retries - 1:
                         time.sleep(10 * (attempt + 1))
             except Exception as e:
-                print(f"  ⚠️ Request error: {e}")
+                print(f"   Request error: {e}")
                 if attempt < max_retries - 1:
                     time.sleep(10 * (attempt + 1))
         
@@ -120,13 +120,13 @@ class RobustBackfiller:
                 # We likely hit the limit, need to use smaller range
                 if block_range > MIN_BLOCK_RANGE:
                     new_range = max(block_range // 2, MIN_BLOCK_RANGE)
-                    print(f" ⚠️ HIT LIMIT! Retrying with smaller range ({new_range:,} blocks)")
+                    print(f"  HIT LIMIT! Retrying with smaller range ({new_range:,} blocks)")
                     # Don't add these results, re-fetch with smaller range
                     sub_results = self.fetch_range(current_start, current_end, new_range)
                     all_transactions.extend(sub_results)
                 else:
                     # Already at minimum range, just add what we have
-                    print(f" ⚠️ At minimum range, some txs may be missing!")
+                    print(f"  At minimum range, some txs may be missing!")
                     all_transactions.extend(results)
             else:
                 print()
@@ -179,7 +179,7 @@ class RobustBackfiller:
     def run_backfill(self, force_full=False):
         """Run the backfill process"""
         print("=" * 80)
-        print("🔄 ROBUST BACKFILL - SOL Token Transactions")
+        print(" ROBUST BACKFILL - SOL Token Transactions")
         print("=" * 80)
         print()
         
@@ -195,10 +195,10 @@ class RobustBackfiller:
         # Get current block
         current_block = self.get_current_block()
         if not current_block:
-            print("❌ Could not get current block, using estimate")
+            print(" Could not get current block, using estimate")
             current_block = 40551000
-        print(f"📊 Current Base block: {current_block:,}")
-        print(f"📊 Token start block: {TOKEN_START_BLOCK:,}")
+        print(f" Current Base block: {current_block:,}")
+        print(f" Token start block: {TOKEN_START_BLOCK:,}")
         print()
         
         # Create a set of existing hashes for deduplication
@@ -208,7 +208,7 @@ class RobustBackfiller:
         gaps = self.identify_gaps(existing_txs)
         
         if gaps:
-            print(f"🔍 Found {len(gaps)} gaps to fill:")
+            print(f" Found {len(gaps)} gaps to fill:")
             for start, end in gaps[:10]:  # Show first 10
                 if end:
                     print(f"   Blocks {start:,} to {end:,} ({end - start + 1:,} blocks)")
@@ -234,7 +234,7 @@ class RobustBackfiller:
             if end < start:
                 continue
             
-            print(f"📥 Filling gap: blocks {start:,} to {end:,}")
+            print(f" Filling gap: blocks {start:,} to {end:,}")
             gap_txs = self.fetch_range(start, end)
             
             # Deduplicate
@@ -248,7 +248,7 @@ class RobustBackfiller:
         
         # Then, fetch from current max to latest
         if current_max < current_block:
-            print(f"📥 Fetching new blocks: {current_max + 1:,} to {current_block:,}")
+            print(f" Fetching new blocks: {current_max + 1:,} to {current_block:,}")
             new_txs = self.fetch_range(current_max + 1, current_block)
             
             for tx in new_txs:
@@ -276,7 +276,7 @@ class RobustBackfiller:
             json.dump(final_txs, f)
         
         print("=" * 80)
-        print("✅ BACKFILL COMPLETE")
+        print(" BACKFILL COMPLETE")
         print("=" * 80)
         print(f"   Previous count: {len(existing_txs):,}")
         print(f"   New transactions: {len(new_transactions):,}")

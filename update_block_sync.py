@@ -77,7 +77,7 @@ def update_block_sync():
     with open('dashboard_export.json', 'w') as f:
         json.dump(dashboard_export, f, indent=2)
     
-    print(f"✅ Updated: {len(hashes):,} txs | Block {max_block:,} | Behind {current_base_block - max_block:,} | {block_sync_percentage:.1f}% synced")
+    print(f" Updated: {len(hashes):,} txs | Block {max_block:,} | Behind {current_base_block - max_block:,} | {block_sync_percentage:.1f}% synced")
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == '--loop':

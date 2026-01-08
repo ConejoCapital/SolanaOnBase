@@ -58,7 +58,7 @@ def main():
     result = check_token_info(current_address)
     
     if result.get('valid'):
-        print("✅ Token Found:")
+        print(" Token Found:")
         print(f"   Name: {result.get('name')}")
         print(f"   Symbol: {result.get('symbol')}")
         print(f"   Decimals: {result.get('decimals')}")
@@ -66,13 +66,13 @@ def main():
         print()
         
         if result.get('symbol', '').upper() == 'AERO':
-            print("✅ This appears to be the correct AERO token!")
+            print(" This appears to be the correct AERO token!")
         else:
-            print("⚠️  Symbol doesn't match 'AERO' - might be wrong address")
+            print("  Symbol doesn't match 'AERO' - might be wrong address")
     else:
-        print(f"❌ Token not found: {result.get('error', 'Unknown error')}")
+        print(f" Token not found: {result.get('error', 'Unknown error')}")
         print()
-        print("💡 To find the correct AERO token address:")
+        print(" To find the correct AERO token address:")
         print("   1. Go to https://basedscan.io")
         print("   2. Search for 'AERO' or 'Aerodrome'")
         print("   3. Find the token contract (not router)")

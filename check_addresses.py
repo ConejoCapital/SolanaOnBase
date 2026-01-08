@@ -87,9 +87,9 @@ def main():
         info = check_address_on_basescan(addr)
         if info:
             if info.get('has_txs'):
-                print(f"   ✅ Has transactions")
+                print(f"    Has transactions")
             if info.get('error'):
-                print(f"   ⚠️  Error: {info['error']}")
+                print(f"     Error: {info['error']}")
         
         time.sleep(0.5)  # Rate limit protection
         print()

@@ -41,7 +41,7 @@ check_and_restart() {
     local log_file=$3
     
     if ! is_process_running "$script_name"; then
-        log "⚠️  $script_name not running, restarting..."
+        log "  $script_name not running, restarting..."
         cd "$(dirname "$0")"  # Ensure we're in the right directory
         
         # Start the process
@@ -54,7 +54,7 @@ check_and_restart() {
         local started=false
         while [ $attempts -lt 3 ]; do
             if is_process_running "$script_name"; then
-                log "✅ $script_name restarted (PID: $pid)"
+                log " $script_name restarted (PID: $pid)"
                 started=true
                 break
             fi
@@ -64,7 +64,7 @@ check_and_restart() {
         
         # If still not running, check for errors
         if [ "$started" = false ]; then
-            log "❌ Failed to start $script_name (PID was: $pid)"
+            log " Failed to start $script_name (PID was: $pid)"
             if [ -f "$log_file" ]; then
                 local last_lines=$(tail -5 "$log_file" 2>/dev/null)
                 if [ -n "$last_lines" ]; then
@@ -97,14 +97,14 @@ while true; do
     
     # PRIORITY 3: Block sync updater (updates dashboard with current progress)
     if ! is_process_running "update_block_sync.py --loop"; then
-        log "⚠️  Block sync updater not running, restarting..."
+        log "  Block sync updater not running, restarting..."
         nohup python3 "$BLOCK_SYNC_SCRIPT" --loop > block_sync_updater.log 2>&1 &
         pid=$!
         sleep 2
         if is_process_running "update_block_sync.py --loop"; then
-            log "✅ Block sync updater restarted (PID: $pid)"
+            log " Block sync updater restarted (PID: $pid)"
         else
-            log "❌ Failed to start block sync updater"
+            log " Failed to start block sync updater"
         fi
     fi
     
@@ -113,7 +113,7 @@ while true; do
     
     # Log current status every check
     TX_COUNT=$(python3 -c "import json; print(len(json.load(open('transactions.json'))))" 2>/dev/null || echo "?")
-    log "📊 Current transaction count: $TX_COUNT"
+    log " Current transaction count: $TX_COUNT"
     
     # Wait 60 seconds before next check
     sleep 60

@@ -30,7 +30,7 @@ SSLError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure
 
 ## Code Status
 
-✅ All integration code is complete and ready:
+ All integration code is complete and ready:
 - `routescan_fetcher.py` - Fetcher with SSL workaround
 - `main.py` - Full analysis script
 - `aero_tracker_basescan.py` - AERO rewards tracker

@@ -283,7 +283,7 @@ class AddressLabeler:
     def label_all_from_transactions(self, transactions_file='transactions.json'):
         """Label all addresses found in transactions"""
         print("=" * 80)
-        print("🏷️ ADDRESS LABELING SYSTEM")
+        print(" ADDRESS LABELING SYSTEM")
         print("=" * 80)
         print()
         
@@ -345,14 +345,14 @@ class AddressLabeler:
             reverse=True
         )
         
-        print(f"📊 Found {len(sorted_addresses):,} unique addresses")
+        print(f" Found {len(sorted_addresses):,} unique addresses")
         print()
         
         # Label top addresses first (most impactful)
         labeled_count = 0
         total_to_label = min(500, len(sorted_addresses))  # Label top 500
         
-        print(f"🏷️ Labeling top {total_to_label} addresses by volume...")
+        print(f" Labeling top {total_to_label} addresses by volume...")
         print()
         
         for addr, stats in sorted_addresses[:total_to_label]:
@@ -372,7 +372,7 @@ class AddressLabeler:
         
         print()
         print("=" * 80)
-        print(f"✅ LABELING COMPLETE")
+        print(f" LABELING COMPLETE")
         print("=" * 80)
         print(f"   Total addresses labeled: {len(self.labels)}")
         print()
@@ -382,7 +382,7 @@ class AddressLabeler:
         for label_info in self.labels.values():
             type_counts[label_info.get('type', 'unknown')] += 1
         
-        print("📊 Labels by type:")
+        print(" Labels by type:")
         for label_type, count in sorted(type_counts.items(), key=lambda x: -x[1]):
             print(f"   {label_type}: {count}")
         

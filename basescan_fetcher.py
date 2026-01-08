@@ -60,7 +60,7 @@ class BasescanFetcher:
                     
                     # Check for rate limiting
                     if 'rate limit' in error_msg.lower() or 'max rate' in error_msg.lower():
-                        print(f"⚠️  Rate limit reached: {error_msg}")
+                        print(f"  Rate limit reached: {error_msg}")
                         print("   Waiting 5 seconds before retry...")
                         time.sleep(5)
                         return None
@@ -132,7 +132,7 @@ class BasescanFetcher:
                 print("Failed after retries")
                 # If first page fails, might be API issue
                 if page == 1:
-                    print("⚠️  First page failed. Check API key and plan limitations.")
+                    print("  First page failed. Check API key and plan limitations.")
                     break
                 else:
                     # Continue with next page
@@ -154,7 +154,7 @@ class BasescanFetcher:
                     converted.append(converted_tx)
             
             all_transactions.extend(converted)
-            print(f"✅ {len(converted)} transactions (Total: {len(all_transactions):,})")
+            print(f" {len(converted)} transactions (Total: {len(all_transactions):,})")
             
             # Check if we got fewer than offset (last page)
             if len(transactions) < offset:

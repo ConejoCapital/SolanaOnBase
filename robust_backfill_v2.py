@@ -120,7 +120,7 @@ class RobustBackfillerV2:
                 if response.status_code == 429:
                     error_msg = f"Rate limited at block {start_block}"
                     self.errors.append(error_msg)
-                    print(f"  ⚠️ Rate limited, rotating key and waiting 30s...")
+                    print(f"   Rate limited, rotating key and waiting 30s...")
                     self._rotate_key()
                     time.sleep(30)  # Shorter wait, then retry
                     continue
@@ -138,18 +138,18 @@ class RobustBackfillerV2:
                     else:
                         error_msg = f"API error: {data.get('message', 'Unknown')}"
                         self.errors.append(error_msg)
-                        print(f"  ⚠️ {error_msg}")
+                        print(f"   {error_msg}")
                         return None
                 else:
                     error_msg = f"HTTP {response.status_code}"
                     self.errors.append(error_msg)
-                    print(f"  ⚠️ {error_msg}")
+                    print(f"   {error_msg}")
                     if attempt < max_retries - 1:
                         time.sleep(5 * (attempt + 1))
             except Exception as e:
                 error_msg = f"Request error: {str(e)[:50]}"
                 self.errors.append(error_msg)
-                print(f"  ⚠️ {error_msg}")
+                print(f"   {error_msg}")
                 if attempt < max_retries - 1:
                     time.sleep(5 * (attempt + 1))
         
@@ -187,12 +187,12 @@ class RobustBackfillerV2:
             if count >= MAX_RESULTS_PER_QUERY - 10:
                 if block_range > MIN_BLOCK_RANGE:
                     new_range = max(block_range // 2, MIN_BLOCK_RANGE)
-                    print(f" ⚠️ HIT LIMIT! Retrying with {new_range:,} blocks")
+                    print(f"  HIT LIMIT! Retrying with {new_range:,} blocks")
                     sub_results = self.fetch_range(current_start, current_end, new_range)
                     all_transactions.extend(sub_results)
                     self.transactions_fetched += len(sub_results)
                 else:
-                    print(f" ⚠️ At minimum range!")
+                    print(f"  At minimum range!")
                     all_transactions.extend(results)
                     self.transactions_fetched += count
             else:
@@ -272,7 +272,7 @@ class RobustBackfillerV2:
     def run_continuous(self):
         """Run backfill continuously - never stop"""
         print("=" * 80)
-        print("🔄 ROBUST BACKFILL V2 - Continuous Mode")
+        print(" ROBUST BACKFILL V2 - Continuous Mode")
         print("=" * 80)
         print()
         
@@ -290,9 +290,9 @@ class RobustBackfillerV2:
                 # Get current block
                 current_block = self.get_current_block()
                 if not current_block:
-                    print("❌ Could not get current block, using estimate")
+                    print(" Could not get current block, using estimate")
                     current_block = 40600000
-                print(f"📊 Current Base block: {current_block:,}")
+                print(f" Current Base block: {current_block:,}")
                 
                 # Create hash set for deduplication
                 existing_hashes = set(tx.get('hash') for tx in existing_txs if tx.get('hash'))
@@ -302,9 +302,9 @@ class RobustBackfillerV2:
                 self.gaps_remaining = len(gaps)
                 
                 if gaps:
-                    print(f"🔍 Found {len(gaps)} gaps to fill")
+                    print(f" Found {len(gaps)} gaps to fill")
                 else:
-                    print("✅ No gaps found!")
+                    print(" No gaps found!")
                 
                 # Get current max block
                 if existing_txs:
@@ -325,7 +325,7 @@ class RobustBackfillerV2:
                     self.gaps_remaining = len(gaps) - i
                     self.update_status("filling_gap", start, end, self.current_gap)
                     
-                    print(f"\n📥 Filling gap {i+1}/{len(gaps)}: blocks {start:,} to {end:,}")
+                    print(f"\n Filling gap {i+1}/{len(gaps)}: blocks {start:,} to {end:,}")
                     gap_txs = self.fetch_range(start, end)
                     
                     for tx in gap_txs:
@@ -346,7 +346,7 @@ class RobustBackfillerV2:
                     self.current_gap = f"New blocks: {current_max + 1:,} to {current_block:,}"
                     self.update_status("fetching_new", current_max + 1, current_block, self.current_gap)
                     
-                    print(f"\n📥 Fetching new blocks: {current_max + 1:,} to {current_block:,}")
+                    print(f"\n Fetching new blocks: {current_max + 1:,} to {current_block:,}")
                     new_txs = self.fetch_range(current_max + 1, current_block)
                     
                     for tx in new_txs:
@@ -359,7 +359,7 @@ class RobustBackfillerV2:
                 # Final save
                 if new_transactions:
                     final_txs = self.save_transactions(existing_txs, new_transactions)
-                    print(f"\n✅ Total unique transactions: {len(final_txs):,}")
+                    print(f"\n Total unique transactions: {len(final_txs):,}")
                 else:
                     final_txs = existing_txs
                 
@@ -368,12 +368,12 @@ class RobustBackfillerV2:
                 max_saved_block = max(blocks) if blocks else 0
                 
                 if max_saved_block >= current_block - 100:
-                    print(f"\n✅ Caught up! Waiting 60 seconds for new blocks...")
+                    print(f"\n Caught up! Waiting 60 seconds for new blocks...")
                     self.update_status("caught_up", max_saved_block, current_block, "Waiting for new blocks")
                     time.sleep(60)
                 else:
                     # Still have work to do
-                    print(f"\n🔄 Continuing... (at block {max_saved_block:,}, target {current_block:,})")
+                    print(f"\n Continuing... (at block {max_saved_block:,}, target {current_block:,})")
                     time.sleep(5)
                     
             except KeyboardInterrupt:
@@ -383,7 +383,7 @@ class RobustBackfillerV2:
             except Exception as e:
                 error_msg = f"Main loop error: {str(e)[:100]}"
                 self.errors.append(error_msg)
-                print(f"\n❌ Error: {e}")
+                print(f"\n Error: {e}")
                 print("   Retrying in 30 seconds...")
                 self.update_status("error", extra=error_msg)
                 time.sleep(30)

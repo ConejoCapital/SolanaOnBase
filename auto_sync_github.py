@@ -71,12 +71,12 @@ def update_dashboard_export():
         }
         
         if balance_ratio > 0.85 and net_ratio < 0.15 and cp < 10 and total_activity > 100:
-            addr_info['label'] = "🚜 Wash Trader"
+            addr_info['label'] = " Wash Trader"
             addr_info['label_type'] = "wash_trader"
             addr_info['label_confidence'] = 95
             wash_list.append(addr_info)
         else:
-            addr_info['label'] = "🌱 Organic" if cp > 5 else "👤 User"
+            addr_info['label'] = " Organic" if cp > 5 else " User"
             addr_info['label_type'] = "organic"
             addr_info['label_confidence'] = 70
             organic_list.append(addr_info)
@@ -164,7 +164,7 @@ def push_to_github():
 
 def main():
     print("=" * 60)
-    print("🔄 Auto-Sync GitHub for Vercel")
+    print(" Auto-Sync GitHub for Vercel")
     print("=" * 60)
     print(f"Syncing every {SYNC_INTERVAL} seconds ({SYNC_INTERVAL // 60} minutes)")
     print("Press Ctrl+C to stop")
@@ -181,11 +181,11 @@ def main():
                 
                 # Push to GitHub
                 if push_to_github():
-                    print(f"[{now}] ✅ Pushed to GitHub")
+                    print(f"[{now}]  Pushed to GitHub")
                 else:
                     print(f"[{now}] No changes to push")
             else:
-                print(f"[{now}] ❌ Error updating")
+                print(f"[{now}]  Error updating")
             
             time.sleep(SYNC_INTERVAL)
             

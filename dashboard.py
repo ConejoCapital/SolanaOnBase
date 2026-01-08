@@ -115,7 +115,7 @@ class BasescanDashboard:
         self.clear_screen()
         
         print("=" * 80)
-        print(" " * 20 + "📊 BASESCAN ANALYSIS DASHBOARD")
+        print(" " * 20 + " BASESCAN ANALYSIS DASHBOARD")
         print("=" * 80)
         print(f"Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         print()
@@ -134,7 +134,7 @@ class BasescanDashboard:
         analysis = self.get_analysis_status()
         
         if analysis['has_results']:
-            print(f"Status:               ✅ Complete")
+            print(f"Status:                Complete")
             print(f"Total Transactions:   {analysis['total_transactions']:,}")
             print(f"Farming Addresses:    {analysis['farming_addresses']}")
             print(f"Organic Addresses:     {analysis['organic_addresses']}")
@@ -156,7 +156,7 @@ class BasescanDashboard:
         aero = self.get_aero_status()
         
         if aero['has_results']:
-            print(f"Status:               ✅ Complete")
+            print(f"Status:                Complete")
             print(f"Addresses with AERO:   {aero['addresses_with_aero']}")
             print(f"Total AERO Received:   {aero['total_received']:,.2f} AERO")
             print(f"Total AERO Sold:       {aero['total_sold']:,.2f} AERO")
@@ -164,7 +164,7 @@ class BasescanDashboard:
                 sell_pct = (aero['total_sold'] / aero['total_received']) * 100
                 print(f"Sell Ratio:           {sell_pct:.2f}%")
         elif 'current_address' in aero:
-            print(f"Status:               🟢 Running")
+            print(f"Status:                Running")
             print(f"Addresses Processed:   {aero.get('current_address', 0)}/{aero.get('total_addresses', 0)}")
             if aero.get('total_addresses', 0) > 0:
                 pct = (aero.get('current_address', 0) / aero.get('total_addresses', 0)) * 100

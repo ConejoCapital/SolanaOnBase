@@ -1,15 +1,15 @@
 {
   "is_running": true,
-  "status": "fetching",
-  "last_update": "2026-01-08 16:02:43",
-  "current_block": 38746805,
-  "target_block": 38951822,
-  "transactions_fetched": 3954,
-  "current_gap": "Gap 4/8: 38,711,805 to 38,951,822",
-  "gaps_remaining": 5,
-  "api_requests": 1461,
+  "status": "caught_up",
+  "last_update": "2026-01-08 16:16:58",
+  "current_block": 40558787,
+  "target_block": 40558787,
+  "transactions_fetched": 409,
+  "current_gap": "New blocks: 40,558,595 to 40,558,787",
+  "gaps_remaining": 1,
+  "api_requests": 58,
   "errors": [],
-  "last_activity": "Blocks 38,746,805 to 38,751,804",
-  "uptime_seconds": 4251,
-  "requests_per_minute": 20.6
+  "last_activity": "Waiting for new blocks",
+  "uptime_seconds": 99,
+  "requests_per_minute": 34.8
 }

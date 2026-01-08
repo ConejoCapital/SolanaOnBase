@@ -25,16 +25,16 @@ Based on [Aerodrome Finance documentation](https://aerodrome.limited/pages/docs.
 ### What We're Actually Measuring
 
 **Primary Metric: Organic vs Farmed Volume**
-- ✅ **This is working correctly**
-- ✅ Shows what percentage of volume is organic vs wash-traded
-- ✅ Identifies addresses engaging in wash trading
-- ✅ This is the KEY metric for the analysis
+-  **This is working correctly**
+-  Shows what percentage of volume is organic vs wash-traded
+-  Identifies addresses engaging in wash trading
+-  This is the KEY metric for the analysis
 
 **Secondary Metric: AERO Rewards Tracking**
-- ⚠️ **Less relevant for volume farmers**
-- ⚠️ Only relevant if addresses are also LP providers
-- ⚠️ May miss rewards if they're claimed (not transferred)
-- ⚠️ Volume farmers may not be earning AERO rewards at all
+-  **Less relevant for volume farmers**
+-  Only relevant if addresses are also LP providers
+-  May miss rewards if they're claimed (not transferred)
+-  Volume farmers may not be earning AERO rewards at all
 
 ## Current Analysis Results
 
@@ -49,8 +49,8 @@ This shows that:
 - The farming addresses are generating artificial volume
 
 ### AERO Token Address
-- ✅ **Verified**: `0x940181a94A35A4569E4529A3CDfB74e38FD98631`
-- ✅ Confirmed on [Basedscan](https://basedscan.io/token/0x940181a94A35A4569E4529A3CDfB74e38FD98631?chainid=8453)
+-  **Verified**: `0x940181a94A35A4569E4529A3CDfB74e38FD98631`
+-  Confirmed on [Basedscan](https://basedscan.io/token/0x940181a94A35A4569E4529A3CDfB74e38FD98631?chainid=8453)
 - This is the correct AERO token contract
 
 ## What This Means
@@ -71,7 +71,7 @@ AERO rewards tracking is **less critical** because:
 
 ### Focus Areas
 
-1. **Continue Volume Analysis** ✅
+1. **Continue Volume Analysis** 
    - This is working correctly
    - Provides the key insights
    - Shows organic vs farmed breakdown
@@ -82,9 +82,9 @@ AERO rewards tracking is **less critical** because:
    - Less critical than volume analysis
 
 3. **Key Question Answered**
-   - ✅ "What % of volume is organic vs farmed?" → **~1.5% organic, ~98.5% farmed**
-   - ✅ "Which addresses are wash-trading?" → **14 farming addresses identified**
-   - ⚠️ "Are they selling AERO rewards?" → **Less relevant if they're not earning rewards**
+   -  "What % of volume is organic vs farmed?" → **~1.5% organic, ~98.5% farmed**
+   -  "Which addresses are wash-trading?" → **14 farming addresses identified**
+   -  "Are they selling AERO rewards?" → **Less relevant if they're not earning rewards**
 
 ## Conclusion
 

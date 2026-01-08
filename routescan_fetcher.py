@@ -91,7 +91,7 @@ class RoutescanFetcher:
                     
                     # Check for rate limiting
                     if 'rate limit' in error_msg.lower() or 'max rate' in error_msg.lower():
-                        print(f"⚠️  Rate limit reached: {error_msg}")
+                        print(f"  Rate limit reached: {error_msg}")
                         self._rotate_api_key()  # Try different key
                         self.consecutive_rate_limits += 1
                         wait_time = min(5 * self.consecutive_rate_limits, 60)
@@ -161,7 +161,7 @@ class RoutescanFetcher:
         # Base launched ~July 2023, ~2 blocks/second = ~63M blocks/year
         # As of Jan 2026 (~2.5 years), current block is approximately 41-42M
         # Use 42M as safe upper bound
-        print("⚠️  Could not get current block from API. Using fallback: 42,000,000")
+        print("  Could not get current block from API. Using fallback: 42,000,000")
         return 42000000
     
     def fetch_all_transactions(self, start_block: int = 0, end_block: int = None, max_pages: Optional[int] = None) -> List[Dict]:
@@ -206,7 +206,7 @@ class RoutescanFetcher:
         while from_block < target_block and from_block < absolute_max_block:
             # Safety check: if from_block is way past the known target block, stop
             if from_block > target_block + 100000:  # More than 100k blocks past "target"
-                print(f"\n⚠️  Stopping: from_block ({from_block:,}) is way past target_block ({target_block:,})")
+                print(f"\n  Stopping: from_block ({from_block:,}) is way past target_block ({target_block:,})")
                 print(f"   This suggests rate limiting prevented accurate block detection.")
                 break
             
@@ -255,7 +255,7 @@ class RoutescanFetcher:
                 consecutive_empty += 1
                 # Only stop after MANY consecutive failures (rate limits are temporary)
                 if consecutive_empty >= 20:  # Reduced from 50 to 20 to avoid wasted time
-                    print("\n⚠️  Many consecutive failures. Pausing for 10 minutes...")
+                    print("\n  Many consecutive failures. Pausing for 10 minutes...")
                     time.sleep(600)  # Wait 10 minutes
                     consecutive_empty = 0  # Reset counter and continue
                 continue
@@ -268,7 +268,7 @@ class RoutescanFetcher:
                 
                 # Check if we've gone too far past target block
                 if target_block > 0 and to_block >= target_block:
-                    print(f"\n✅ Reached target block ({target_block:,})")
+                    print(f"\n Reached target block ({target_block:,})")
                     print(f"   Stopping fetch - no more blocks to query")
                     break
                 
@@ -277,7 +277,7 @@ class RoutescanFetcher:
                     last_tx_block = max(int(tx.get('blockNumber', 0)) for tx in all_transactions if tx.get('blockNumber'))
                     blocks_ahead = to_block - last_tx_block
                     if blocks_ahead > 200000:  # 200k blocks ahead of last transaction
-                        print(f"\n✅ Stopping: Querying {blocks_ahead:,} blocks ahead of last transaction")
+                        print(f"\n Stopping: Querying {blocks_ahead:,} blocks ahead of last transaction")
                         print(f"   Last transaction was at block {last_tx_block:,}")
                         print(f"   Current query block: {to_block:,}")
                         print(f"   Token likely stopped trading. Collected {len(all_transactions):,} transactions.")
@@ -286,14 +286,14 @@ class RoutescanFetcher:
                 # Only stop after MANY consecutive empty ranges
                 # But also check if we're way past where transactions likely exist
                 if consecutive_empty >= 500:  # Very high threshold - transactions might be sparse
-                    print(f"\n⚠️  No transactions found in last {consecutive_empty} ranges.")
+                    print(f"\n  No transactions found in last {consecutive_empty} ranges.")
                     print(f"   Current block: {to_block:,}, Total collected: {len(all_transactions):,}")
                     # If we have transactions, check if we're way past the last one
                     if all_transactions:
                         last_tx_block = max(int(tx.get('blockNumber', 0)) for tx in all_transactions if tx.get('blockNumber'))
                         blocks_ahead = to_block - last_tx_block
                         if blocks_ahead > 200000:  # 200k blocks ahead of last transaction
-                            print(f"   ⚠️  Querying {blocks_ahead:,} blocks ahead of last transaction")
+                            print(f"     Querying {blocks_ahead:,} blocks ahead of last transaction")
                             print(f"   Token likely stopped trading. Stopping fetch.")
                             break
                     print(f"   Continuing to check more ranges...")
@@ -313,7 +313,7 @@ class RoutescanFetcher:
                     converted.append(converted_tx)
             
             all_transactions.extend(converted)
-            print(f"✅ {len(converted)} transactions (Total: {len(all_transactions):,})")
+            print(f" {len(converted)} transactions (Total: {len(all_transactions):,})")
             
             # Update progress
             if converted:

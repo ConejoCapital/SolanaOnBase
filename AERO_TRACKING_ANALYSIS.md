@@ -3,11 +3,11 @@
 ## Current Status
 
 ### Implementation Review
-- ✅ **Tracking Logic**: Correctly identifies incoming vs outgoing AERO transfers
-- ✅ **Analysis Logic**: Properly calculates sell ratios and net positions
-- ✅ **API Integration**: Uses Routescan API correctly with proper rate limiting
-- ⚠️ **Token Address**: Needs verification (may be incorrect)
-- ✅ **Block Range Query**: Fixed to use actual current block (was hardcoded)
+-  **Tracking Logic**: Correctly identifies incoming vs outgoing AERO transfers
+-  **Analysis Logic**: Properly calculates sell ratios and net positions
+-  **API Integration**: Uses Routescan API correctly with proper rate limiting
+-  **Token Address**: Needs verification (may be incorrect)
+-  **Block Range Query**: Fixed to use actual current block (was hardcoded)
 
 ### Current Results
 - **Farming Addresses Identified**: 14 addresses
@@ -43,9 +43,9 @@
 
 ### 3. Query Implementation
 **Fixed Issues**:
-- ✅ Changed from hardcoded `current_block = 99999999` to actual block fetch
-- ✅ Added better logging for query progress
-- ✅ Added consecutive empty range detection
+-  Changed from hardcoded `current_block = 99999999` to actual block fetch
+-  Added better logging for query progress
+-  Added consecutive empty range detection
 
 **Remaining Considerations**:
 - Block range might need adjustment
@@ -143,7 +143,7 @@ Rewards might be distributed via:
 
 ## Next Steps
 
-1. ✅ **Fixed**: Current block fetching
+1.  **Fixed**: Current block fetching
 2. ⏳ **TODO**: Verify AERO token address
 3. ⏳ **TODO**: Test query on one address manually
 4. ⏳ **TODO**: Check reward distribution mechanism

@@ -76,13 +76,13 @@ def main():
             
             if unique_new:
                 transactions.extend(unique_new)
-                print(f"\n✅ Added {len(unique_new):,} new transactions")
-                print(f"✅ Total now: {len(transactions):,} transactions")
+                print(f"\n Added {len(unique_new):,} new transactions")
+                print(f" Total now: {len(transactions):,} transactions")
                 
                 # Save progress
                 fetcher.save_transactions(transactions, transactions_file)
             else:
-                print("\n⚠️  No new unique transactions found")
+                print("\n  No new unique transactions found")
                 # Check if we should continue or stop
                 if len(transactions) >= target_transactions * 0.9:  # If we have 90% of target
                     print("   Have 90%+ of target transactions. Stopping fetch.")
@@ -91,7 +91,7 @@ def main():
                     print("   Continuing to check more blocks...")
                     time.sleep(5)  # Wait before next attempt
         else:
-            print("\n⚠️  No transactions returned")
+            print("\n  No transactions returned")
             # If we have substantial data, analyze what we have
             if len(transactions) > 100000:
                 print(f"   Have {len(transactions):,} transactions. Analyzing current data...")
@@ -167,7 +167,7 @@ def main():
     print("  - analysis_results.json (structured data)")
     print("  - analysis_report.txt (human-readable report)")
     if results['is_preliminary']:
-        print(f"\n⚠️  NOTE: This is preliminary analysis ({len(transactions):,}/{target_transactions:,} transactions)")
+        print(f"\n  NOTE: This is preliminary analysis ({len(transactions):,}/{target_transactions:,} transactions)")
         print("   Analysis will continue fetching more transactions in background")
     print("=" * 80)
 

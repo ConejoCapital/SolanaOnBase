@@ -1,6 +1,6 @@
 # Basescan API Integration Status
 
-## ⚠️ Free Tier Limitation
+##  Free Tier Limitation
 
 **Issue**: Free API access is not supported for Base chain queries.
 
@@ -12,12 +12,12 @@ Please upgrade your api plan for full chain coverage.
 
 ## What Works
 
-✅ **API V2 Integration**: Correctly configured
+ **API V2 Integration**: Correctly configured
 - Endpoint: `https://api.etherscan.io/v2/api`
 - Chain ID: `8453` (Base)
 - API Key: Valid
 
-✅ **Small Queries**: First test query (10 transactions) succeeded
+ **Small Queries**: First test query (10 transactions) succeeded
 - This suggests the API key works
 - But larger queries or specific parameters trigger the free tier limitation
 
@@ -31,10 +31,10 @@ Please upgrade your api plan for full chain coverage.
 ## Files Ready
 
 All integration code is complete and ready:
-- ✅ `basescan_fetcher.py` - Main fetcher (V2 format)
-- ✅ `main.py` - Full analysis script
-- ✅ `aero_tracker_basescan.py` - AERO rewards tracker
-- ✅ `dashboard.py` - Progress dashboard
-- ✅ `test_basescan.py` - Integration test
+-  `basescan_fetcher.py` - Main fetcher (V2 format)
+-  `main.py` - Full analysis script
+-  `aero_tracker_basescan.py` - AERO rewards tracker
+-  `dashboard.py` - Progress dashboard
+-  `test_basescan.py` - Integration test
 
 Once API plan is upgraded, all code will work immediately.

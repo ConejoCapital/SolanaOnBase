@@ -219,7 +219,7 @@ def update_dashboard_data():
     # Generate chart data for time-series visualization
     generate_chart_data()
     
-    print(f"✅ Dashboard data updated: {tx_count:,} transactions, AERO: {'Yes' if aero_results else 'No'}")
+    print(f" Dashboard data updated: {tx_count:,} transactions, AERO: {'Yes' if aero_results else 'No'}")
 
 def main():
     """Main update loop"""

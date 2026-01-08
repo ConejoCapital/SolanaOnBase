@@ -6,7 +6,7 @@ echo "==========================================================================
 echo "BASESCAN ANALYSIS - FREE TIER MODE"
 echo "=================================================================================="
 echo ""
-echo "⚠️  Using very small chunks (10 transactions per page)"
+echo "  Using very small chunks (10 transactions per page)"
 echo "   This will take a LONG time for 1.8M transactions"
 echo "   Estimated: ~180,000 pages × 0.25s = ~12.5 hours"
 echo ""

@@ -28,7 +28,7 @@ def main():
     print()
     
     if our_min_block <= token_start_block:
-        print("✅ Already have all earlier transactions!")
+        print(" Already have all earlier transactions!")
         return
     
     # Fetch transactions from token start to our earliest
@@ -49,8 +49,8 @@ def main():
         
         if unique_new:
             transactions.extend(unique_new)
-            print(f"\n✅ Added {len(unique_new):,} new transactions")
-            print(f"✅ Total now: {len(transactions):,} transactions")
+            print(f"\n Added {len(unique_new):,} new transactions")
+            print(f" Total now: {len(transactions):,} transactions")
             
             # Save with deduplication
             unique_txs = {}

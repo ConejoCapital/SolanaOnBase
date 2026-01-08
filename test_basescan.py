@@ -41,7 +41,7 @@ def main():
     data = fetcher._make_request(params)
     
     if data:
-        print("✅ API V2 connection successful!")
+        print(" API V2 connection successful!")
         transactions = data.get('result', [])
         print(f"   Found {len(transactions)} transactions in test query")
         
@@ -59,12 +59,12 @@ def main():
             # Test conversion
             converted = fetcher._convert_to_standard_format(sample)
             if converted:
-                print("\n   ✅ Conversion to standard format successful!")
+                print("\n    Conversion to standard format successful!")
                 print(f"     Standard format keys: {list(converted.keys())}")
         else:
-            print("   ⚠️  No transactions returned (might be rate limited or no data)")
+            print("     No transactions returned (might be rate limited or no data)")
     else:
-        print("❌ API connection failed!")
+        print(" API connection failed!")
         print("   Check your API key and network connection")
         return False
     
@@ -85,7 +85,7 @@ def main():
     
     if data:
         transactions = data.get('result', [])
-        print(f"✅ Successfully fetched {len(transactions)} transactions")
+        print(f" Successfully fetched {len(transactions)} transactions")
         
         if len(transactions) > 0:
             # Check data quality
@@ -101,16 +101,16 @@ def main():
             print(f"     Has value: {has_value}/{len(transactions)}")
             
             if has_hash == len(transactions) and has_from == len(transactions):
-                print("\n   ✅ All transactions have required fields!")
+                print("\n    All transactions have required fields!")
             else:
-                print("\n   ⚠️  Some transactions missing fields")
+                print("\n     Some transactions missing fields")
     else:
-        print("❌ Failed to fetch batch")
+        print(" Failed to fetch batch")
         return False
     
     print()
     print("=" * 80)
-    print("✅ BASESCAN API INTEGRATION TEST PASSED!")
+    print(" BASESCAN API INTEGRATION TEST PASSED!")
     print("=" * 80)
     print()
     print("The Basescan API is working correctly.")

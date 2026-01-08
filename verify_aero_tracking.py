@@ -39,23 +39,23 @@ def verify_aero_token_address():
             data = response.json()
             if data.get('status') == '1' and data.get('result'):
                 result = data['result'][0] if isinstance(data['result'], list) else data['result']
-                print(f"✅ Token Found:")
+                print(f" Token Found:")
                 print(f"   Name: {result.get('tokenName', 'N/A')}")
                 print(f"   Symbol: {result.get('symbol', 'N/A')}")
                 print(f"   Decimals: {result.get('divisor', 'N/A')}")
                 print(f"   Total Supply: {result.get('totalSupply', 'N/A')}")
                 return True
             else:
-                print(f"❌ Token not found or error: {data.get('message', 'Unknown')}")
+                print(f" Token not found or error: {data.get('message', 'Unknown')}")
                 return False
         else:
-            print(f"❌ API Error: {response.status_code}")
+            print(f" API Error: {response.status_code}")
             if response.status_code == 429:
                 print("   Rate limited - waiting 10 seconds...")
                 time.sleep(10)
             return False
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f" Error: {e}")
         return False
 
 def test_aero_transfer_query(address: str):
@@ -91,7 +91,7 @@ def test_aero_transfer_query(address: str):
             data = response.json()
             if data.get('status') == '1' and data.get('message') == 'OK':
                 transfers = data.get('result', [])
-                print(f"✅ Found {len(transfers)} AERO transfers")
+                print(f" Found {len(transfers)} AERO transfers")
                 
                 if transfers:
                     print("\nSample transfers:")
@@ -110,22 +110,22 @@ def test_aero_transfer_query(address: str):
                 return len(transfers)
             elif data.get('status') == '0':
                 error_msg = data.get('message', '')
-                print(f"❌ API Error: {error_msg}")
+                print(f" API Error: {error_msg}")
                 if 'rate limit' in error_msg.lower():
                     print("   Rate limited - need to wait")
                 return 0
             else:
-                print(f"❌ Unexpected response: {json.dumps(data, indent=2)}")
+                print(f" Unexpected response: {json.dumps(data, indent=2)}")
                 return 0
         elif response.status_code == 429:
-            print("❌ Rate limited (429)")
+            print(" Rate limited (429)")
             return -1
         else:
-            print(f"❌ HTTP Error: {response.status_code}")
+            print(f" HTTP Error: {response.status_code}")
             print(response.text[:500])
             return 0
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f" Error: {e}")
         return 0
 
 def main():
@@ -137,13 +137,13 @@ def main():
     
     # Step 1: Verify AERO token address
     if not verify_aero_token_address():
-        print("\n⚠️  Could not verify AERO token address")
+        print("\n  Could not verify AERO token address")
         print("   This might be the issue - address may be incorrect")
         return
     
     # Step 2: Load farming addresses
     if not os.path.exists('analysis_results.json'):
-        print("\n❌ No analysis_results.json found")
+        print("\n No analysis_results.json found")
         print("   Run main.py first to identify farming addresses")
         return
     
@@ -153,10 +153,10 @@ def main():
     farming_addresses = results.get('patterns', {}).get('farming_addresses', [])
     
     if not farming_addresses:
-        print("\n❌ No farming addresses found")
+        print("\n No farming addresses found")
         return
     
-    print(f"\n✅ Found {len(farming_addresses)} farming addresses")
+    print(f"\n Found {len(farming_addresses)} farming addresses")
     
     # Step 3: Test query on first address
     test_address = farming_addresses[0]
@@ -165,16 +165,16 @@ def main():
     transfer_count = test_aero_transfer_query(test_address)
     
     if transfer_count > 0:
-        print(f"\n✅ SUCCESS: Found {transfer_count} AERO transfers")
+        print(f"\n SUCCESS: Found {transfer_count} AERO transfers")
         print("   The tracking implementation should work!")
     elif transfer_count == 0:
-        print(f"\n⚠️  No transfers found for this address")
+        print(f"\n  No transfers found for this address")
         print("   Possible reasons:")
         print("   1. Address hasn't received AERO rewards yet")
         print("   2. AERO token address is incorrect")
         print("   3. Query parameters need adjustment")
     else:
-        print(f"\n⚠️  Rate limited - need to wait before testing")
+        print(f"\n  Rate limited - need to wait before testing")
     
     print("\n" + "=" * 80)
     print("VERIFICATION COMPLETE")

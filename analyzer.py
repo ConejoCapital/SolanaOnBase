@@ -342,7 +342,7 @@ class VolumeAnalyzer:
         report.append("-" * 80)
         report.append(f"Total Transactions Analyzed: {len(self.df):,}")
         if len(self.df) < 100000:
-            report.append("⚠️  NOTE: This is a partial dataset. Subgraph is still syncing.")
+            report.append("  NOTE: This is a partial dataset. Subgraph is still syncing.")
             report.append("   Expected total: ~1,800,000 transactions")
             report.append("")
         report.append(f"Farmed Volume: {volume_breakdown['farmed_percentage']:.2f}%")

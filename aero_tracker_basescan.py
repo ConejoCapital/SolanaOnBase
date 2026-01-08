@@ -150,7 +150,7 @@ class BasescanAEROTracker:
                 from_block = to_block + 1
                 consecutive_empty += 1
                 if consecutive_empty >= max_consecutive_empty:
-                    print(f"\n   ⚠️  {max_consecutive_empty} consecutive empty ranges, stopping")
+                    print(f"\n     {max_consecutive_empty} consecutive empty ranges, stopping")
                     break
                 continue
             
@@ -167,7 +167,7 @@ class BasescanAEROTracker:
                 from_block = to_block + 1
                 consecutive_empty += 1
                 if consecutive_empty >= max_consecutive_empty:
-                    print(f"\n   ⚠️  {max_consecutive_empty} consecutive empty ranges, stopping")
+                    print(f"\n     {max_consecutive_empty} consecutive empty ranges, stopping")
                     break
                 continue
             

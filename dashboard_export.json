@@ -1,50 +1,50 @@
 {
   "summary": {
-    "transactions_analyzed": 2059484,
+    "transactions_analyzed": 2059829,
     "unique_addresses": 8382,
     "holders_on_basescan": 4238,
     "target_transactions": 2352771,
     "progress_percentage": 87.5,
-    "total_volume_sol": 75903351.33,
-    "total_volume_usd": 10464036014.12,
+    "total_volume_sol": 75941694.56,
+    "total_volume_usd": 10469322011.42,
     "sol_price_usd": 137.86,
-    "pool_volume_sol": 36755383.5,
+    "pool_volume_sol": 36774264.01,
     "pool_volume_pct": 48.4,
-    "non_pool_volume_sol": 39147967.82,
-    "wash_volume_sol": 37365298.75,
-    "wash_volume_usd": 5151180085.67,
+    "non_pool_volume_sol": 39167430.55,
+    "wash_volume_sol": 37384759.73,
+    "wash_volume_usd": 5153862976.38,
     "wash_percentage": 95.4,
-    "organic_volume_sol": 1782668.61,
-    "organic_volume_usd": 245758694.57,
+    "organic_volume_sol": 1782670.34,
+    "organic_volume_usd": 245758933.07,
     "organic_percentage": 4.6,
     "wash_address_count": 86,
     "organic_address_count": 6745,
     "block_sync": {
-      "synced_block": 40556009,
+      "synced_block": 40556176,
       "min_block": 38699339,
       "token_start_block": 38699339
     },
-    "last_updated": "2026-01-08 14:46:41"
+    "last_updated": "2026-01-08 14:51:51"
   },
   "wash_trading_addresses": [
     {
       "address": "0x7c460d504c1600fb8c030ff0d3b7e02bab268309",
-      "total_volume_sol": 18631031.07,
-      "total_volume_usd": 2568473943.56,
+      "total_volume_sol": 18635052.16,
+      "total_volume_usd": 2569028291.25,
       "balance_ratio": 100.0,
       "counterparties": 2,
-      "tx_count": 106914,
+      "tx_count": 106933,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
     },
     {
       "address": "0xecbe25d69f0bc85c8eb42ae9a3b9a212dced96e6",
-      "total_volume_sol": 14676766.95,
-      "total_volume_usd": 2023339092.36,
+      "total_volume_sol": 14691831.0,
+      "total_volume_usd": 2025415821.88,
       "balance_ratio": 99.8,
       "counterparties": 2,
-      "tx_count": 831192,
+      "tx_count": 831464,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -73,11 +73,11 @@
     },
     {
       "address": "0x88fec94eb9f11376e0dcb31ea7babc278d6035c3",
-      "total_volume_sol": 1168393.33,
-      "total_volume_usd": 161074704.94,
+      "total_volume_sol": 1168753.03,
+      "total_volume_usd": 161124293.01,
       "balance_ratio": 99.8,
       "counterparties": 4,
-      "tx_count": 198192,
+      "tx_count": 198234,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -95,11 +95,11 @@
     },
     {
       "address": "0x802b65b5d9016621e66003aed0b16615093f328b",
-      "total_volume_sol": 59062.18,
-      "total_volume_usd": 8142312.08,
-      "balance_ratio": 99.8,
+      "total_volume_sol": 59078.23,
+      "total_volume_usd": 8144525.32,
+      "balance_ratio": 99.9,
       "counterparties": 3,
-      "tx_count": 36691,
+      "tx_count": 36697,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -110,7 +110,7 @@
       "total_volume_usd": 5796167.84,
       "balance_ratio": 99.5,
       "counterparties": 3,
-      "tx_count": 22922,
+      "tx_count": 22924,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -249,11 +249,11 @@
     },
     {
       "address": "0x8d064a0c52a864a99fc1ab09164d3b44d9a0145c",
-      "total_volume_sol": 2411.01,
-      "total_volume_usd": 332382.22,
+      "total_volume_sol": 2411.1,
+      "total_volume_usd": 332394.21,
       "balance_ratio": 99.7,
       "counterparties": 3,
-      "tx_count": 434,
+      "tx_count": 436,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -977,11 +977,11 @@
   "organic_addresses": [
     {
       "address": "0xa25773f75d7190e130d501509d22592151db3915",
-      "total_volume_sol": 1453418.51,
-      "total_volume_usd": 200368275.93,
+      "total_volume_sol": 1453419.43,
+      "total_volume_usd": 200368403.29,
       "balance_ratio": 98.2,
       "counterparties": 234,
-      "tx_count": 430201,
+      "tx_count": 430205,
       "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
@@ -1065,11 +1065,11 @@
     },
     {
       "address": "0xab07de353e15b80fa3b4224d5c8fdf3ac9f50670",
-      "total_volume_sol": 7704.73,
-      "total_volume_usd": 1062173.68,
+      "total_volume_sol": 7705.12,
+      "total_volume_usd": 1062227.72,
       "balance_ratio": 75.1,
       "counterparties": 521,
-      "tx_count": 30273,
+      "tx_count": 30274,
       "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
@@ -1087,11 +1087,11 @@
     },
     {
       "address": "0x4c598ed2d67d2f189263f70cf4573c5c1e6718b3",
-      "total_volume_sol": 5970.1,
-      "total_volume_usd": 823037.41,
+      "total_volume_sol": 5970.52,
+      "total_volume_usd": 823096.46,
       "balance_ratio": 96.0,
       "counterparties": 2249,
-      "tx_count": 35867,
+      "tx_count": 35870,
       "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70

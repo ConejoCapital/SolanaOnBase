@@ -371,6 +371,26 @@ margin-bottom: 32px;
             width: 100%;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border) var(--bg-secondary);
+        }
+        
+        .table-wrapper::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .table-wrapper::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+            border-radius: 4px;
+        }
+        
+        .table-wrapper::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+        
+        .table-wrapper::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
         }
         
         /* Address Tables */
@@ -404,13 +424,21 @@ margin-bottom: 32px;
  background: var(--bg-secondary);
  }
  
- .address {
- font-family: 'JetBrains Mono', monospace;
- font-size: 0.85em;
- }
- 
- .address.wash { color: var(--accent-wash); }
- .address.organic { color: var(--accent-organic); }
+.address {
+font-family: 'JetBrains Mono', monospace;
+font-size: 0.85em;
+text-decoration: none;
+transition: opacity 0.2s;
+display: inline-block;
+}
+
+.address:hover {
+opacity: 0.8;
+text-decoration: underline;
+}
+
+.address.wash { color: var(--accent-wash); }
+.address.organic { color: var(--accent-organic); }
  
  .mono {
  font-family: 'JetBrains Mono', monospace;
@@ -1026,21 +1054,48 @@ text-decoration: underline;
                 -webkit-overflow-scrolling: touch;
                 margin: 0 -16px;
                 padding: 0 16px;
+                scrollbar-width: thin;
+            }
+            
+            .table-wrapper::-webkit-scrollbar {
+                height: 6px;
+            }
+            
+            .table-wrapper::-webkit-scrollbar-track {
+                background: var(--bg-secondary);
+            }
+            
+            .table-wrapper::-webkit-scrollbar-thumb {
+                background: var(--border);
+                border-radius: 3px;
             }
             
             .address-table {
-                min-width: 500px;
+                min-width: 450px;
             }
             
             .address-table th, .address-table td {
-                padding: 12px 10px;
-                font-size: 0.85em;
+                padding: 10px 8px;
+                font-size: 0.8em;
                 white-space: nowrap;
             }
             
             .address-table th:first-child,
             .address-table td:first-child {
-                width: 40px;
+                width: 35px;
+                padding-left: 12px;
+            }
+            
+            /* Address column - allow wrapping on mobile */
+            .address-table td:nth-child(2) {
+                min-width: 120px;
+                max-width: 180px;
+            }
+            
+            .address-table .address {
+                word-break: break-all;
+                white-space: normal;
+                line-height: 1.4;
             }
             
             /* Methodology Sections */
@@ -1204,7 +1259,10 @@ text-decoration: underline;
             .methodology-section h2 { font-size: 1em; }
             
             /* Tables - optimized for small screens */
-            .address-table { min-width: 320px; }
+            .address-table { 
+                min-width: 380px;
+                font-size: 0.75em;
+            }
             
             /* Hide Balance % and Counterparties on very small screens */
             .address-table th:nth-child(5),
@@ -1216,22 +1274,32 @@ text-decoration: underline;
             
             /* Compact table cells */
             .address-table th, .address-table td {
-                padding: 10px 6px;
-                font-size: 0.8em;
-            }
-            
-            /* Address column - more compact */
-            .address-cell {
-                max-width: 100px;
-            }
-            
-            .address-cell a {
+                padding: 8px 6px;
                 font-size: 0.75em;
             }
             
+            /* Address column - better mobile display */
+            .address-cell {
+                min-width: 100px;
+            }
+            
+            .address-cell a {
+                font-size: 0.7em;
+                word-break: break-all;
+                display: block;
+                line-height: 1.3;
+            }
+            
             .address-label {
-                font-size: 0.65em;
-                padding: 2px 6px;
+                font-size: 0.6em;
+                padding: 2px 4px;
+                margin-top: 2px;
+            }
+            
+            /* Volume column - compact numbers */
+            .address-table td:nth-child(3) {
+                font-size: 0.7em;
+                white-space: nowrap;
             }
             
             /* Pagination on small screens */
@@ -2544,18 +2612,31 @@ text-decoration: underline;
  }
  }
  
- function formatNumber(n, decimals = 0) {
- if (n === undefined || n === null || isNaN(n)) return '-';
- return n.toLocaleString(undefined, { maximumFractionDigits: decimals });
- }
- 
- function formatUSD(n) {
- if (n === undefined || n === null || isNaN(n)) return '-';
- if (n >= 1e9) return '$' + (n / 1e9).toFixed(2) + 'B';
- if (n >= 1e6) return '$' + (n / 1e6).toFixed(2) + 'M';
- if (n >= 1e3) return '$' + (n / 1e3).toFixed(1) + 'K';
- return '$' + n.toFixed(2);
- }
+function formatNumber(n, decimals = 0) {
+if (n === undefined || n === null || isNaN(n)) return '-';
+return n.toLocaleString(undefined, { maximumFractionDigits: decimals });
+}
+
+function formatCompactNumber(n, decimals = 1) {
+if (n === undefined || n === null || isNaN(n)) return '-';
+if (n >= 1e9) return (n / 1e9).toFixed(decimals) + 'B';
+if (n >= 1e6) return (n / 1e6).toFixed(decimals) + 'M';
+if (n >= 1e3) return (n / 1e3).toFixed(decimals) + 'K';
+return n.toFixed(decimals);
+}
+
+function formatUSD(n) {
+if (n === undefined || n === null || isNaN(n)) return '-';
+if (n >= 1e9) return '$' + (n / 1e9).toFixed(2) + 'B';
+if (n >= 1e6) return '$' + (n / 1e6).toFixed(2) + 'M';
+if (n >= 1e3) return '$' + (n / 1e3).toFixed(1) + 'K';
+return '$' + n.toFixed(2);
+}
+
+function formatAddress(addr, start = 6, end = 4) {
+if (!addr || addr.length < start + end) return addr;
+return `${addr.slice(0, start)}...${addr.slice(-end)}`;
+}
  
  // Research mode: exclude top traders
  let excludedWash = new Set();
@@ -2780,36 +2861,36 @@ text-decoration: underline;
  if (!dashboardData) return;
  
  // Top wash traders
- const washBody = document.getElementById('topWashTable');
- const topWash = (dashboardData.wash_trading_addresses || []).slice(0, 5);
- if (topWash.length > 0) {
- washBody.innerHTML = topWash.map((a, i) => `
- <tr>
- <td class="mono">${i + 1}</td>
- <td><span class="address wash">${a.address.slice(0, 10)}...${a.address.slice(-8)}</span></td>
- <td class="mono">${formatNumber(a.total_volume_sol, 0)}</td>
- <td class="mono" style="color: var(--accent-wash)">${a.balance_ratio}%</td>
- </tr>
- `).join('');
- } else {
- washBody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--text-muted)">No wash traders detected</td></tr>';
- }
- 
- // Top organic traders
- const organicBody = document.getElementById('topOrganicTable');
- const topOrganic = (dashboardData.organic_addresses || []).slice(0, 5);
- if (topOrganic.length > 0) {
- organicBody.innerHTML = topOrganic.map((a, i) => `
- <tr>
- <td class="mono">${i + 1}</td>
- <td><span class="address organic">${a.address.slice(0, 10)}...${a.address.slice(-8)}</span></td>
- <td class="mono">${formatNumber(a.total_volume_sol, 0)}</td>
- <td class="mono">${a.counterparties}</td>
- </tr>
- `).join('');
- } else {
- organicBody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--text-muted)">Loading...</td></tr>';
- }
+const washBody = document.getElementById('topWashTable');
+const topWash = (dashboardData.wash_trading_addresses || []).slice(0, 5);
+if (topWash.length > 0) {
+washBody.innerHTML = topWash.map((a, i) => `
+<tr>
+<td class="mono">${i + 1}</td>
+<td><a href="https://basescan.org/address/${a.address}" target="_blank" class="address wash" title="${a.address}">${formatAddress(a.address, 6, 4)}</a></td>
+<td class="mono">${formatCompactNumber(a.total_volume_sol || 0)} SOL</td>
+<td class="mono" style="color: var(--accent-wash)">${(a.balance_ratio || 0).toFixed(1)}%</td>
+</tr>
+`).join('');
+} else {
+washBody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--text-muted)">No wash traders detected</td></tr>';
+}
+
+// Top organic traders
+const organicBody = document.getElementById('topOrganicTable');
+const topOrganic = (dashboardData.organic_addresses || []).slice(0, 5);
+if (topOrganic.length > 0) {
+organicBody.innerHTML = topOrganic.map((a, i) => `
+<tr>
+<td class="mono">${i + 1}</td>
+<td><a href="https://basescan.org/address/${a.address}" target="_blank" class="address organic" title="${a.address}">${formatAddress(a.address, 6, 4)}</a></td>
+<td class="mono">${formatCompactNumber(a.total_volume_sol || 0)} SOL</td>
+<td class="mono">${a.counterparties || 0}</td>
+</tr>
+`).join('');
+} else {
+organicBody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--text-muted)">Loading...</td></tr>';
+}
  }
  
         function renderAddressTable(addresses, tableId, paginationId, pageInfoId, currentPage, addressClass) {
@@ -2832,14 +2913,14 @@ text-decoration: underline;
                         <td class="mono">${start + i + 1}</td>
                         <td>
                             <div class="address-cell">
-                                <a href="https://basescan.org/address/${a.address}" target="_blank" class="address ${addressClass}">${a.address.slice(0,10)}...${a.address.slice(-4)}</a>
+                                <a href="https://basescan.org/address/${a.address}" target="_blank" class="address ${addressClass}" title="${a.address}">${formatAddress(a.address, 6, 4)}</a>
                                 <div class="address-label ${a.label_type || ''}" title="${a.label_source || 'Unknown source'}">${a.label || 'Unknown'}</div>
                             </div>
                         </td>
-                        <td class="mono">${formatNumber(volume, 0)}</td>
-                        <td class="mono" style="color: ${pctOfTotal > 10 ? 'var(--accent-wash)' : pctOfTotal > 1 ? 'var(--accent-warning)' : 'var(--text-secondary)'};">${pctOfTotal.toFixed(2)}%</td>
-                        <td class="mono">${a.balance_ratio}%</td>
-                        <td class="mono">${a.counterparties}</td>
+                        <td class="mono">${formatCompactNumber(volume)} SOL</td>
+                        <td class="mono" style="color: ${pctOfTotal > 10 ? 'var(--accent-wash)' : pctOfTotal > 1 ? 'var(--accent-warning)' : 'var(--text-secondary)'};">${pctOfTotal.toFixed(1)}%</td>
+                        <td class="mono">${(a.balance_ratio || 0).toFixed(1)}%</td>
+                        <td class="mono">${a.counterparties || 0}</td>
                     </tr>
                 `}).join('');
             } else {

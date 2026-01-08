@@ -340,11 +340,18 @@
  margin: 20px 0;
  }
  
- /* Address Tables */
- .address-table {
- width: 100%;
- border-collapse: collapse;
- }
+        /* Table Wrapper for Mobile Scroll */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        /* Address Tables */
+        .address-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
  
  .address-table th {
  text-align: left;
@@ -718,106 +725,281 @@
  .two-col { grid-template-columns: 1fr; }
  }
  
- @media (max-width: 768px) {
- /* Navigation */
- .mobile-menu-btn { display: block; }
- 
- .nav-links {
- display: none;
- position: absolute;
- top: 70px;
- left: 0;
- right: 0;
- background: var(--bg-primary);
- flex-direction: column;
- padding: 20px;
- border-bottom: 1px solid var(--border);
- }
- 
- .nav-links.open { display: flex; }
- 
- .nav-link {
- padding: 15px 20px;
- width: 100%;
- text-align: center;
- }
- 
- /* Main Layout */
- .main { padding: 80px 15px 30px; }
- 
- /* Header */
- .header h1 { font-size: 1.8em; }
- .header .subtitle { font-size: 1em; }
- 
- /* Stats Grid */
- .stats-grid { grid-template-columns: 1fr; gap: 12px; }
- 
- /* Cards */
- .card { padding: 20px; }
- .card-header { flex-direction: column; align-items: flex-start; gap: 10px; }
- 
- /* Volume Breakdown */
- .volume-pct { font-size: 2.5em; }
- .volume-section { padding: 20px; }
- 
- /* Progress Bar */
- .progress-container { height: 40px; }
- .progress-wash, .progress-organic { font-size: 0.75em; }
- 
- /* Tables */
- .address-table th, .address-table td {
- padding: 10px 8px;
- font-size: 0.85em;
- }
- 
- .address-table th:nth-child(3),
- .address-table td:nth-child(3),
- .address-table th:nth-child(4),
- .address-table td:nth-child(4) {
- display: none;
- }
- 
- /* Methodology */
- .methodology-section { padding: 20px; }
- .methodology-section h2 { font-size: 1.2em; }
- .criteria-list li { flex-direction: column; gap: 10px; }
- .criteria-list i { margin: 0; }
- 
- /* Research Mode Panel */
- .research-panel { grid-template-columns: 1fr !important; }
- 
- /* Token Badges */
- .token-badges { flex-direction: column; align-items: flex-start; }
- 
- /* Charts */
- .chart-container { height: 250px; }
- 
- /* Backfill Stats */
- .backfill-stats { grid-template-columns: 1fr; }
- 
- /* Address Display */
- .mono { font-size: 0.8em; word-break: break-all; }
- 
- /* Pagination */
- .pagination { flex-wrap: wrap; justify-content: center; }
- .pagination button { padding: 8px 12px; font-size: 0.85em; }
- }
- 
- @media (max-width: 480px) {
- .header h1 { font-size: 1.5em; }
- .nav-brand { font-size: 1.1em; }
- .volume-pct { font-size: 2em; }
- .card { padding: 15px; }
- .stats-grid { gap: 10px; }
- 
- /* Hide less important columns on very small screens */
- .address-table th:nth-child(2),
- .address-table td:nth-child(2) {
- max-width: 100px;
- overflow: hidden;
- text-overflow: ellipsis;
- }
- }
+/* ============================================
+           MOBILE RESPONSIVE STYLES
+           ============================================ */
+        
+        @media (max-width: 1024px) {
+            .stats-grid, .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .two-col { grid-template-columns: 1fr; }
+        }
+        
+        @media (max-width: 768px) {
+            /* Navigation */
+            .mobile-menu-btn { display: block; }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--bg-primary);
+                flex-direction: column;
+                padding: 20px;
+                border-bottom: 1px solid var(--border);
+                z-index: 999;
+            }
+            
+            .nav-links.open { display: flex; }
+            
+            .nav-link {
+                padding: 15px 20px;
+                width: 100%;
+                text-align: center;
+                border-radius: 8px;
+            }
+            
+            .nav-brand span { font-size: 0.9em; }
+            
+            /* Main Layout */
+            .main { padding: 80px 12px 30px; }
+            
+            /* Header */
+            .header { margin-bottom: 25px; }
+            .header h1 { font-size: 1.6em; line-height: 1.2; }
+            .header .subtitle { font-size: 0.95em; line-height: 1.5; }
+            
+            /* Token Badges */
+            .token-badges { 
+                flex-direction: column; 
+                align-items: stretch;
+                gap: 8px;
+            }
+            .token-badge {
+                font-size: 0.8em;
+                padding: 10px 12px;
+                word-break: break-all;
+            }
+            
+            /* Stats Grid / Row */
+            .stats-grid, .stats-row { 
+                grid-template-columns: 1fr; 
+                gap: 12px; 
+            }
+            .stat-card { padding: 18px; }
+            .stat-value { font-size: 1.8em; }
+            .stat-label { font-size: 0.8em; }
+            
+            /* Cards */
+            .card { 
+                padding: 16px; 
+                border-radius: 12px;
+            }
+            .card-header { 
+                flex-direction: column; 
+                align-items: flex-start; 
+                gap: 10px; 
+            }
+            .card-title { font-size: 1em; }
+            
+            /* Volume Breakdown */
+            .volume-breakdown { 
+                grid-template-columns: 1fr; 
+                gap: 12px;
+            }
+            .volume-section { padding: 20px 15px; }
+            .volume-pct { font-size: 2.8em; }
+            .volume-amount { font-size: 1em; }
+            
+            /* Progress Bar */
+            .progress-container { 
+                height: 36px; 
+                border-radius: 8px;
+            }
+            .progress-wash, .progress-organic { 
+                font-size: 0.7em;
+                padding: 0 8px;
+            }
+            
+            /* Research Mode Panel */
+            [style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Tables - Horizontal Scroll Wrapper */
+            .table-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                margin: 0 -16px;
+                padding: 0 16px;
+            }
+            
+            .address-table {
+                min-width: 500px;
+            }
+            
+            .address-table th, .address-table td {
+                padding: 12px 10px;
+                font-size: 0.85em;
+                white-space: nowrap;
+            }
+            
+            .address-table th:first-child,
+            .address-table td:first-child {
+                width: 40px;
+            }
+            
+            /* Methodology Sections */
+            .methodology-section { 
+                padding: 18px; 
+                margin-bottom: 16px;
+                border-radius: 12px;
+            }
+            .methodology-section h2 { 
+                font-size: 1.1em; 
+                line-height: 1.3;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .methodology-section p { 
+                font-size: 0.9em; 
+                line-height: 1.6;
+            }
+            
+            /* Criteria Lists */
+            .criteria-list { padding-left: 0; }
+            .criteria-list li { 
+                flex-direction: column; 
+                gap: 8px;
+                padding: 12px;
+                margin-bottom: 10px;
+            }
+            .criteria-list i { 
+                margin: 0;
+                font-size: 1.2em;
+            }
+            
+            /* Code blocks and addresses */
+            code, .mono {
+                font-size: 0.75em;
+                word-break: break-all;
+                display: inline-block;
+                max-width: 100%;
+            }
+            
+            /* Grids inside methodology */
+            [style*="display: grid"][style*="gap: 15px"] {
+                gap: 10px !important;
+            }
+            
+            [style*="grid-template-columns: repeat(auto-fit"] {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Backfill Stats */
+            .backfill-stats { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 10px;
+            }
+            .backfill-stat { padding: 10px 12px; }
+            .backfill-stat .value { font-size: 1em; }
+            
+            /* Block Sync Card */
+            [style*="display: grid"][style*="minmax(200px"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            
+            /* Charts */
+            .chart-container { height: 220px; }
+            
+            /* Pagination */
+            .pagination { 
+                flex-wrap: wrap; 
+                justify-content: center;
+                gap: 6px;
+            }
+            .pagination button { 
+                padding: 10px 14px; 
+                font-size: 0.85em;
+                min-width: 44px;
+            }
+            
+            /* Footer */
+            .footer { padding: 30px 15px; }
+            .footer p { font-size: 0.85em; }
+            
+            /* Evidence sections */
+            [style*="display: grid"][style*="grid-template-columns: 1fr 1fr"][style*="gap: 20px"] {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Lists */
+            ol, ul { padding-left: 20px; }
+            li { margin-bottom: 8px; }
+        }
+        
+        @media (max-width: 480px) {
+            /* Extra small screens */
+            .main { padding: 75px 10px 25px; }
+            
+            .header h1 { font-size: 1.4em; }
+            .header .subtitle { font-size: 0.9em; }
+            
+            .nav-brand { font-size: 1em; }
+            .nav-brand span { display: none; }
+            
+            .volume-pct { font-size: 2.2em; }
+            .volume-section { padding: 16px 12px; }
+            
+            .stat-card { padding: 14px; }
+            .stat-value { font-size: 1.5em; }
+            
+            .card { padding: 12px; }
+            .card-title { font-size: 0.95em; }
+            
+            .methodology-section { padding: 14px; }
+            .methodology-section h2 { font-size: 1em; }
+            
+            /* Tables - show fewer columns */
+            .address-table { min-width: 350px; }
+            
+            .address-table th:nth-child(4),
+            .address-table td:nth-child(4),
+            .address-table th:nth-child(5),
+            .address-table td:nth-child(5) {
+                display: none;
+            }
+            
+            /* Backfill stats */
+            .backfill-stats { grid-template-columns: 1fr; }
+            
+            /* Block sync */
+            [style*="display: grid"][style*="minmax(200px"] {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Simplify complex layouts */
+            [style*="display: flex"][style*="gap: 15px"] {
+                flex-direction: column !important;
+            }
+        }
+        
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .nav-link, .pagination button, button, a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .address-table td a {
+                padding: 4px 0;
+                display: inline-block;
+            }
+        }
  </style>
 </head>
 <body>
@@ -1047,46 +1229,50 @@
  </div>
  </div>
  
- <!-- Top Addresses -->
- <div class="two-col">
- <div class="card">
- <div class="card-header">
- <h2 class="card-title"><i class="fas fa-tractor"></i> Top Wash Traders</h2>
- </div>
- <table class="address-table">
- <thead>
- <tr>
- <th>#</th>
- <th>Address</th>
- <th>Volume</th>
- <th>Balance %</th>
- </tr>
- </thead>
- <tbody id="topWashTable">
- <tr><td colspan="4" class="loading"><div class="spinner"></div>Loading...</td></tr>
- </tbody>
- </table>
- </div>
- 
- <div class="card">
- <div class="card-header">
- <h2 class="card-title"><i class="fas fa-leaf"></i> Top Organic Traders</h2>
- </div>
- <table class="address-table">
- <thead>
- <tr>
- <th>#</th>
- <th>Address</th>
- <th>Volume</th>
- <th>Counterparties</th>
- </tr>
- </thead>
- <tbody id="topOrganicTable">
- <tr><td colspan="4" class="loading"><div class="spinner"></div>Loading...</td></tr>
- </tbody>
- </table>
- </div>
- </div>
+            <!-- Top Addresses -->
+            <div class="two-col">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-tractor"></i> Top Wash Traders</h2>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="address-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Address</th>
+                                    <th>Volume</th>
+                                    <th>Balance %</th>
+                                </tr>
+                            </thead>
+                            <tbody id="topWashTable">
+                                <tr><td colspan="4" class="loading"><div class="spinner"></div>Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-leaf"></i> Top Organic Traders</h2>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="address-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Address</th>
+                                    <th>Volume</th>
+                                    <th>Counterparties</th>
+                                </tr>
+                            </thead>
+                            <tbody id="topOrganicTable">
+                                <tr><td colspan="4" class="loading"><div class="spinner"></div>Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
  </section>
  
  <!-- Methodology Page -->
@@ -1738,66 +1924,66 @@
  </div>
  </section>
  
- <!-- Wash Trading Addresses Page -->
- <section id="wash-addresses" class="page">
- <div class="header">
- <h1><span style="color: var(--accent-wash)"> Wash Trading</span> Addresses</h1>
- <p class="subtitle">All addresses classified as wash trading based on their trading patterns</p>
- </div>
- 
- <div class="card">
- <div class="card-header">
- <h2 class="card-title"><i class="fas fa-list"></i> Complete List (<span id="washCount">0</span> addresses)</h2>
- </div>
- <table class="address-table">
- <thead>
- <tr>
- <th>#</th>
- <th>Address & Label</th>
- <th>Volume (SOL)</th>
- <th>Volume (USD)</th>
- <th>Balance %</th>
- <th>Counterparties</th>
- <th>Confidence</th>
- </tr>
- </thead>
- <tbody id="washAddressesTable">
- <tr><td colspan="7" class="loading"><div class="spinner"></div>Loading...</td></tr>
- </tbody>
- </table>
- <div class="pagination" id="washPagination"></div>
- <div class="page-info" id="washPageInfo"></div>
- </div>
- </section>
- 
- <!-- Organic Addresses Page -->
- <section id="organic-addresses" class="page">
- <div class="header">
- <h1><span style="color: var(--accent-organic)"> Organic</span> Addresses</h1>
- <p class="subtitle">All addresses classified as organic traders</p>
- </div>
- 
- <div class="card">
- <div class="card-header">
- <h2 class="card-title"><i class="fas fa-list"></i> Complete List (<span id="organicCount">0</span> addresses)</h2>
- </div>
- <table class="address-table">
- <thead>
- <tr>
- <th>#</th>
- <th>Address & Label</th>
- <th>Volume (SOL)</th>
- <th>Volume (USD)</th>
- <th>Balance %</th>
- <th>Counterparties</th>
- <th>Confidence</th>
- </tr>
- </thead>
- <tbody id="organicAddressesTable">
- <tr><td colspan="7" class="loading"><div class="spinner"></div>Loading...</td></tr>
- </tbody>
- </table>
- <div class="pagination" id="organicPagination"></div>
+    <!-- Wash Trading Addresses Page -->
+    <section id="wash-addresses" class="page">
+        <div class="header">
+            <h1><span style="color: var(--accent-wash)">Wash Trading</span> Addresses</h1>
+            <p class="subtitle">All addresses classified as wash trading based on their trading patterns</p>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title"><i class="fas fa-list"></i> Complete List (<span id="washCount">0</span> addresses)</h2>
+            </div>
+            <div class="table-wrapper">
+                <table class="address-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Address & Label</th>
+                            <th>Balance %</th>
+                            <th>Counterparties</th>
+                            <th>Confidence</th>
+                        </tr>
+                    </thead>
+                    <tbody id="washAddressesTable">
+                        <tr><td colspan="5" class="loading"><div class="spinner"></div>Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination" id="washPagination"></div>
+            <div class="page-info" id="washPageInfo"></div>
+        </div>
+    </section>
+    
+    <!-- Organic Addresses Page -->
+    <section id="organic-addresses" class="page">
+        <div class="header">
+            <h1><span style="color: var(--accent-organic)">Organic</span> Addresses</h1>
+            <p class="subtitle">All addresses classified as organic traders</p>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title"><i class="fas fa-list"></i> Complete List (<span id="organicCount">0</span> addresses)</h2>
+            </div>
+            <div class="table-wrapper">
+                <table class="address-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Address & Label</th>
+                            <th>Balance %</th>
+                            <th>Counterparties</th>
+                            <th>Confidence</th>
+                        </tr>
+                    </thead>
+                    <tbody id="organicAddressesTable">
+                        <tr><td colspan="5" class="loading"><div class="spinner"></div>Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination" id="organicPagination"></div>
  <div class="page-info" id="organicPageInfo"></div>
  </div>
  </section>
@@ -2219,34 +2405,32 @@
  }
  }
  
- function renderAddressTable(addresses, tableId, paginationId, pageInfoId, currentPage, addressClass) {
- const totalPages = Math.ceil(addresses.length / ITEMS_PER_PAGE);
- const start = (currentPage - 1) * ITEMS_PER_PAGE;
- const end = start + ITEMS_PER_PAGE;
- const pageAddresses = addresses.slice(start, end);
- 
- // Table body
- const tbody = document.getElementById(tableId);
- if (pageAddresses.length > 0) {
- tbody.innerHTML = pageAddresses.map((a, i) => `
- <tr>
- <td class="mono">${start + i + 1}</td>
- <td>
- <div class="address-cell">
- <a href="https://basescan.org/address/${a.address}" target="_blank" class="address ${addressClass}">${a.address.slice(0,10)}...${a.address.slice(-8)}</a>
- <div class="address-label ${a.label_type || ''}" title="${a.label_source || 'Unknown source'}">${a.label || 'Unknown'}</div>
- </div>
- </td>
- <td class="mono">${formatNumber(a.total_volume_sol, 2)}</td>
- <td class="mono">${formatUSD(a.total_volume_usd)}</td>
- <td class="mono">${a.balance_ratio}%</td>
- <td class="mono">${a.counterparties}</td>
- <td class="mono">${a.label_confidence || 0}%</td>
- </tr>
- `).join('');
- } else {
- tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:var(--text-muted)">No addresses found</td></tr>';
- }
+        function renderAddressTable(addresses, tableId, paginationId, pageInfoId, currentPage, addressClass) {
+            const totalPages = Math.ceil(addresses.length / ITEMS_PER_PAGE);
+            const start = (currentPage - 1) * ITEMS_PER_PAGE;
+            const end = start + ITEMS_PER_PAGE;
+            const pageAddresses = addresses.slice(start, end);
+            
+            // Table body
+            const tbody = document.getElementById(tableId);
+            if (pageAddresses.length > 0) {
+                tbody.innerHTML = pageAddresses.map((a, i) => `
+                    <tr>
+                        <td class="mono">${start + i + 1}</td>
+                        <td>
+                            <div class="address-cell">
+                                <a href="https://basescan.org/address/${a.address}" target="_blank" class="address ${addressClass}">${a.address.slice(0,10)}...${a.address.slice(-4)}</a>
+                                <div class="address-label ${a.label_type || ''}" title="${a.label_source || 'Unknown source'}">${a.label || 'Unknown'}</div>
+                            </div>
+                        </td>
+                        <td class="mono">${a.balance_ratio}%</td>
+                        <td class="mono">${a.counterparties}</td>
+                        <td class="mono">${a.label_confidence || 0}%</td>
+                    </tr>
+                `).join('');
+            } else {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-muted)">No addresses found</td></tr>';
+            }
  
  // Pagination
  const pag = document.getElementById(paginationId);

@@ -680,6 +680,43 @@
  color: #888;
  }
  
+/* Collapsible Sections */
+.collapsible-section {
+background: var(--bg-card);
+border: 1px solid var(--border);
+border-radius: 16px;
+overflow: hidden;
+}
+
+.collapsible-header {
+display: flex;
+align-items: center;
+padding: 20px 24px;
+font-size: 1.1em;
+font-weight: 600;
+color: var(--text-primary);
+cursor: pointer;
+user-select: none;
+transition: background 0.2s;
+}
+
+.collapsible-header:hover {
+background: var(--bg-secondary);
+}
+
+.collapsible-header i:first-child {
+margin-right: 12px;
+color: var(--accent-organic);
+}
+
+details[open] .collapsible-header i:last-child {
+transform: rotate(180deg);
+}
+
+.collapsible-content {
+padding: 0 24px 24px 24px;
+}
+
 /* Footer */
 .footer {
 text-align: center;
@@ -1379,7 +1416,82 @@ text-decoration: underline;
  </div>
  </div>
  
-            <!-- Top Addresses -->
+             <!-- Collapsible Technical Details -->
+            <details class="collapsible-section" style="margin-top: 20px;">
+                <summary class="collapsible-header">
+                    <i class="fas fa-sync-alt"></i> Block Sync Status
+                    <i class="fas fa-chevron-down" style="margin-left: auto; transition: transform 0.3s;"></i>
+                </summary>
+                <div class="collapsible-content">
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-label">Synced Block</div>
+                            <div class="stat-value" id="syncedBlock" style="color: var(--accent-organic)">-</div>
+                            <div class="stat-sub">Latest block with transactions</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Latest Base Block</div>
+                            <div class="stat-value" id="latestBlock">-</div>
+                            <div class="stat-sub">Current network block</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Blocks Behind</div>
+                            <div class="stat-value" id="blocksBehind" style="color: var(--accent-warning)">-</div>
+                            <div class="stat-sub" id="blockSyncPct">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Block Sync Progress</div>
+                            <div class="stat-value" id="blockSyncProgress" style="color: var(--accent-info)">-</div>
+                            <div class="stat-sub">From token start (38,699,339)</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <details class="collapsible-section" style="margin-top: 15px;">
+                <summary class="collapsible-header">
+                    <i class="fas fa-download"></i> Live Backfill Status
+                    <span id="backfillIndicator" class="status-badge" style="font-size: 0.8em; margin-left: 10px;">
+                        <i class="fas fa-circle-notch fa-spin"></i> Checking...
+                    </span>
+                    <i class="fas fa-chevron-down" style="margin-left: auto; transition: transform 0.3s;"></i>
+                </summary>
+                <div class="collapsible-content">
+                    <div class="backfill-status">
+                        <div class="backfill-main">
+                            <div class="backfill-state" id="backfillState">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <span>Loading status...</span>
+                            </div>
+                            <div class="backfill-activity" id="backfillActivity">-</div>
+                        </div>
+                        <div class="backfill-stats">
+                            <div class="backfill-stat">
+                                <span class="label">Transactions Fetched:</span>
+                                <span class="value" id="backfillTxCount">-</span>
+                            </div>
+                            <div class="backfill-stat">
+                                <span class="label">API Requests:</span>
+                                <span class="value" id="backfillRequests">-</span>
+                            </div>
+                            <div class="backfill-stat">
+                                <span class="label">Gaps Remaining:</span>
+                                <span class="value" id="backfillGaps">-</span>
+                            </div>
+                            <div class="backfill-stat">
+                                <span class="label">Req/min:</span>
+                                <span class="value" id="backfillRate">-</span>
+                            </div>
+                        </div>
+                        <div class="backfill-errors" id="backfillErrors" style="display: none;">
+                            <strong>Recent Errors:</strong>
+                            <ul id="backfillErrorList"></ul>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+           <!-- Top Addresses -->
             <div class="two-col">
                 <div class="card">
                     <div class="card-header">
@@ -2250,6 +2362,9 @@ text-decoration: underline;
         
         <p class="footer-info">Volume Analysis Report &bull; Base Network (L2) &bull; Data from Routescan API</p>
         <p class="footer-updated">Last updated: <span id="lastUpdated">-</span></p>
+        <p style="margin-top: 10px; padding: 10px 15px; background: rgba(0,255,170,0.1); border-radius: 8px; font-size: 0.9em; color: var(--accent-organic);">
+            <i class="fas fa-info-circle"></i> Backfill process will restart soon to continue fetching remaining transactions
+        </p>
         <p class="footer-github">
             <a href="https://github.com/ConejoCapital/SolanaOnBase" target="_blank">
                 <i class="fab fa-github"></i> github.com/ConejoCapital/SolanaOnBase

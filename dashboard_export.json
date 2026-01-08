@@ -1,61 +1,61 @@
 {
   "summary": {
-    "transactions_analyzed": 1965710,
-    "unique_addresses": 8194,
+    "transactions_analyzed": 2057918,
+    "unique_addresses": 8380,
     "holders_on_basescan": 4238,
     "target_transactions": 2352771,
-    "progress_percentage": 83.5,
-    "total_volume_sol": 70752506.91,
-    "total_volume_usd": 9753940602.56,
+    "progress_percentage": 87.5,
+    "total_volume_sol": 75807986.57,
+    "total_volume_usd": 10450889028.15,
     "sol_price_usd": 137.86,
-    "pool_volume_sol": 34193886.86,
-    "pool_volume_pct": 48.3,
-    "non_pool_volume_sol": 36558620.05,
-    "wash_volume_sol": 34812047.16,
-    "wash_volume_usd": 4799188821.48,
-    "wash_percentage": 95.2,
-    "organic_volume_sol": 1746572.39,
-    "organic_volume_usd": 240782469.69,
-    "organic_percentage": 4.8,
+    "pool_volume_sol": 36708768.13,
+    "pool_volume_pct": 48.4,
+    "non_pool_volume_sol": 39099218.44,
+    "wash_volume_sol": 37317896.42,
+    "wash_volume_usd": 5144645200.46,
+    "wash_percentage": 95.4,
+    "organic_volume_sol": 1781321.55,
+    "organic_volume_usd": 245572988.88,
+    "organic_percentage": 4.6,
     "wash_address_count": 86,
-    "organic_address_count": 6605,
+    "organic_address_count": 6744,
     "block_sync": {
-      "synced_block": 40511280,
+      "synced_block": 40555322,
       "min_block": 38699339,
       "token_start_block": 38699339
     },
-    "last_updated": "2026-01-08 14:18:01"
+    "last_updated": "2026-01-08 14:26:09"
   },
   "wash_trading_addresses": [
     {
       "address": "0x7c460d504c1600fb8c030ff0d3b7e02bab268309",
-      "total_volume_sol": 18190361.89,
-      "total_volume_usd": 2507723290.02,
+      "total_volume_sol": 18618148.79,
+      "total_volume_usd": 2566697992.04,
       "balance_ratio": 100.0,
       "counterparties": 2,
-      "tx_count": 103698,
+      "tx_count": 106838,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
     },
     {
       "address": "0xecbe25d69f0bc85c8eb42ae9a3b9a212dced96e6",
-      "total_volume_sol": 12681217.76,
-      "total_volume_usd": 1748232679.86,
+      "total_volume_sol": 14644701.7,
+      "total_volume_usd": 2018918575.84,
       "balance_ratio": 99.8,
       "counterparties": 2,
-      "tx_count": 764888,
+      "tx_count": 830150,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
     },
     {
       "address": "0xdb0253708c484ac5b6710b3b6ee7ac896f643d33",
-      "total_volume_sol": 1333103.23,
-      "total_volume_usd": 183781611.6,
+      "total_volume_sol": 1346484.46,
+      "total_volume_usd": 185626347.63,
       "balance_ratio": 99.9,
       "counterparties": 1,
-      "tx_count": 371554,
+      "tx_count": 376137,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -73,11 +73,11 @@
     },
     {
       "address": "0x88fec94eb9f11376e0dcb31ea7babc278d6035c3",
-      "total_volume_sol": 1072757.95,
-      "total_volume_usd": 147890411.67,
+      "total_volume_sol": 1166947.19,
+      "total_volume_usd": 160875339.34,
       "balance_ratio": 99.9,
       "counterparties": 4,
-      "tx_count": 185145,
+      "tx_count": 198000,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -95,11 +95,22 @@
     },
     {
       "address": "0x802b65b5d9016621e66003aed0b16615093f328b",
-      "total_volume_sol": 56662.67,
-      "total_volume_usd": 7811515.23,
-      "balance_ratio": 99.9,
+      "total_volume_sol": 59038.9,
+      "total_volume_usd": 8139103.15,
+      "balance_ratio": 99.8,
       "counterparties": 3,
-      "tx_count": 34603,
+      "tx_count": 36677,
+      "label": "\ud83d\ude9c Wash Trader",
+      "label_type": "wash_trader",
+      "label_confidence": 95
+    },
+    {
+      "address": "0x3a32d2987b86a9c5552921289b8d4470075d360f",
+      "total_volume_sol": 42041.25,
+      "total_volume_usd": 5795806.46,
+      "balance_ratio": 99.5,
+      "counterparties": 3,
+      "tx_count": 22910,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -111,17 +122,6 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 3,
-      "label": "\ud83d\ude9c Wash Trader",
-      "label_type": "wash_trader",
-      "label_confidence": 95
-    },
-    {
-      "address": "0x3a32d2987b86a9c5552921289b8d4470075d360f",
-      "total_volume_sol": 40327.23,
-      "total_volume_usd": 5559512.4,
-      "balance_ratio": 99.8,
-      "counterparties": 3,
-      "tx_count": 22040,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -182,6 +182,17 @@
       "label_confidence": 95
     },
     {
+      "address": "0xd0d08887e8a5b16049534a7f3fc1de92848f5bea",
+      "total_volume_sol": 6146.29,
+      "total_volume_usd": 847327.47,
+      "balance_ratio": 99.3,
+      "counterparties": 8,
+      "tx_count": 1174,
+      "label": "\ud83d\ude9c Wash Trader",
+      "label_type": "wash_trader",
+      "label_confidence": 95
+    },
+    {
       "address": "0x8bb2a96517c256467474e9c66b5ff8de1602c30e",
       "total_volume_sol": 5977.38,
       "total_volume_usd": 824041.68,
@@ -193,34 +204,23 @@
       "label_confidence": 95
     },
     {
-      "address": "0xd0d08887e8a5b16049534a7f3fc1de92848f5bea",
-      "total_volume_sol": 4143.02,
-      "total_volume_usd": 571157.0,
-      "balance_ratio": 98.6,
-      "counterparties": 8,
-      "tx_count": 728,
-      "label": "\ud83d\ude9c Wash Trader",
-      "label_type": "wash_trader",
-      "label_confidence": 95
-    },
-    {
       "address": "0x4f1bc131713117fbbf8077d777b116cb20d6e7e9",
-      "total_volume_sol": 4032.23,
-      "total_volume_usd": 555883.83,
-      "balance_ratio": 97.7,
+      "total_volume_sol": 4250.8,
+      "total_volume_usd": 586014.93,
+      "balance_ratio": 95.4,
       "counterparties": 4,
-      "tx_count": 2713,
+      "tx_count": 2812,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
     },
     {
       "address": "0xf333557cb5e69ba9e4b870f6b326f8386a40e826",
-      "total_volume_sol": 3308.01,
-      "total_volume_usd": 456042.87,
+      "total_volume_sol": 3399.17,
+      "total_volume_usd": 468609.23,
       "balance_ratio": 99.9,
       "counterparties": 4,
-      "tx_count": 1083,
+      "tx_count": 1126,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -249,11 +249,11 @@
     },
     {
       "address": "0x8d064a0c52a864a99fc1ab09164d3b44d9a0145c",
-      "total_volume_sol": 2392.19,
-      "total_volume_usd": 329786.85,
+      "total_volume_sol": 2410.76,
+      "total_volume_usd": 332347.31,
       "balance_ratio": 99.7,
       "counterparties": 3,
-      "tx_count": 411,
+      "tx_count": 432,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -325,23 +325,23 @@
       "label_confidence": 95
     },
     {
+      "address": "0x0f34656ce5d009d0a48ca687fd31d6721f933722",
+      "total_volume_sol": 2325.55,
+      "total_volume_usd": 320599.97,
+      "balance_ratio": 99.7,
+      "counterparties": 1,
+      "tx_count": 322,
+      "label": "\ud83d\ude9c Wash Trader",
+      "label_type": "wash_trader",
+      "label_confidence": 95
+    },
+    {
       "address": "0x036027b05e2bd6ed6a98fbfeb096bfdd0fb36215",
       "total_volume_sol": 2042.69,
       "total_volume_usd": 281605.67,
       "balance_ratio": 100.0,
       "counterparties": 1,
       "tx_count": 138,
-      "label": "\ud83d\ude9c Wash Trader",
-      "label_type": "wash_trader",
-      "label_confidence": 95
-    },
-    {
-      "address": "0x0f34656ce5d009d0a48ca687fd31d6721f933722",
-      "total_volume_sol": 1870.95,
-      "total_volume_usd": 257929.8,
-      "balance_ratio": 98.9,
-      "counterparties": 1,
-      "tx_count": 261,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -402,6 +402,17 @@
       "label_confidence": 95
     },
     {
+      "address": "0x79aa95d8aee46df6f106ab8641d1b6ebeaafd023",
+      "total_volume_sol": 647.31,
+      "total_volume_usd": 89238.73,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 144,
+      "label": "\ud83d\ude9c Wash Trader",
+      "label_type": "wash_trader",
+      "label_confidence": 95
+    },
+    {
       "address": "0x4752e3c3a01fa6491397c983aed178b73a3431e0",
       "total_volume_sol": 605.99,
       "total_volume_usd": 83541.53,
@@ -413,23 +424,12 @@
       "label_confidence": 95
     },
     {
-      "address": "0x79aa95d8aee46df6f106ab8641d1b6ebeaafd023",
-      "total_volume_sol": 507.01,
-      "total_volume_usd": 69896.53,
-      "balance_ratio": 100.0,
-      "counterparties": 2,
-      "tx_count": 111,
-      "label": "\ud83d\ude9c Wash Trader",
-      "label_type": "wash_trader",
-      "label_confidence": 95
-    },
-    {
       "address": "0x4af1e335df2121d796a1f9798dd636b1b5fcce51",
-      "total_volume_sol": 425.55,
-      "total_volume_usd": 58666.91,
+      "total_volume_sol": 442.3,
+      "total_volume_usd": 60974.8,
       "balance_ratio": 100.0,
       "counterparties": 2,
-      "tx_count": 81,
+      "tx_count": 83,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -469,11 +469,11 @@
     },
     {
       "address": "0x3242840eba9db42a0787903b546f02f1e8cb0a82",
-      "total_volume_sol": 372.94,
-      "total_volume_usd": 51412.86,
-      "balance_ratio": 98.6,
-      "counterparties": 3,
-      "tx_count": 3525,
+      "total_volume_sol": 373.16,
+      "total_volume_usd": 51443.17,
+      "balance_ratio": 98.5,
+      "counterparties": 4,
+      "tx_count": 3526,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -644,23 +644,23 @@
       "label_confidence": 95
     },
     {
+      "address": "0xd27da5611d03f6e4750cb2596afb0b2b5278b592",
+      "total_volume_sol": 149.83,
+      "total_volume_usd": 20656.08,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 42,
+      "label": "\ud83d\ude9c Wash Trader",
+      "label_type": "wash_trader",
+      "label_confidence": 95
+    },
+    {
       "address": "0x95ff552b7457971b303630b6bd433a7cb4247742",
       "total_volume_sol": 143.02,
       "total_volume_usd": 19716.73,
       "balance_ratio": 100.0,
       "counterparties": 4,
       "tx_count": 14,
-      "label": "\ud83d\ude9c Wash Trader",
-      "label_type": "wash_trader",
-      "label_confidence": 95
-    },
-    {
-      "address": "0xd27da5611d03f6e4750cb2596afb0b2b5278b592",
-      "total_volume_sol": 142.56,
-      "total_volume_usd": 19652.73,
-      "balance_ratio": 100.0,
-      "counterparties": 2,
-      "tx_count": 39,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -721,12 +721,12 @@
       "label_confidence": 95
     },
     {
-      "address": "0x6a941fe89cac5f440bb14e5286ad3e38ca3f2d39",
-      "total_volume_sol": 116.76,
-      "total_volume_usd": 16097.09,
-      "balance_ratio": 93.1,
-      "counterparties": 2,
-      "tx_count": 6,
+      "address": "0xdfa088e87a6733553c15a633b84b2e81fa11ebee",
+      "total_volume_sol": 105.47,
+      "total_volume_usd": 14540.39,
+      "balance_ratio": 100.0,
+      "counterparties": 6,
+      "tx_count": 127,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -738,17 +738,6 @@
       "balance_ratio": 100.0,
       "counterparties": 1,
       "tx_count": 3,
-      "label": "\ud83d\ude9c Wash Trader",
-      "label_type": "wash_trader",
-      "label_confidence": 95
-    },
-    {
-      "address": "0xdfa088e87a6733553c15a633b84b2e81fa11ebee",
-      "total_volume_sol": 104.79,
-      "total_volume_usd": 14445.75,
-      "balance_ratio": 100.0,
-      "counterparties": 6,
-      "tx_count": 123,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -854,11 +843,11 @@
     },
     {
       "address": "0x97e8ee9f2e7975a7b74fabe137eef136c1bbcdc9",
-      "total_volume_sol": 83.91,
-      "total_volume_usd": 11567.36,
-      "balance_ratio": 100.0,
+      "total_volume_sol": 86.29,
+      "total_volume_usd": 11896.03,
+      "balance_ratio": 99.8,
       "counterparties": 4,
-      "tx_count": 119,
+      "tx_count": 129,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -908,6 +897,28 @@
       "label_confidence": 95
     },
     {
+      "address": "0x420a4065d86c98be005c276046333a10c356d600",
+      "total_volume_sol": 71.25,
+      "total_volume_usd": 9823.17,
+      "balance_ratio": 100.0,
+      "counterparties": 1,
+      "tx_count": 2,
+      "label": "\ud83d\ude9c Wash Trader",
+      "label_type": "wash_trader",
+      "label_confidence": 95
+    },
+    {
+      "address": "0x49ae8919625874820795f5dbca39b3f0d2034c62",
+      "total_volume_sol": 69.71,
+      "total_volume_usd": 9610.33,
+      "balance_ratio": 99.7,
+      "counterparties": 4,
+      "tx_count": 155,
+      "label": "\ud83d\ude9c Wash Trader",
+      "label_type": "wash_trader",
+      "label_confidence": 95
+    },
+    {
       "address": "0xd7288af0f94791b44ba08390c29f0306fa807348",
       "total_volume_sol": 63.81,
       "total_volume_usd": 8796.25,
@@ -919,23 +930,12 @@
       "label_confidence": 95
     },
     {
-      "address": "0x49ae8919625874820795f5dbca39b3f0d2034c62",
-      "total_volume_sol": 61.45,
-      "total_volume_usd": 8472.17,
-      "balance_ratio": 99.7,
-      "counterparties": 4,
-      "tx_count": 145,
-      "label": "\ud83d\ude9c Wash Trader",
-      "label_type": "wash_trader",
-      "label_confidence": 95
-    },
-    {
       "address": "0x3751703d260439482daf05eed4105087ebf5ee28",
-      "total_volume_sol": 60.62,
-      "total_volume_usd": 8357.43,
-      "balance_ratio": 99.7,
+      "total_volume_sol": 61.8,
+      "total_volume_usd": 8520.15,
+      "balance_ratio": 98.4,
       "counterparties": 3,
-      "tx_count": 44,
+      "tx_count": 45,
       "label": "\ud83d\ude9c Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -977,44 +977,55 @@
   "organic_addresses": [
     {
       "address": "0xa25773f75d7190e130d501509d22592151db3915",
-      "total_volume_sol": 1433822.97,
-      "total_volume_usd": 197666834.42,
+      "total_volume_sol": 1452294.96,
+      "total_volume_usd": 200213382.59,
       "balance_ratio": 98.2,
-      "counterparties": 227,
-      "tx_count": 422681,
+      "counterparties": 234,
+      "tx_count": 429971,
       "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
     },
     {
       "address": "0x416ec2ca21a38cbcfeacd6a14532b3f348356d23",
-      "total_volume_sol": 93880.14,
-      "total_volume_usd": 12942316.22,
-      "balance_ratio": 0.7,
+      "total_volume_sol": 105315.69,
+      "total_volume_usd": 14518821.2,
+      "balance_ratio": 0.6,
       "counterparties": 1,
-      "tx_count": 1218,
+      "tx_count": 1314,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
     },
     {
       "address": "0x0000000000000000000000000000000000000000",
-      "total_volume_sol": 69005.49,
-      "total_volume_usd": 9513097.24,
+      "total_volume_sol": 69005.52,
+      "total_volume_usd": 9513101.1,
       "balance_ratio": 14.8,
-      "counterparties": 147,
-      "tx_count": 383,
+      "counterparties": 150,
+      "tx_count": 386,
       "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
     },
     {
       "address": "0xf70da97812cb96acdf810712aa562db8dfa3dbef",
-      "total_volume_sol": 25091.46,
-      "total_volume_usd": 3459108.64,
+      "total_volume_sol": 25096.66,
+      "total_volume_usd": 3459825.3,
       "balance_ratio": 42.4,
-      "counterparties": 1504,
-      "tx_count": 31901,
+      "counterparties": 1529,
+      "tx_count": 31952,
+      "label": "\ud83c\udf31 Organic",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xd34ea7278e6bd48defe656bbe263aef11101469c",
+      "total_volume_sol": 24895.55,
+      "total_volume_usd": 3432101.11,
+      "balance_ratio": 65.4,
+      "counterparties": 1158,
+      "tx_count": 3463,
       "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
@@ -1031,17 +1042,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0xd34ea7278e6bd48defe656bbe263aef11101469c",
-      "total_volume_sol": 22756.96,
-      "total_volume_usd": 3137274.57,
-      "balance_ratio": 62.6,
-      "counterparties": 1108,
-      "tx_count": 3247,
-      "label": "\ud83c\udf31 Organic",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x1a25298212dce420e0fd60be326957fb0ae6a1cf",
       "total_volume_sol": 12505.34,
       "total_volume_usd": 1723986.52,
@@ -1053,24 +1053,24 @@
       "label_confidence": 70
     },
     {
-      "address": "0xab07de353e15b80fa3b4224d5c8fdf3ac9f50670",
-      "total_volume_sol": 7543.73,
-      "total_volume_usd": 1039978.4,
-      "balance_ratio": 75.3,
-      "counterparties": 512,
-      "tx_count": 29502,
-      "label": "\ud83c\udf31 Organic",
+      "address": "0x907252a59469a294037a7932dbe5b0edafb49e94",
+      "total_volume_sol": 9004.26,
+      "total_volume_usd": 1241327.56,
+      "balance_ratio": 31.0,
+      "counterparties": 2,
+      "tx_count": 411,
+      "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
     },
     {
-      "address": "0x907252a59469a294037a7932dbe5b0edafb49e94",
-      "total_volume_sol": 7413.56,
-      "total_volume_usd": 1022034.0,
-      "balance_ratio": 27.2,
-      "counterparties": 2,
-      "tx_count": 333,
-      "label": "\ud83d\udc64 User",
+      "address": "0xab07de353e15b80fa3b4224d5c8fdf3ac9f50670",
+      "total_volume_sol": 7702.34,
+      "total_volume_usd": 1061844.51,
+      "balance_ratio": 75.2,
+      "counterparties": 521,
+      "tx_count": 30265,
+      "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
     },
@@ -1078,31 +1078,31 @@
       "address": "0x2d5b665a27e2388b09a29b07107eaacc6e543113",
       "total_volume_sol": 6248.47,
       "total_volume_usd": 861413.84,
-      "balance_ratio": 18.3,
+      "balance_ratio": 20.3,
       "counterparties": 5,
-      "tx_count": 796,
+      "tx_count": 820,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
     },
     {
       "address": "0x4c598ed2d67d2f189263f70cf4573c5c1e6718b3",
-      "total_volume_sol": 5874.85,
-      "total_volume_usd": 809906.95,
-      "balance_ratio": 97.0,
-      "counterparties": 2228,
-      "tx_count": 35269,
+      "total_volume_sol": 5968.95,
+      "total_volume_usd": 822879.54,
+      "balance_ratio": 96.1,
+      "counterparties": 2249,
+      "tx_count": 35858,
       "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
     },
     {
       "address": "0x14bc822b0b457a332aaa8f6f02707ec7c64f4cfb",
-      "total_volume_sol": 5399.85,
-      "total_volume_usd": 744423.7,
-      "balance_ratio": 70.4,
+      "total_volume_sol": 5554.72,
+      "total_volume_usd": 765774.1,
+      "balance_ratio": 70.5,
       "counterparties": 9,
-      "tx_count": 200,
+      "tx_count": 208,
       "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
@@ -1124,40 +1124,40 @@
       "total_volume_usd": 588950.78,
       "balance_ratio": 0.5,
       "counterparties": 3,
-      "tx_count": 13137,
+      "tx_count": 13545,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
     },
     {
       "address": "0xc72691b5c9273207319a89e5358db79ebe57f4b6",
-      "total_volume_sol": 2938.58,
-      "total_volume_usd": 405112.05,
-      "balance_ratio": 74.4,
+      "total_volume_sol": 2945.21,
+      "total_volume_usd": 406027.32,
+      "balance_ratio": 74.2,
       "counterparties": 10,
-      "tx_count": 169,
-      "label": "\ud83c\udf31 Organic",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x4cd00e387622c35bddb9b4c962c136462338bc31",
-      "total_volume_sol": 2398.38,
-      "total_volume_usd": 330641.32,
-      "balance_ratio": 94.9,
-      "counterparties": 540,
-      "tx_count": 2444,
+      "tx_count": 171,
       "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
     },
     {
       "address": "0xbf9d262f0199fea8bef911175b1b313055af4b1b",
-      "total_volume_sol": 2209.96,
-      "total_volume_usd": 304665.44,
-      "balance_ratio": 45.0,
-      "counterparties": 544,
-      "tx_count": 23995,
+      "total_volume_sol": 2455.59,
+      "total_volume_usd": 338527.91,
+      "balance_ratio": 47.4,
+      "counterparties": 567,
+      "tx_count": 25110,
+      "label": "\ud83c\udf31 Organic",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x4cd00e387622c35bddb9b4c962c136462338bc31",
+      "total_volume_sol": 2405.76,
+      "total_volume_usd": 331658.25,
+      "balance_ratio": 94.6,
+      "counterparties": 541,
+      "tx_count": 2446,
       "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
@@ -1197,11 +1197,11 @@
     },
     {
       "address": "0x6c072f7c8e54ff147817d0dd6fd08734ede6de1f",
-      "total_volume_sol": 475.18,
-      "total_volume_usd": 65508.63,
-      "balance_ratio": 44.8,
-      "counterparties": 43,
-      "tx_count": 2032,
+      "total_volume_sol": 492.41,
+      "total_volume_usd": 67883.31,
+      "balance_ratio": 44.7,
+      "counterparties": 45,
+      "tx_count": 2163,
       "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
@@ -1240,12 +1240,34 @@
       "label_confidence": 70
     },
     {
+      "address": "0xef34911a2aa1bcb1598b38feb998d6dbaf91a4c4",
+      "total_volume_sol": 142.9,
+      "total_volume_usd": 19699.95,
+      "balance_ratio": 0.0,
+      "counterparties": 9,
+      "tx_count": 21,
+      "label": "\ud83c\udf31 Organic",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x7b48d7f7f2c7d8af92bd4a14d1317fd28ba65b92",
       "total_volume_sol": 117.77,
       "total_volume_usd": 16235.24,
       "balance_ratio": 29.4,
       "counterparties": 2,
       "tx_count": 6,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x6a941fe89cac5f440bb14e5286ad3e38ca3f2d39",
+      "total_volume_sol": 116.76,
+      "total_volume_usd": 16097.09,
+      "balance_ratio": 77.8,
+      "counterparties": 3,
+      "tx_count": 8,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -1258,17 +1280,6 @@
       "counterparties": 5,
       "tx_count": 9,
       "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xef34911a2aa1bcb1598b38feb998d6dbaf91a4c4",
-      "total_volume_sol": 108.95,
-      "total_volume_usd": 15020.07,
-      "balance_ratio": 0.0,
-      "counterparties": 7,
-      "tx_count": 13,
-      "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
     },
@@ -1317,6 +1328,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x9deb607b7e92096df55b02aa563e82f612fd0def",
+      "total_volume_sol": 83.69,
+      "total_volume_usd": 11537.43,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 8,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x8cd228ce7ad2a0dd7668aedba7de15d35c0e3fd3",
       "total_volume_sol": 82.8,
       "total_volume_usd": 11415.44,
@@ -1333,17 +1355,6 @@
       "total_volume_usd": 11320.06,
       "balance_ratio": 0.0,
       "counterparties": 2,
-      "tx_count": 7,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x9deb607b7e92096df55b02aa563e82f612fd0def",
-      "total_volume_sol": 80.47,
-      "total_volume_usd": 11093.01,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
       "tx_count": 7,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
@@ -1373,11 +1384,11 @@
     },
     {
       "address": "0xbdae5df498a45c5f058e3a09afe9ba4da7b248aa",
-      "total_volume_sol": 63.89,
-      "total_volume_usd": 8807.55,
+      "total_volume_sol": 64.25,
+      "total_volume_usd": 8857.48,
       "balance_ratio": 0.0,
       "counterparties": 1,
-      "tx_count": 4,
+      "tx_count": 5,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -1672,9 +1683,9 @@
       "address": "0x131fdbeb8157ade436b29c086849620329535497",
       "total_volume_sol": 39.68,
       "total_volume_usd": 5470.09,
-      "balance_ratio": 6.1,
+      "balance_ratio": 6.2,
       "counterparties": 2,
-      "tx_count": 2,
+      "tx_count": 3,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -1713,12 +1724,34 @@
       "label_confidence": 70
     },
     {
+      "address": "0xbb8fb8fe5198f25d117c0e7b1b9c8260cb19c3c0",
+      "total_volume_sol": 37.72,
+      "total_volume_usd": 5199.46,
+      "balance_ratio": 87.9,
+      "counterparties": 3,
+      "tx_count": 99,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x6cd1b8cfcd2ca2bcdb46a2d96bd22b92e16ba427",
       "total_volume_sol": 37.53,
       "total_volume_usd": 5173.94,
       "balance_ratio": 100.0,
       "counterparties": 1,
       "tx_count": 48,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x811a8ca0e5e5577d56454c0049e6b9969d715700",
+      "total_volume_sol": 37.37,
+      "total_volume_usd": 5151.27,
+      "balance_ratio": 0.6,
+      "counterparties": 3,
+      "tx_count": 20,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -1790,12 +1823,12 @@
       "label_confidence": 70
     },
     {
-      "address": "0xbb8fb8fe5198f25d117c0e7b1b9c8260cb19c3c0",
-      "total_volume_sol": 35.95,
-      "total_volume_usd": 4955.5,
-      "balance_ratio": 89.0,
-      "counterparties": 3,
-      "tx_count": 94,
+      "address": "0x259d542b3507404af5dbdd90432a64228639452e",
+      "total_volume_sol": 36.01,
+      "total_volume_usd": 4964.63,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 26,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -1884,17 +1917,6 @@
       "balance_ratio": 0.0,
       "counterparties": 2,
       "tx_count": 4,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x259d542b3507404af5dbdd90432a64228639452e",
-      "total_volume_sol": 34.08,
-      "total_volume_usd": 4698.07,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 24,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -2098,6 +2120,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0xb97036666d4a7c7a71f85524feee0deb0df14394",
+      "total_volume_sol": 28.15,
+      "total_volume_usd": 3880.7,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 4,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x66a570590a26d906fae99870dbccee156923b81b",
       "total_volume_sol": 28.11,
       "total_volume_usd": 3875.11,
@@ -2121,11 +2154,11 @@
     },
     {
       "address": "0x316720a5d402110978851fcb02cf216eda73b2fa",
-      "total_volume_sol": 26.69,
-      "total_volume_usd": 3679.03,
-      "balance_ratio": 87.6,
+      "total_volume_sol": 26.8,
+      "total_volume_usd": 3695.16,
+      "balance_ratio": 87.2,
       "counterparties": 3,
-      "tx_count": 54,
+      "tx_count": 55,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -2137,6 +2170,17 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x893414432fb4f2d06c8ba117275da13c0f0baf61",
+      "total_volume_sol": 25.81,
+      "total_volume_usd": 3558.71,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 9,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -2219,12 +2263,12 @@
       "label_confidence": 70
     },
     {
-      "address": "0x893414432fb4f2d06c8ba117275da13c0f0baf61",
-      "total_volume_sol": 23.07,
-      "total_volume_usd": 3180.03,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 8,
+      "address": "0xb37f99cedd20a92ccc042b539bed8d5d733c7aa4",
+      "total_volume_sol": 23.39,
+      "total_volume_usd": 3223.92,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 88,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -2258,6 +2302,17 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 4,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xd0ac50d9f7516be16e2449539394a3967bea03c7",
+      "total_volume_sol": 22.99,
+      "total_volume_usd": 3169.59,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -2313,17 +2368,6 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 3,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xb37f99cedd20a92ccc042b539bed8d5d733c7aa4",
-      "total_volume_sol": 22.22,
-      "total_volume_usd": 3063.42,
-      "balance_ratio": 99.5,
-      "counterparties": 2,
-      "tx_count": 85,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -2439,12 +2483,34 @@
       "label_confidence": 70
     },
     {
+      "address": "0xeefe8699f3a588c0d3466a94ef10018832449a99",
+      "total_volume_sol": 20.0,
+      "total_volume_usd": 2757.2,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x12196bb528a62c66824749cfff4787f1b5dc66bc",
       "total_volume_sol": 19.98,
       "total_volume_usd": 2754.9,
       "balance_ratio": 0.5,
       "counterparties": 2,
       "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x54f9bfa43b1ddde70c866d3c7f9dcbc573f9ca60",
+      "total_volume_sol": 19.64,
+      "total_volume_usd": 2707.2,
+      "balance_ratio": 98.6,
+      "counterparties": 4,
+      "tx_count": 538,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -2626,17 +2692,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x54f9bfa43b1ddde70c866d3c7f9dcbc573f9ca60",
-      "total_volume_sol": 16.86,
-      "total_volume_usd": 2324.86,
-      "balance_ratio": 98.3,
-      "counterparties": 4,
-      "tx_count": 497,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x3652d5365fd2f139603ded18cdcdb32be66fde4a",
       "total_volume_sol": 16.85,
       "total_volume_usd": 2323.24,
@@ -2654,17 +2709,6 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 4,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x811a8ca0e5e5577d56454c0049e6b9969d715700",
-      "total_volume_sol": 16.71,
-      "total_volume_usd": 2304.15,
-      "balance_ratio": 1.3,
-      "counterparties": 3,
-      "tx_count": 15,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -2802,6 +2846,28 @@
       "label_confidence": 70
     },
     {
+      "address": "0x42c5d611de834f079d0a4f8ee464c3481a610cbe",
+      "total_volume_sol": 16.04,
+      "total_volume_usd": 2211.74,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x30403661ce666ed77afa83b504bb580266639d10",
+      "total_volume_sol": 16.03,
+      "total_volume_usd": 2209.26,
+      "balance_ratio": 0.0,
+      "counterparties": 2,
+      "tx_count": 4,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xb8d6b68e1de1de12e95d7593d97d7391f1669182",
       "total_volume_sol": 15.67,
       "total_volume_usd": 2159.73,
@@ -2934,17 +3000,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x30403661ce666ed77afa83b504bb580266639d10",
-      "total_volume_sol": 14.87,
-      "total_volume_usd": 2050.21,
-      "balance_ratio": 0.0,
-      "counterparties": 2,
-      "tx_count": 3,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0xd42d654d065ff9560c823f2d71411535d5e81132",
       "total_volume_sol": 14.84,
       "total_volume_usd": 2046.34,
@@ -2982,6 +3037,17 @@
       "total_volume_sol": 14.62,
       "total_volume_usd": 2016.09,
       "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x8e928bf90a85ab578c8602fa6cdaa1d412bf19ab",
+      "total_volume_sol": 14.51,
+      "total_volume_usd": 2000.43,
+      "balance_ratio": 99.7,
       "counterparties": 2,
       "tx_count": 2,
       "label": "\ud83d\udc64 User",
@@ -3132,12 +3198,23 @@
       "label_confidence": 70
     },
     {
+      "address": "0xe433538e2a41cd7fc7fbd8d4a6ee07e5a71ed916",
+      "total_volume_sol": 12.66,
+      "total_volume_usd": 1745.9,
+      "balance_ratio": 98.0,
+      "counterparties": 2,
+      "tx_count": 5,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x498581ff718922c3f8e6a244956af099b2652b2b",
-      "total_volume_sol": 12.56,
-      "total_volume_usd": 1731.61,
-      "balance_ratio": 33.0,
-      "counterparties": 14,
-      "tx_count": 1862,
+      "total_volume_sol": 12.6,
+      "total_volume_usd": 1737.16,
+      "balance_ratio": 38.9,
+      "counterparties": 18,
+      "tx_count": 1887,
       "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
@@ -3183,6 +3260,17 @@
       "counterparties": 3,
       "tx_count": 18,
       "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x5aafc1f252d544f744d17a4e734afd6efc47ede4",
+      "total_volume_sol": 12.28,
+      "total_volume_usd": 1692.91,
+      "balance_ratio": 5.5,
+      "counterparties": 63,
+      "tx_count": 78,
+      "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
     },
@@ -3236,7 +3324,7 @@
       "total_volume_usd": 1645.54,
       "balance_ratio": 62.9,
       "counterparties": 4,
-      "tx_count": 78,
+      "tx_count": 79,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -3319,6 +3407,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x443f565c4fa82cb4872392df5caab206aaa68318",
+      "total_volume_sol": 11.57,
+      "total_volume_usd": 1595.06,
+      "balance_ratio": 100.0,
+      "counterparties": 1,
+      "tx_count": 6,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x429b13416a8eae2eb6c9ba13246e0d968d3a4bb2",
       "total_volume_sol": 11.52,
       "total_volume_usd": 1587.88,
@@ -3363,13 +3462,13 @@
       "label_confidence": 70
     },
     {
-      "address": "0x5aafc1f252d544f744d17a4e734afd6efc47ede4",
-      "total_volume_sol": 11.34,
-      "total_volume_usd": 1563.8,
-      "balance_ratio": 6.0,
-      "counterparties": 61,
-      "tx_count": 75,
-      "label": "\ud83c\udf31 Organic",
+      "address": "0x54cab5533993d8a98b8f60acb5143b6c6267bffc",
+      "total_volume_sol": 11.32,
+      "total_volume_usd": 1561.26,
+      "balance_ratio": 0.0,
+      "counterparties": 2,
+      "tx_count": 8,
+      "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
     },
@@ -3561,6 +3660,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x0c805c5dabc791daae054457906ced4aedafd7eb",
+      "total_volume_sol": 10.48,
+      "total_volume_usd": 1445.18,
+      "balance_ratio": 100.0,
+      "counterparties": 1,
+      "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xf2f218265c1f6f668d165e0585329af68ebaa91f",
       "total_volume_sol": 10.45,
       "total_volume_usd": 1439.96,
@@ -3704,12 +3814,12 @@
       "label_confidence": 70
     },
     {
-      "address": "0x54cab5533993d8a98b8f60acb5143b6c6267bffc",
+      "address": "0xc1149f7d35890ca715d320b053225faee5bfbef0",
       "total_volume_sol": 10.17,
-      "total_volume_usd": 1401.74,
-      "balance_ratio": 0.0,
-      "counterparties": 2,
-      "tx_count": 7,
+      "total_volume_usd": 1402.72,
+      "balance_ratio": 100.0,
+      "counterparties": 1,
+      "tx_count": 2,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -3743,6 +3853,17 @@
       "balance_ratio": 99.7,
       "counterparties": 3,
       "tx_count": 12,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x0b2ff7239f39a2db6b6cc3d5195c50cc04d3808d",
+      "total_volume_sol": 10.11,
+      "total_volume_usd": 1394.06,
+      "balance_ratio": 0.0,
+      "counterparties": 2,
+      "tx_count": 7,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -3881,11 +4002,11 @@
     },
     {
       "address": "0x429ba8a4fd9e58bb131d77b605d4ba4dae97bfdd",
-      "total_volume_sol": 9.83,
-      "total_volume_usd": 1355.83,
-      "balance_ratio": 38.8,
-      "counterparties": 4,
-      "tx_count": 9,
+      "total_volume_sol": 9.86,
+      "total_volume_usd": 1359.88,
+      "balance_ratio": 39.0,
+      "counterparties": 5,
+      "tx_count": 11,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -4166,6 +4287,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x2299944ae8ee748285bccbd4a5172fe292753dea",
+      "total_volume_sol": 9.28,
+      "total_volume_usd": 1278.88,
+      "balance_ratio": 0.0,
+      "counterparties": 2,
+      "tx_count": 7,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x9ab70cd3e192db3e8b92fdf5178ef6b694b79bc6",
       "total_volume_sol": 9.25,
       "total_volume_usd": 1275.45,
@@ -4184,6 +4316,17 @@
       "counterparties": 2,
       "tx_count": 20,
       "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x5badb0143f69015c5c86cbd9373474a9c8ab713b",
+      "total_volume_sol": 9.18,
+      "total_volume_usd": 1265.66,
+      "balance_ratio": 97.6,
+      "counterparties": 23,
+      "tx_count": 46,
+      "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
     },
@@ -4309,6 +4452,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x4c2e5e17480cba788da1294038e28c9f014dd67f",
+      "total_volume_sol": 9.08,
+      "total_volume_usd": 1252.25,
+      "balance_ratio": 0.0,
+      "counterparties": 2,
+      "tx_count": 7,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x9f077529ca95c2d77a308c7defaa84a5bfe789da",
       "total_volume_sol": 9.07,
       "total_volume_usd": 1250.44,
@@ -4316,17 +4470,6 @@
       "counterparties": 2,
       "tx_count": 17,
       "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x5badb0143f69015c5c86cbd9373474a9c8ab713b",
-      "total_volume_sol": 9.05,
-      "total_volume_usd": 1247.44,
-      "balance_ratio": 97.6,
-      "counterparties": 22,
-      "tx_count": 44,
-      "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
     },
@@ -4392,6 +4535,17 @@
       "balance_ratio": 99.8,
       "counterparties": 3,
       "tx_count": 12,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x947bb6996c362222374fc5af2ccbd9cf64f3b724",
+      "total_volume_sol": 8.89,
+      "total_volume_usd": 1224.97,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 8,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -4491,17 +4645,6 @@
       "balance_ratio": 81.3,
       "counterparties": 2,
       "tx_count": 17,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x0b2ff7239f39a2db6b6cc3d5195c50cc04d3808d",
-      "total_volume_sol": 8.76,
-      "total_volume_usd": 1208.2,
-      "balance_ratio": 0.0,
-      "counterparties": 2,
-      "tx_count": 6,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -5079,17 +5222,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x4c2e5e17480cba788da1294038e28c9f014dd67f",
-      "total_volume_sol": 7.88,
-      "total_volume_usd": 1085.98,
-      "balance_ratio": 0.0,
-      "counterparties": 2,
-      "tx_count": 6,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x5c01da44f97f9e87e72f91dcf97979d44953fbbe",
       "total_volume_sol": 7.83,
       "total_volume_usd": 1079.22,
@@ -5239,6 +5371,17 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xc4f8871cfbf1f495abf214891494429928fc4ae8",
+      "total_volume_sol": 7.68,
+      "total_volume_usd": 1059.44,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 6,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -5404,6 +5547,17 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x8a16b8a23e0c67d54f6dcf55f1fcddaff69ea674",
+      "total_volume_sol": 7.53,
+      "total_volume_usd": 1038.58,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -5860,6 +6014,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x44a397886f9833c8f7af015cb68212e73eb78605",
+      "total_volume_sol": 7.01,
+      "total_volume_usd": 966.03,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 5,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x323a8a4643c690dae74bd3be3110e0eb018e213e",
       "total_volume_sol": 7.0,
       "total_volume_usd": 965.02,
@@ -6091,17 +6256,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x2299944ae8ee748285bccbd4a5172fe292753dea",
-      "total_volume_sol": 6.77,
-      "total_volume_usd": 933.47,
-      "balance_ratio": 0.0,
-      "counterparties": 2,
-      "tx_count": 5,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x968fdfb3fd654dc5e6bb6bbdeaf01860614eae3c",
       "total_volume_sol": 6.75,
       "total_volume_usd": 930.49,
@@ -6130,6 +6284,28 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 10,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x7525358a360980e8e32213b0f682ee051fba8685",
+      "total_volume_sol": 6.72,
+      "total_volume_usd": 925.79,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xe2ef1593a9ef1a1c0414ba21c896b9e9d613e383",
+      "total_volume_sol": 6.72,
+      "total_volume_usd": 925.79,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -6278,17 +6454,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x443f565c4fa82cb4872392df5caab206aaa68318",
-      "total_volume_sol": 6.56,
-      "total_volume_usd": 904.26,
-      "balance_ratio": 100.0,
-      "counterparties": 1,
-      "tx_count": 4,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0xd6ee427ffbadc83bcdf98b96d0567973d6386b56",
       "total_volume_sol": 6.55,
       "total_volume_usd": 902.96,
@@ -6383,17 +6548,6 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 8,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xc4f8871cfbf1f495abf214891494429928fc4ae8",
-      "total_volume_sol": 6.45,
-      "total_volume_usd": 889.0,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 5,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -7114,6 +7268,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0xbb822642ca44ab37c9571097d8686a08321e629d",
+      "total_volume_sol": 5.83,
+      "total_volume_usd": 803.28,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 5,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x8edf7f9506b40a549e0a48832dee51725e07084d",
       "total_volume_sol": 5.82,
       "total_volume_usd": 801.84,
@@ -7131,17 +7296,6 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 2,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x44a397886f9833c8f7af015cb68212e73eb78605",
-      "total_volume_sol": 5.8,
-      "total_volume_usd": 799.04,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 4,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -7466,6 +7620,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x6bce6d561c5add72b432132c7c1e4dc53344d74d",
+      "total_volume_sol": 5.38,
+      "total_volume_usd": 741.97,
+      "balance_ratio": 0.0,
+      "counterparties": 2,
+      "tx_count": 4,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x13074710b3e9d98f2e20ab49afa78cd0da183a94",
       "total_volume_sol": 5.36,
       "total_volume_usd": 738.38,
@@ -7521,6 +7686,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x11a084dc24bc52022b71b47d17868d1f72072dfc",
+      "total_volume_sol": 5.3,
+      "total_volume_usd": 730.46,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 5,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x41d4ff54863da3be7faabbd2be443b6aedbf1898",
       "total_volume_sol": 5.29,
       "total_volume_usd": 729.03,
@@ -7537,6 +7713,17 @@
       "total_volume_usd": 728.97,
       "balance_ratio": 100.0,
       "counterparties": 4,
+      "tx_count": 5,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x050aa2510dec2ba1057ac138c45e546aa6d8431c",
+      "total_volume_sol": 5.29,
+      "total_volume_usd": 729.4,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
       "tx_count": 5,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
@@ -7996,10 +8183,10 @@
     {
       "address": "0x387df2ba0440edcf551273ecbce6ac22b591c3ae",
       "total_volume_sol": 4.84,
-      "total_volume_usd": 666.55,
+      "total_volume_usd": 667.01,
       "balance_ratio": 99.6,
       "counterparties": 2,
-      "tx_count": 810,
+      "tx_count": 813,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -8225,34 +8412,12 @@
       "label_confidence": 70
     },
     {
-      "address": "0x947bb6996c362222374fc5af2ccbd9cf64f3b724",
-      "total_volume_sol": 4.72,
-      "total_volume_usd": 650.03,
-      "balance_ratio": 53.1,
-      "counterparties": 2,
-      "tx_count": 7,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0xf5dfa78573d859ba64522b44ff0f7f970cfc5d78",
       "total_volume_sol": 4.71,
       "total_volume_usd": 649.86,
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 3,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xbb822642ca44ab37c9571097d8686a08321e629d",
-      "total_volume_sol": 4.71,
-      "total_volume_usd": 648.81,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 4,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -8296,6 +8461,28 @@
       "total_volume_usd": 645.66,
       "balance_ratio": 88.1,
       "counterparties": 1,
+      "tx_count": 6,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x98e4b1f72f5d979d6fb81ae4333092c8315480f5",
+      "total_volume_sol": 4.66,
+      "total_volume_usd": 642.91,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xfbbadbd8615fc5e54c5a616065f316894fbd9762",
+      "total_volume_sol": 4.66,
+      "total_volume_usd": 642.91,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
       "tx_count": 6,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
@@ -8368,6 +8555,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x48afec7474b2a946b7c1ae6c2715a2310c0e73ee",
+      "total_volume_sol": 4.61,
+      "total_volume_usd": 635.38,
+      "balance_ratio": 100.0,
+      "counterparties": 8,
+      "tx_count": 24,
+      "label": "\ud83c\udf31 Organic",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xf509ad97616b7b32182410045c0dcfacb9e07cc5",
       "total_volume_sol": 4.57,
       "total_volume_usd": 629.95,
@@ -8390,6 +8588,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0xf7c22825ca87db3f00ea39eb38a8f735c455f021",
+      "total_volume_sol": 4.54,
+      "total_volume_usd": 626.39,
+      "balance_ratio": 0.0,
+      "counterparties": 2,
+      "tx_count": 7,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x57460c86081a606f9ca5d2c72854ca8bbdfd06cb",
       "total_volume_sol": 4.53,
       "total_volume_usd": 624.83,
@@ -8397,17 +8606,6 @@
       "counterparties": 4,
       "tx_count": 6,
       "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x48afec7474b2a946b7c1ae6c2715a2310c0e73ee",
-      "total_volume_sol": 4.53,
-      "total_volume_usd": 624.25,
-      "balance_ratio": 100.0,
-      "counterparties": 7,
-      "tx_count": 20,
-      "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
     },
@@ -8654,23 +8852,23 @@
       "label_confidence": 70
     },
     {
-      "address": "0xf7c22825ca87db3f00ea39eb38a8f735c455f021",
-      "total_volume_sol": 4.21,
-      "total_volume_usd": 579.76,
-      "balance_ratio": 0.0,
-      "counterparties": 2,
-      "tx_count": 6,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x01bc70673cdf7b5e668a74888e8c53a0d79da7ac",
       "total_volume_sol": 4.18,
       "total_volume_usd": 576.47,
       "balance_ratio": 67.6,
       "counterparties": 2,
       "tx_count": 11,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x5d8a4508ff2cc72ba673732d4a8567aa8a944680",
+      "total_volume_sol": 4.17,
+      "total_volume_usd": 575.14,
+      "balance_ratio": 82.6,
+      "counterparties": 3,
+      "tx_count": 14,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -8819,28 +9017,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x98e4b1f72f5d979d6fb81ae4333092c8315480f5",
-      "total_volume_sol": 4.08,
-      "total_volume_usd": 562.55,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 2,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xfbbadbd8615fc5e54c5a616065f316894fbd9762",
-      "total_volume_sol": 4.08,
-      "total_volume_usd": 562.55,
-      "balance_ratio": 100.0,
-      "counterparties": 2,
-      "tx_count": 4,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0xe5fed704340f69f67e0926766e6cc41c3cb2830b",
       "total_volume_sol": 4.08,
       "total_volume_usd": 561.88,
@@ -8858,6 +9034,17 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 15,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x3ec44fd18b0b18080c61ae501d790fc9265e660a",
+      "total_volume_sol": 4.06,
+      "total_volume_usd": 559.77,
+      "balance_ratio": 100.0,
+      "counterparties": 1,
+      "tx_count": 5,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -9578,6 +9765,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x5ee0b52c889b56875d3f7ce8845ac973691fbf0d",
+      "total_volume_sol": 3.66,
+      "total_volume_usd": 504.92,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x3561f552ec7c9dd51ba0b0b8a48eec6860823740",
       "total_volume_sol": 3.65,
       "total_volume_usd": 502.74,
@@ -9930,17 +10128,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x3ec44fd18b0b18080c61ae501d790fc9265e660a",
-      "total_volume_sol": 3.44,
-      "total_volume_usd": 474.81,
-      "balance_ratio": 100.0,
-      "counterparties": 1,
-      "tx_count": 3,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x6c30f938def3da5d6bb92f597f74f8f9b66480cb",
       "total_volume_sol": 3.44,
       "total_volume_usd": 473.8,
@@ -10062,23 +10249,23 @@
       "label_confidence": 70
     },
     {
+      "address": "0x9e355eebf2eb210d4977c3c84681e3e5a0402e37",
+      "total_volume_sol": 3.35,
+      "total_volume_usd": 462.14,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 35,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x9a7965a6e242ade00bb57ecc208144e3f77c01ab",
       "total_volume_sol": 3.32,
       "total_volume_usd": 457.99,
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 14,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x11a084dc24bc52022b71b47d17868d1f72072dfc",
-      "total_volume_sol": 3.32,
-      "total_volume_usd": 457.13,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 3,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -10266,17 +10453,6 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 18,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x9e355eebf2eb210d4977c3c84681e3e5a0402e37",
-      "total_volume_sol": 3.22,
-      "total_volume_usd": 444.27,
-      "balance_ratio": 100.0,
-      "counterparties": 2,
-      "tx_count": 33,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -10590,17 +10766,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0xb97036666d4a7c7a71f85524feee0deb0df14394",
-      "total_volume_sol": 2.88,
-      "total_volume_usd": 396.89,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 3,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x4f753696cd464a4b0667906dbaeb1bf0d14abee3",
       "total_volume_sol": 2.86,
       "total_volume_usd": 394.06,
@@ -10651,6 +10816,28 @@
       "balance_ratio": 66.4,
       "counterparties": 1,
       "tx_count": 6,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xe2f6af74edea2c676346cf9c12a1a77d86a1ed21",
+      "total_volume_sol": 2.82,
+      "total_volume_usd": 388.26,
+      "balance_ratio": 48.6,
+      "counterparties": 2,
+      "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x593b38af04e5332c849e515adebcab89e9bb358d",
+      "total_volume_sol": 2.82,
+      "total_volume_usd": 388.26,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 4,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -11030,6 +11217,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x475b48a80c41813e8b9084896190011532c05cac",
+      "total_volume_sol": 2.53,
+      "total_volume_usd": 348.44,
+      "balance_ratio": 100.0,
+      "counterparties": 6,
+      "tx_count": 29,
+      "label": "\ud83c\udf31 Organic",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x7bcb904a0c19fb2f4059549ac983ffeb81fe4fe5",
       "total_volume_sol": 2.5,
       "total_volume_usd": 345.14,
@@ -11151,6 +11349,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x595d5d0a1df4dc4e4c45dcb0a2c123f5689b9e5c",
+      "total_volume_sol": 2.45,
+      "total_volume_usd": 337.53,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 6,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x2f3006a74b24e91d48fb11d5350619ddd445bbf5",
       "total_volume_sol": 2.44,
       "total_volume_usd": 336.44,
@@ -11190,17 +11399,6 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x050aa2510dec2ba1057ac138c45e546aa6d8431c",
-      "total_volume_sol": 2.39,
-      "total_volume_usd": 329.78,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 2,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -11481,17 +11679,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x5d8a4508ff2cc72ba673732d4a8567aa8a944680",
-      "total_volume_sol": 2.24,
-      "total_volume_usd": 309.49,
-      "balance_ratio": 97.3,
-      "counterparties": 2,
-      "tx_count": 10,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x1788e180331677ac041af85489d08f24ba107daf",
       "total_volume_sol": 2.23,
       "total_volume_usd": 307.1,
@@ -11499,17 +11686,6 @@
       "counterparties": 2,
       "tx_count": 2,
       "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x475b48a80c41813e8b9084896190011532c05cac",
-      "total_volume_sol": 2.23,
-      "total_volume_usd": 307.41,
-      "balance_ratio": 100.0,
-      "counterparties": 6,
-      "tx_count": 25,
-      "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
     },
@@ -11531,6 +11707,17 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xdd02a7f64064cccabbc26f0e31a6955c4c9d567c",
+      "total_volume_sol": 2.21,
+      "total_volume_usd": 304.16,
+      "balance_ratio": 68.7,
+      "counterparties": 4,
+      "tx_count": 32,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -11569,12 +11756,12 @@
       "label_confidence": 70
     },
     {
-      "address": "0xdd02a7f64064cccabbc26f0e31a6955c4c9d567c",
+      "address": "0xddbae04ef4b71227f07371ec3deead470a189e66",
       "total_volume_sol": 2.2,
-      "total_volume_usd": 303.96,
+      "total_volume_usd": 303.35,
       "balance_ratio": 68.7,
-      "counterparties": 4,
-      "tx_count": 30,
+      "counterparties": 2,
+      "tx_count": 6,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -11745,6 +11932,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0xb98fb80d89d9cf33c3726843fcbf68e6a7d64c00",
+      "total_volume_sol": 2.07,
+      "total_volume_usd": 285.75,
+      "balance_ratio": 87.1,
+      "counterparties": 49,
+      "tx_count": 475,
+      "label": "\ud83c\udf31 Organic",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x92fb1863b304f2f04817a822296cc1eec22f1164",
       "total_volume_sol": 2.07,
       "total_volume_usd": 286.0,
@@ -11774,17 +11972,6 @@
       "counterparties": 2,
       "tx_count": 2,
       "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xb98fb80d89d9cf33c3726843fcbf68e6a7d64c00",
-      "total_volume_sol": 2.06,
-      "total_volume_usd": 283.72,
-      "balance_ratio": 87.7,
-      "counterparties": 49,
-      "tx_count": 445,
-      "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
     },
@@ -12240,6 +12427,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x5150990bf4b455c5d89f57f92a95df6cdc760052",
+      "total_volume_sol": 1.95,
+      "total_volume_usd": 269.31,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 26,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x4d30a2022151d9c81ad51608a750c8f568614ea3",
       "total_volume_sol": 1.94,
       "total_volume_usd": 267.83,
@@ -12405,28 +12603,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x5150990bf4b455c5d89f57f92a95df6cdc760052",
-      "total_volume_sol": 1.89,
-      "total_volume_usd": 260.78,
-      "balance_ratio": 96.8,
-      "counterparties": 2,
-      "tx_count": 22,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xe433538e2a41cd7fc7fbd8d4a6ee07e5a71ed916",
-      "total_volume_sol": 1.89,
-      "total_volume_usd": 260.81,
-      "balance_ratio": 100.0,
-      "counterparties": 1,
-      "tx_count": 2,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x8c8f99d13b1e9dd98a40aec8aee28c2bffe966af",
       "total_volume_sol": 1.89,
       "total_volume_usd": 260.81,
@@ -12493,6 +12669,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0xd9304214ab4a95feb886057db059549f13671419",
+      "total_volume_sol": 1.86,
+      "total_volume_usd": 256.5,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x867f68d131f9a8df6caf40c79a703b45de1677bd",
       "total_volume_sol": 1.85,
       "total_volume_usd": 255.66,
@@ -12526,6 +12713,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x82789cdcaa0953a6d853156ed847e16c0b4c3696",
+      "total_volume_sol": 1.84,
+      "total_volume_usd": 253.24,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xc118688a06faf0791e5f7f89e639b7f560e616f6",
       "total_volume_sol": 1.83,
       "total_volume_usd": 252.27,
@@ -12551,6 +12749,17 @@
       "address": "0x7d297d6d36fee7dc25d86cc9286f215ad4736d76",
       "total_volume_sol": 1.83,
       "total_volume_usd": 252.63,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xda4133be73a1a1b48a1c4a5fedc85c036a824ca6",
+      "total_volume_sol": 1.83,
+      "total_volume_usd": 252.13,
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 3,
@@ -12594,10 +12803,10 @@
     {
       "address": "0x4acb6c4321253548a7d4bb9c84032cc4ee04bfd7",
       "total_volume_sol": 1.8,
-      "total_volume_usd": 247.94,
+      "total_volume_usd": 248.67,
       "balance_ratio": 0.0,
       "counterparties": 3,
-      "tx_count": 117,
+      "tx_count": 122,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -12664,6 +12873,17 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xcb39c432be0053423bc7851e67ff69b6b6e7a27f",
+      "total_volume_sol": 1.78,
+      "total_volume_usd": 244.88,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 3,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -12812,6 +13032,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0xd399ed66aae0ccb2027714db9eee26cd57211e3f",
+      "total_volume_sol": 1.69,
+      "total_volume_usd": 233.18,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x3b82328b4e7c76c1fc05d65565015719cdfb2450",
       "total_volume_sol": 1.67,
       "total_volume_usd": 229.7,
@@ -12939,6 +13170,17 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 4,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xdf9d646043a9b21cd103d90f3def66c4d7c8ffe2",
+      "total_volume_sol": 1.64,
+      "total_volume_usd": 226.54,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 3,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -13241,6 +13483,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0xd632a8f769078bce8b97b5b09e572a67eda8180e",
+      "total_volume_sol": 1.54,
+      "total_volume_usd": 212.24,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 21,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x11bad864ac59c5c8bb94be3c3138a3ce27cdde9d",
       "total_volume_sol": 1.54,
       "total_volume_usd": 212.88,
@@ -13280,17 +13533,6 @@
       "balance_ratio": 100.0,
       "counterparties": 4,
       "tx_count": 8,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xd632a8f769078bce8b97b5b09e572a67eda8180e",
-      "total_volume_sol": 1.53,
-      "total_volume_usd": 210.61,
-      "balance_ratio": 99.2,
-      "counterparties": 2,
-      "tx_count": 20,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -13467,6 +13709,17 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x45f52f8fbbcd877541ff661a7575eb136a6ebef5",
+      "total_volume_sol": 1.5,
+      "total_volume_usd": 206.79,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -13824,6 +14077,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0xca91f4b627046f992a2badea0c02182996ff8920",
+      "total_volume_sol": 1.4,
+      "total_volume_usd": 192.69,
+      "balance_ratio": 97.2,
+      "counterparties": 2,
+      "tx_count": 6,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xe6b67a279cc7f57cc486e82a1c89422fa20e2098",
       "total_volume_sol": 1.39,
       "total_volume_usd": 192.06,
@@ -13989,6 +14253,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x4fff6a8d6578eb3f827264f6a264fdbec7a6e40e",
+      "total_volume_sol": 1.33,
+      "total_volume_usd": 183.33,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xb90dc42c8b4689ee3b89fa4e2a543063b8303e8a",
       "total_volume_sol": 1.31,
       "total_volume_usd": 180.54,
@@ -14005,17 +14280,6 @@
       "total_volume_usd": 179.96,
       "balance_ratio": 99.9,
       "counterparties": 2,
-      "tx_count": 2,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xda4133be73a1a1b48a1c4a5fedc85c036a824ca6",
-      "total_volume_sol": 1.31,
-      "total_volume_usd": 180.14,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
       "tx_count": 2,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
@@ -14039,17 +14303,6 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xd9304214ab4a95feb886057db059549f13671419",
-      "total_volume_sol": 1.31,
-      "total_volume_usd": 180.38,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 2,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -14160,6 +14413,17 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x3a18c261befac3cc22728cab6f8747ee8eeb06f6",
+      "total_volume_sol": 1.29,
+      "total_volume_usd": 178.48,
+      "balance_ratio": 49.0,
+      "counterparties": 5,
+      "tx_count": 9,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -14363,17 +14627,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x3a18c261befac3cc22728cab6f8747ee8eeb06f6",
-      "total_volume_sol": 1.25,
-      "total_volume_usd": 171.93,
-      "balance_ratio": 50.9,
-      "counterparties": 5,
-      "tx_count": 8,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0xaf9d3b348d7964cf4278744600c1cb675af900b9",
       "total_volume_sol": 1.25,
       "total_volume_usd": 172.75,
@@ -14407,6 +14660,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0xe3e2ba094935165484a955902ad284c2614fe40e",
+      "total_volume_sol": 1.24,
+      "total_volume_usd": 170.38,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 10,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x4127b2d364a8b1a10afda5d63c95253ce336c09b",
       "total_volume_sol": 1.24,
       "total_volume_usd": 171.49,
@@ -14424,17 +14688,6 @@
       "balance_ratio": 100.0,
       "counterparties": 1,
       "tx_count": 2,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xe3e2ba094935165484a955902ad284c2614fe40e",
-      "total_volume_sol": 1.23,
-      "total_volume_usd": 169.2,
-      "balance_ratio": 100.0,
-      "counterparties": 2,
-      "tx_count": 8,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -14467,7 +14720,7 @@
       "total_volume_usd": 168.63,
       "balance_ratio": 10.8,
       "counterparties": 3,
-      "tx_count": 360,
+      "tx_count": 384,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -14567,28 +14820,6 @@
       "balance_ratio": 19.9,
       "counterparties": 2,
       "tx_count": 2,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xcb39c432be0053423bc7851e67ff69b6b6e7a27f",
-      "total_volume_sol": 1.21,
-      "total_volume_usd": 167.47,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 2,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xddbae04ef4b71227f07371ec3deead470a189e66",
-      "total_volume_sol": 1.2,
-      "total_volume_usd": 165.21,
-      "balance_ratio": 37.4,
-      "counterparties": 2,
-      "tx_count": 5,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -14732,6 +14963,17 @@
       "balance_ratio": 0.4,
       "counterparties": 3,
       "tx_count": 13,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x7a8c9940469d39bcd37ed3201f9029ca1e2866a0",
+      "total_volume_sol": 1.17,
+      "total_volume_usd": 161.85,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 2,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -15018,6 +15260,17 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x5a1ee711b333cbd113861729af70f8b2742c2748",
+      "total_volume_sol": 1.1,
+      "total_volume_usd": 151.52,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 6,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -15386,6 +15639,28 @@
       "label_confidence": 70
     },
     {
+      "address": "0x2a6326c55116f600ad8daf8eda0da40a30efe930",
+      "total_volume_sol": 1.04,
+      "total_volume_usd": 142.85,
+      "balance_ratio": 85.6,
+      "counterparties": 2,
+      "tx_count": 4,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x1cca8388e671e83010843a1a0535b04f2d7e946b",
+      "total_volume_sol": 1.04,
+      "total_volume_usd": 142.85,
+      "balance_ratio": 100.0,
+      "counterparties": 3,
+      "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x1123ab89b8c81ab683ab0d9c27f1a10428be7b8c",
       "total_volume_sol": 1.03,
       "total_volume_usd": 141.91,
@@ -15481,6 +15756,17 @@
       "counterparties": 3,
       "tx_count": 11,
       "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x415c88a05b75d1a65822d899f4a78b4c0d7cbefd",
+      "total_volume_sol": 1.02,
+      "total_volume_usd": 141.1,
+      "balance_ratio": 55.2,
+      "counterparties": 19,
+      "tx_count": 45,
+      "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
     },
@@ -15590,6 +15876,17 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 162,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x3e38a3f54b2f397b9aaa4c88fbf9761cb602c00b",
+      "total_volume_sol": 1.0,
+      "total_volume_usd": 137.86,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -16002,12 +16299,12 @@
       "label_confidence": 70
     },
     {
-      "address": "0x595d5d0a1df4dc4e4c45dcb0a2c123f5689b9e5c",
+      "address": "0x039fdb92ee0647a72643309c6a7771cf3b3293fb",
       "total_volume_sol": 1.0,
-      "total_volume_usd": 137.93,
-      "balance_ratio": 99.4,
-      "counterparties": 1,
-      "tx_count": 3,
+      "total_volume_usd": 137.86,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -16173,6 +16470,17 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x8defac69cf09038e82a45f0ec4524509209dd734",
+      "total_volume_sol": 0.96,
+      "total_volume_usd": 132.53,
+      "balance_ratio": 38.2,
+      "counterparties": 4,
+      "tx_count": 6,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -16464,6 +16772,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x8d527f0a923ef6399077eba99aa3804157d7123e",
+      "total_volume_sol": 0.91,
+      "total_volume_usd": 125.1,
+      "balance_ratio": 100.0,
+      "counterparties": 1,
+      "tx_count": 4,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xfc8c97f4dcf50ae524d8813d34b71140e3db9a04",
       "total_volume_sol": 0.91,
       "total_volume_usd": 125.89,
@@ -16684,17 +17003,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x8d527f0a923ef6399077eba99aa3804157d7123e",
-      "total_volume_sol": 0.89,
-      "total_volume_usd": 122.54,
-      "balance_ratio": 100.0,
-      "counterparties": 1,
-      "tx_count": 2,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x027895bd57361a82b2abb3230ba95a2aca807970",
       "total_volume_sol": 0.89,
       "total_volume_usd": 122.69,
@@ -16756,6 +17064,17 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x5f2d481c4ac4a6f3ba8e31249b9b05b2b270e4d4",
+      "total_volume_sol": 0.88,
+      "total_volume_usd": 120.78,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -16834,6 +17153,17 @@
       "counterparties": 1,
       "tx_count": 6,
       "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x33c696815fedfadf0744a8982e23aadd58ffd9b7",
+      "total_volume_sol": 0.86,
+      "total_volume_usd": 118.52,
+      "balance_ratio": 72.5,
+      "counterparties": 6,
+      "tx_count": 9,
+      "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
     },
@@ -17091,6 +17421,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0xc1873da74db15a701d0c345666182c57c0bb3c1b",
+      "total_volume_sol": 0.84,
+      "total_volume_usd": 115.28,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xfc77577d39bac91d57956338e1ba594fee603dfa",
       "total_volume_sol": 0.83,
       "total_volume_usd": 114.94,
@@ -17262,6 +17603,17 @@
       "balance_ratio": 83.1,
       "counterparties": 2,
       "tx_count": 8,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xfd9303425ce2bfa6777a9e404f7eca075979c147",
+      "total_volume_sol": 0.82,
+      "total_volume_usd": 113.48,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 2,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -17487,6 +17839,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x2163547c5e1ee29152831ca3fd69b847bd9b7cef",
+      "total_volume_sol": 0.8,
+      "total_volume_usd": 110.82,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x89b7daa4f1889ee9f9feac9f0c592ea4ebe1c8ca",
       "total_volume_sol": 0.79,
       "total_volume_usd": 108.98,
@@ -17555,10 +17918,10 @@
     {
       "address": "0x9aba7a212d479ed1678d903ba851778bc2fb3103",
       "total_volume_sol": 0.79,
-      "total_volume_usd": 109.38,
+      "total_volume_usd": 109.58,
       "balance_ratio": 0.0,
       "counterparties": 2,
-      "tx_count": 18,
+      "tx_count": 19,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -17707,6 +18070,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x12218d323b6088968639bf6c3b5c81d04edfb306",
+      "total_volume_sol": 0.78,
+      "total_volume_usd": 108.03,
+      "balance_ratio": 100.0,
+      "counterparties": 3,
+      "tx_count": 8,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x08ca6f5a6f4fd7ab4bd6bb754441e90af3d12eff",
       "total_volume_sol": 0.78,
       "total_volume_usd": 108.02,
@@ -17834,6 +18208,17 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xdf9fff94b62dba5b09b3454455d6f6bf21b3a01f",
+      "total_volume_sol": 0.76,
+      "total_volume_usd": 104.37,
+      "balance_ratio": 97.6,
+      "counterparties": 2,
+      "tx_count": 40,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -18158,12 +18543,12 @@
       "label_confidence": 70
     },
     {
-      "address": "0xdf9fff94b62dba5b09b3454455d6f6bf21b3a01f",
-      "total_volume_sol": 0.74,
-      "total_volume_usd": 102.64,
-      "balance_ratio": 96.0,
+      "address": "0xbc4af5f79e3ce43bb9eea2f97397f3bc86616e58",
+      "total_volume_sol": 0.75,
+      "total_volume_usd": 103.63,
+      "balance_ratio": 91.3,
       "counterparties": 2,
-      "tx_count": 38,
+      "tx_count": 3,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -18257,22 +18642,22 @@
       "label_confidence": 70
     },
     {
-      "address": "0x82789cdcaa0953a6d853156ed847e16c0b4c3696",
-      "total_volume_sol": 0.74,
-      "total_volume_usd": 101.33,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 1,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x176ea51f1317f23a06957773b79004190340fec4",
       "total_volume_sol": 0.74,
       "total_volume_usd": 102.16,
       "balance_ratio": 0.0,
       "counterparties": 1,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x8815f90ea7b72e1f084a5a9a62821eaeab68288b",
+      "total_volume_sol": 0.74,
+      "total_volume_usd": 101.58,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
       "tx_count": 2,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
@@ -18436,6 +18821,28 @@
       "address": "0x0fbbf2ec3a7805ac62ecfdbcc6a54b439188ea43",
       "total_volume_sol": 0.73,
       "total_volume_usd": 100.45,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xf25872bea0ed1772faad79fecc8ca89c5c30d94d",
+      "total_volume_sol": 0.73,
+      "total_volume_usd": 100.59,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xadcf3bfe5f39cb457d4769ba988705af5291649c",
+      "total_volume_sol": 0.73,
+      "total_volume_usd": 100.59,
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 2,
@@ -19005,6 +19412,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0xc197453898b79d107d4f0b59c87366d0e80dd161",
+      "total_volume_sol": 0.67,
+      "total_volume_usd": 92.19,
+      "balance_ratio": 97.0,
+      "counterparties": 1,
+      "tx_count": 62,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xeff92d36d16f4f7cf0d81fefecb701a42611b38c",
       "total_volume_sol": 0.67,
       "total_volume_usd": 92.67,
@@ -19012,17 +19430,6 @@
       "counterparties": 6,
       "tx_count": 6,
       "label": "\ud83c\udf31 Organic",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x33c696815fedfadf0744a8982e23aadd58ffd9b7",
-      "total_volume_sol": 0.67,
-      "total_volume_usd": 92.85,
-      "balance_ratio": 64.9,
-      "counterparties": 5,
-      "tx_count": 7,
-      "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
     },
@@ -19236,6 +19643,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x70ca7c7ea313e0d120e0b924a921b6829b03a13c",
+      "total_volume_sol": 0.65,
+      "total_volume_usd": 89.35,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 16,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x9dcf89de31bf419066a0f8f0c0cc638318012862",
       "total_volume_sol": 0.65,
       "total_volume_usd": 89.04,
@@ -19297,17 +19715,6 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xc197453898b79d107d4f0b59c87366d0e80dd161",
-      "total_volume_sol": 0.64,
-      "total_volume_usd": 88.46,
-      "balance_ratio": 96.8,
-      "counterparties": 1,
-      "tx_count": 45,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -19418,6 +19825,17 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x5d5dbe0c35fe766ceecb183024c56478ba5a6897",
+      "total_volume_sol": 0.63,
+      "total_volume_usd": 86.66,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -19863,6 +20281,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0xaa1a25c6bd319fa218170d57541278b9f3c67305",
+      "total_volume_sol": 0.6,
+      "total_volume_usd": 82.16,
+      "balance_ratio": 34.7,
+      "counterparties": 1,
+      "tx_count": 6,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x5ddea6ec77a08259dfc266ecdc660b59894a9ade",
       "total_volume_sol": 0.59,
       "total_volume_usd": 81.69,
@@ -20292,6 +20721,28 @@
       "label_confidence": 70
     },
     {
+      "address": "0xbaa04a72ded7fd4fbf0b0f48c89f217813d860e6",
+      "total_volume_sol": 0.57,
+      "total_volume_usd": 77.94,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x594271a1f275be38804ea3620395249d04d2ba42",
+      "total_volume_sol": 0.57,
+      "total_volume_usd": 77.94,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x7496e98517c60f45577d04e4478ba77481895633",
       "total_volume_sol": 0.56,
       "total_volume_usd": 76.66,
@@ -20512,6 +20963,28 @@
       "label_confidence": 70
     },
     {
+      "address": "0xccd84974e68bc24ff1060a8e0c117d03b5879d8c",
+      "total_volume_sol": 0.55,
+      "total_volume_usd": 76.04,
+      "balance_ratio": 50.0,
+      "counterparties": 1,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x88504b825b33538835417f8dfc29c146d2ab3d37",
+      "total_volume_sol": 0.55,
+      "total_volume_usd": 76.23,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xbbdc1c223676eb56953afab0b60d3be8df57c4f6",
       "total_volume_sol": 0.54,
       "total_volume_usd": 74.1,
@@ -20562,17 +21035,6 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 2,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x7a8c9940469d39bcd37ed3201f9029ca1e2866a0",
-      "total_volume_sol": 0.54,
-      "total_volume_usd": 75.11,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 1,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -20732,6 +21194,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x7bca7e9a3b4816468fdf9aeecd1ebe8a2a9c2f3e",
+      "total_volume_sol": 0.53,
+      "total_volume_usd": 73.48,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xa61557f91e25f19f3abdd4e902502015ddc5f0e7",
       "total_volume_sol": 0.52,
       "total_volume_usd": 71.87,
@@ -20760,17 +21233,6 @@
       "balance_ratio": 0.0,
       "counterparties": 2,
       "tx_count": 2,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xd399ed66aae0ccb2027714db9eee26cd57211e3f",
-      "total_volume_sol": 0.52,
-      "total_volume_usd": 71.59,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 1,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -20848,6 +21310,17 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x4535550c7dec7727206e9a86e0ea9f456cc79652",
+      "total_volume_sol": 0.51,
+      "total_volume_usd": 70.52,
+      "balance_ratio": 99.1,
+      "counterparties": 2,
+      "tx_count": 137,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -21106,17 +21579,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x70ca7c7ea313e0d120e0b924a921b6829b03a13c",
-      "total_volume_sol": 0.49,
-      "total_volume_usd": 68.06,
-      "balance_ratio": 76.2,
-      "counterparties": 2,
-      "tx_count": 15,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x6d1dbd248ef9f23a9a25c7b5503e395d13e83110",
       "total_volume_sol": 0.49,
       "total_volume_usd": 67.42,
@@ -21244,17 +21706,6 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 3,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x4535550c7dec7727206e9a86e0ea9f456cc79652",
-      "total_volume_sol": 0.48,
-      "total_volume_usd": 66.28,
-      "balance_ratio": 97.6,
-      "counterparties": 2,
-      "tx_count": 130,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -21678,6 +22129,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x2241863b03b194064c5f19505467f73dfe852bd3",
+      "total_volume_sol": 0.46,
+      "total_volume_usd": 63.96,
+      "balance_ratio": 0.0,
+      "counterparties": 2,
+      "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x4614ee8a59a62e66853ecddafcc802f128266843",
       "total_volume_sol": 0.45,
       "total_volume_usd": 62.09,
@@ -21689,12 +22151,34 @@
       "label_confidence": 70
     },
     {
+      "address": "0x0ddec40df9989c62bd25a11195dca45897ffc26a",
+      "total_volume_sol": 0.45,
+      "total_volume_usd": 61.54,
+      "balance_ratio": 72.4,
+      "counterparties": 2,
+      "tx_count": 25,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x34c35ffd33169eee46e84644ed551d53dfd7069a",
       "total_volume_sol": 0.45,
       "total_volume_usd": 61.99,
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x6c6b52cfb02fb7ba0839e273b017425ed2193984",
+      "total_volume_sol": 0.45,
+      "total_volume_usd": 61.69,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 6,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -22206,17 +22690,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0xaa1a25c6bd319fa218170d57541278b9f3c67305",
-      "total_volume_sol": 0.43,
-      "total_volume_usd": 59.0,
-      "balance_ratio": 25.0,
-      "counterparties": 1,
-      "tx_count": 3,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x0e7f99f6d77319cccb7c25cdb51e2dd0b8ed4285",
       "total_volume_sol": 0.42,
       "total_volume_usd": 57.32,
@@ -22289,6 +22762,17 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xf63ec78cbf40c6db3d68902a9eca418471b8c3a5",
+      "total_volume_sol": 0.42,
+      "total_volume_usd": 57.68,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 23,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -22514,12 +22998,23 @@
       "label_confidence": 70
     },
     {
-      "address": "0x0ddec40df9989c62bd25a11195dca45897ffc26a",
-      "total_volume_sol": 0.41,
-      "total_volume_usd": 56.02,
+      "address": "0x0645f1afdcf0a3b28748e4a4d28607530919e85e",
+      "total_volume_sol": 0.42,
+      "total_volume_usd": 58.11,
+      "balance_ratio": 0.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x67ec0270143a62285ce070956a9a0c5d52dee35d",
+      "total_volume_sol": 0.42,
+      "total_volume_usd": 57.38,
       "balance_ratio": 100.0,
       "counterparties": 2,
-      "tx_count": 21,
+      "tx_count": 2,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -22586,17 +23081,6 @@
       "balance_ratio": 0.0,
       "counterparties": 2,
       "tx_count": 7,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xf63ec78cbf40c6db3d68902a9eca418471b8c3a5",
-      "total_volume_sol": 0.41,
-      "total_volume_usd": 56.57,
-      "balance_ratio": 100.0,
-      "counterparties": 2,
-      "tx_count": 21,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -22965,6 +23449,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x2289a3b51e9935b2a0106f8c785ab2533aed66df",
+      "total_volume_sol": 0.4,
+      "total_volume_usd": 54.47,
+      "balance_ratio": 100.0,
+      "counterparties": 6,
+      "tx_count": 12,
+      "label": "\ud83c\udf31 Organic",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x9ae3c593d0bcb7c694d4ae1a13b17acd0baf444a",
       "total_volume_sol": 0.4,
       "total_volume_usd": 55.06,
@@ -23202,6 +23697,17 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x6369be54610ba0ae262249a19d3195ec3fe5fa22",
+      "total_volume_sol": 0.4,
+      "total_volume_usd": 55.04,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 12,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -23653,17 +24159,6 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 2,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x6c6b52cfb02fb7ba0839e273b017425ed2193984",
-      "total_volume_sol": 0.38,
-      "total_volume_usd": 52.83,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 5,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -24450,17 +24945,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x6bce6d561c5add72b432132c7c1e4dc53344d74d",
-      "total_volume_sol": 0.36,
-      "total_volume_usd": 49.58,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 1,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0xed173ccd6e0a3d027eb2a126fd67318ea07009da",
       "total_volume_sol": 0.36,
       "total_volume_usd": 49.8,
@@ -24500,6 +24984,17 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x1899b1aa3ec025765eac4bd6a9898106ce43917b",
+      "total_volume_sol": 0.36,
+      "total_volume_usd": 49.51,
+      "balance_ratio": 0.0,
+      "counterparties": 3,
+      "tx_count": 4,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -24879,6 +25374,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x879244e5d8181d8024c210eabe7aa8edba11d700",
+      "total_volume_sol": 0.34,
+      "total_volume_usd": 47.56,
+      "balance_ratio": 77.9,
+      "counterparties": 3,
+      "tx_count": 7,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x3805a2c0e569dc118fbf4caaa301c0f181227772",
       "total_volume_sol": 0.33,
       "total_volume_usd": 45.33,
@@ -25033,6 +25539,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x0aae741162e48302f5ac589e08b969dc0f75f9e3",
+      "total_volume_sol": 0.32,
+      "total_volume_usd": 44.36,
+      "balance_ratio": 17.1,
+      "counterparties": 12,
+      "tx_count": 98,
+      "label": "\ud83c\udf31 Organic",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x96600dd1d3a366b56147b1afadb3ab2705b843fd",
       "total_volume_sol": 0.32,
       "total_volume_usd": 44.43,
@@ -25050,6 +25567,28 @@
       "balance_ratio": 100.0,
       "counterparties": 1,
       "tx_count": 9,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x6b660f8748ed4a57e4cace2268192b291e6905a0",
+      "total_volume_sol": 0.32,
+      "total_volume_usd": 44.31,
+      "balance_ratio": 100.0,
+      "counterparties": 1,
+      "tx_count": 4,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x5adbf0c7751478432ba3c6182ed11d179a89799e",
+      "total_volume_sol": 0.32,
+      "total_volume_usd": 44.12,
+      "balance_ratio": 96.4,
+      "counterparties": 2,
+      "tx_count": 3,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -25209,6 +25748,28 @@
       "label_confidence": 70
     },
     {
+      "address": "0x696b5a0aa791377221854979ca91cd8a728c4d31",
+      "total_volume_sol": 0.32,
+      "total_volume_usd": 44.76,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x2fc23250e0f4ad0a217c081652aeb229ca1ccc0f",
+      "total_volume_sol": 0.32,
+      "total_volume_usd": 44.76,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x4613b731ef2ce510ce5627330dd178d5865184ed",
       "total_volume_sol": 0.31,
       "total_volume_usd": 43.38,
@@ -25256,9 +25817,9 @@
       "address": "0xa416fc5cebbcc7c65da57797b6770401a55a8c19",
       "total_volume_sol": 0.31,
       "total_volume_usd": 43.27,
-      "balance_ratio": 100.0,
+      "balance_ratio": 23.9,
       "counterparties": 2,
-      "tx_count": 3,
+      "tx_count": 4,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -25506,17 +26067,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x2289a3b51e9935b2a0106f8c785ab2533aed66df",
-      "total_volume_sol": 0.3,
-      "total_volume_usd": 41.04,
-      "balance_ratio": 100.0,
-      "counterparties": 4,
-      "tx_count": 7,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0xec66556017499cc664389a031c3f47d5c4c15112",
       "total_volume_sol": 0.3,
       "total_volume_usd": 41.13,
@@ -25594,13 +26144,13 @@
       "label_confidence": 70
     },
     {
-      "address": "0x0aae741162e48302f5ac589e08b969dc0f75f9e3",
-      "total_volume_sol": 0.29,
-      "total_volume_usd": 39.93,
-      "balance_ratio": 18.8,
-      "counterparties": 12,
-      "tx_count": 92,
-      "label": "\ud83c\udf31 Organic",
+      "address": "0xc2eed7b674ee085934f11fc499ea689a98b2fe8b",
+      "total_volume_sol": 0.3,
+      "total_volume_usd": 40.81,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
     },
@@ -25814,17 +26364,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x6369be54610ba0ae262249a19d3195ec3fe5fa22",
-      "total_volume_sol": 0.29,
-      "total_volume_usd": 40.46,
-      "balance_ratio": 100.0,
-      "counterparties": 2,
-      "tx_count": 6,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x8926a4636c5f4d888db7fe9f85192a33e7aae7de",
       "total_volume_sol": 0.29,
       "total_volume_usd": 40.32,
@@ -25832,6 +26371,17 @@
       "counterparties": 3,
       "tx_count": 5,
       "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x6fe1805fd841393bc60200e061d06c4eab975eaa",
+      "total_volume_sol": 0.29,
+      "total_volume_usd": 39.34,
+      "balance_ratio": 100.0,
+      "counterparties": 11,
+      "tx_count": 26,
+      "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
     },
@@ -26188,6 +26738,28 @@
       "label_confidence": 70
     },
     {
+      "address": "0x925b06bc5206f618d9a9ac8b56c50f7fb949d77d",
+      "total_volume_sol": 0.28,
+      "total_volume_usd": 38.35,
+      "balance_ratio": 52.3,
+      "counterparties": 2,
+      "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xf6d988c15b2abfb6473e7fb1abb73676626cdcf7",
+      "total_volume_sol": 0.28,
+      "total_volume_usd": 38.21,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xfc460c1e96e66c22cc3624a93895ae75c51d02ff",
       "total_volume_sol": 0.27,
       "total_volume_usd": 37.47,
@@ -26408,6 +26980,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0xae1cffb6ebd009cf35f4f5efec368cc9d289fe0f",
+      "total_volume_sol": 0.27,
+      "total_volume_usd": 37.7,
+      "balance_ratio": 48.3,
+      "counterparties": 3,
+      "tx_count": 4,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xd63d1b4f6512bba10203151d83a35fb9ad2dfc06",
       "total_volume_sol": 0.26,
       "total_volume_usd": 36.01,
@@ -26421,10 +27004,10 @@
     {
       "address": "0xe854b1a254ce01d6c55d67e47c7365b1680fdc3a",
       "total_volume_sol": 0.26,
-      "total_volume_usd": 35.35,
+      "total_volume_usd": 35.96,
       "balance_ratio": 0.0,
       "counterparties": 1,
-      "tx_count": 63,
+      "tx_count": 65,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -27112,6 +27695,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x6e371551919ce751499d268ecf34da04b99d1356",
+      "total_volume_sol": 0.24,
+      "total_volume_usd": 33.73,
+      "balance_ratio": 100.0,
+      "counterparties": 3,
+      "tx_count": 28,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xdd68d44dfa943ae279f603e9bf5c08a12860fb29",
       "total_volume_sol": 0.24,
       "total_volume_usd": 32.81,
@@ -27251,17 +27845,6 @@
       "counterparties": 1,
       "tx_count": 1,
       "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x415c88a05b75d1a65822d899f4a78b4c0d7cbefd",
-      "total_volume_sol": 0.24,
-      "total_volume_usd": 33.43,
-      "balance_ratio": 13.5,
-      "counterparties": 11,
-      "tx_count": 16,
-      "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
     },
@@ -27610,9 +28193,9 @@
       "address": "0xcd6b980029e6e6e0733ac8ec3e02be9410d09799",
       "total_volume_sol": 0.23,
       "total_volume_usd": 31.75,
-      "balance_ratio": 24.5,
-      "counterparties": 41,
-      "tx_count": 52,
+      "balance_ratio": 26.0,
+      "counterparties": 42,
+      "tx_count": 53,
       "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
@@ -28053,17 +28636,6 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 2,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x8defac69cf09038e82a45f0ec4524509209dd734",
-      "total_volume_sol": 0.23,
-      "total_volume_usd": 31.06,
-      "balance_ratio": 61.3,
-      "counterparties": 3,
-      "tx_count": 5,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -28696,6 +29268,50 @@
       "label_confidence": 70
     },
     {
+      "address": "0xb3fa1794ef74f69f8bbc7a3b7c49300cc769ef14",
+      "total_volume_sol": 0.22,
+      "total_volume_usd": 30.12,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xdd713fc913b14a6bc10374af301e27933992f6ed",
+      "total_volume_sol": 0.22,
+      "total_volume_usd": 30.74,
+      "balance_ratio": 100.0,
+      "counterparties": 1,
+      "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x0b3bbb9fdd42eea0b152670dcadb7cfcddce3dad",
+      "total_volume_sol": 0.22,
+      "total_volume_usd": 30.31,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x859acf9d52e39180312df02cd1bcc2e4c2cfc3fd",
+      "total_volume_sol": 0.21,
+      "total_volume_usd": 28.31,
+      "balance_ratio": 78.7,
+      "counterparties": 6,
+      "tx_count": 74,
+      "label": "\ud83c\udf31 Organic",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x50963b8e0ca5518bb7a315e66c37595321fe7598",
       "total_volume_sol": 0.21,
       "total_volume_usd": 29.17,
@@ -28790,6 +29406,17 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xca20d0c91c2e3c6e8239573e46ef32348378eef9",
+      "total_volume_sol": 0.21,
+      "total_volume_usd": 29.03,
+      "balance_ratio": 95.8,
+      "counterparties": 1,
+      "tx_count": 71,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -30327,9 +30954,9 @@
       "address": "0x8b3d74431bda58464aa294e20044992ff58db6a6",
       "total_volume_sol": 0.2,
       "total_volume_usd": 28.03,
-      "balance_ratio": 87.5,
+      "balance_ratio": 63.2,
       "counterparties": 2,
-      "tx_count": 44,
+      "tx_count": 45,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -31116,6 +31743,39 @@
       "label_confidence": 70
     },
     {
+      "address": "0xc5cce7ad4527f1689157d1389bea3f1cfe08ae8c",
+      "total_volume_sol": 0.2,
+      "total_volume_usd": 27.57,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x6a59e90862ebb8037da9a393760f5eceab364f85",
+      "total_volume_sol": 0.2,
+      "total_volume_usd": 27.56,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x01aedfc207b0fd00ea3a0ef3847764675ce161d5",
+      "total_volume_sol": 0.2,
+      "total_volume_usd": 27.43,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xfb240e7545a8fd51e814281bb1aaf078f223f1a2",
       "total_volume_sol": 0.19,
       "total_volume_usd": 26.34,
@@ -31138,17 +31798,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x6e371551919ce751499d268ecf34da04b99d1356",
-      "total_volume_sol": 0.19,
-      "total_volume_usd": 26.18,
-      "balance_ratio": 96.0,
-      "counterparties": 3,
-      "tx_count": 21,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x3a02d068f106c8d0acf74b87b24e6f6a1dfddefd",
       "total_volume_sol": 0.19,
       "total_volume_usd": 26.75,
@@ -31166,17 +31815,6 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xca20d0c91c2e3c6e8239573e46ef32348378eef9",
-      "total_volume_sol": 0.19,
-      "total_volume_usd": 26.82,
-      "balance_ratio": 96.1,
-      "counterparties": 1,
-      "tx_count": 65,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -32326,17 +32964,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x6fe1805fd841393bc60200e061d06c4eab975eaa",
-      "total_volume_sol": 0.18,
-      "total_volume_usd": 25.41,
-      "balance_ratio": 99.8,
-      "counterparties": 7,
-      "tx_count": 16,
-      "label": "\ud83c\udf31 Organic",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x14642ba57fcf36af5a236c359eed6f59ed12f47a",
       "total_volume_sol": 0.18,
       "total_volume_usd": 25.32,
@@ -32623,17 +33250,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x859acf9d52e39180312df02cd1bcc2e4c2cfc3fd",
-      "total_volume_sol": 0.17,
-      "total_volume_usd": 23.31,
-      "balance_ratio": 65.9,
-      "counterparties": 4,
-      "tx_count": 66,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x442e57af7d67173fdfa402f6566058a92b092572",
       "total_volume_sol": 0.17,
       "total_volume_usd": 23.57,
@@ -32673,17 +33289,6 @@
       "balance_ratio": 0.0,
       "counterparties": 2,
       "tx_count": 2,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x6b660f8748ed4a57e4cace2268192b291e6905a0",
-      "total_volume_sol": 0.17,
-      "total_volume_usd": 23.7,
-      "balance_ratio": 53.5,
-      "counterparties": 1,
-      "tx_count": 3,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -32824,9 +33429,9 @@
       "address": "0x8694405ea183a604a9ed5eb94020614c40beb947",
       "total_volume_sol": 0.17,
       "total_volume_usd": 23.63,
-      "balance_ratio": 100.0,
+      "balance_ratio": 72.8,
       "counterparties": 2,
-      "tx_count": 3,
+      "tx_count": 4,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -32893,6 +33498,17 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x0f9628d71ce30375e462112d726b95b92d7e4428",
+      "total_volume_sol": 0.17,
+      "total_volume_usd": 23.18,
+      "balance_ratio": 65.5,
+      "counterparties": 1,
+      "tx_count": 6,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -33055,6 +33671,17 @@
       "address": "0x01cd55f1f4d0cf73b9f4a215c1eda25b2bfcb3d6",
       "total_volume_sol": 0.17,
       "total_volume_usd": 24.08,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x7e63667190d68899864989fea03f802ebcdf28cb",
+      "total_volume_sol": 0.17,
+      "total_volume_usd": 24.05,
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 2,
@@ -33558,12 +34185,45 @@
       "label_confidence": 70
     },
     {
+      "address": "0x1652cd9aa77c27a97dfff9fa1834414aade59867",
+      "total_volume_sol": 0.16,
+      "total_volume_usd": 21.6,
+      "balance_ratio": 100.0,
+      "counterparties": 1,
+      "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x275c7844df2feb4aed11ccd33445a20dbbce5fe4",
       "total_volume_sol": 0.16,
       "total_volume_usd": 22.02,
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xce5e5dd70d40b43c3c38b4794491b8ae5d626150",
+      "total_volume_sol": 0.16,
+      "total_volume_usd": 22.52,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x880a86cae14e71d9c0e3332f401d85f39027f810",
+      "total_volume_sol": 0.16,
+      "total_volume_usd": 22.52,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -33888,6 +34548,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x6a400214a4380376f12aa22a309ae6138606764a",
+      "total_volume_sol": 0.15,
+      "total_volume_usd": 20.68,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x6a11c52f000a04241747f90e05aff110d74cac59",
       "total_volume_sol": 0.15,
       "total_volume_usd": 20.06,
@@ -34108,6 +34779,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x9d2012e7c41eddd947ac7bb846bd7cee4e29e48c",
+      "total_volume_sol": 0.15,
+      "total_volume_usd": 20.86,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 7,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xefe43815732c8f8d82ab3b11afe527bee783f000",
       "total_volume_sol": 0.15,
       "total_volume_usd": 20.61,
@@ -34144,6 +34826,50 @@
       "address": "0xf74ca8f62d7c810a4f30c5a3dacef01e9a76b666",
       "total_volume_sol": 0.15,
       "total_volume_usd": 20.98,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x468e7f1545bd3784dc465132553647258b73814d",
+      "total_volume_sol": 0.15,
+      "total_volume_usd": 20.9,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xda5798b720084e773fa939cc42307929a41e265e",
+      "total_volume_sol": 0.15,
+      "total_volume_usd": 20.9,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xd9a323640e7901cf9620d18bb4a1815b953f2324",
+      "total_volume_sol": 0.15,
+      "total_volume_usd": 20.74,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x706220d11dc04623748c02c55df1aa972004fb3b",
+      "total_volume_sol": 0.15,
+      "total_volume_usd": 20.48,
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
@@ -34199,9 +34925,9 @@
       "address": "0xad4a3f135c6d8e0928d1eb2aab46f5a5d2050c18",
       "total_volume_sol": 0.14,
       "total_volume_usd": 19.23,
-      "balance_ratio": 100.0,
+      "balance_ratio": 86.1,
       "counterparties": 2,
-      "tx_count": 6,
+      "tx_count": 8,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -34273,6 +34999,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x019b347ad3e8f0fc177749498d13ee815c36a5e2",
+      "total_volume_sol": 0.14,
+      "total_volume_usd": 18.73,
+      "balance_ratio": 49.0,
+      "counterparties": 2,
+      "tx_count": 35,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x95e8e6811925aa71760382a260d404e607385192",
       "total_volume_sol": 0.14,
       "total_volume_usd": 19.85,
@@ -34332,6 +35069,17 @@
       "total_volume_sol": 0.14,
       "total_volume_usd": 19.53,
       "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x9eba8c124a6ba1e47ce01e037f36581c9009b5ea",
+      "total_volume_sol": 0.14,
+      "total_volume_usd": 19.23,
+      "balance_ratio": 0.0,
       "counterparties": 2,
       "tx_count": 2,
       "label": "\ud83d\udc64 User",
@@ -34526,17 +35274,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x0f9628d71ce30375e462112d726b95b92d7e4428",
-      "total_volume_sol": 0.14,
-      "total_volume_usd": 19.19,
-      "balance_ratio": 54.2,
-      "counterparties": 1,
-      "tx_count": 5,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x1633804b90d4eb43a6ed74a2f00c505ddffef7c5",
       "total_volume_sol": 0.14,
       "total_volume_usd": 19.82,
@@ -34653,6 +35390,28 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x9edfe5dd2e25013be10142f0cca17b5441044d3b",
+      "total_volume_sol": 0.14,
+      "total_volume_usd": 19.0,
+      "balance_ratio": 0.0,
+      "counterparties": 4,
+      "tx_count": 5,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x6760cb8b0760a0e1ea8e4d6e5f4f678ad4c6846a",
+      "total_volume_sol": 0.14,
+      "total_volume_usd": 18.79,
+      "balance_ratio": 99.6,
+      "counterparties": 2,
+      "tx_count": 2,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -35016,17 +35775,6 @@
       "balance_ratio": 90.2,
       "counterparties": 2,
       "tx_count": 3,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x9d2012e7c41eddd947ac7bb846bd7cee4e29e48c",
-      "total_volume_sol": 0.13,
-      "total_volume_usd": 18.27,
-      "balance_ratio": 87.6,
-      "counterparties": 2,
-      "tx_count": 6,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -35681,17 +36429,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x9eba8c124a6ba1e47ce01e037f36581c9009b5ea",
-      "total_volume_sol": 0.11,
-      "total_volume_usd": 14.57,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 1,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x92b6d890afadd97c02433794ed190c85f1c55bf9",
       "total_volume_sol": 0.11,
       "total_volume_usd": 15.36,
@@ -36105,6 +36842,28 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x4b075bae4ede0940912ca57789769e40cce29fdd",
+      "total_volume_sol": 0.11,
+      "total_volume_usd": 15.79,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x079e152af6f1d499aa2e1a61ff7def89a401c286",
+      "total_volume_sol": 0.11,
+      "total_volume_usd": 14.85,
+      "balance_ratio": 100.0,
+      "counterparties": 1,
+      "tx_count": 3,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -36836,6 +37595,28 @@
       "label_confidence": 70
     },
     {
+      "address": "0x1ce5d716e9a3907e165ee728f9fb4c644d086859",
+      "total_volume_sol": 0.1,
+      "total_volume_usd": 13.23,
+      "balance_ratio": 99.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x12e493bd26f7fdee12c982a46f56f4273b1eb267",
+      "total_volume_sol": 0.1,
+      "total_volume_usd": 13.23,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xd91d9de054e294d9bebb7149955457300a9305cc",
       "total_volume_sol": 0.09,
       "total_volume_usd": 11.85,
@@ -37069,10 +37850,10 @@
     {
       "address": "0xe84923aa731c9506d9715b493e314667d1302d48",
       "total_volume_sol": 0.09,
-      "total_volume_usd": 12.13,
-      "balance_ratio": 93.3,
+      "total_volume_usd": 12.41,
+      "balance_ratio": 95.4,
       "counterparties": 2,
-      "tx_count": 4,
+      "tx_count": 5,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -37608,10 +38389,10 @@
     {
       "address": "0x13ff77c9315dde5ac9cfdb7258f99d7d70011803",
       "total_volume_sol": 0.09,
-      "total_volume_usd": 12.94,
-      "balance_ratio": 32.0,
+      "total_volume_usd": 13.01,
+      "balance_ratio": 32.2,
       "counterparties": 4,
-      "tx_count": 14,
+      "tx_count": 15,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -37716,12 +38497,23 @@
       "label_confidence": 70
     },
     {
+      "address": "0x5873cfb10b61c09a3d8595e0435d7a6171062e81",
+      "total_volume_sol": 0.09,
+      "total_volume_usd": 12.89,
+      "balance_ratio": 100.0,
+      "counterparties": 1,
+      "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xeea0832eff36a8d3bf4bac6d9b853575a0731fc6",
       "total_volume_sol": 0.09,
-      "total_volume_usd": 11.99,
-      "balance_ratio": 97.4,
+      "total_volume_usd": 12.32,
+      "balance_ratio": 100.0,
       "counterparties": 3,
-      "tx_count": 7,
+      "tx_count": 8,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -37733,6 +38525,61 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x65c05309c1fe97ce252726e977d78a812851e4c0",
+      "total_volume_sol": 0.09,
+      "total_volume_usd": 11.82,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x6b8807d4eb5c00edb4be4e9ddf935ce207ab3d00",
+      "total_volume_sol": 0.09,
+      "total_volume_usd": 12.2,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x7b6970ce2bf1eb557e1042d0299fc6cd88fb822e",
+      "total_volume_sol": 0.09,
+      "total_volume_usd": 12.44,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x6d4d9b8f5b321e9355cbb61164d60147ee58ba3e",
+      "total_volume_sol": 0.09,
+      "total_volume_usd": 12.68,
+      "balance_ratio": 49.6,
+      "counterparties": 3,
+      "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xec67109bd7ee3a779fd585cd62db0954b68f3ce0",
+      "total_volume_sol": 0.09,
+      "total_volume_usd": 12.11,
+      "balance_ratio": 0.0,
+      "counterparties": 4,
+      "tx_count": 5,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -37921,6 +38768,17 @@
       "counterparties": 2,
       "tx_count": 2,
       "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xcbc8c6dee96a6ce822e8819069f881073fa31110",
+      "total_volume_sol": 0.08,
+      "total_volume_usd": 10.75,
+      "balance_ratio": 99.9,
+      "counterparties": 8,
+      "tx_count": 18,
+      "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
     },
@@ -38783,6 +39641,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x5eb8e23d351d7ac608718c6df2870854c2c017c5",
+      "total_volume_sol": 0.08,
+      "total_volume_usd": 11.12,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xa60166b1eb9e016fd5d849fce77bdc6060dc915e",
       "total_volume_sol": 0.07,
       "total_volume_usd": 9.86,
@@ -38954,17 +39823,6 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 2,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x019b347ad3e8f0fc177749498d13ee815c36a5e2",
-      "total_volume_sol": 0.07,
-      "total_volume_usd": 9.35,
-      "balance_ratio": 48.8,
-      "counterparties": 2,
-      "tx_count": 24,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -39476,6 +40334,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x0d0ae3831991ec3651ef5b13620ae013a34a63e0",
+      "total_volume_sol": 0.07,
+      "total_volume_usd": 10.22,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xe0164aba54771d45af1e01abaaf8bee95fa587e9",
       "total_volume_sol": 0.07,
       "total_volume_usd": 9.79,
@@ -39960,6 +40829,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x7ccd85dcc37da7a83ed83048b6e0c3acdaf38a46",
+      "total_volume_sol": 0.07,
+      "total_volume_usd": 9.87,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xe949795d401540c2c82fa83c43d8be692d901fce",
       "total_volume_sol": 0.06,
       "total_volume_usd": 8.22,
@@ -40147,6 +41027,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x455cd9d31d4c82533a7d762ba4ef3a351d353055",
+      "total_volume_sol": 0.06,
+      "total_volume_usd": 8.77,
+      "balance_ratio": 0.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xa4632f63b464a81aa411b1133e6dfaa9d513603a",
       "total_volume_sol": 0.06,
       "total_volume_usd": 8.41,
@@ -40154,17 +41045,6 @@
       "counterparties": 1,
       "tx_count": 1,
       "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xcbc8c6dee96a6ce822e8819069f881073fa31110",
-      "total_volume_sol": 0.06,
-      "total_volume_usd": 8.55,
-      "balance_ratio": 99.8,
-      "counterparties": 6,
-      "tx_count": 10,
-      "label": "\ud83c\udf31 Organic",
       "label_type": "organic",
       "label_confidence": 70
     },
@@ -40219,6 +41099,17 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x910acd689ba614e77b898c0a35a7c3ff49b444e8",
+      "total_volume_sol": 0.06,
+      "total_volume_usd": 8.88,
+      "balance_ratio": 30.6,
+      "counterparties": 2,
+      "tx_count": 31,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -40730,17 +41621,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x12218d323b6088968639bf6c3b5c81d04edfb306",
-      "total_volume_sol": 0.06,
-      "total_volume_usd": 8.66,
-      "balance_ratio": 100.0,
-      "counterparties": 3,
-      "tx_count": 6,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x551d219206b720d5051ed20df55bf5e6ab4b59d1",
       "total_volume_sol": 0.06,
       "total_volume_usd": 8.28,
@@ -40854,6 +41734,39 @@
       "address": "0xeefd621cd33a4d6b244ea2956d28d46c3e00f13b",
       "total_volume_sol": 0.06,
       "total_volume_usd": 8.82,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xdcf5bdde8562548ee76c34cc77df2c381dab8fb8",
+      "total_volume_sol": 0.06,
+      "total_volume_usd": 8.64,
+      "balance_ratio": 66.7,
+      "counterparties": 3,
+      "tx_count": 5,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x9d9c92b611724a547aa10e32265d8843477f86dd",
+      "total_volume_sol": 0.06,
+      "total_volume_usd": 8.53,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x7595079b0b813bc1786de869a35229b176a4bdb4",
+      "total_volume_sol": 0.06,
+      "total_volume_usd": 8.88,
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
@@ -41544,6 +42457,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0xcfd5765591143ce251a048dc8ea0cc60193e2a5d",
+      "total_volume_sol": 0.05,
+      "total_volume_usd": 6.25,
+      "balance_ratio": 0.0,
+      "counterparties": 3,
+      "tx_count": 4,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x5afce1c439b8f5014931a815cd762eeff7684cdb",
       "total_volume_sol": 0.05,
       "total_volume_usd": 6.58,
@@ -42171,6 +43095,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0xe93bc47da800c19268dd6b0ad0cf00a73e3fad96",
+      "total_volume_sol": 0.05,
+      "total_volume_usd": 6.95,
+      "balance_ratio": 98.8,
+      "counterparties": 5,
+      "tx_count": 11,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x9d61a59747db68da79496035f9252102b7b9d4d3",
       "total_volume_sol": 0.05,
       "total_volume_usd": 6.95,
@@ -42188,6 +43123,28 @@
       "balance_ratio": 0.0,
       "counterparties": 2,
       "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x11909fd5c6141db9c7ef8d0e2c99dbd8a974177b",
+      "total_volume_sol": 0.05,
+      "total_volume_usd": 6.89,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x92ac0780c12214ea267c75d9a389dccefe803348",
+      "total_volume_sol": 0.05,
+      "total_volume_usd": 6.54,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -42481,10 +43438,10 @@
     {
       "address": "0x8127b5e1a89b31e0d32964e3a3fc4162eca901fe",
       "total_volume_sol": 0.04,
-      "total_volume_usd": 5.1,
-      "balance_ratio": 55.2,
+      "total_volume_usd": 5.18,
+      "balance_ratio": 54.3,
       "counterparties": 4,
-      "tx_count": 21,
+      "tx_count": 22,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -43387,17 +44344,6 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 2,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xcfd5765591143ce251a048dc8ea0cc60193e2a5d",
-      "total_volume_sol": 0.04,
-      "total_volume_usd": 5.14,
-      "balance_ratio": 0.0,
-      "counterparties": 3,
-      "tx_count": 3,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -46318,12 +47264,78 @@
       "label_confidence": 70
     },
     {
+      "address": "0xe63493953e44b3972bc1f0737ec4e4c21cd7f1cb",
+      "total_volume_sol": 0.04,
+      "total_volume_usd": 5.79,
+      "balance_ratio": 72.0,
+      "counterparties": 1,
+      "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x75554382f9814633a000c99363d4970458ea267b",
       "total_volume_sol": 0.04,
       "total_volume_usd": 5.38,
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xa3503ec0504ab6f090d8b74381951253e908d3ad",
+      "total_volume_sol": 0.04,
+      "total_volume_usd": 4.99,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 5,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xb72153cdeed77587e5867d84e7cbd2bbba456028",
+      "total_volume_sol": 0.04,
+      "total_volume_usd": 5.23,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x27158e0be88355285e04c5877b5343dba3e30173",
+      "total_volume_sol": 0.04,
+      "total_volume_usd": 5.99,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xdbfda8b2aff95643e4b3f5e9635974ddec2a29d8",
+      "total_volume_sol": 0.04,
+      "total_volume_usd": 6.11,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x469ad8c1026f5ec74ef782b911cd2036a2e2c676",
+      "total_volume_sol": 0.04,
+      "total_volume_usd": 5.08,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -46738,10 +47750,10 @@
     {
       "address": "0xdb040c342dd7f9b035c8a2c3832fb7768cfb1980",
       "total_volume_sol": 0.03,
-      "total_volume_usd": 3.86,
-      "balance_ratio": 34.3,
-      "counterparties": 2,
-      "tx_count": 5,
+      "total_volume_usd": 4.26,
+      "balance_ratio": 37.8,
+      "counterparties": 3,
+      "tx_count": 8,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -47803,17 +48815,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0xe93bc47da800c19268dd6b0ad0cf00a73e3fad96",
-      "total_volume_sol": 0.03,
-      "total_volume_usd": 3.64,
-      "balance_ratio": 99.4,
-      "counterparties": 3,
-      "tx_count": 7,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0xcd67e53ac9030df9c3a4c531bd2ab595ac84b36e",
       "total_volume_sol": 0.03,
       "total_volume_usd": 4.07,
@@ -47830,17 +48831,6 @@
       "total_volume_usd": 4.53,
       "balance_ratio": 100.0,
       "counterparties": 2,
-      "tx_count": 2,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x9edfe5dd2e25013be10142f0cca17b5441044d3b",
-      "total_volume_sol": 0.03,
-      "total_volume_usd": 4.66,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
       "tx_count": 2,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
@@ -47880,6 +48870,39 @@
       "label_confidence": 70
     },
     {
+      "address": "0xad3922eb0d3072ddaf3738fe179dec89f26131da",
+      "total_volume_sol": 0.03,
+      "total_volume_usd": 3.61,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x60ae2fa234a666dbcfa0c86eae38e2b97af9a9e4",
+      "total_volume_sol": 0.03,
+      "total_volume_usd": 4.37,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x5023aee311a7b09b5939cc2d0c2faf7e0cdfb1d5",
+      "total_volume_sol": 0.03,
+      "total_volume_usd": 4.37,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xfd5360572a68c17c132c9e3569f9732d22334d25",
       "total_volume_sol": 0.02,
       "total_volume_usd": 3.16,
@@ -47904,10 +48927,10 @@
     {
       "address": "0x6cf81f0727c0ef1d039f14f1b9610fc4175ede7d",
       "total_volume_sol": 0.02,
-      "total_volume_usd": 2.48,
-      "balance_ratio": 60.5,
+      "total_volume_usd": 2.76,
+      "balance_ratio": 67.2,
       "counterparties": 2,
-      "tx_count": 10,
+      "tx_count": 11,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -48245,10 +49268,10 @@
     {
       "address": "0x0f1a4fe8d203caa81d01ad302725831b5da39eb9",
       "total_volume_sol": 0.02,
-      "total_volume_usd": 3.3,
-      "balance_ratio": 55.5,
-      "counterparties": 1,
-      "tx_count": 3,
+      "total_volume_usd": 3.37,
+      "balance_ratio": 54.4,
+      "counterparties": 2,
+      "tx_count": 4,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -48546,6 +49569,17 @@
       "balance_ratio": 100.0,
       "counterparties": 2,
       "tx_count": 6,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x9a797d696da816d4e4b0d7d4064db8444fee0974",
+      "total_volume_sol": 0.02,
+      "total_volume_usd": 2.57,
+      "balance_ratio": 0.0,
+      "counterparties": 2,
+      "tx_count": 3,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -50476,17 +51510,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x5873cfb10b61c09a3d8595e0435d7a6171062e81",
-      "total_volume_sol": 0.02,
-      "total_volume_usd": 2.83,
-      "balance_ratio": 22.0,
-      "counterparties": 1,
-      "tx_count": 2,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0xefe885c0377d9ee800a8a89b073e38c0a1c26048",
       "total_volume_sol": 0.02,
       "total_volume_usd": 3.35,
@@ -50542,6 +51565,28 @@
       "label_confidence": 70
     },
     {
+      "address": "0xf8c454e38f1cb59c43aa9cbe2e2c875c493402f2",
+      "total_volume_sol": 0.02,
+      "total_volume_usd": 3.36,
+      "balance_ratio": 38.1,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x4b496ad1db77c61a96a2da4a669879539b46b7dd",
+      "total_volume_sol": 0.02,
+      "total_volume_usd": 2.77,
+      "balance_ratio": 4.2,
+      "counterparties": 3,
+      "tx_count": 9,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0x6e8fc75e94c04bb6541c45a87888912a81d3efc5",
       "total_volume_sol": 0.02,
       "total_volume_usd": 2.19,
@@ -50553,11 +51598,99 @@
       "label_confidence": 70
     },
     {
-      "address": "0xa3503ec0504ab6f090d8b74381951253e908d3ad",
+      "address": "0x3238208b79fdd97097740c2d0d252db5133a85c7",
       "total_volume_sol": 0.02,
-      "total_volume_usd": 2.13,
+      "total_volume_usd": 2.88,
+      "balance_ratio": 100.0,
+      "counterparties": 1,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x048f984ac8f20bc7a6f34771d15fd3badf645f27",
+      "total_volume_sol": 0.02,
+      "total_volume_usd": 2.88,
+      "balance_ratio": 100.0,
+      "counterparties": 1,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xf324f2f325c3a8ca19ff5d4247d5f4095f11966d",
+      "total_volume_sol": 0.02,
+      "total_volume_usd": 3.03,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x3ba98c021bddac9f920ce810a4a9b84eff710c13",
+      "total_volume_sol": 0.02,
+      "total_volume_usd": 2.34,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xd7128917a9872185034447598a0d20f86ea6dcc8",
+      "total_volume_sol": 0.02,
+      "total_volume_usd": 3.03,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x70250787e0a598257c85419b855ac296e5993425",
+      "total_volume_sol": 0.02,
+      "total_volume_usd": 2.6,
       "balance_ratio": 0.0,
       "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x1ce6403369db0796e0f93cf4cb3ae63bf8d6ee8d",
+      "total_volume_sol": 0.02,
+      "total_volume_usd": 2.23,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x8b8fbb18acd1246e930d60eb0fc66ca9b0c601da",
+      "total_volume_sol": 0.02,
+      "total_volume_usd": 2.24,
+      "balance_ratio": 51.1,
+      "counterparties": 2,
+      "tx_count": 5,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xd8b138cc0bcc011b8760db3834b21df1c8aac166",
+      "total_volume_sol": 0.02,
+      "total_volume_usd": 3.03,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
       "tx_count": 2,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
@@ -50588,10 +51721,10 @@
     {
       "address": "0x327fc153c67819206bf403a436507c658606d979",
       "total_volume_sol": 0.01,
-      "total_volume_usd": 0.69,
-      "balance_ratio": 33.6,
+      "total_volume_usd": 1.03,
+      "balance_ratio": 50.2,
       "counterparties": 2,
-      "tx_count": 2,
+      "tx_count": 3,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -50962,10 +52095,10 @@
     {
       "address": "0x89258ffe9460a0d4ea4e6f9c3f46cee0b704fe16",
       "total_volume_sol": 0.01,
-      "total_volume_usd": 1.77,
-      "balance_ratio": 46.7,
+      "total_volume_usd": 1.83,
+      "balance_ratio": 48.4,
       "counterparties": 5,
-      "tx_count": 44,
+      "tx_count": 45,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -51348,9 +52481,9 @@
       "address": "0xdfd553ba49ec685828aeb58b6d6287c4f642804f",
       "total_volume_sol": 0.01,
       "total_volume_usd": 2.04,
-      "balance_ratio": 0.1,
+      "balance_ratio": 0.0,
       "counterparties": 3,
-      "tx_count": 67,
+      "tx_count": 75,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -51370,17 +52503,6 @@
       "address": "0x5bbf6d7b03501728e740b0d5677d17535c6e87d7",
       "total_volume_sol": 0.01,
       "total_volume_usd": 1.08,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 1,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x455cd9d31d4c82533a7d762ba4ef3a351d353055",
-      "total_volume_sol": 0.01,
-      "total_volume_usd": 1.38,
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
@@ -51450,6 +52572,17 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xbcd2143bfb741d4e36abaa5797fd88ae5d9fbefa",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 0.72,
+      "balance_ratio": 100.0,
+      "counterparties": 4,
+      "tx_count": 6,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -51538,6 +52671,28 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xc466be3f3882f9bb25b0bd51c1c364969bae25f2",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 1.0,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x7a1f0c56098b84fc7daa30680ce9f68f212e04e9",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 0.96,
+      "balance_ratio": 91.3,
+      "counterparties": 2,
+      "tx_count": 4,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -51923,17 +53078,6 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x910acd689ba614e77b898c0a35a7c3ff49b444e8",
-      "total_volume_sol": 0.01,
-      "total_volume_usd": 0.97,
-      "balance_ratio": 100.0,
-      "counterparties": 2,
-      "tx_count": 5,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -53221,6 +54365,17 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xd4b24e99708442febbd64fb9b0032aabc015aff9",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 1.65,
+      "balance_ratio": 0.0,
+      "counterparties": 2,
+      "tx_count": 2,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -54601,6 +55756,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x5d74c9c186961b23fb2bc67d3551654555f266fb",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 0.78,
+      "balance_ratio": 0.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xeb3f55f85bf579e4c93405b0f9e2e31cc2bd9c08",
       "total_volume_sol": 0.01,
       "total_volume_usd": 1.52,
@@ -55547,17 +56713,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x4b496ad1db77c61a96a2da4a669879539b46b7dd",
-      "total_volume_sol": 0.01,
-      "total_volume_usd": 1.25,
-      "balance_ratio": 89.4,
-      "counterparties": 3,
-      "tx_count": 6,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x8a0c6e3d360ea838e3e2cbaf2d6237c5512a7838",
       "total_volume_sol": 0.01,
       "total_volume_usd": 1.94,
@@ -55602,6 +56757,17 @@
       "label_confidence": 70
     },
     {
+      "address": "0x968a80ce147f1ed9aac5f66da5720fa771ea7c0f",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 1.52,
+      "balance_ratio": 68.9,
+      "counterparties": 1,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xb15398a6726755f7c8ea1938fa89104304db5a65",
       "total_volume_sol": 0.01,
       "total_volume_usd": 0.78,
@@ -55619,6 +56785,237 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x68dd44832e51b0cea3f52141d1bde38ff110a7a4",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 1.02,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x3c0490a710b8ca3e50ae12370f942be848f04fc0",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 1.02,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x53b9cd0e9e181240bb8cc079e0348eb47dc6691d",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 1.1,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xf45d7e08cf6530a53e6258ce9c8c7bfde3cc71f6",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 0.97,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x0de40ea77016baa7b7e69847752d0eedcfda830d",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 1.89,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x8ffe0ed1cee9ca592dab69e2dac18ff486db1022",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 2.01,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xb43a13b332f79448f73a9dd2f5cb3645eecc0bd3",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 1.01,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x69684f4499571c61b2ec33eb7083f1b6933eedf3",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 0.81,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xc83918fdc9d37b39a8bd9f715da8f9dd46e90d70",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 1.0,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x768c586fefedd2f66da3782fccd2c5c2bc35864c",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 1.0,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x403d2e8c9342f3ae8f6e4790a81139a866253f1a",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 0.99,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xedc7764e314416a38537a79b64dd8a4a596ab593",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 0.99,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x378f07503704966d3eb6518fdd6456bd2390b681",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 0.97,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x882be32cf711abb084b7d7451c695ddaa1300921",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 1.0,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x2f829253cfea70583f5c7cfa4b08714eb8a8aad4",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 2.06,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 5,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xe2133b44c93dd256e6d3ba6f0e546378cd1906bd",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 0.97,
+      "balance_ratio": 58.9,
+      "counterparties": 3,
+      "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x8bcbd75585a135ffc99be662fa83fdbe13dc8e42",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 0.97,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xe6a0c4e5bdaf657f629ae9faf9aecaa357056f18",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 1.38,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x5d29b68aafb22c491977eacf7dfb1661d2832555",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 0.89,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 5,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x4367b955f6b5099849fd75f29baedef63083ff3a",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 1.34,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x64d004bcb1b102236b0e221eae71ef7153868fa1",
+      "total_volume_sol": 0.01,
+      "total_volume_usd": 0.97,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -56004,6 +57401,17 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x58e4bb89a0ad3afad030b19b1a96a7c04971b963",
+      "total_volume_sol": 0.0,
+      "total_volume_usd": 0.12,
+      "balance_ratio": 100.0,
+      "counterparties": 3,
+      "tx_count": 8,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -56581,28 +57989,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0xbcd2143bfb741d4e36abaa5797fd88ae5d9fbefa",
-      "total_volume_sol": 0.0,
-      "total_volume_usd": 0.62,
-      "balance_ratio": 86.0,
-      "counterparties": 3,
-      "tx_count": 5,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x9a797d696da816d4e4b0d7d4064db8444fee0974",
-      "total_volume_sol": 0.0,
-      "total_volume_usd": 0.55,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 2,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0x1610b87b44c9fbb1b974809a72ffe2facc741261",
       "total_volume_sol": 0.0,
       "total_volume_usd": 0.0,
@@ -56682,10 +58068,10 @@
     {
       "address": "0xead3d06b49f092b16ce4e975b5ee5f4c5ab582bb",
       "total_volume_sol": 0.0,
-      "total_volume_usd": 0.04,
+      "total_volume_usd": 0.09,
       "balance_ratio": 0.0,
       "counterparties": 1,
-      "tx_count": 1,
+      "tx_count": 2,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -56697,17 +58083,6 @@
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0x7a1f0c56098b84fc7daa30680ce9f68f212e04e9",
-      "total_volume_sol": 0.0,
-      "total_volume_usd": 0.68,
-      "balance_ratio": 65.0,
-      "counterparties": 1,
-      "tx_count": 3,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -58058,17 +59433,6 @@
       "address": "0x789dc14764c2b43ea6a566e4301e7041b43e3b87",
       "total_volume_sol": 0.0,
       "total_volume_usd": 0.39,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 1,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
-      "address": "0xd4b24e99708442febbd64fb9b0032aabc015aff9",
-      "total_volume_sol": 0.0,
-      "total_volume_usd": 0.37,
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
@@ -72487,17 +73851,6 @@
       "label_confidence": 70
     },
     {
-      "address": "0x5d74c9c186961b23fb2bc67d3551654555f266fb",
-      "total_volume_sol": 0.0,
-      "total_volume_usd": 0.63,
-      "balance_ratio": 0.0,
-      "counterparties": 1,
-      "tx_count": 1,
-      "label": "\ud83d\udc64 User",
-      "label_type": "organic",
-      "label_confidence": 70
-    },
-    {
       "address": "0xb6cb859351fc957f494c400dc4129bc6beced205",
       "total_volume_sol": 0.0,
       "total_volume_usd": 0.1,
@@ -72929,10 +74282,10 @@
     {
       "address": "0xb231d16076e9149faaf73cd86c779e2f8762e311",
       "total_volume_sol": 0.0,
-      "total_volume_usd": 0.05,
-      "balance_ratio": 4.1,
+      "total_volume_usd": 0.06,
+      "balance_ratio": 3.3,
       "counterparties": 5,
-      "tx_count": 10,
+      "tx_count": 11,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -73052,8 +74405,8 @@
       "total_volume_sol": 0.0,
       "total_volume_usd": 0.03,
       "balance_ratio": 0.0,
-      "counterparties": 2,
-      "tx_count": 2,
+      "counterparties": 3,
+      "tx_count": 3,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -73444,12 +74797,34 @@
       "label_confidence": 70
     },
     {
+      "address": "0xb3462903689b338b9a5c08b9dafee11a34e65e56",
+      "total_volume_sol": 0.0,
+      "total_volume_usd": 0.02,
+      "balance_ratio": 1.4,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
       "address": "0xdaf1702cc23abcb30cf35b8a6481f066845bb5bb",
       "total_volume_sol": 0.0,
       "total_volume_usd": 0.09,
       "balance_ratio": 0.0,
       "counterparties": 1,
       "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x0aa1d37f42894b03e59161816922e4204d042651",
+      "total_volume_sol": 0.0,
+      "total_volume_usd": 0.21,
+      "balance_ratio": 100.0,
+      "counterparties": 1,
+      "tx_count": 3,
       "label": "\ud83d\udc64 User",
       "label_type": "organic",
       "label_confidence": 70
@@ -73624,6 +74999,160 @@
       "total_volume_sol": 0.0,
       "total_volume_usd": 0.1,
       "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xf4feb27e49bc53f3972f33060f18d7cf3cb056cf",
+      "total_volume_sol": 0.0,
+      "total_volume_usd": 0.12,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x80e9a9343f7df57a59368b8d55d51602e0d18e9a",
+      "total_volume_sol": 0.0,
+      "total_volume_usd": 0.11,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xaaa124bacf005fe94b648abdb2cb46733622ab8c",
+      "total_volume_sol": 0.0,
+      "total_volume_usd": 0.3,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x7d6d445d801f68c72c704a7ead5300602fd4ea3d",
+      "total_volume_sol": 0.0,
+      "total_volume_usd": 0.04,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xa7628c4cc1cca932c3d51e7d66d9b2572e3c9da6",
+      "total_volume_sol": 0.0,
+      "total_volume_usd": 0.11,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x2f878d19fb0b49729e81ba7328e6892ac415fa41",
+      "total_volume_sol": 0.0,
+      "total_volume_usd": 0.34,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x9f109a79f64c1ab447c3ec45d6c079ba88125a26",
+      "total_volume_sol": 0.0,
+      "total_volume_usd": 0.45,
+      "balance_ratio": 70.8,
+      "counterparties": 2,
+      "tx_count": 3,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x41276d614c78cceb9f9fca12f2778c7bd568891a",
+      "total_volume_sol": 0.0,
+      "total_volume_usd": 0.11,
+      "balance_ratio": 100.0,
+      "counterparties": 1,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x0afecffae1064dafeab6fb872c35aa697bdf6c0c",
+      "total_volume_sol": 0.0,
+      "total_volume_usd": 0.48,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x354169a1f9432cc66f5c52080a2a91d7a104c21f",
+      "total_volume_sol": 0.0,
+      "total_volume_usd": 0.14,
+      "balance_ratio": 69.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x9f4876a206a4842fcfc313bde71f5831c72ed7f0",
+      "total_volume_sol": 0.0,
+      "total_volume_usd": 0.0,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xf8fbc9be087eb16aad348dfcb7f8da8af5b2d5c2",
+      "total_volume_sol": 0.0,
+      "total_volume_usd": 0.14,
+      "balance_ratio": 100.0,
+      "counterparties": 2,
+      "tx_count": 2,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0xd8457fff283b50a154d34102b505491f8f24372e",
+      "total_volume_sol": 0.0,
+      "total_volume_usd": 0.01,
+      "balance_ratio": 0.0,
+      "counterparties": 1,
+      "tx_count": 1,
+      "label": "\ud83d\udc64 User",
+      "label_type": "organic",
+      "label_confidence": 70
+    },
+    {
+      "address": "0x4c2f6ed4743fe06d760fbfd1cc2acd2127db6b91",
+      "total_volume_sol": 0.0,
+      "total_volume_usd": 0.55,
+      "balance_ratio": 99.0,
       "counterparties": 2,
       "tx_count": 2,
       "label": "\ud83d\udc64 User",

@@ -1,0 +1,42 @@
+================================================================================
+AERO REWARDS TRACKING REPORT
+================================================================================
+
+SUMMARY
+--------------------------------------------------------------------------------
+Total AERO Received: 2,248,355.00 AERO
+Total AERO Sold:     2,215,947.22 AERO (98.56%)
+Total AERO Held:     32,407.78 AERO (1.44%)
+
+TOP ADDRESSES
+--------------------------------------------------------------------------------
+
+0x802b65b5d9016621e66003aed0b16615093f328b
+  Received: 1,802,522.32 AERO
+  Sold:     1,770,356.04 AERO
+  Net:      32,166.28 AERO
+  Sell %:   98.22%
+
+0xa87a233e8a7d8951ff790a2e39738086cb5f71b7
+  Received: 441,565.77 AERO
+  Sold:     441,565.77 AERO
+  Net:      0.00 AERO
+  Sell %:   100.00%
+
+0xcbcfdaaae40d3466f0c68dc73f8fc6cf29e6c988
+  Received: 3,399.12 AERO
+  Sold:     3,121.73 AERO
+  Net:      277.40 AERO
+  Sell %:   91.84%
+
+0x88fec94eb9f11376e0dcb31ea7babc278d6035c3
+  Received: 864.67 AERO
+  Sold:     903.68 AERO
+  Net:      -39.01 AERO
+  Sell %:   104.51%
+
+0xdb0253708c484ac5b6710b3b6ee7ac896f643d33
+  Received: 3.11 AERO
+  Sold:     0.00 AERO
+  Net:      3.11 AERO
+  Sell %:   0.00%

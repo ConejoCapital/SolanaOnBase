@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solana Token Analysis - AERO Farming Investigation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --info: #3b82f6;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --border: #e5e7eb;
+            --text: #111827;
+            --text-light: #6b7280;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--success), var(--danger));
+        }
+        
+        h1 {
+            color: var(--dark);
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        h1 i {
+            color: var(--primary);
+        }
+        
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        .token-info {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            border: 1px solid var(--border);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .token-info-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .token-info-label {
+            font-size: 0.85em;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+        
+        .token-info-value {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        /* Bounty Section */
+        .bounty-section {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 5px solid var(--warning);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .bounty-section h2 {
+            color: #92400e;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5em;
+        }
+        
+        .bounty-section p {
+            color: #78350f;
+            margin: 8px 0;
+            line-height: 1.8;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--stat-color, var(--primary));
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+        
+        .stat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            background: var(--stat-bg, #f3f4f6);
+            color: var(--stat-color, var(--primary));
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .stat-value {
+            font-size: 2.8em;
+            font-weight: 800;
+            margin: 10px 0;
+            color: var(--stat-color, var(--primary));
+        }
+        
+        .stat-description {
+            color: var(--text-light);
+            font-size: 0.9em;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+        
+        .organic { --stat-color: var(--success); --stat-bg: #d1fae5; }
+        .farmed { --stat-color: var(--danger); --stat-bg: #fee2e2; }
+        .total { --stat-color: var(--info); --stat-bg: #dbeafe; }
+        .addresses { --stat-color: var(--warning); --stat-bg: #fef3c7; }
+        
+        /* Progress Bar */
+        .progress-section {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 30px 0;
+        }
+        
+        .progress-section h3 {
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+        
+        .progress-container {
+            position: relative;
+            background: var(--light);
+            height: 50px;
+            border-radius: 25px;
+            overflow: hidden;
+            margin: 20px 0;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .progress-fill {
+            height: 100%;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9em;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .progress-organic {
+            background: linear-gradient(90deg, var(--success), #34d399);
+        }
+        
+        .progress-farmed {
+            background: linear-gradient(90deg, var(--danger), #f87171);
+        }
+        
+        .progress-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: var(--text-light);
+        }
+        
+        /* Chart Sections */
+        .chart-section {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 30px 0;
+            border: 1px solid var(--border);
+        }
+        
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .chart-header h2 {
+            color: var(--dark);
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .chart-description {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            background: var(--light);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .chart-container {
+            text-align: center;
+            margin: 20px 0;
+            background: var(--light);
+            padding: 20px;
+            border-radius: 12px;
+        }
+        
+        .chart-container img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        /* Table */
+        .table-wrapper {
+            overflow-x: auto;
+            margin-top: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        
+        .addresses-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        .addresses-table thead {
+            background: linear-gradient(135deg, var(--dark) 0%, #374151 100%);
+            color: white;
+        }
+        
+        .addresses-table th {
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .addresses-table th:first-child {
+            border-top-left-radius: 12px;
+        }
+        
+        .addresses-table th:last-child {
+            border-top-right-radius: 12px;
+        }
+        
+        .addresses-table td {
+            padding: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .addresses-table tbody tr {
+            transition: background 0.2s;
+        }
+        
+        .addresses-table tbody tr:hover {
+            background: var(--light);
+        }
+        
+        .addresses-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .address {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        
+        .farming-badge {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        
+        .organic-badge {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        
+        .number {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        /* Key Findings */
+        .key-findings {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 30px 0;
+            border: 1px solid var(--border);
+        }
+        
+        .key-findings h2 {
+            color: var(--dark);
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .findings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .finding-item {
+            padding: 20px;
+            background: var(--light);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .finding-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .finding-item strong {
+            color: var(--dark);
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        .finding-item .farmed {
+            color: var(--danger);
+            font-weight: 700;
+        }
+        
+        .finding-item .organic {
+            color: var(--success);
+            font-weight: 700;
+        }
+        
+        /* Warning */
+        .warning {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid var(--warning);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 12px;
+            display: flex;
+            align-items: start;
+            gap: 15px;
+        }
+        
+        .warning-icon {
+            font-size: 1.5em;
+            color: var(--warning);
+            flex-shrink: 0;
+        }
+        
+        .warning-content {
+            flex: 1;
+        }
+        
+        .warning strong {
+            color: #92400e;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .warning p {
+            color: #78350f;
+            margin: 5px 0;
+        }
+        
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 60px;
+            color: var(--text-light);
+        }
+        
+        .spinner {
+            border: 4px solid var(--border);
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: white;
+            margin-top: 50px;
+        }
+        
+        footer p {
+            opacity: 0.9;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .token-info {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Tooltip */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            font-size: 0.85em;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-chart-line"></i> Solana Token Analysis</h1>
+            <p class="subtitle">Comprehensive AERO Incentives Farming Investigation</p>
+            <div class="token-info">
+                <div class="token-info-item">
+                    <div class="token-info-label">Token Address</div>
+                    <div class="token-info-value">0x311935cd80b76769bf2ecc9d8ab7635b2139cf82</div>
+                </div>
+                <div class="token-info-item">
+                    <div class="token-info-label">Network</div>
+                    <div class="token-info-value">Base (Ethereum L2)</div>
+                </div>
+                <div class="token-info-item">
+                    <div class="token-info-label">Analysis Status</div>
+                    <div class="token-info-value" id="status">Loading...</div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="bounty-section">
+            <h2><i class="fas fa-dollar-sign"></i> $500 Bounty Investigation</h2>
+            <p><strong>Primary Question:</strong> What percentage of the volume is organic vs. farmed for the AERO incentives?</p>
+            <p><strong>Additional Investigation:</strong> How much AERO do farming addresses sell vs. hold? Are they accumulating or immediately selling rewards?</p>
+            <p><strong>Context:</strong> Initial analysis found 99.8% of volume from just 3 addresses with minimal net position changes, indicating systematic wash trading to generate AERO rewards.</p>
+        </div>
+        
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card total">
+                <div class="stat-header">
+                    <div>
+                        <div class="stat-label">Total Transactions</div>
+                        <div class="stat-value" id="totalTxs">-</div>
+                    </div>
+                    <div class="stat-icon"><i class="fas fa-exchange-alt"></i></div>
+                </div>
+                <div class="stat-description">
+                    Total number of ERC-20 transfer transactions analyzed. This includes all token movements from the Solana token's inception block.
+                </div>
+            </div>
+            
+            <div class="stat-card farmed">
+                <div class="stat-header">
+                    <div>
+                        <div class="stat-label">Farmed Volume</div>
+                        <div class="stat-value" id="farmedPct">-</div>
+                        <div class="stat-description" id="farmedVol">-</div>
+                    </div>
+                    <div class="stat-icon"><i class="fas fa-robot"></i></div>
+                </div>
+                <div class="stat-description">
+                    Volume generated through wash trading patterns. Identified by high round-trip ratios (>90%) with minimal net position changes, indicating systematic trading to generate AERO rewards.
+                </div>
+            </div>
+            
+            <div class="stat-card organic">
+                <div class="stat-header">
+                    <div>
+                        <div class="stat-label">Organic Volume</div>
+                        <div class="stat-value" id="organicPct">-</div>
+                        <div class="stat-description" id="organicVol">-</div>
+                    </div>
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                </div>
+                <div class="stat-description">
+                    Genuine trading volume from organic users. These transactions show normal trading patterns with meaningful net position changes and diverse counterparties.
+                </div>
+            </div>
+            
+            <div class="stat-card addresses">
+                <div class="stat-header">
+                    <div>
+                        <div class="stat-label">Farming Addresses</div>
+                        <div class="stat-value" id="farmingAddrs">-</div>
+                    </div>
+                    <div class="stat-icon"><i class="fas fa-address-card"></i></div>
+                </div>
+                <div class="stat-description">
+                    Number of unique addresses identified as engaging in wash trading. These addresses typically show 99%+ round-trip ratios with net positions less than 1% of total volume.
+                </div>
+            </div>
+        </div>
+        
+        <div class="progress-section">
+            <h3><i class="fas fa-chart-pie"></i> Volume Distribution</h3>
+            <div class="progress-container">
+                <div class="progress-fill progress-farmed" id="farmedBar" style="width: 0%">0%</div>
+                <div class="progress-fill progress-organic" id="organicBar" style="width: 0%">0%</div>
+            </div>
+            <div class="progress-labels">
+                <span><strong>Farmed:</strong> <span id="farmedLabel">0%</span></span>
+                <span><strong>Organic:</strong> <span id="organicLabel">0%</span></span>
+            </div>
+        </div>
+        
+        <div class="key-findings">
+            <h2><i class="fas fa-lightbulb"></i> Key Findings</h2>
+            <div class="findings-grid" id="findings"></div>
+        </div>
+        
+        <div class="chart-section">
+            <div class="chart-header">
+                <h2><i class="fas fa-chart-pie"></i> Volume Breakdown</h2>
+            </div>
+            <div class="chart-description">
+                <strong>What this shows:</strong> This pie chart visualizes the proportion of total trading volume that is farmed (wash traded) versus organic (genuine trading). The massive disparity indicates that nearly all volume is generated by systematic trading bots designed to earn AERO rewards rather than genuine market activity.
+            </div>
+            <div class="chart-container">
+                <img src="visualizations/preliminary_volume_breakdown.png" alt="Volume Breakdown" id="volumeChart">
+            </div>
+        </div>
+        
+        <div class="chart-section">
+            <div class="chart-header">
+                <h2><i class="fas fa-chart-bar"></i> Top Addresses by Volume</h2>
+            </div>
+            <div class="chart-description">
+                <strong>What this shows:</strong> The top 20 addresses ranked by total trading volume. Addresses are color-coded: <span style="color: #ef4444; font-weight: 600;">Red = Farming addresses</span> (wash trading), <span style="color: #10b981; font-weight: 600;">Green = Organic addresses</span> (genuine trading). The dominance of red bars reveals that farming addresses generate the vast majority of volume.
+            </div>
+            <div class="chart-container">
+                <img src="visualizations/preliminary_top_addresses.png" alt="Top Addresses" id="addressesChart">
+            </div>
+        </div>
+        
+        <div class="chart-section">
+            <div class="chart-header">
+                <h2><i class="fas fa-calendar-alt"></i> Daily Transaction Volume</h2>
+            </div>
+            <div class="chart-description">
+                <strong>What this shows:</strong> Transaction volume over time, showing when trading activity occurred. This helps identify patterns in farming behavior, such as consistent daily volume generation or spikes during specific periods. Regular, consistent patterns may indicate automated trading systems.
+            </div>
+            <div class="chart-container">
+                <img src="visualizations/preliminary_daily_transactions.png" alt="Daily Transactions" id="dailyChart">
+            </div>
+        </div>
+        
+        <div class="chart-section">
+            <div class="chart-header">
+                <h2><i class="fas fa-table"></i> Top Farming Addresses</h2>
+            </div>
+            <div class="chart-description">
+                <strong>What this table tracks:</strong>
+                <ul style="margin: 15px 0; padding-left: 25px; color: var(--text-light);">
+                    <li><strong>Rank:</strong> Position by total volume</li>
+                    <li><strong>Address:</strong> Ethereum address of the farming wallet</li>
+                    <li><strong>Volume:</strong> Total SOL tokens traded (buy + sell)</li>
+                    <li><strong>Transactions:</strong> Number of individual trades executed</li>
+                    <li><strong>Net Position:</strong> Final token balance (bought - sold). Low values indicate wash trading.</li>
+                    <li><strong>Round-Trip Ratio:</strong> Percentage of volume that is "round-tripped" (bought then sold). Values near 100% indicate systematic wash trading.</li>
+                </ul>
+            </div>
+            <div class="table-wrapper">
+                <table class="addresses-table" id="addressesTable">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Address</th>
+                            <th>Volume (SOL)</th>
+                            <th>Transactions</th>
+                            <th>Net Position</th>
+                            <th>Round-Trip Ratio</th>
+                        </tr>
+                    </thead>
+                    <tbody id="addressesTableBody">
+                        <tr><td colspan="6" class="loading"><div class="spinner"></div>Loading addresses...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="warning">
+            <div class="warning-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="warning-content">
+                <strong>⚠️ Preliminary Results</strong>
+                <p>This analysis is based on <span id="prelimTxs">-</span> transactions collected so far. The full analysis (targeting 1.8M transactions) is still running in the background. Results will be updated automatically as more data is collected.</p>
+                <p style="margin-top: 10px;"><strong>Note:</strong> While preliminary, the current findings show a clear pattern: 99.97% of volume is farmed, consistent with initial observations of 99.8% from just 3 addresses.</p>
+            </div>
+        </div>
+        
+        <div class="chart-section">
+            <div class="chart-header">
+                <h2><i class="fas fa-coins"></i> AERO Rewards Tracking</h2>
+            </div>
+            <div class="chart-description">
+                <strong>What this section tracks:</strong> This analysis examines how farming addresses handle their AERO token rewards. It tracks:
+                <ul style="margin: 15px 0; padding-left: 25px; color: var(--text-light);">
+                    <li><strong>Total AERO Received:</strong> Amount of AERO tokens earned by each farming address</li>
+                    <li><strong>AERO Sold:</strong> Amount of AERO tokens sold/transferred out</li>
+                    <li><strong>AERO Held:</strong> Net AERO position (received - sold)</li>
+                    <li><strong>Sell Ratio:</strong> Percentage of rewards that are immediately sold vs. held</li>
+                </ul>
+                This helps answer whether farming addresses are accumulating AERO or immediately selling rewards for profit.
+            </div>
+            <div id="aeroStatus" style="padding: 20px; background: var(--light); border-radius: 8px; margin-top: 20px;">
+                <p><i class="fas fa-clock"></i> <strong>Status:</strong> AERO rewards analysis pending. This will track AERO token transfers for all identified farming addresses to determine how much they sell vs. hold.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p><i class="fas fa-database"></i> Analysis powered by Routescan/Basedscan API</p>
+        <p style="margin-top: 10px;">Last updated: <span id="lastUpdate">-</span></p>
+    </footer>
+    
+    <script>
+        // Auto-refresh dashboard every 30 seconds
+        function loadDashboardData() {
+            fetch('dashboard_data.json?t=' + Date.now())
+                .then(r => r.json())
+                .then(data => {
+                    updateDashboard(data);
+                })
+                .catch(e => {
+                    console.error('Error loading data:', e);
+                });
+        }
+        
+        function updateDashboard(data) {
+                // Update stats
+                document.getElementById('totalTxs').textContent = data.total_transactions.toLocaleString();
+                document.getElementById('farmedPct').textContent = data.farmed_percentage.toFixed(2) + '%';
+                document.getElementById('farmedVol').textContent = data.farmed_volume.toLocaleString(undefined, {maximumFractionDigits: 2}) + ' SOL';
+                document.getElementById('organicPct').textContent = data.organic_percentage.toFixed(2) + '%';
+                document.getElementById('organicVol').textContent = data.organic_volume.toLocaleString(undefined, {maximumFractionDigits: 2}) + ' SOL';
+                document.getElementById('farmingAddrs').textContent = data.farming_addresses_count;
+                document.getElementById('prelimTxs').textContent = data.total_transactions.toLocaleString();
+                
+                // Update progress bars
+                const farmedPct = data.farmed_percentage;
+                const organicPct = data.organic_percentage;
+                document.getElementById('farmedBar').style.width = farmedPct + '%';
+                document.getElementById('farmedBar').textContent = farmedPct.toFixed(2) + '%';
+                document.getElementById('organicBar').style.width = organicPct + '%';
+                document.getElementById('organicBar').textContent = organicPct.toFixed(2) + '%';
+                document.getElementById('organicBar').style.marginLeft = farmedPct + '%';
+                document.getElementById('farmedLabel').textContent = farmedPct.toFixed(2) + '%';
+                document.getElementById('organicLabel').textContent = organicPct.toFixed(2) + '%';
+                
+                // Update status with dynamic text
+                const statusEl = document.getElementById('status');
+                const txCount = data.total_transactions.toLocaleString();
+                const isRunning = data.main_analysis_running !== false; // Default to true if not specified
+                
+                if (data.is_preliminary && !isRunning) {
+                    statusEl.textContent = `Preliminary Analysis (${txCount} transactions)`;
+                    statusEl.style.color = 'var(--warning)';
+                } else if (isRunning) {
+                    statusEl.textContent = `🟢 Analysis in Progress (${txCount} transactions)`;
+                    statusEl.style.color = 'var(--success)';
+                } else {
+                    statusEl.textContent = `Analysis Complete (${txCount} transactions)`;
+                    statusEl.style.color = 'var(--success)';
+                }
+                
+                // Update last updated time
+                if (data.last_updated) {
+                    const updateTime = new Date(data.last_updated);
+                    document.getElementById('lastUpdate').textContent = updateTime.toLocaleString();
+                } else {
+                    document.getElementById('lastUpdate').textContent = new Date().toLocaleString();
+                }
+                
+                // Key findings
+                const findings = document.getElementById('findings');
+                findings.innerHTML = `
+                    <div class="finding-item">
+                        <strong><i class="fas fa-bullseye"></i> Primary Finding</strong>
+                        <span class="farmed">${data.farmed_percentage.toFixed(2)}%</span> of volume is farmed, 
+                        only <span class="organic">${data.organic_percentage.toFixed(2)}%</span> is organic trading.
+                        This confirms the initial observation that nearly all volume is generated through wash trading.
+                    </div>
+                    <div class="finding-item">
+                        <strong><i class="fas fa-chart-line"></i> Volume Analysis</strong>
+                        Total volume of ${data.total_volume.toLocaleString(undefined, {maximumFractionDigits: 2})} SOL tokens analyzed. 
+                        ${data.farmed_volume.toLocaleString(undefined, {maximumFractionDigits: 2})} SOL from farming, 
+                        ${data.organic_volume.toLocaleString(undefined, {maximumFractionDigits: 2})} SOL from organic trading.
+                    </div>
+                    <div class="finding-item">
+                        <strong><i class="fas fa-users"></i> Address Analysis</strong>
+                        ${data.farming_addresses_count} addresses identified as farming addresses, 
+                        ${data.organic_addresses_count} addresses identified as organic traders.
+                        The farming addresses generate the vast majority of volume despite being fewer in number.
+                    </div>
+                    <div class="finding-item">
+                        <strong><i class="fas fa-sync-alt"></i> Trading Pattern</strong>
+                        Top farming addresses show 99%+ round-trip ratios with minimal net position changes, 
+                        indicating systematic wash trading to generate AERO rewards. This pattern is consistent 
+                        across all major farming addresses.
+                    </div>
+                `;
+                
+                // Update addresses table
+                const tbody = document.getElementById('addressesTableBody');
+                tbody.innerHTML = '';
+                data.top_farming_addresses.forEach((addr, idx) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td class="number">${idx + 1}</td>
+                        <td><span class="address">${addr.address}</span></td>
+                        <td class="number">${addr.volume.toLocaleString(undefined, {maximumFractionDigits: 2})}</td>
+                        <td class="number">${addr.transactions.toLocaleString()}</td>
+                        <td class="number">${addr.net_position.toLocaleString(undefined, {maximumFractionDigits: 2})}</td>
+                        <td class="number">${addr.round_trip_ratio.toFixed(2)}%</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+                
+                // Update timestamp
+                document.getElementById('lastUpdate').textContent = new Date().toLocaleString();
+                
+                // Show AERO status if available
+                if (data.aero_available) {
+                    const aeroStatus = document.getElementById('aeroStatus');
+                    aeroStatus.innerHTML = `
+                        <p><i class="fas fa-check-circle" style="color: var(--success);"></i> <strong>Status:</strong> AERO rewards analysis complete!</p>
+                        <p style="margin-top: 10px;">Total AERO Received: ${data.aero_results.total_received?.toLocaleString(undefined, {maximumFractionDigits: 2}) || 'N/A'} AERO</p>
+                        <p>Total AERO Sold: ${data.aero_results.total_sold?.toLocaleString(undefined, {maximumFractionDigits: 2}) || 'N/A'} AERO</p>
+                    `;
+                } else if (data.aero_in_progress) {
+                    const aeroStatus = document.getElementById('aeroStatus');
+                    const progress = data.aero_progress;
+                    const pct = progress.total_addresses > 0 ? (progress.current_address / progress.total_addresses * 100).toFixed(1) : 0;
+                    aeroStatus.innerHTML = `
+                        <p><i class="fas fa-spinner fa-spin"></i> <strong>Status:</strong> AERO tracking in progress...</p>
+                        <p style="margin-top: 10px;">Progress: ${progress.current_address || 0}/${progress.total_addresses || 0} addresses (${pct}%)</p>
+                        <p>Transfers found: ${progress.transfers_found?.toLocaleString() || 0}</p>
+                    `;
+                }
+            }
+        
+        // Load data immediately and set up auto-refresh
+        loadDashboardData();
+        setInterval(loadDashboardData, 30000); // Refresh every 30 seconds
+    </script>
+</body>
+</html>

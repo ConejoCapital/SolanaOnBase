@@ -1,0 +1,27 @@
+# Large data files (too big for GitHub)
+transactions.json
+transactions_backup*.json
+aero_transfers_cache.json
+
+# Log files
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.tmp
+tmp*.json

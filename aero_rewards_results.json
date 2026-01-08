@@ -1,0 +1,40 @@
+{
+  "address_stats": {
+    "0xa87a233e8a7d8951ff790a2e39738086cb5f71b7": {
+      "total_received": 441565.77342580626,
+      "total_sold": 441565.77342580626,
+      "net_position": 0.0,
+      "sell_ratio": 1.0,
+      "hold_ratio": 0.0
+    },
+    "0xdb0253708c484ac5b6710b3b6ee7ac896f643d33": {
+      "total_received": 3.112344937742431,
+      "total_sold": 0,
+      "net_position": 3.112344937742431,
+      "sell_ratio": 0.0,
+      "hold_ratio": 1.0
+    },
+    "0xcbcfdaaae40d3466f0c68dc73f8fc6cf29e6c988": {
+      "total_received": 3399.122498222556,
+      "total_sold": 3121.7263522322655,
+      "net_position": 277.3961459902915,
+      "sell_ratio": 0.9183918360884775,
+      "hold_ratio": 0.08160816391152248
+    },
+    "0x88fec94eb9f11376e0dcb31ea7babc278d6035c3": {
+      "total_received": 864.6698993119604,
+      "total_sold": 903.6788985714779,
+      "net_position": -39.00899925951909,
+      "sell_ratio": 1.0451143254675084,
+      "hold_ratio": -0.045114325467508376
+    },
+    "0x802b65b5d9016621e66003aed0b16615093f328b": {
+      "total_received": 1802522.3181927162,
+      "total_sold": 1770356.0369679655,
+      "net_position": 32166.281224735776,
+      "sell_ratio": 0.9821548499565864,
+      "hold_ratio": 0.017845150043413582
+    }
+  },
+  "total_transfers": 50345
+}

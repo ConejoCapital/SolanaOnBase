@@ -1,0 +1,124 @@
+{
+  "generated_at": "2026-01-08T03:04:06.227096",
+  "transactions_analyzed": 137813,
+  "total_target": 1847723,
+  "sample_percentage": 7.458531392421916,
+  "volume_breakdown": {
+    "total_volume_sol": 18541005.960081168,
+    "total_volume_usd": 3708201192.0162334,
+    "wash_trading_volume_sol": 9146993.893121898,
+    "wash_trading_volume_usd": 1829398778.6243796,
+    "wash_trading_percentage": 49.333859839187795,
+    "organic_volume_sol": 9394012.06695927,
+    "organic_volume_usd": 1878802413.3918538,
+    "organic_percentage": 50.66614016081221
+  },
+  "wash_trading_addresses": [
+    {
+      "address": "0x7c460d504c1600fb8c030ff0d3b7e02bab268309",
+      "volume": 5976177.239354767,
+      "counterparties": 2
+    },
+    {
+      "address": "0xecbe25d69f0bc85c8eb42ae9a3b9a212dced96e6",
+      "volume": 2587455.081377981,
+      "counterparties": 1
+    },
+    {
+      "address": "0xab7ae77b7df5f10caaaca6049abe1d05416b680d",
+      "volume": 172183.6743016838,
+      "counterparties": 3
+    },
+    {
+      "address": "0x88fec94eb9f11376e0dcb31ea7babc278d6035c3",
+      "volume": 155388.04109873087,
+      "counterparties": 3
+    },
+    {
+      "address": "0xa87a233e8a7d8951ff790a2e39738086cb5f71b7",
+      "volume": 84001.98,
+      "counterparties": 2
+    },
+    {
+      "address": "0xdb0253708c484ac5b6710b3b6ee7ac896f643d33",
+      "volume": 62951.58747228506,
+      "counterparties": 1
+    },
+    {
+      "address": "0x55606779f4c08fb988fbcd83539278b676d5bd9c",
+      "volume": 30776.76109689601,
+      "counterparties": 3
+    },
+    {
+      "address": "0x802b65b5d9016621e66003aed0b16615093f328b",
+      "volume": 20034.057914614983,
+      "counterparties": 3
+    },
+    {
+      "address": "0x3a32d2987b86a9c5552921289b8d4470075d360f",
+      "volume": 11095.852845359017,
+      "counterparties": 3
+    },
+    {
+      "address": "0x1113a2bc6c237083183b9db29410d93f0077e501",
+      "volume": 6413.965932373005,
+      "counterparties": 2
+    },
+    {
+      "address": "0x9cf66981279c950a16d8275ec4f3a45843feb4df",
+      "volume": 4712.93806983,
+      "counterparties": 2
+    },
+    {
+      "address": "0xaa3c3e630d6eb3adc62e192e54fdcb06aeb5c91f",
+      "volume": 4699.883099678,
+      "counterparties": 2
+    },
+    {
+      "address": "0x9bca56ab341b6b77531f0fc77854d59a32ccc696",
+      "volume": 4699.883099678,
+      "counterparties": 2
+    },
+    {
+      "address": "0xab4fb72233670625b0cb9b0f96d620ade76b877e",
+      "volume": 4699.883099678,
+      "counterparties": 2
+    },
+    {
+      "address": "0x7fa38daa0b714af79d18a3501f51b53e98c27c02",
+      "volume": 4699.883099678,
+      "counterparties": 2
+    },
+    {
+      "address": "0xc196d9405cb9b9d6ae8ec26e5d863a3c0b1f547c",
+      "volume": 4699.883099678,
+      "counterparties": 2
+    },
+    {
+      "address": "0x6ce8c60577c9acd5db41780fba2151f676f388aa",
+      "volume": 2178.6246466959974,
+      "counterparties": 2
+    },
+    {
+      "address": "0xed11e25b64313b2625a6118b6501ecd649e59641",
+      "volume": 2000.0700000000002,
+      "counterparties": 2
+    },
+    {
+      "address": "0xd0d08887e8a5b16049534a7f3fc1de92848f5bea",
+      "volume": 1374.1202891950002,
+      "counterparties": 7
+    },
+    {
+      "address": "0x181f52a9a75973f4e0e13d28b54d1d905f612601",
+      "volume": 1360.0085906489999,
+      "counterparties": 1
+    }
+  ],
+  "methodology": {
+    "balance_ratio_threshold": 0.85,
+    "net_ratio_threshold": 0.15,
+    "counterparty_threshold": 10,
+    "min_volume_threshold": 100
+  }
+}

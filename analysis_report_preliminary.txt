@@ -1,0 +1,115 @@
+================================================================================
+VOLUME ANALYSIS REPORT
+Token: 0x311935cd80b76769bf2ecc9d8ab7635b2139cf82
+================================================================================
+
+EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+Total Transactions Analyzed: 298,483
+Farmed Volume: 99.97%
+Organic Volume: 0.03%
+
+VOLUME BREAKDOWN
+--------------------------------------------------------------------------------
+Total Volume: 13,347,895 tokens
+Farmed Volume: 13,343,613 tokens (99.97%)
+Organic Volume: 4,282 tokens (0.03%)
+
+FARMING ANALYSIS
+--------------------------------------------------------------------------------
+Farming Addresses Identified: 62
+Organic Addresses Identified: 1169
+
+TOP FARMING ADDRESSES
+--------------------------------------------------------------------------------
+0xb30540172f1b37d1ee1d109e49f883e935e69219
+  Volume: 12,752,144.62 tokens
+  Transactions: 168,548
+  Net Position: 37,755.45 tokens (0.30% of volume)
+  Round-trip Ratio: 99.41%
+
+0x7c460d504c1600fb8c030ff0d3b7e02bab268309
+  Volume: 10,119,608.24 tokens
+  Transactions: 26,502
+  Net Position: -1,193.20 tokens (0.01% of volume)
+  Round-trip Ratio: 99.98%
+
+0xecbe25d69f0bc85c8eb42ae9a3b9a212dced96e6
+  Volume: 1,626,962.54 tokens
+  Transactions: 52,363
+  Net Position: 205.38 tokens (0.01% of volume)
+  Round-trip Ratio: 99.97%
+
+0xcbcfdaaae40d3466f0c68dc73f8fc6cf29e6c988
+  Volume: 507,462.05 tokens
+  Transactions: 10,021
+  Net Position: 1.71 tokens (0.00% of volume)
+  Round-trip Ratio: 100.00%
+
+0xa25773f75d7190e130d501509d22592151db3915
+  Volume: 254,698.94 tokens
+  Transactions: 33,642
+  Net Position: 122.79 tokens (0.05% of volume)
+  Round-trip Ratio: 99.90%
+
+0x88fec94eb9f11376e0dcb31ea7babc278d6035c3
+  Volume: 253,861.31 tokens
+  Transactions: 27,415
+  Net Position: 1,437.48 tokens (0.57% of volume)
+  Round-trip Ratio: 98.87%
+
+0xdb0253708c484ac5b6710b3b6ee7ac896f643d33
+  Volume: 224,287.54 tokens
+  Transactions: 22,669
+  Net Position: 25.44 tokens (0.01% of volume)
+  Round-trip Ratio: 99.98%
+
+0xab7ae77b7df5f10caaaca6049abe1d05416b680d
+  Volume: 172,911.63 tokens
+  Transactions: 16,086
+  Net Position: 1.66 tokens (0.00% of volume)
+  Round-trip Ratio: 100.00%
+
+0x416ec2ca21a38cbcfeacd6a14532b3f348356d23
+  Volume: 91,144.35 tokens
+  Transactions: 3,963
+  Net Position: 881.04 tokens (0.97% of volume)
+  Round-trip Ratio: 98.09%
+
+0x0ac583ce7fcd7d6de77d340abac18e7ff20e1f5f
+  Volume: 87,390.04 tokens
+  Transactions: 966
+  Net Position: 2,249.42 tokens (2.57% of volume)
+  Round-trip Ratio: 94.98%
+
+TOP 20 ADDRESSES BY VOLUME
+--------------------------------------------------------------------------------
+[FARMING] 0xb30540172f1b37d1ee1d109e49f883e935e69219: 12,752,144.62 tokens (Net: 37,755.45)
+[FARMING] 0x7c460d504c1600fb8c030ff0d3b7e02bab268309: 10,119,608.24 tokens (Net: -1,193.20)
+[FARMING] 0xecbe25d69f0bc85c8eb42ae9a3b9a212dced96e6: 1,626,962.54 tokens (Net: 205.38)
+[FARMING] 0xcbcfdaaae40d3466f0c68dc73f8fc6cf29e6c988: 507,462.05 tokens (Net: 1.71)
+[FARMING] 0xa25773f75d7190e130d501509d22592151db3915: 254,698.94 tokens (Net: 122.79)
+[FARMING] 0x88fec94eb9f11376e0dcb31ea7babc278d6035c3: 253,861.31 tokens (Net: 1,437.48)
+[FARMING] 0xdb0253708c484ac5b6710b3b6ee7ac896f643d33: 224,287.54 tokens (Net: 25.44)
+[FARMING] 0xab7ae77b7df5f10caaaca6049abe1d05416b680d: 172,911.63 tokens (Net: 1.66)
+[FARMING] 0x416ec2ca21a38cbcfeacd6a14532b3f348356d23: 91,144.35 tokens (Net: 881.04)
+[FARMING] 0x0ac583ce7fcd7d6de77d340abac18e7ff20e1f5f: 87,390.04 tokens (Net: 2,249.42)
+[FARMING] 0xa87a233e8a7d8951ff790a2e39738086cb5f71b7: 84,001.98 tokens (Net: 0.000000)
+[ORGANIC] 0x0000000000000000000000000000000000000000: 71,598.03 tokens (Net: -55,257.73)
+[FARMING] 0x785648669b8e90a75a6a8de682258957f9028462: 58,422.25 tokens (Net: 0.06)
+[FARMING] 0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f: 48,703.83 tokens (Net: 0.000000)
+[FARMING] 0x802b65b5d9016621e66003aed0b16615093f328b: 32,004.74 tokens (Net: -103.30)
+[FARMING] 0x3a32d2987b86a9c5552921289b8d4470075d360f: 23,563.61 tokens (Net: -293.94)
+[ORGANIC] 0xd34ea7278e6bd48defe656bbe263aef11101469c: 21,680.92 tokens (Net: 12,296.20)
+[FARMING] 0xa343e6d005cbe3adf1cb8325ac2b59ddf25b30ac: 21,529.08 tokens (Net: 281.08)
+[FARMING] 0xf5042e6ffac5a625d4e7848e0b01373d8eb9e222: 18,144.87 tokens (Net: 5.94)
+[FARMING] 0xf70da97812cb96acdf810712aa562db8dfa3dbef: 17,518.35 tokens (Net: 879.02)
+
+METHODOLOGY
+--------------------------------------------------------------------------------
+Farming addresses identified by:
+  1. High round-trip ratio (>90%) with low net position (<10% of volume)
+  2. High volume with very few unique counterparties (<5)
+  3. Very regular transaction timing (bot-like patterns)
+
+================================================================================

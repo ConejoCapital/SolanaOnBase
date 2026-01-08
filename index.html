@@ -1037,6 +1037,187 @@
                 </ul>
             </div>
             
+            <!-- Aerodrome Reward Mechanism -->
+            <div class="methodology-section" style="border: 2px solid #7C3AED;">
+                <h2><i class="fas fa-coins" style="color: #7C3AED;"></i> Aerodrome Reward Mechanism</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                    Understanding how volume farmers profit from Aerodrome's incentive structure is key to analyzing this behavior.
+                    Aerodrome Finance is a next-generation AMM on Base that uses the ve(3,3) tokenomics model.
+                </p>
+                
+                <!-- AERO Token Info -->
+                <div style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(124, 58, 237, 0.05)); border: 1px solid rgba(124, 58, 237, 0.4); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #7C3AED, #5B21B6); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-wind" style="color: white; font-size: 1.3em;"></i>
+                        </div>
+                        <div>
+                            <h3 style="margin: 0; color: var(--text-primary);">AERO Token</h3>
+                            <a href="https://basescan.org/token/0x940181a94a35a4569e4529a3cdfb74e38fd98631" target="_blank" 
+                               style="font-family: 'JetBrains Mono'; font-size: 0.8em; color: #7C3AED;">
+                                0x940181a94A35A4569E4529A3CDfB74e38FD98631 <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-secondary); margin: 0; font-size: 0.95em;">
+                        AERO is Aerodrome's native token. It can be locked into <strong style="color: #7C3AED;">veAERO</strong> (vote-escrowed AERO) 
+                        to participate in governance and earn protocol fees. veAERO holders vote on which pools receive AERO emissions each epoch.
+                    </p>
+                </div>
+                
+                <!-- Revenue Streams -->
+                <h3 style="color: var(--text-primary); margin: 25px 0 15px;"><i class="fas fa-stream"></i> Liquidity Provider Revenue Streams</h3>
+                
+                <div style="display: grid; gap: 15px;">
+                    <!-- Trading Fees -->
+                    <div style="background: var(--bg-secondary); border-radius: 10px; padding: 20px; border-left: 4px solid #10B981;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                            <i class="fas fa-percentage" style="color: #10B981; font-size: 1.2em;"></i>
+                            <strong style="color: var(--text-primary);">1. Trading Fees (0.3%)</strong>
+                        </div>
+                        <p style="color: var(--text-secondary); margin: 0 0 10px 0; font-size: 0.9em;">
+                            Every swap through the pool pays a <strong>0.3% fee</strong> to liquidity providers, split proportionally 
+                            by their share of the pool. The SOL/WETH pool uses <strong>Slipstream</strong> (concentrated liquidity).
+                        </p>
+                        <div style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 6px; font-size: 0.85em;">
+                            <span style="color: var(--text-muted);">Formula:</span>
+                            <code style="color: #10B981; font-family: 'JetBrains Mono';">Fee = Swap Volume × 0.003 × (Your Liquidity / Total Liquidity)</code>
+                        </div>
+                    </div>
+                    
+                    <!-- AERO Emissions -->
+                    <div style="background: var(--bg-secondary); border-radius: 10px; padding: 20px; border-left: 4px solid #7C3AED;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                            <i class="fas fa-wind" style="color: #7C3AED; font-size: 1.2em;"></i>
+                            <strong style="color: var(--text-primary);">2. AERO Emissions (Gauge Rewards)</strong>
+                        </div>
+                        <p style="color: var(--text-secondary); margin: 0 0 10px 0; font-size: 0.9em;">
+                            veAERO holders vote on which pools receive AERO emissions each week. LPs who <strong>stake their LP positions 
+                            in the gauge</strong> (<code style="font-size: 0.8em; color: var(--text-muted);">0xC6e211fF1D04A1728ab011406AD42EF529Cb3886</code>) 
+                            earn AERO tokens proportional to their staked liquidity.
+                        </p>
+                        <div style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 6px; font-size: 0.85em;">
+                            <span style="color: var(--text-muted);">Claim:</span>
+                            <code style="color: #7C3AED; font-family: 'JetBrains Mono';">LPs must manually claim AERO rewards from the gauge contract</code>
+                        </div>
+                    </div>
+                    
+                    <!-- veAERO Voting -->
+                    <div style="background: var(--bg-secondary); border-radius: 10px; padding: 20px; border-left: 4px solid #F59E0B;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                            <i class="fas fa-vote-yea" style="color: #F59E0B; font-size: 1.2em;"></i>
+                            <strong style="color: var(--text-primary);">3. veAERO (Vote-Escrowed AERO)</strong>
+                        </div>
+                        <p style="color: var(--text-secondary); margin: 0 0 10px 0; font-size: 0.9em;">
+                            Users can lock AERO into <strong>veAERO</strong> to gain voting power. veAERO holders:
+                        </p>
+                        <ul style="color: var(--text-secondary); font-size: 0.9em; margin: 0; padding-left: 20px;">
+                            <li>Vote on which pools receive AERO emissions</li>
+                            <li>Earn 100% of trading fees from pools they vote for</li>
+                            <li>Receive bribes from protocols seeking votes</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Bribes -->
+                    <div style="background: var(--bg-secondary); border-radius: 10px; padding: 20px; border-left: 4px solid #EC4899;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                            <i class="fas fa-hand-holding-usd" style="color: #EC4899; font-size: 1.2em;"></i>
+                            <strong style="color: var(--text-primary);">4. Bribes (Voter Incentives)</strong>
+                        </div>
+                        <p style="color: var(--text-secondary); margin: 0; font-size: 0.9em;">
+                            Protocols can offer <strong>bribes</strong> to veAERO voters to direct emissions to their pools. 
+                            These are typically paid in the protocol's native token or stablecoins and go to <strong>voters</strong>, not LPs directly.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- How Volume Farmers Exploit This -->
+                <h3 style="color: var(--accent-wash); margin: 30px 0 15px;"><i class="fas fa-user-ninja"></i> How the Volume Farmer Exploits This</h3>
+                
+                <div style="background: linear-gradient(135deg, rgba(255,99,99,0.1), rgba(255,99,99,0.05)); border: 1px solid rgba(255,99,99,0.3); border-radius: 12px; padding: 20px;">
+                    <p style="color: var(--text-secondary); margin: 0 0 20px 0;">
+                        The volume farmer uses a <strong>smart contract</strong> to repeatedly add and remove liquidity, exploiting the system in the following ways:
+                    </p>
+                    
+                    <div style="display: grid; gap: 15px;">
+                        <div style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="min-width: 30px; height: 30px; background: var(--accent-wash); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">1</div>
+                            <div>
+                                <strong style="color: var(--text-primary);">Add Concentrated Liquidity</strong>
+                                <p style="color: var(--text-secondary); margin: 5px 0 0 0; font-size: 0.9em;">
+                                    Deposits SOL + USDC into a narrow price range (Slipstream concentrated liquidity), maximizing capital efficiency.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="min-width: 30px; height: 30px; background: var(--accent-wash); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">2</div>
+                            <div>
+                                <strong style="color: var(--text-primary);">Stake LP NFT in Gauge</strong>
+                                <p style="color: var(--text-secondary); margin: 5px 0 0 0; font-size: 0.9em;">
+                                    Immediately stakes the Slipstream Position NFT in the gauge to start accruing AERO emissions.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="min-width: 30px; height: 30px; background: var(--accent-wash); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">3</div>
+                            <div>
+                                <strong style="color: var(--text-primary);">Remove Liquidity Quickly</strong>
+                                <p style="color: var(--text-secondary); margin: 5px 0 0 0; font-size: 0.9em;">
+                                    Withdraws liquidity shortly after, minimizing impermanent loss risk while generating SOL transfer "volume."
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="min-width: 30px; height: 30px; background: var(--accent-wash); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">4</div>
+                            <div>
+                                <strong style="color: var(--text-primary);">Repeat ~50,000 Times</strong>
+                                <p style="color: var(--text-secondary); margin: 5px 0 0 0; font-size: 0.9em;">
+                                    This process is automated and repeated thousands of times, inflating the token's apparent trading volume.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Observed Rewards -->
+                <h3 style="color: var(--text-primary); margin: 30px 0 15px;"><i class="fas fa-chart-bar"></i> Observed On-Chain Rewards</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <div style="background: var(--bg-secondary); border-radius: 10px; padding: 20px; text-align: center;">
+                        <div style="color: #10B981; font-size: 0.8em; text-transform: uppercase; margin-bottom: 5px;">USDC (Net)</div>
+                        <div style="color: var(--text-primary); font-size: 1.8em; font-weight: 700;">~$3,979</div>
+                        <div style="color: var(--text-muted); font-size: 0.75em;">Trading fees captured</div>
+                    </div>
+                    <div style="background: var(--bg-secondary); border-radius: 10px; padding: 20px; text-align: center;">
+                        <div style="color: #7C3AED; font-size: 0.8em; text-transform: uppercase; margin-bottom: 5px;">AERO (Net)</div>
+                        <div style="color: var(--text-primary); font-size: 1.8em; font-weight: 700;">~1.74</div>
+                        <div style="color: var(--text-muted); font-size: 0.75em;">From gauge staking</div>
+                    </div>
+                    <div style="background: var(--bg-secondary); border-radius: 10px; padding: 20px; text-align: center;">
+                        <div style="color: var(--accent-warning); font-size: 0.8em; text-transform: uppercase; margin-bottom: 5px;">Gas Spent</div>
+                        <div style="color: var(--text-primary); font-size: 1.8em; font-weight: 700;">~$1,070</div>
+                        <div style="color: var(--text-muted); font-size: 0.75em;">~107K txs × $0.01</div>
+                    </div>
+                    <div style="background: var(--bg-secondary); border-radius: 10px; padding: 20px; text-align: center;">
+                        <div style="color: var(--accent-organic); font-size: 0.8em; text-transform: uppercase; margin-bottom: 5px;">Est. Net Profit</div>
+                        <div style="color: var(--text-primary); font-size: 1.8em; font-weight: 700;">~$2,900</div>
+                        <div style="color: var(--text-muted); font-size: 0.75em;">Conservative estimate</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 20px; padding: 15px; background: rgba(255,170,0,0.1); border-radius: 8px; border: 1px solid rgba(255,170,0,0.3);">
+                    <p style="color: var(--text-secondary); margin: 0; font-size: 0.9em;">
+                        <i class="fas fa-info-circle" style="color: var(--accent-warning);"></i>
+                        <strong>Note:</strong> The relatively modest profit (~$2,900) compared to the massive volume (18.6M SOL) suggests the primary 
+                        goal may be <strong>inflating volume metrics</strong> rather than pure profit extraction. This could be to make the token 
+                        appear more actively traded than it actually is, potentially to attract real traders or boost rankings on analytics platforms.
+                    </p>
+                </div>
+            </div>
+            
             <div class="methodology-section" style="border: 2px solid var(--accent-wash);">
                 <h2><i class="fas fa-search" style="color: var(--accent-wash)"></i> Proof: Volume Farming via LP Churning</h2>
                 <p>

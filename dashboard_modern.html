@@ -1504,10 +1504,12 @@
         }
         
         function formatNumber(n, decimals = 0) {
+            if (n === undefined || n === null || isNaN(n)) return '-';
             return n.toLocaleString(undefined, { maximumFractionDigits: decimals });
         }
         
         function formatUSD(n) {
+            if (n === undefined || n === null || isNaN(n)) return '-';
             if (n >= 1e9) return '$' + (n / 1e9).toFixed(2) + 'B';
             if (n >= 1e6) return '$' + (n / 1e6).toFixed(2) + 'M';
             if (n >= 1e3) return '$' + (n / 1e3).toFixed(1) + 'K';
@@ -1644,11 +1646,21 @@
             // Block sync info
             if (s.block_sync) {
                 const bs = s.block_sync;
-                document.getElementById('syncedBlock').textContent = formatNumber(bs.synced_block);
-                document.getElementById('latestBlock').textContent = formatNumber(bs.latest_base_block);
-                document.getElementById('blocksBehind').textContent = formatNumber(bs.blocks_behind);
-                document.getElementById('blockSyncPct').textContent = bs.blocks_behind <= 100 ? '✅ Caught up!' : `${bs.blocks_behind} blocks behind`;
-                document.getElementById('blockSyncProgress').textContent = bs.block_sync_percentage.toFixed(1) + '%';
+                const syncedEl = document.getElementById('syncedBlock');
+                const latestEl = document.getElementById('latestBlock');
+                const behindEl = document.getElementById('blocksBehind');
+                const pctEl = document.getElementById('blockSyncPct');
+                const progressEl = document.getElementById('blockSyncProgress');
+                
+                if (syncedEl) syncedEl.textContent = formatNumber(bs.synced_block);
+                if (latestEl) latestEl.textContent = formatNumber(bs.latest_base_block || bs.synced_block);
+                if (behindEl) behindEl.textContent = formatNumber(bs.blocks_behind || 0);
+                if (pctEl) pctEl.textContent = (bs.blocks_behind || 0) <= 100 ? '✅ Caught up!' : `${bs.blocks_behind || 0} blocks behind`;
+                if (progressEl && bs.block_sync_percentage !== undefined) {
+                    progressEl.textContent = bs.block_sync_percentage.toFixed(1) + '%';
+                } else if (progressEl) {
+                    progressEl.textContent = '-';
+                }
             }
             
             // Top tables
@@ -1663,7 +1675,7 @@
             
             // Top wash traders
             const washBody = document.getElementById('topWashTable');
-            const topWash = dashboardData.wash_trading_addresses.slice(0, 5);
+            const topWash = (dashboardData.wash_trading_addresses || []).slice(0, 5);
             if (topWash.length > 0) {
                 washBody.innerHTML = topWash.map((a, i) => `
                     <tr>
@@ -1679,7 +1691,7 @@
             
             // Top organic traders
             const organicBody = document.getElementById('topOrganicTable');
-            const topOrganic = dashboardData.organic_addresses.slice(0, 5);
+            const topOrganic = (dashboardData.organic_addresses || []).slice(0, 5);
             if (topOrganic.length > 0) {
                 organicBody.innerHTML = topOrganic.map((a, i) => `
                     <tr>
@@ -1762,12 +1774,12 @@
         }
         
         function updateWashTable() {
-            if (!dashboardData) return;
+            if (!dashboardData || !dashboardData.wash_trading_addresses) return;
             renderAddressTable(dashboardData.wash_trading_addresses, 'washAddressesTable', 'washPagination', 'washPageInfo', washPage, 'wash');
         }
         
         function updateOrganicTable() {
-            if (!dashboardData) return;
+            if (!dashboardData || !dashboardData.organic_addresses) return;
             renderAddressTable(dashboardData.organic_addresses, 'organicAddressesTable', 'organicPagination', 'organicPageInfo', organicPage, 'organic');
         }
         

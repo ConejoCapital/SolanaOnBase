@@ -999,80 +999,301 @@
             <div class="methodology-section" style="border: 2px solid var(--accent-wash);">
                 <h2><i class="fas fa-search" style="color: var(--accent-wash)"></i> Proof: Wash Trading Mechanism</h2>
                 <p>
-                    <strong>We have identified conclusive evidence of wash trading.</strong> The top wash trader 
-                    executes buy and sell transactions for the <strong>exact same amount</strong> within seconds of each other.
+                    <strong>We have identified conclusive evidence of wash trading.</strong> The wash traders 
+                    execute buy and sell transactions for the <strong>exact same amount</strong> within seconds of each other.
                 </p>
                 
                 <div style="background: var(--bg-secondary); border-radius: 12px; padding: 20px; margin: 20px 0;">
                     <h3 style="color: var(--text-primary); margin-bottom: 15px;">🔍 The Mechanism</h3>
                     <ol style="color: var(--text-secondary); line-height: 2; padding-left: 20px;">
-                        <li><strong>SELL:</strong> Trader sends 84.7211 SOL to the Aerodrome pool</li>
-                        <li><strong>BUY:</strong> 2 seconds later, trader receives 84.7211 SOL back from the pool</li>
-                        <li><strong>REPEAT:</strong> This process repeats thousands of times</li>
-                        <li><strong>RESULT:</strong> No net position change, but volume generated for AERO incentives</li>
+                        <li><strong>SELL:</strong> Trader sends X SOL to the Aerodrome pool</li>
+                        <li><strong>BUY:</strong> Within seconds, trader receives X SOL back from the pool</li>
+                        <li><strong>REPEAT:</strong> This process repeats hundreds of thousands of times</li>
+                        <li><strong>RESULT:</strong> No net position change, but massive volume generated for AERO incentives</li>
                     </ol>
                 </div>
+            </div>
+            
+            <!-- Wash Trader 1: 0x7c460d... -->
+            <div class="methodology-section" style="border: 2px solid var(--accent-wash);">
+                <h2><i class="fas fa-tractor" style="color: var(--accent-wash)"></i> Wash Trader #1</h2>
                 
-                <h3 style="color: var(--text-primary); margin: 25px 0 15px;">📊 Real Transaction Examples</h3>
-                <p style="color: var(--text-muted); font-size: 0.9em;">From top wash trader: <code id="topWashTrader" style="font-family: 'JetBrains Mono'; font-size: 0.85em;">Loading...</code></p>
-                
-                <div id="evidenceExamples" style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
-                    <div style="background: linear-gradient(135deg, rgba(255,99,99,0.1), rgba(255,99,99,0.05)); border: 1px solid rgba(255,99,99,0.3); border-radius: 10px; padding: 20px;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                            <span style="color: var(--accent-wash); font-weight: 600;">Example 1</span>
-                            <span class="status-badge running" style="font-size: 0.8em;">Verified</span>
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                            <div>
-                                <span style="color: var(--text-muted); font-size: 0.85em;">🔻 SELL</span>
-                                <div style="font-family: 'JetBrains Mono'; font-size: 1.1em; color: var(--accent-wash);" id="ex1-sell">84.7211 SOL</div>
-                                <div style="color: var(--text-muted); font-size: 0.8em;" id="ex1-sell-block">Block 39,109,843</div>
-                            </div>
-                            <div>
-                                <span style="color: var(--text-muted); font-size: 0.85em;">🔺 BUY</span>
-                                <div style="font-family: 'JetBrains Mono'; font-size: 1.1em; color: var(--accent-organic);" id="ex1-buy">84.7211 SOL</div>
-                                <div style="color: var(--text-muted); font-size: 0.8em;" id="ex1-buy-block">Block 39,109,844</div>
-                            </div>
-                        </div>
-                        <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1);">
-                            <span style="color: var(--accent-warning); font-size: 0.85em;">⏱️ Time difference: <span id="ex1-time">~2 seconds</span></span>
-                            <span style="color: var(--text-muted); font-size: 0.85em; margin-left: 20px;">Δ Amount: <span style="color: var(--accent-organic);">0.0000 SOL (0.00%)</span></span>
-                        </div>
+                <div style="background: var(--bg-secondary); border-radius: 12px; padding: 20px; margin: 15px 0;">
+                    <h4 style="color: var(--text-muted); margin-bottom: 10px;">Address</h4>
+                    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                        <code style="font-family: 'JetBrains Mono'; font-size: 0.9em; color: var(--accent-wash); background: rgba(255,99,99,0.15); padding: 8px 12px; border-radius: 6px; word-break: break-all;">0x7c460d504c1600fb8c030ff0d3b7e02bab268309</code>
+                        <a href="https://basescan.org/address/0x7c460d504c1600fb8c030ff0d3b7e02bab268309" target="_blank" style="color: var(--accent-organic); text-decoration: none; font-size: 0.9em;">
+                            <i class="fas fa-external-link-alt"></i> View on Basescan
+                        </a>
                     </div>
                     
-                    <div style="background: linear-gradient(135deg, rgba(255,99,99,0.1), rgba(255,99,99,0.05)); border: 1px solid rgba(255,99,99,0.3); border-radius: 10px; padding: 20px;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                            <span style="color: var(--accent-wash); font-weight: 600;">Example 2</span>
-                            <span class="status-badge running" style="font-size: 0.8em;">Verified</span>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px;">
+                        <div>
+                            <div style="color: var(--text-muted); font-size: 0.8em;">Total Transactions</div>
+                            <div style="color: var(--text-primary); font-size: 1.2em; font-weight: 600;">106,909</div>
                         </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                            <div>
-                                <span style="color: var(--text-muted); font-size: 0.85em;">🔻 SELL</span>
-                                <div style="font-family: 'JetBrains Mono'; font-size: 1.1em; color: var(--accent-wash);" id="ex2-sell">86.3533 SOL</div>
-                                <div style="color: var(--text-muted); font-size: 0.8em;" id="ex2-sell-block">Block 39,110,148</div>
-                            </div>
-                            <div>
-                                <span style="color: var(--text-muted); font-size: 0.85em;">🔺 BUY</span>
-                                <div style="font-family: 'JetBrains Mono'; font-size: 1.1em; color: var(--accent-organic);" id="ex2-buy">86.3533 SOL</div>
-                                <div style="color: var(--text-muted); font-size: 0.8em;" id="ex2-buy-block">Block 39,110,147</div>
-                            </div>
+                        <div>
+                            <div style="color: var(--text-muted); font-size: 0.8em;">Total SELL Volume</div>
+                            <div style="color: var(--accent-wash); font-size: 1.2em; font-weight: 600;">18,630,981 SOL</div>
                         </div>
-                        <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1);">
-                            <span style="color: var(--accent-warning); font-size: 0.85em;">⏱️ Time difference: <span id="ex2-time">~2 seconds</span></span>
-                            <span style="color: var(--text-muted); font-size: 0.85em; margin-left: 20px;">Δ Amount: <span style="color: var(--accent-organic);">0.0000 SOL (0.00%)</span></span>
+                        <div>
+                            <div style="color: var(--text-muted); font-size: 0.8em;">Total BUY Volume</div>
+                            <div style="color: var(--accent-organic); font-size: 1.2em; font-weight: 600;">18,629,870 SOL</div>
+                        </div>
+                        <div>
+                            <div style="color: var(--text-muted); font-size: 0.8em;">Net Position</div>
+                            <div style="color: var(--text-primary); font-size: 1.2em; font-weight: 600;">-1,111 SOL</div>
+                        </div>
+                        <div>
+                            <div style="color: var(--text-muted); font-size: 0.8em;">Balance Ratio</div>
+                            <div style="color: var(--accent-warning); font-size: 1.2em; font-weight: 600;">99.99%</div>
                         </div>
                     </div>
                 </div>
                 
-                <div style="background: rgba(255,170,0,0.1); border: 1px solid rgba(255,170,0,0.3); border-radius: 10px; padding: 20px; margin-top: 20px;">
-                    <h4 style="color: var(--accent-warning); margin-bottom: 10px;">🎯 Why This is Conclusive Proof</h4>
-                    <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px;">
-                        <li>The amounts are <strong>exactly identical</strong> - no price slippage, no partial fills</li>
-                        <li>Transactions occur within <strong>2-4 seconds</strong> of each other (1-2 blocks on Base)</li>
-                        <li>This pattern repeats <strong>thousands of times</strong> from the same addresses</li>
-                        <li>Net position change is <strong>~0</strong> despite millions in volume</li>
+                <h4 style="color: var(--text-primary); margin: 20px 0 15px;"><i class="fas fa-receipt"></i> Transaction Evidence (Verified on Basescan)</h4>
+                
+                <!-- Example 1 -->
+                <div style="background: linear-gradient(135deg, rgba(255,99,99,0.1), rgba(255,99,99,0.05)); border: 1px solid rgba(255,99,99,0.3); border-radius: 10px; padding: 20px; margin-bottom: 15px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <span style="color: var(--accent-wash); font-weight: 600;">Round-Trip Example #1</span>
+                        <span class="status-badge running" style="font-size: 0.8em;"><i class="fas fa-check"></i> Verified</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px;">
+                            <div style="color: var(--accent-wash); font-weight: 600; margin-bottom: 10px;">🔻 SELL Transaction</div>
+                            <div style="color: var(--text-primary); font-size: 1.1em; font-weight: 600;">84.7211 SOL</div>
+                            <div style="color: var(--text-muted); font-size: 0.85em; margin-top: 5px;">Block 39,109,843</div>
+                            <div style="margin-top: 10px;">
+                                <div style="color: var(--text-muted); font-size: 0.75em;">Transaction Hash:</div>
+                                <a href="https://basescan.org/tx/0xcd9ce7f02aa53c42f1627053f0e698a1dd1f6dd7480c816780c0b827d0002f4e" target="_blank" style="font-family: 'JetBrains Mono'; font-size: 0.7em; color: var(--accent-organic); word-break: break-all;">
+                                    0xcd9ce7f02aa53c42f1627053f0e698a1dd1f6dd7480c816780c0b827d0002f4e <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px;">
+                            <div style="color: var(--accent-organic); font-weight: 600; margin-bottom: 10px;">🔺 BUY Transaction</div>
+                            <div style="color: var(--text-primary); font-size: 1.1em; font-weight: 600;">84.7211 SOL</div>
+                            <div style="color: var(--text-muted); font-size: 0.85em; margin-top: 5px;">Block 39,109,842</div>
+                            <div style="margin-top: 10px;">
+                                <div style="color: var(--text-muted); font-size: 0.75em;">Transaction Hash:</div>
+                                <a href="https://basescan.org/tx/0x7ba89c9d5b4b0f83b1ccaa19585fcbe252cbdf22666340a5f7f4ab7053c2653c" target="_blank" style="font-family: 'JetBrains Mono'; font-size: 0.7em; color: var(--accent-organic); word-break: break-all;">
+                                    0x7ba89c9d5b4b0f83b1ccaa19585fcbe252cbdf22666340a5f7f4ab7053c2653c <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 30px; flex-wrap: wrap;">
+                        <span style="color: var(--accent-warning); font-size: 0.9em;"><i class="fas fa-clock"></i> Time difference: <strong>~2 seconds</strong> (1 block)</span>
+                        <span style="color: var(--accent-organic); font-size: 0.9em;"><i class="fas fa-equals"></i> Amount difference: <strong>0.0000 SOL</strong></span>
+                    </div>
+                </div>
+                
+                <!-- Example 2 -->
+                <div style="background: linear-gradient(135deg, rgba(255,99,99,0.1), rgba(255,99,99,0.05)); border: 1px solid rgba(255,99,99,0.3); border-radius: 10px; padding: 20px; margin-bottom: 15px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <span style="color: var(--accent-wash); font-weight: 600;">Round-Trip Example #2</span>
+                        <span class="status-badge running" style="font-size: 0.8em;"><i class="fas fa-check"></i> Verified</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px;">
+                            <div style="color: var(--accent-wash); font-weight: 600; margin-bottom: 10px;">🔻 SELL Transaction</div>
+                            <div style="color: var(--text-primary); font-size: 1.1em; font-weight: 600;">86.3533 SOL</div>
+                            <div style="color: var(--text-muted); font-size: 0.85em; margin-top: 5px;">Block 39,110,148</div>
+                            <div style="margin-top: 10px;">
+                                <div style="color: var(--text-muted); font-size: 0.75em;">Transaction Hash:</div>
+                                <a href="https://basescan.org/tx/0xef317c75817cd3d01fc480f0f0d48e19c2e9687cb5a58dba81632d57244b88cf" target="_blank" style="font-family: 'JetBrains Mono'; font-size: 0.7em; color: var(--accent-organic); word-break: break-all;">
+                                    0xef317c75817cd3d01fc480f0f0d48e19c2e9687cb5a58dba81632d57244b88cf <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px;">
+                            <div style="color: var(--accent-organic); font-weight: 600; margin-bottom: 10px;">🔺 BUY Transaction</div>
+                            <div style="color: var(--text-primary); font-size: 1.1em; font-weight: 600;">86.3533 SOL</div>
+                            <div style="color: var(--text-muted); font-size: 0.85em; margin-top: 5px;">Block 39,110,147</div>
+                            <div style="margin-top: 10px;">
+                                <div style="color: var(--text-muted); font-size: 0.75em;">Transaction Hash:</div>
+                                <a href="https://basescan.org/tx/0xbe6c8b6386c4c6bfc7143422c6667fd021c45d5218fdc3fab6303a3106af5219" target="_blank" style="font-family: 'JetBrains Mono'; font-size: 0.7em; color: var(--accent-organic); word-break: break-all;">
+                                    0xbe6c8b6386c4c6bfc7143422c6667fd021c45d5218fdc3fab6303a3106af5219 <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 30px; flex-wrap: wrap;">
+                        <span style="color: var(--accent-warning); font-size: 0.9em;"><i class="fas fa-clock"></i> Time difference: <strong>~2 seconds</strong> (1 block)</span>
+                        <span style="color: var(--accent-organic); font-size: 0.9em;"><i class="fas fa-equals"></i> Amount difference: <strong>0.0000 SOL</strong></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Wash Trader 2: 0xEcBE25D69f0Bc85C8Eb42AE9A3b9A212DCed96e6 -->
+            <div class="methodology-section" style="border: 2px solid var(--accent-wash);">
+                <h2><i class="fas fa-tractor" style="color: var(--accent-wash)"></i> Wash Trader #2</h2>
+                
+                <div style="background: var(--bg-secondary); border-radius: 12px; padding: 20px; margin: 15px 0;">
+                    <h4 style="color: var(--text-muted); margin-bottom: 10px;">Address</h4>
+                    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                        <code style="font-family: 'JetBrains Mono'; font-size: 0.9em; color: var(--accent-wash); background: rgba(255,99,99,0.15); padding: 8px 12px; border-radius: 6px; word-break: break-all;">0xEcBE25D69f0Bc85C8Eb42AE9A3b9A212DCed96e6</code>
+                        <a href="https://basescan.org/address/0xEcBE25D69f0Bc85C8Eb42AE9A3b9A212DCed96e6" target="_blank" style="color: var(--accent-organic); text-decoration: none; font-size: 0.9em;">
+                            <i class="fas fa-external-link-alt"></i> View on Basescan
+                        </a>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px;">
+                        <div>
+                            <div style="color: var(--text-muted); font-size: 0.8em;">Total Transactions</div>
+                            <div style="color: var(--text-primary); font-size: 1.2em; font-weight: 600;">831,122</div>
+                        </div>
+                        <div>
+                            <div style="color: var(--text-muted); font-size: 0.8em;">Total SELL Volume</div>
+                            <div style="color: var(--accent-wash); font-size: 1.2em; font-weight: 600;">14,674,440 SOL</div>
+                        </div>
+                        <div>
+                            <div style="color: var(--text-muted); font-size: 0.8em;">Total BUY Volume</div>
+                            <div style="color: var(--accent-organic); font-size: 1.2em; font-weight: 600;">14,700,974 SOL</div>
+                        </div>
+                        <div>
+                            <div style="color: var(--text-muted); font-size: 0.8em;">Net Position</div>
+                            <div style="color: var(--text-primary); font-size: 1.2em; font-weight: 600;">+26,534 SOL</div>
+                        </div>
+                        <div>
+                            <div style="color: var(--text-muted); font-size: 0.8em;">Balance Ratio</div>
+                            <div style="color: var(--accent-warning); font-size: 1.2em; font-weight: 600;">99.82%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h4 style="color: var(--text-primary); margin: 20px 0 15px;"><i class="fas fa-receipt"></i> Transaction Evidence (Verified on Basescan)</h4>
+                
+                <!-- Example 1 -->
+                <div style="background: linear-gradient(135deg, rgba(255,99,99,0.1), rgba(255,99,99,0.05)); border: 1px solid rgba(255,99,99,0.3); border-radius: 10px; padding: 20px; margin-bottom: 15px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <span style="color: var(--accent-wash); font-weight: 600;">Round-Trip Example #1</span>
+                        <span class="status-badge running" style="font-size: 0.8em;"><i class="fas fa-check"></i> Verified</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px;">
+                            <div style="color: var(--accent-wash); font-weight: 600; margin-bottom: 10px;">🔻 SELL Transaction</div>
+                            <div style="color: var(--text-primary); font-size: 1.1em; font-weight: 600;">0.0081 SOL</div>
+                            <div style="color: var(--text-muted); font-size: 0.85em; margin-top: 5px;">Block 39,919,926</div>
+                            <div style="margin-top: 10px;">
+                                <div style="color: var(--text-muted); font-size: 0.75em;">Transaction Hash:</div>
+                                <a href="https://basescan.org/tx/0x2d86d012e6ba1cf6e6052b55bcd8ce897fe99e71d1df281ce791e106da87689e" target="_blank" style="font-family: 'JetBrains Mono'; font-size: 0.7em; color: var(--accent-organic); word-break: break-all;">
+                                    0x2d86d012e6ba1cf6e6052b55bcd8ce897fe99e71d1df281ce791e106da87689e <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px;">
+                            <div style="color: var(--accent-organic); font-weight: 600; margin-bottom: 10px;">🔺 BUY Transaction</div>
+                            <div style="color: var(--text-primary); font-size: 1.1em; font-weight: 600;">0.0081 SOL</div>
+                            <div style="color: var(--text-muted); font-size: 0.85em; margin-top: 5px;">Block 39,919,926</div>
+                            <div style="margin-top: 10px;">
+                                <div style="color: var(--text-muted); font-size: 0.75em;">Transaction Hash:</div>
+                                <a href="https://basescan.org/tx/0x6d335c2db34cceb974c19ddfb6ee30877c379fb2a94612a74ec0b1f9b98cb62a" target="_blank" style="font-family: 'JetBrains Mono'; font-size: 0.7em; color: var(--accent-organic); word-break: break-all;">
+                                    0x6d335c2db34cceb974c19ddfb6ee30877c379fb2a94612a74ec0b1f9b98cb62a <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 30px; flex-wrap: wrap;">
+                        <span style="color: var(--accent-warning); font-size: 0.9em;"><i class="fas fa-clock"></i> Time difference: <strong>0 seconds</strong> (same block!)</span>
+                        <span style="color: var(--accent-organic); font-size: 0.9em;"><i class="fas fa-equals"></i> Amount difference: <strong>0.0000 SOL</strong></span>
+                    </div>
+                </div>
+                
+                <!-- Example 2 -->
+                <div style="background: linear-gradient(135deg, rgba(255,99,99,0.1), rgba(255,99,99,0.05)); border: 1px solid rgba(255,99,99,0.3); border-radius: 10px; padding: 20px; margin-bottom: 15px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <span style="color: var(--accent-wash); font-weight: 600;">Round-Trip Example #2</span>
+                        <span class="status-badge running" style="font-size: 0.8em;"><i class="fas fa-check"></i> Verified</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px;">
+                            <div style="color: var(--accent-wash); font-weight: 600; margin-bottom: 10px;">🔻 SELL Transaction</div>
+                            <div style="color: var(--text-primary); font-size: 1.1em; font-weight: 600;">0.0081 SOL</div>
+                            <div style="color: var(--text-muted); font-size: 0.85em; margin-top: 5px;">Block 39,919,927</div>
+                            <div style="margin-top: 10px;">
+                                <div style="color: var(--text-muted); font-size: 0.75em;">Transaction Hash:</div>
+                                <a href="https://basescan.org/tx/0xb20d77e4cb2636466f4990aecbb204d2dc883f8b822a2d9372d564e772d9cdc0" target="_blank" style="font-family: 'JetBrains Mono'; font-size: 0.7em; color: var(--accent-organic); word-break: break-all;">
+                                    0xb20d77e4cb2636466f4990aecbb204d2dc883f8b822a2d9372d564e772d9cdc0 <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px;">
+                            <div style="color: var(--accent-organic); font-weight: 600; margin-bottom: 10px;">🔺 BUY Transaction</div>
+                            <div style="color: var(--text-primary); font-size: 1.1em; font-weight: 600;">0.0081 SOL</div>
+                            <div style="color: var(--text-muted); font-size: 0.85em; margin-top: 5px;">Block 39,919,927</div>
+                            <div style="margin-top: 10px;">
+                                <div style="color: var(--text-muted); font-size: 0.75em;">Transaction Hash:</div>
+                                <a href="https://basescan.org/tx/0x5d30f1bd9326ef4af741401a4e9235d3323980993ddd88f25c13ec963038cea4" target="_blank" style="font-family: 'JetBrains Mono'; font-size: 0.7em; color: var(--accent-organic); word-break: break-all;">
+                                    0x5d30f1bd9326ef4af741401a4e9235d3323980993ddd88f25c13ec963038cea4 <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 30px; flex-wrap: wrap;">
+                        <span style="color: var(--accent-warning); font-size: 0.9em;"><i class="fas fa-clock"></i> Time difference: <strong>0 seconds</strong> (same block!)</span>
+                        <span style="color: var(--accent-organic); font-size: 0.9em;"><i class="fas fa-equals"></i> Amount difference: <strong>0.0000 SOL</strong></span>
+                    </div>
+                </div>
+                
+                <div style="background: rgba(255,170,0,0.15); border: 1px solid rgba(255,170,0,0.3); border-radius: 10px; padding: 15px; margin-top: 15px;">
+                    <strong style="color: var(--accent-warning);">⚠️ Note:</strong> 
+                    <span style="color: var(--text-secondary);">This trader executes many transactions in the <strong>same block</strong>, indicating automated/bot trading with extremely high frequency.</span>
+                </div>
+            </div>
+            
+            <!-- Conclusion -->
+            <div class="methodology-section" style="border: 2px solid var(--accent-organic);">
+                <h2><i class="fas fa-gavel" style="color: var(--accent-organic)"></i> Conclusion</h2>
+                
+                <div style="background: rgba(0,255,170,0.1); border: 1px solid rgba(0,255,170,0.3); border-radius: 10px; padding: 20px;">
+                    <h4 style="color: var(--accent-organic); margin-bottom: 15px;">🎯 Why This is Conclusive Proof of Wash Trading</h4>
+                    <ul style="color: var(--text-secondary); line-height: 2; padding-left: 20px;">
+                        <li>The buy and sell amounts are <strong>exactly identical</strong> - no price slippage, no partial fills</li>
+                        <li>Transactions occur within <strong>0-6 seconds</strong> of each other (0-3 blocks on Base)</li>
+                        <li>This pattern repeats <strong>hundreds of thousands of times</strong> from these addresses</li>
+                        <li>Net position change is <strong>~0</strong> despite tens of millions of SOL in volume</li>
+                        <li>Both traders have a <strong>99%+ balance ratio</strong> (buy ≈ sell)</li>
+                        <li>All transactions verified on <strong>Basescan</strong> - click any link above to verify</li>
                     </ul>
                 </div>
+                
+                <div style="margin-top: 20px;">
+                    <h4 style="color: var(--text-primary); margin-bottom: 10px;">📊 Combined Statistics</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                        <div style="background: var(--bg-secondary); padding: 15px; border-radius: 8px; text-align: center;">
+                            <div style="color: var(--text-muted); font-size: 0.85em;">Combined Transactions</div>
+                            <div style="color: var(--accent-wash); font-size: 1.5em; font-weight: 700;">938,031</div>
+                        </div>
+                        <div style="background: var(--bg-secondary); padding: 15px; border-radius: 8px; text-align: center;">
+                            <div style="color: var(--text-muted); font-size: 0.85em;">Combined Volume</div>
+                            <div style="color: var(--accent-wash); font-size: 1.5em; font-weight: 700;">33.3M SOL</div>
+                        </div>
+                        <div style="background: var(--bg-secondary); padding: 15px; border-radius: 8px; text-align: center;">
+                            <div style="color: var(--text-muted); font-size: 0.85em;">Combined Net Position</div>
+                            <div style="color: var(--accent-organic); font-size: 1.5em; font-weight: 700;">+25,423 SOL</div>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9em; text-align: center; margin-top: 15px;">
+                        These two addresses alone generated <strong>33.3 million SOL</strong> in volume with a net change of only <strong>~25,000 SOL</strong> (0.08%)
+                    </p>
+                </div>
+            </div>
+            
+            <div style="display: none;"> <!-- Hidden legacy elements for JS compatibility -->
+                <div id="evidenceExamples"></div>
+                <span id="topWashTrader"></span>
+                <span id="ex1-sell"></span>
+                <span id="ex1-buy"></span>
+                <span id="ex1-sell-block"></span>
+                <span id="ex1-buy-block"></span>
+                <span id="ex1-time"></span>
+                <span id="ex2-sell"></span>
+                <span id="ex2-buy"></span>
+                <span id="ex2-sell-block"></span>
+                <span id="ex2-buy-block"></span>
+                <span id="ex2-time"></span>
             </div>
             
             <div class="methodology-section">

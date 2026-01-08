@@ -2025,7 +2025,7 @@
  </main>
  
     <footer class="footer">
-        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 10px;">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 15px;">
             <svg width="24" height="24" viewBox="0 0 397 311" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M64.6 237.9c2.4-2.4 5.7-3.8 9.2-3.8h317.4c5.8 0 8.7 7 4.6 11.1l-62.7 62.7c-2.4 2.4-5.7 3.8-9.2 3.8H6.5c-5.8 0-8.7-7-4.6-11.1l62.7-62.7z" fill="url(#solana-gradient-footer)"/>
                 <path d="M64.6 3.8C67.1 1.4 70.4 0 73.8 0h317.4c5.8 0 8.7 7 4.6 11.1l-62.7 62.7c-2.4 2.4-5.7 3.8-9.2 3.8H6.5c-5.8 0-8.7-7-4.6-11.1L64.6 3.8z" fill="url(#solana-gradient-footer)"/>
@@ -2037,10 +2037,57 @@
                     </linearGradient>
                 </defs>
             </svg>
-            <span style="font-weight: 600; font-size: 1.1em;">Solana on Base</span>
+            <span style="font-weight: 600; font-size: 1.1em;">Solana on Base Volume Analysis</span>
         </div>
-        <p>Volume Analysis Report &bull; Base Network (L2) &bull; Data from Routescan API</p>
-        <p style="margin-top: 8px; font-size: 0.85em;">Last updated: <span id="lastUpdated">-</span></p>
+        
+        <!-- GitHub & Resources -->
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
+            <a href="https://github.com/ConejoCapital/SolanaOnBase" target="_blank" style="display: flex; align-items: center; gap: 8px; color: var(--text-primary); text-decoration: none; padding: 10px 20px; background: var(--bg-secondary); border-radius: 8px; border: 1px solid var(--border);">
+                <i class="fab fa-github"></i> View Source Code
+            </a>
+            <a href="https://basescan.org/token/0x311935cd80b76769bf2ecc9d8ab7635b2139cf82" target="_blank" style="display: flex; align-items: center; gap: 8px; color: var(--text-primary); text-decoration: none; padding: 10px 20px; background: var(--bg-secondary); border-radius: 8px; border: 1px solid var(--border);">
+                <i class="fas fa-cube"></i> SOL Token on Basescan
+            </a>
+        </div>
+        
+        <!-- Resources for Researchers -->
+        <div style="max-width: 800px; margin: 0 auto 25px; text-align: left;">
+            <h4 style="color: var(--text-primary); margin-bottom: 12px; text-align: center;">Resources for Researchers</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                <div style="background: var(--bg-secondary); padding: 15px; border-radius: 8px; border: 1px solid var(--border);">
+                    <div style="color: var(--solana-purple); font-weight: 600; margin-bottom: 8px;"><i class="fas fa-database"></i> Data Sources</div>
+                    <ul style="color: var(--text-secondary); font-size: 0.85em; padding-left: 18px; margin: 0;">
+                        <li><a href="https://routescan.io/documentation/api/etherscan-like/accounts" target="_blank" style="color: var(--accent-organic);">Routescan API</a></li>
+                        <li><a href="https://basescan.org" target="_blank" style="color: var(--accent-organic);">Basescan Explorer</a></li>
+                        <li><a href="https://docs.base.org" target="_blank" style="color: var(--accent-organic);">Base Documentation</a></li>
+                    </ul>
+                </div>
+                <div style="background: var(--bg-secondary); padding: 15px; border-radius: 8px; border: 1px solid var(--border);">
+                    <div style="color: var(--solana-purple); font-weight: 600; margin-bottom: 8px;"><i class="fas fa-book"></i> Aerodrome Resources</div>
+                    <ul style="color: var(--text-secondary); font-size: 0.85em; padding-left: 18px; margin: 0;">
+                        <li><a href="https://aerodrome.finance" target="_blank" style="color: var(--accent-organic);">Aerodrome Finance</a></li>
+                        <li><a href="https://aerodrome.finance/docs" target="_blank" style="color: var(--accent-organic);">Aerodrome Docs</a></li>
+                        <li><a href="https://tokenterminal.com/explorer/projects/aerodrome" target="_blank" style="color: var(--accent-organic);">Token Terminal</a></li>
+                    </ul>
+                </div>
+                <div style="background: var(--bg-secondary); padding: 15px; border-radius: 8px; border: 1px solid var(--border);">
+                    <div style="color: var(--solana-purple); font-weight: 600; margin-bottom: 8px;"><i class="fas fa-link"></i> Key Contracts</div>
+                    <ul style="color: var(--text-secondary); font-size: 0.85em; padding-left: 18px; margin: 0;">
+                        <li><a href="https://basescan.org/address/0x311935cd80b76769bf2ecc9d8ab7635b2139cf82" target="_blank" style="color: var(--accent-organic);">SOL Token</a></li>
+                        <li><a href="https://basescan.org/address/0x940181a94a35a4569e4529a3cdfb74e38fd98631" target="_blank" style="color: var(--accent-organic);">AERO Token</a></li>
+                        <li><a href="https://basescan.org/address/0xb30540172f1b37d1ee1d109e49f883e935e69219" target="_blank" style="color: var(--accent-organic);">SOL/WETH Pool</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <p style="color: var(--text-muted);">Volume Analysis Report &bull; Base Network (L2) &bull; Data from Routescan API</p>
+        <p style="margin-top: 8px; font-size: 0.85em; color: var(--text-muted);">Last updated: <span id="lastUpdated">-</span></p>
+        <p style="margin-top: 15px; font-size: 0.8em; color: var(--text-muted);">
+            <a href="https://github.com/ConejoCapital/SolanaOnBase" target="_blank" style="color: var(--solana-purple);">
+                <i class="fab fa-github"></i> github.com/ConejoCapital/SolanaOnBase
+            </a>
+        </p>
     </footer>
  
  <script>

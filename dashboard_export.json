@@ -1,10 +1,10 @@
 {
   "summary": {
-    "transactions_analyzed": 2063946,
+    "transactions_analyzed": 2064127,
     "unique_addresses": 8386,
     "holders_on_basescan": 4238,
     "target_transactions": 2352771,
-    "progress_percentage": 87.7,
+    "progress_percentage": 111.7,
     "total_volume_sol": 76185738.13,
     "total_volume_usd": 10502965858.87,
     "sol_price_usd": 137.86,
@@ -20,7 +20,10 @@
     "wash_address_count": 86,
     "organic_address_count": 6750,
     "block_sync": {
-      "synced_block": 40558106,
+      "synced_block": 40558186,
+      "latest_base_block": 40558274,
+      "blocks_behind": 88,
+      "block_sync_percentage": 100.0,
       "min_block": 38699339,
       "token_start_block": 38699339
     },

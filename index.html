@@ -729,10 +729,117 @@ text-decoration: underline;
  color: #9a5aff;
  }
  
- .address-label.user {
- background: rgba(128, 128, 128, 0.2);
- color: #888;
- }
+.address-label.user {
+background: rgba(128, 128, 128, 0.2);
+color: #888;
+}
+
+/* Mobile Card Layout */
+.address-card-list {
+display: none;
+list-style: none;
+padding: 0;
+margin: 0;
+gap: 12px;
+}
+
+.address-card {
+background: var(--bg-card);
+border: 1px solid var(--border);
+border-radius: 16px;
+padding: 16px;
+margin-bottom: 12px;
+}
+
+.address-card-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom: 12px;
+}
+
+.address-card-rank {
+font-family: 'JetBrains Mono', monospace;
+font-size: 0.9em;
+color: var(--text-muted);
+width: 30px;
+flex-shrink: 0;
+}
+
+.address-card-address {
+font-family: 'JetBrains Mono', monospace;
+font-size: 0.85em;
+flex: 1;
+margin: 0 12px;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+
+.address-card-address a {
+text-decoration: none;
+transition: opacity 0.2s;
+}
+
+.address-card-address a:hover {
+opacity: 0.8;
+}
+
+.address-card-badge {
+font-size: 0.75em;
+padding: 4px 10px;
+border-radius: 12px;
+font-weight: 600;
+font-family: 'JetBrains Mono', monospace;
+}
+
+.address-card-badge.wash {
+background: rgba(255, 107, 107, 0.15);
+color: var(--accent-wash);
+}
+
+.address-card-badge.organic {
+background: rgba(0, 255, 170, 0.15);
+color: var(--accent-organic);
+}
+
+.address-card-stats {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 8px;
+margin-top: 12px;
+}
+
+.address-card-stat {
+background: var(--bg-secondary);
+border-radius: 12px;
+padding: 12px;
+}
+
+.address-card-stat-label {
+font-size: 0.7em;
+color: var(--text-muted);
+text-transform: uppercase;
+letter-spacing: 0.5px;
+margin-bottom: 4px;
+}
+
+.address-card-stat-value {
+font-family: 'JetBrains Mono', monospace;
+font-size: 0.9em;
+font-weight: 600;
+color: var(--text-primary);
+}
+
+/* Desktop: Show tables, hide cards */
+@media (min-width: 640px) {
+.address-card-list {
+display: none !important;
+}
+.table-wrapper {
+display: block !important;
+}
+}
  
 /* Collapsible Sections */
 .collapsible-section {
@@ -1048,7 +1155,16 @@ text-decoration: underline;
                 grid-template-columns: 1fr !important;
             }
             
-            /* Tables - Horizontal Scroll Wrapper */
+            /* Mobile: Show cards, hide tables */
+            .address-card-list {
+                display: block;
+            }
+            
+            .table-wrapper {
+                display: none;
+            }
+            
+            /* Tables - Horizontal Scroll Wrapper (for larger screens) */
             .table-wrapper {
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;

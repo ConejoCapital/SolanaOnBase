@@ -177,16 +177,54 @@ The dashboard is deployed as a static site on Vercel:
 
 ## Resources
 
-### Documentation
+### Primary Documentation
 
-- [Aerodrome Finance Documentation](https://aerodrome.finance/docs)
-- [Base Network Documentation](https://docs.base.org)
-- [Routescan API Documentation](https://routescan.io/documentation/api)
+| Resource | Description |
+|----------|-------------|
+| [Aerodrome Finance Docs](https://docs.aerodrome.finance/) | Official Aerodrome protocol documentation |
+| [Aerodrome Contracts](https://docs.aerodrome.finance/contracts) | Contract addresses and ABIs |
+| [Base Network Docs](https://docs.base.org) | Base L2 documentation |
+| [Routescan API](https://routescan.io/documentation/api) | API used for transaction data |
 
-### Data Verification
+### DEX Pool Resources
 
-- [SOL Token on Basescan](https://basescan.org/token/0x311935cd80b76769bf2ecc9d8ab7635b2139cf82)
-- [Aerodrome Analytics on Token Terminal](https://tokenterminal.com/explorer/projects/aerodrome)
+| Protocol | Resource |
+|----------|----------|
+| **Aerodrome** | [Pool Explorer](https://aerodrome.finance/pools) |
+| **Uniswap V3** | [Base Deployments](https://docs.uniswap.org/contracts/v3/reference/deployments/base-deployments) |
+| **PancakeSwap** | [V3 Contracts](https://docs.pancakeswap.finance/developers/smart-contracts/pancakeswap-exchange/v3-contracts) |
+
+### Aggregator Documentation
+
+| Protocol | Resource |
+|----------|----------|
+| **1inch** | [Contract Addresses](https://docs.1inch.io/docs/aggregation-protocol/smart-contract-addresses) |
+| **0x Protocol** | [Cheat Sheet](https://docs.0x.org/introduction/0x-cheat-sheet) |
+| **Odos** | [Contract Addresses](https://docs.odos.xyz/product/smart-order-routing/contract-addresses) |
+| **Paraswap** | [Smart Contracts](https://developers.paraswap.network/smart-contracts) |
+
+### Bridge Documentation
+
+| Protocol | Resource |
+|----------|----------|
+| **LayerZero** | [V2 Contracts](https://docs.layerzero.network/v2/developers/evm/technical-reference/deployed-contracts) |
+| **Across** | [Contract Addresses](https://docs.across.to/reference/contract-addresses) |
+
+### Data Verification Links
+
+| Contract | Basescan Link |
+|----------|---------------|
+| SOL Token | [0x311935cd80b76769bf2ecc9d8ab7635b2139cf82](https://basescan.org/token/0x311935cd80b76769bf2ecc9d8ab7635b2139cf82) |
+| AERO Token | [0x940181a94a35a4569e4529a3cdfb74e38fd98631](https://basescan.org/token/0x940181a94a35a4569e4529a3cdfb74e38fd98631) |
+| Aerodrome SOL/WETH Pool | [0xb30540172f1b37d1ee1d109e49f883e935e69219](https://basescan.org/address/0xb30540172f1b37d1ee1d109e49f883e935e69219) |
+| Volume Farmer #1 | [0x7c460d504c1600fb8c030ff0d3b7e02bab268309](https://basescan.org/address/0x7c460d504c1600fb8c030ff0d3b7e02bab268309) |
+| Volume Farmer #2 | [0xecbe25d69f0bc85c8eb42ae9a3b9a212dced96e6](https://basescan.org/address/0xecbe25d69f0bc85c8eb42ae9a3b9a212dced96e6) |
+
+### Analytics
+
+- [Token Terminal - Aerodrome](https://tokenterminal.com/explorer/projects/aerodrome)
+- [DefiLlama - Base](https://defillama.com/chain/Base)
+- [Dune Analytics - Base](https://dune.com/browse/dashboards?q=base)
 
 ---
 

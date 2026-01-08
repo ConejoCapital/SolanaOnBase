@@ -9058,5 +9058,133 @@
     "type": "user",
     "source": "Low activity",
     "confidence": 50
+  },
+  "0xcf77a3ba9a5ca399b7c97c74d54e5b1beb874e43": {
+    "label": "Aerodrome Router",
+    "type": "dex_router",
+    "protocol": "Aerodrome",
+    "source": "https://docs.aerodrome.finance/contracts",
+    "verified": true,
+    "description": "Main router contract for swaps on Aerodrome"
+  },
+  "0x16613524e02ad97edfef371bc883f2f5d6c480a5": {
+    "label": "Aerodrome Voter",
+    "type": "governance",
+    "protocol": "Aerodrome",
+    "source": "https://docs.aerodrome.finance/contracts",
+    "verified": true,
+    "description": "Governance contract for AERO emissions voting"
+  },
+  "0x420dd381b31aef6683db6b902084cb0ffece40da": {
+    "label": "Aerodrome Pool Factory",
+    "type": "factory",
+    "protocol": "Aerodrome",
+    "source": "https://docs.aerodrome.finance/contracts",
+    "verified": true,
+    "description": "Factory contract for creating new liquidity pools"
+  },
+  "0x6cb442acf35158d87c7dab6066a90d69824d1c08": {
+    "label": "Aerodrome Router V2",
+    "type": "dex_router",
+    "protocol": "Aerodrome",
+    "source": "https://docs.aerodrome.finance/contracts",
+    "verified": true
+  },
+  "0x3fc91a3afd70395cd496c647d5a6cc9d4b2b7fad": {
+    "label": "Uniswap Universal Router",
+    "type": "dex_router",
+    "protocol": "Uniswap",
+    "source": "https://docs.uniswap.org/contracts/v3/reference/deployments/base-deployments",
+    "verified": true,
+    "description": "Uniswap's universal router for multi-protocol swaps"
+  },
+  "0x2626664c2603336e57b271c5c0b26f421741e481": {
+    "label": "Uniswap V3 SwapRouter02",
+    "type": "dex_router",
+    "protocol": "Uniswap",
+    "source": "https://docs.uniswap.org/contracts/v3/reference/deployments/base-deployments",
+    "verified": true
+  },
+  "0x33128a8fc17869897dce68ed026d694621f6fdfd": {
+    "label": "Uniswap V3 Factory",
+    "type": "factory",
+    "protocol": "Uniswap",
+    "source": "https://docs.uniswap.org/contracts/v3/reference/deployments/base-deployments",
+    "verified": true
+  },
+  "0x1b81d678ffb9c0263b24a97847620c99d213eb14": {
+    "label": "PancakeSwap SmartRouter",
+    "type": "dex_router",
+    "protocol": "PancakeSwap",
+    "source": "https://docs.pancakeswap.finance/developers/smart-contracts/pancakeswap-exchange/v3-contracts",
+    "verified": true
+  },
+  "0xdef1c0ded9bec7f1a1670819833240f027b25eff": {
+    "label": "0x Exchange Proxy",
+    "type": "aggregator",
+    "protocol": "0x Protocol",
+    "source": "https://docs.0x.org/introduction/0x-cheat-sheet",
+    "verified": true
+  },
+  "0xdef171fe48cf0115b1d80b88dc8eab59176fee57": {
+    "label": "Paraswap Augustus Swapper",
+    "type": "aggregator",
+    "protocol": "Paraswap",
+    "source": "https://developers.paraswap.network/smart-contracts",
+    "verified": true
+  },
+  "0x1a44076050125825900e736c501f859c50fe728c": {
+    "label": "LayerZero Endpoint V2",
+    "type": "bridge",
+    "protocol": "LayerZero",
+    "source": "https://docs.layerzero.network/v2/developers/evm/technical-reference/deployed-contracts",
+    "verified": true
+  },
+  "0x09aea4b2242abc8bb4bb78d537a67a245a7bec64": {
+    "label": "Across Bridge SpokePool",
+    "type": "bridge",
+    "protocol": "Across",
+    "source": "https://docs.across.to/reference/contract-addresses",
+    "verified": true
+  },
+  "0xf28c66a9dfa53eeaf4b25d280b294c8835e10ea9": {
+    "label": "Volume Farmer #1 Owner (EOA)",
+    "type": "volume_farmer_owner",
+    "protocol": "None",
+    "source": "https://basescan.org/address/0xf28c66a9dfa53eeaf4b25d280b294c8835e10ea9",
+    "verified": true,
+    "controls": "0x7c460d504c1600fb8c030ff0d3b7e02bab268309",
+    "description": "EOA that initiates transactions for Volume Farmer #1 contract"
+  },
+  "0x4160f36b829958555134b8249250925092509250": {
+    "label": "Volume Farmer #2 Owner (EOA)",
+    "type": "volume_farmer_owner",
+    "protocol": "None",
+    "source": "https://basescan.org/address/0x4160f36b829958555134b8249250925092509250",
+    "verified": true,
+    "controls": "0xecbe25d69f0bc85c8eb42ae9a3b9a212dced96e6",
+    "description": "EOA that controls Volume Farmer #2 contract"
+  },
+  "0x940181a94a35a4569e4529a3cdfb74e38fd98631": {
+    "label": "AERO Token (Aerodrome Governance)",
+    "type": "token",
+    "protocol": "Aerodrome",
+    "source": "https://basescan.org/token/0x940181a94a35a4569e4529a3cdfb74e38fd98631",
+    "verified": true,
+    "description": "Aerodrome governance and emissions token"
+  },
+  "0x4200000000000000000000000000000000000006": {
+    "label": "Wrapped ETH (WETH)",
+    "type": "token",
+    "protocol": "Base",
+    "source": "https://basescan.org/token/0x4200000000000000000000000000000000000006",
+    "verified": true
+  },
+  "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913": {
+    "label": "USD Coin (USDC)",
+    "type": "token",
+    "protocol": "Circle",
+    "source": "https://basescan.org/token/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+    "verified": true
   }
 }

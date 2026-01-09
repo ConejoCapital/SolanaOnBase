@@ -1,50 +1,50 @@
 {
   "summary": {
-    "transactions_analyzed": 2080744,
+    "transactions_analyzed": 2080864,
     "unique_addresses": 8419,
     "holders_on_basescan": 4238,
     "target_transactions": 2352771,
     "progress_percentage": 88.4,
-    "total_volume_sol": 77147364.52,
-    "total_volume_usd": 10635535672.93,
+    "total_volume_sol": 77155892.28,
+    "total_volume_usd": 10636711309.48,
     "sol_price_usd": 137.86,
-    "pool_volume_sol": 37370597.63,
+    "pool_volume_sol": 37374748.49,
     "pool_volume_pct": 48.4,
-    "non_pool_volume_sol": 39776766.89,
-    "wash_volume_sol": 37984924.45,
-    "wash_volume_usd": 5236601684.68,
+    "non_pool_volume_sol": 39781143.78,
+    "wash_volume_sol": 37989299.96,
+    "wash_volume_usd": 5237204892.49,
     "wash_percentage": 95.5,
-    "organic_volume_sol": 1791841.99,
-    "organic_volume_usd": 247023336.74,
+    "organic_volume_sol": 1791843.37,
+    "organic_volume_usd": 247023526.99,
     "organic_percentage": 4.5,
     "wash_address_count": 86,
     "organic_address_count": 6768,
     "block_sync": {
-      "synced_block": 40564896,
+      "synced_block": 40564952,
       "min_block": 38699339,
       "token_start_block": 38699339
     },
-    "last_updated": "2026-01-08 19:40:57"
+    "last_updated": "2026-01-08 19:44:01"
   },
   "wash_trading_addresses": [
     {
       "address": "0x7c460d504c1600fb8c030ff0d3b7e02bab268309",
-      "total_volume_sol": 18735682.97,
-      "total_volume_usd": 2582901254.21,
+      "total_volume_sol": 18736651.63,
+      "total_volume_usd": 2583034793.13,
       "balance_ratio": 100.0,
       "counterparties": 2,
-      "tx_count": 107622,
+      "tx_count": 107627,
       "label": " Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
     },
     {
       "address": "0xecbe25d69f0bc85c8eb42ae9a3b9a212dced96e6",
-      "total_volume_sol": 15165582.72,
-      "total_volume_usd": 2090727233.24,
+      "total_volume_sol": 15168917.46,
+      "total_volume_usd": 2091186961.04,
       "balance_ratio": 99.8,
       "counterparties": 2,
-      "tx_count": 846113,
+      "tx_count": 846214,
       "label": " Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -73,11 +73,11 @@
     },
     {
       "address": "0x88fec94eb9f11376e0dcb31ea7babc278d6035c3",
-      "total_volume_sol": 1186718.99,
-      "total_volume_usd": 163601079.66,
+      "total_volume_sol": 1186790.14,
+      "total_volume_usd": 163610889.24,
       "balance_ratio": 99.9,
       "counterparties": 4,
-      "tx_count": 200611,
+      "tx_count": 200622,
       "label": " Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -205,11 +205,11 @@
     },
     {
       "address": "0x4f1bc131713117fbbf8077d777b116cb20d6e7e9",
-      "total_volume_sol": 4259.97,
-      "total_volume_usd": 587279.14,
+      "total_volume_sol": 4260.93,
+      "total_volume_usd": 587412.21,
       "balance_ratio": 95.3,
       "counterparties": 4,
-      "tx_count": 2836,
+      "tx_count": 2837,
       "label": " Wash Trader",
       "label_type": "wash_trader",
       "label_confidence": 95
@@ -977,11 +977,11 @@
   "organic_addresses": [
     {
       "address": "0xa25773f75d7190e130d501509d22592151db3915",
-      "total_volume_sol": 1460966.0,
-      "total_volume_usd": 201408772.35,
+      "total_volume_sol": 1460967.23,
+      "total_volume_usd": 201408942.14,
       "balance_ratio": 98.2,
       "counterparties": 236,
-      "tx_count": 432518,
+      "tx_count": 432519,
       "label": " Organic",
       "label_type": "organic",
       "label_confidence": 70
@@ -1142,11 +1142,11 @@
     },
     {
       "address": "0xbf9d262f0199fea8bef911175b1b313055af4b1b",
-      "total_volume_sol": 2494.22,
-      "total_volume_usd": 343853.32,
+      "total_volume_sol": 2494.37,
+      "total_volume_usd": 343873.18,
       "balance_ratio": 47.6,
       "counterparties": 572,
-      "tx_count": 25306,
+      "tx_count": 25307,
       "label": " Organic",
       "label_type": "organic",
       "label_confidence": 70
